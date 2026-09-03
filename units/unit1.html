@@ -546,7 +546,355 @@ I = 3 A
 </div>
 
 </section>
+<!-- ========================================================= -->
+<!-- UNIT 1 VERSION 3.0 : KCL, KVL, SERIES-PARALLEL & STAR DELTA -->
+<!-- ========================================================= -->
 
+<section id="kcl" class="section">
+
+<h2>11. Kirchhoff's Current Law (KCL)</h2>
+
+<div class="info">
+<b>Statement:</b> The algebraic sum of all currents entering and leaving a node is always zero.
+</div>
+
+<div class="formula">
+ΣI = 0
+</div>
+
+<p>
+Kirchhoff's Current Law is based on the <b>Law of Conservation of Charge</b>. It states that electric charge cannot accumulate at a junction.
+</p>
+
+<h3>Node Diagram</h3>
+
+<svg viewBox="0 0 300 200">
+
+<circle cx="150" cy="100" r="8" fill="#0B4AA2"/>
+
+<line x1="150" y1="20" x2="150" y2="92" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="20" y1="100" x2="142" y2="100" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="158" y1="100" x2="280" y2="100" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="150" y1="108" x2="150" y2="180" stroke="#0B4AA2" stroke-width="2"/>
+
+<polygon points="145,40 150,30 155,40" fill="#16A34A"/>
+<polygon points="40,95 30,100 40,105" fill="#16A34A"/>
+<polygon points="260,95 270,100 260,105" fill="#DC2626"/>
+<polygon points="145,160 150,170 155,160" fill="#DC2626"/>
+
+<text x="160" y="28" font-size="10" fill="#16A34A">I₁</text>
+<text x="8" y="92" font-size="10" fill="#16A34A">I₂</text>
+<text x="250" y="92" font-size="10" fill="#DC2626">I₃</text>
+<text x="160" y="178" font-size="10" fill="#DC2626">I₄</text>
+
+</svg>
+
+<h3>Mathematical Form</h3>
+
+<div class="formula">
+I₁ + I₂ = I₃ + I₄
+</div>
+
+<h3>Solved Numerical</h3>
+
+<table>
+<tr><th>Given</th><th>Value</th></tr>
+<tr><td>I₁</td><td>4 A</td></tr>
+<tr><td>I₂</td><td>2 A</td></tr>
+<tr><td>I₃</td><td>3 A</td></tr>
+<tr><td>I₄</td><td>?</td></tr>
+</table>
+
+<h3>Solution</h3>
+
+<pre>
+I₁ + I₂ = I₃ + I₄
+
+4 + 2 = 3 + I₄
+
+I₄ = 3 A
+</pre>
+
+<div class="info">
+<b>Answer:</b> Current leaving the junction = <b>3 A</b>
+</div>
+
+</section>
+
+<!-- ========================================================= -->
+
+<section id="kvl" class="section">
+
+<h2>12. Kirchhoff's Voltage Law (KVL)</h2>
+
+<div class="info">
+<b>Statement:</b> The algebraic sum of all voltages around any closed loop is always zero.
+</div>
+
+<div class="formula">
+ΣV = 0
+</div>
+
+<p>
+KVL is based on the <b>Law of Conservation of Energy</b>. The total voltage supplied equals the total voltage consumed.
+</p>
+
+<h3>Closed Loop Circuit</h3>
+
+<svg viewBox="0 0 340 170">
+
+<rect x="25" y="55" width="45" height="55" fill="#F59E0B"/>
+<text x="48" y="82" font-size="10" text-anchor="middle" fill="white">10V</text>
+
+<line x1="70" y1="55" x2="140" y2="55" stroke="#0B4AA2" stroke-width="2"/>
+<rect x="140" y="40" width="45" height="30" fill="#64748B"/>
+<text x="162" y="58" font-size="8" text-anchor="middle" fill="white">R₁</text>
+
+<line x1="185" y1="55" x2="260" y2="55" stroke="#0B4AA2" stroke-width="2"/>
+<rect x="260" y="40" width="45" height="30" fill="#64748B"/>
+<text x="282" y="58" font-size="8" text-anchor="middle" fill="white">R₂</text>
+
+<line x1="305" y1="55" x2="305" y2="110" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="305" y1="110" x2="25" y2="110" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="25" y1="110" x2="25" y2="55" stroke="#0B4AA2" stroke-width="2"/>
+
+<path d="M95 95 A55 55 0 1 0 245 95" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="4 4"/>
+<polygon points="248,88 258,96 246,98" fill="#16A34A"/>
+<text x="170" y="135" font-size="9" fill="#16A34A">Loop Direction</text>
+
+</svg>
+
+<h3>Voltage Equation</h3>
+
+<div class="formula">
++10 − 4 − 6 = 0
+</div>
+
+<h3>Solved Numerical</h3>
+
+<table>
+<tr><th>Supply</th><th>10 V</th></tr>
+<tr><td>R₁ Drop</td><td>4 V</td></tr>
+<tr><td>R₂ Drop</td><td>6 V</td></tr>
+</table>
+
+<h3>Verification</h3>
+
+<pre>
+ΣV = 0
+
+10 - 4 - 6
+
+= 0 ✔
+</pre>
+
+</section>
+
+<!-- ========================================================= -->
+
+<section id="series" class="section">
+
+<h2>13. Series & Parallel Circuits</h2>
+
+<h3>Series Circuit</h3>
+
+<p>
+In a series circuit, components are connected one after another. The same current flows through every resistor.
+</p>
+
+<svg viewBox="0 0 320 90">
+
+<line x1="20" y1="45" x2="60" y2="45" stroke="#0B4AA2" stroke-width="2"/>
+<rect x="60" y="30" width="40" height="30" fill="#64748B"/>
+<text x="80" y="48" font-size="8" text-anchor="middle" fill="white">R₁</text>
+
+<line x1="100" y1="45" x2="140" y2="45" stroke="#0B4AA2" stroke-width="2"/>
+<rect x="140" y="30" width="40" height="30" fill="#64748B"/>
+<text x="160" y="48" font-size="8" text-anchor="middle" fill="white">R₂</text>
+
+<line x1="180" y1="45" x2="220" y2="45" stroke="#0B4AA2" stroke-width="2"/>
+<rect x="220" y="30" width="40" height="30" fill="#64748B"/>
+<text x="240" y="48" font-size="8" text-anchor="middle" fill="white">R₃</text>
+
+<line x1="260" y1="45" x2="300" y2="45" stroke="#0B4AA2" stroke-width="2"/>
+
+</svg>
+
+<div class="formula">
+R = R₁ + R₂ + R₃
+</div>
+
+<h3>Parallel Circuit</h3>
+
+<p>
+In a parallel circuit, voltage across each branch remains the same while current divides among the branches.
+</p>
+
+<svg viewBox="0 0 260 150">
+
+<line x1="30" y1="20" x2="30" y2="130" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="230" y1="20" x2="230" y2="130" stroke="#0B4AA2" stroke-width="2"/>
+
+<rect x="90" y="25" width="80" height="18" fill="#64748B"/>
+<text x="130" y="38" font-size="8" text-anchor="middle" fill="white">R₁</text>
+
+<rect x="90" y="65" width="80" height="18" fill="#64748B"/>
+<text x="130" y="78" font-size="8" text-anchor="middle" fill="white">R₂</text>
+
+<rect x="90" y="105" width="80" height="18" fill="#64748B"/>
+<text x="130" y="118" font-size="8" text-anchor="middle" fill="white">R₃</text>
+
+<line x1="30" y1="34" x2="90" y2="34" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="170" y1="34" x2="230" y2="34" stroke="#0B4AA2" stroke-width="2"/>
+
+<line x1="30" y1="74" x2="90" y2="74" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="170" y1="74" x2="230" y2="74" stroke="#0B4AA2" stroke-width="2"/>
+
+<line x1="30" y1="114" x2="90" y2="114" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="170" y1="114" x2="230" y2="114" stroke="#0B4AA2" stroke-width="2"/>
+
+</svg>
+
+<div class="formula">
+1/R = 1/R₁ + 1/R₂ + 1/R₃
+</div>
+
+<h3>Comparison</h3>
+
+<table>
+<tr><th>Series</th><th>Parallel</th></tr>
+<tr><td>Current is same</td><td>Voltage is same</td></tr>
+<tr><td>Voltage divides</td><td>Current divides</td></tr>
+<tr><td>R increases</td><td>R decreases</td></tr>
+</table>
+
+</section>
+
+<!-- ========================================================= -->
+
+<section id="star" class="section">
+
+<h2>14. Star–Delta Transformation</h2>
+
+<p>
+Star–Delta transformation is used to simplify complex resistor networks that cannot be solved directly by series or parallel reduction.
+</p>
+
+<h3>Star Network</h3>
+
+<svg viewBox="0 0 220 180">
+
+<circle cx="110" cy="90" r="5" fill="#0B4AA2"/>
+
+<line x1="110" y1="90" x2="110" y2="25" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="110" y1="90" x2="35" y2="145" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="110" y1="90" x2="185" y2="145" stroke="#0B4AA2" stroke-width="2"/>
+
+<text x="116" y="55" font-size="9" fill="#16A34A">R₁</text>
+<text x="55" y="120" font-size="9" fill="#EA580C">R₂</text>
+<text x="145" y="120" font-size="9" fill="#7C3AED">R₃</text>
+
+<text x="106" y="15" font-size="10" font-weight="bold">A</text>
+<text x="22" y="160" font-size="10" font-weight="bold">B</text>
+<text x="190" y="160" font-size="10" font-weight="bold">C</text>
+
+</svg>
+
+<h3>Delta Network</h3>
+
+<svg viewBox="0 0 220 180">
+
+<polygon points="110,20 30,150 190,150"
+fill="none" stroke="#0B4AA2" stroke-width="2"/>
+
+<text x="72" y="88" font-size="9" fill="#16A34A">RAB</text>
+<text x="145" y="88" font-size="9" fill="#EA580C">RAC</text>
+<text x="95" y="165" font-size="9" fill="#7C3AED">RBC</text>
+
+<text x="106" y="12" font-size="10" font-weight="bold">A</text>
+<text x="20" y="160" font-size="10" font-weight="bold">B</text>
+<text x="194" y="160" font-size="10" font-weight="bold">C</text>
+
+</svg>
+
+<h3>Important Formula</h3>
+
+<div class="formula">
+RAB = (R₁R₂ + R₂R₃ + R₃R₁) / R₃
+</div>
+
+<p>
+Similarly, RAC and RBC are obtained by dividing the numerator by the opposite Star resistance.
+</p>
+
+</section>
+
+<!-- ========================================================= -->
+
+<section id="numericals" class="section">
+
+<h2>15. Practice Numericals</h2>
+
+<table>
+<tr>
+<th>Numerical</th>
+<th>Answer</th>
+</tr>
+
+<tr>
+<td>Find current when V = 24 V and R = 8 Ω</td>
+<td>3 A</td>
+</tr>
+
+<tr>
+<td>Find resistance when V = 18 V and I = 3 A</td>
+<td>6 Ω</td>
+</tr>
+
+<tr>
+<td>Find power when V = 12 V and I = 2 A</td>
+<td>24 W</td>
+</tr>
+
+<tr>
+<td>Find energy for 100 W lamp used for 2 hours</td>
+<td>0.2 kWh</td>
+</tr>
+
+<tr>
+<td>Equivalent resistance of 4 Ω and 6 Ω in series</td>
+<td>10 Ω</td>
+</tr>
+
+<tr>
+<td>Equivalent resistance of 6 Ω and 3 Ω in parallel</td>
+<td>2 Ω</td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- ========================================================= -->
+
+<section id="viva" class="section">
+
+<h2>16. Viva Questions</h2>
+
+<ol>
+<li>State Ohm's Law.</li>
+<li>What is the SI unit of current?</li>
+<li>Differentiate voltage and EMF.</li>
+<li>State Kirchhoff's Current Law.</li>
+<li>State Kirchhoff's Voltage Law.</li>
+<li>Why does current remain constant in series circuit?</li>
+<li>Why does voltage remain constant in parallel circuit?</li>
+<li>What is Star–Delta transformation used for?</li>
+<li>Which instrument measures electrical power?</li>
+<li>Define electrical energy.</li>
+</ol>
+
+</section>
 </main>
 
 </div>
