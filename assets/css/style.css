@@ -1,1 +1,146 @@
 /* Learn with Abhi - Global Website Styles */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#eef4fb;
+  color:#17345e;
+}
+
+.navbar{
+  background:#062b5b;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 6%;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+}
+
+.logo p{
+  font-size:13px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+  padding:60px 6%;
+}
+
+.badge{
+  background:#dce9ff;
+  color:#0b56c3;
+  padding:8px 14px;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:58px;
+  margin:20px 0;
+}
+
+.hero h1 span{
+  color:#0b56c3;
+}
+
+.hero p{
+  line-height:1.7;
+  font-size:18px;
+}
+
+.faculty{
+  background:#0b56c3;
+  color:white;
+  margin-top:30px;
+  padding:18px;
+  border-radius:14px;
+}
+
+.right img{
+  width:100%;
+  max-width:420px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,.18);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:10px 6% 60px;
+}
+
+.card{
+  background:white;
+  text-decoration:none;
+  color:#17345e;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 5px 12px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  color:#0b56c3;
+  margin-bottom:10px;
+}
+
+footer{
+  background:#062b5b;
+  color:white;
+  text-align:center;
+  padding:18px;
+}
+
+@media(max-width:900px){
+
+.hero{
+  grid-template-columns:1fr;
+}
+
+.navbar{
+  flex-direction:column;
+  gap:15px;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+}
