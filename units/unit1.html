@@ -3,116 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Unit 1 | DC Electric Circuit</title>
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
 <style>
-body{
-    background:#F5F8FC;
-    font-family:Arial, Helvetica, sans-serif;
-    margin:0;
+body{background:#F5F8FC;margin:0;font-family:Arial,Helvetica,sans-serif;}
+.hero{
+background:linear-gradient(135deg,#0B4AA2,#1976D2);
+color:#fff;
+padding:45px 8%;
 }
-.banner{
-    background:linear-gradient(135deg,#0B4AA2,#1E88E5);
-    color:white;
-    padding:40px 8%;
-}
-.banner h1{
-    margin:8px 0;
-    font-size:42px;
-}
+.hero h1{font-size:44px;margin:8px 0;}
 .container{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:25px;
-    width:90%;
-    margin:30px auto;
+display:grid;
+grid-template-columns:250px 1fr;
+gap:25px;
+width:92%;
+margin:25px auto;
 }
 .sidebar{
-    background:white;
-    border-radius:14px;
-    padding:20px;
-    position:sticky;
-    top:20px;
-    height:fit-content;
+background:#fff;
+padding:20px;
+border-radius:14px;
+position:sticky;
+top:20px;
+height:fit-content;
+box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
-.sidebar h3{
-    color:#0B4AA2;
-}
+.sidebar h3{color:#0B4AA2;}
 .sidebar a{
-    display:block;
-    text-decoration:none;
-    color:#17345e;
-    padding:8px 0;
+display:block;
+padding:8px 0;
+text-decoration:none;
+color:#17345E;
+font-size:15px;
 }
 .content{
-    background:white;
-    border-radius:14px;
-    padding:35px;
+background:#fff;
+padding:30px;
+border-radius:14px;
+box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
-.section{
-    margin-bottom:45px;
-}
+.section{margin-bottom:45px;}
 .section h2{
-    color:#0B4AA2;
-    border-left:6px solid #0B4AA2;
-    padding-left:12px;
+color:#0B4AA2;
+border-left:6px solid #0B4AA2;
+padding-left:12px;
 }
 .info{
-    background:#EAF3FF;
-    border-left:5px solid #1976D2;
-    padding:15px;
-    border-radius:8px;
+background:#EAF4FF;
+border-left:5px solid #1976D2;
+padding:14px;
+border-radius:8px;
+margin:15px 0;
 }
 table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
+width:100%;
+border-collapse:collapse;
+margin-top:12px;
 }
 th,td{
-    border:1px solid #D8E2EF;
-    padding:10px;
-    text-align:left;
+border:1px solid #D9E3F1;
+padding:10px;
+text-align:left;
 }
 th{
-    background:#0B4AA2;
-    color:white;
+background:#0B4AA2;
+color:#fff;
 }
-svg{
-    width:100%;
-    max-width:500px;
-    display:block;
-    margin:auto;
+.formula{
+background:#FFF8E1;
+text-align:center;
+font-size:28px;
+padding:18px;
+border-radius:10px;
+margin:15px 0;
+font-weight:bold;
 }
+svg{display:block;margin:auto;max-width:100%;}
 footer{
-    text-align:center;
-    color:#64748B;
-    padding:20px;
+text-align:center;
+padding:25px;
+color:#64748B;
 }
 @media(max-width:900px){
-.container{
-grid-template-columns:1fr;
-}
-.sidebar{
-position:relative;
-}
+.container{grid-template-columns:1fr;}
+.sidebar{position:relative;}
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="banner">
-<p>Fundamental of Electrical & Electronics Engineering</p>
+<section class="hero">
+<p>Learn with Abhi</p>
 <h1>UNIT 1 : DC ELECTRIC CIRCUIT</h1>
-<p>Prepared by <b>Mr. Abhijit S. Shinde</b> | Learn with Abhi</p>
-</div>
+<p>Fundamental of Electrical & Electronics Engineering</p>
+</section>
 
 <div class="container">
 
 <aside class="sidebar">
+
 <h3>📘 Contents</h3>
 
 <a href="#intro">1. Introduction</a>
@@ -120,14 +114,15 @@ position:relative;
 <a href="#applications">3. Applications</a>
 <a href="#current">4. Electric Current</a>
 <a href="#voltage">5. Potential Difference</a>
-<a href="#power">6. Power & Energy</a>
-<a href="#rcl">7. R, C & L</a>
-<a href="#signals">8. Signals</a>
-<a href="#ohm">9. Ohm's Law</a>
+<a href="#power">6. Power</a>
+<a href="#energy">7. Energy</a>
+<a href="#components">8. Circuit Elements</a>
+<a href="#signals">9. Waveforms</a>
+<a href="#ohm">10. Ohm's Law</a>
 
 <hr>
 
-<a href="../index.html">⬅ Back to Home</a>
+<a href="../index.html">🏠 Home</a>
 
 </aside>
 
@@ -138,14 +133,16 @@ position:relative;
 <h2>1. Introduction</h2>
 
 <p>
-Electrical and Electronics Engineering deals with generation, control,
-transmission and utilization of electrical energy along with electronic
-devices used for communication, automation and digital systems.
+Electrical and Electronics Engineering is a branch of engineering concerned
+with the generation, transmission, control and utilization of electrical
+energy along with the design and application of electronic devices for
+communication, automation and digital systems.
 </p>
 
 <div class="info">
-<b>Learning Outcome:</b> Identify basic electrical quantities, passive elements
-and waveform parameters used in electrical and electronic circuits.
+<b>Course Outcome Addressed:</b> CO1 – Identify basic electrical quantities,
+circuit elements and waveform parameters used in electrical and electronic
+circuits.
 </div>
 
 </section>
@@ -171,18 +168,18 @@ and waveform parameters used in electrical and electronic circuits.
 </tr>
 
 <tr>
-<td>Power generation and transmission</td>
-<td>Signal processing and communication</td>
+<td>Power generation & distribution</td>
+<td>Signal processing & communication</td>
 </tr>
 
 <tr>
 <td>Machines and transformers</td>
-<td>Diodes, transistors and ICs</td>
+<td>Diodes, transistors & ICs</td>
 </tr>
 
 <tr>
-<td>Voltage range is high</td>
-<td>Voltage range is comparatively low</td>
+<td>kW to MW range</td>
+<td>mW to W range</td>
 </tr>
 
 </table>
@@ -191,22 +188,37 @@ and waveform parameters used in electrical and electronic circuits.
 
 <section id="applications" class="section">
 
-<h2>3. Applications of Electrical & Electronics Engineering</h2>
+<h2>3. Applications of Electrical & Electronics</h2>
 
 <table>
 <tr>
 <th>Field</th>
-<th>Examples</th>
+<th>Major Applications</th>
 </tr>
 
 <tr>
-<td>⚡ Electrical</td>
-<td>Power stations, transformers, EVs, motors, irrigation pumps</td>
+<td>⚡ Power Systems</td>
+<td>Power stations, transformers, substations, transmission lines</td>
+</tr>
+
+<tr>
+<td>🏭 Industrial</td>
+<td>Electric motors, industrial drives, robotics, automation</td>
+</tr>
+
+<tr>
+<td>🚆 Transportation</td>
+<td>Electric vehicles, metro rail, charging stations</td>
+</tr>
+
+<tr>
+<td>🌾 Agriculture</td>
+<td>Irrigation pumps, dairy equipment, solar pumping systems</td>
 </tr>
 
 <tr>
 <td>📡 Electronics</td>
-<td>Radar, drones, smartphones, ECG, oscilloscopes, sensors</td>
+<td>Radar, smartphones, ECG, oscilloscopes, drones, sensors</td>
 </tr>
 
 </table>
@@ -218,34 +230,36 @@ and waveform parameters used in electrical and electronic circuits.
 <h2>4. Electric Current</h2>
 
 <p>
-Electric current is the rate of flow of electric charge through a conductor.
+Electric Current is the rate of flow of electric charge through a conductor.
 </p>
 
-**Formula**
-
-<p style="font-size:28px;text-align:center;"><b>I = Q / t</b></p>
+<div class="formula">
+I = Q / t
+</div>
 
 <table>
-<tr><th>Quantity</th><th>Value</th></tr>
+<tr><th>Item</th><th>Description</th></tr>
 <tr><td>Symbol</td><td>I</td></tr>
 <tr><td>SI Unit</td><td>Ampere (A)</td></tr>
 <tr><td>Instrument</td><td>Ammeter</td></tr>
-<tr><td>Other name</td><td>Flow of electrons</td></tr>
+<tr><td>Other Name</td><td>Flow of Electrons</td></tr>
 </table>
 
-<h3>Current Flow Diagram</h3>
+<h3>Current Flow</h3>
 
-<svg viewBox="0 0 300 120">
+<svg viewBox="0 0 320 120">
+
 <rect x="15" y="45" width="45" height="30" rx="4" fill="#F59E0B"/>
 <text x="37" y="63" font-size="8" text-anchor="middle" fill="white">Battery</text>
 
-<line x1="60" y1="60" x2="240" y2="60" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="60" y1="60" x2="250" y2="60" stroke="#0B4AA2" stroke-width="2"/>
 
-<rect x="240" y="45" width="45" height="30" rx="4" fill="#64748B"/>
-<text x="262" y="63" font-size="8" text-anchor="middle" fill="white">Load</text>
+<rect x="250" y="45" width="45" height="30" rx="4" fill="#64748B"/>
+<text x="272" y="63" font-size="8" text-anchor="middle" fill="white">Load</text>
 
 <polygon points="120,55 140,60 120,65" fill="#16A34A"/>
-<text x="150" y="45" font-size="8" fill="#16A34A">Current (I)</text>
+<text x="150" y="46" font-size="8" fill="#16A34A">Current</text>
+
 </svg>
 
 </section>
@@ -255,16 +269,18 @@ Electric current is the rate of flow of electric charge through a conductor.
 <h2>5. Potential Difference (Voltage)</h2>
 
 <p>
-Potential difference is the work done in moving one coulomb of charge from one
+Potential Difference is the work done in moving one coulomb of charge from one
 point to another.
 </p>
 
-<p style="font-size:28px;text-align:center;"><b>V = W / Q</b></p>
+<div class="formula">
+V = W / Q
+</div>
 
 <table>
 <tr><th>Item</th><th>Value</th></tr>
 <tr><td>Symbol</td><td>V</td></tr>
-<tr><td>Unit</td><td>Volt</td></tr>
+<tr><td>SI Unit</td><td>Volt</td></tr>
 <tr><td>Instrument</td><td>Voltmeter</td></tr>
 <tr><td>Other Name</td><td>Voltage / EMF</td></tr>
 </table>
@@ -273,141 +289,260 @@ point to another.
 
 <section id="power" class="section">
 
-<h2>6. Electric Power & Energy</h2>
+<h2>6. Electric Power</h2>
+
+<p>
+Electric Power is the rate at which electrical energy is consumed or produced.
+</p>
+
+<div class="formula">
+P = V × I
+</div>
 
 <table>
-<tr>
-<th>Power</th>
-<th>Energy</th>
-</tr>
-
-<tr>
-<td>Rate of electrical work</td>
-<td>Total electrical work done</td>
-</tr>
-
-<tr>
-<td>P = VI</td>
-<td>E = P × t</td>
-</tr>
-
-<tr>
-<td>Unit : Watt</td>
-<td>Unit : Joule / kWh</td>
-</tr>
-
+<tr><th>Parameter</th><th>Value</th></tr>
+<tr><td>Symbol</td><td>P</td></tr>
+<tr><td>Unit</td><td>Watt (W)</td></tr>
+<tr><td>Measuring Instrument</td><td>Wattmeter</td></tr>
 </table>
 
 </section>
 
-<section id="rcl" class="section">
+<section id="energy" class="section">
 
-<h2>7. Resistor, Capacitor & Inductor</h2>
+<h2>7. Electrical Energy</h2>
+
+<p>
+Electrical Energy is the total work done by an electrical circuit over a period
+of time.
+</p>
+
+<div class="formula">
+E = P × t
+</div>
+
+<table>
+<tr><th>Unit</th><th>Application</th></tr>
+<tr><td>Joule</td><td>Scientific calculations</td></tr>
+<tr><td>kWh</td><td>Electricity billing</td></tr>
+</table>
+
+</section>
+
+<section id="components" class="section">
+
+<h2>8. Basic Circuit Elements</h2>
 
 <table>
 <tr>
 <th>Component</th>
+<th>Symbol</th>
 <th>Function</th>
 </tr>
 
 <tr>
 <td>Resistor</td>
+<td>R</td>
 <td>Opposes current flow</td>
 </tr>
 
 <tr>
 <td>Capacitor</td>
-<td>Stores electrical charge</td>
+<td>C</td>
+<td>Stores electric charge</td>
 </tr>
 
 <tr>
 <td>Inductor</td>
+<td>L</td>
 <td>Stores magnetic energy</td>
 </tr>
 
 </table>
 
+<h3>Passive Components</h3>
+
+<svg viewBox="0 0 420 90">
+
+<text x="20" y="18" font-size="9">Resistor</text>
+<line x1="20" y1="45" x2="40" y2="45" stroke="black"/>
+<polyline points="40,45 50,35 60,55 70,35 80,55 90,35 100,45"
+stroke="black" fill="none"/>
+<line x1="100" y1="45" x2="120" y2="45" stroke="black"/>
+
+<text x="150" y="18" font-size="9">Capacitor</text>
+<line x1="150" y1="45" x2="170" y2="45" stroke="black"/>
+<line x1="170" y1="30" x2="170" y2="60" stroke="black" stroke-width="2"/>
+<line x1="185" y1="30" x2="185" y2="60" stroke="black" stroke-width="2"/>
+<line x1="185" y1="45" x2="205" y2="45" stroke="black"/>
+
+<text x="260" y="18" font-size="9">Inductor</text>
+<line x1="250" y1="45" x2="265" y2="45" stroke="black"/>
+<path d="M265 45 a7 7 0 0 1 14 0
+         a7 7 0 0 1 14 0
+         a7 7 0 0 1 14 0
+         a7 7 0 0 1 14 0"
+stroke="black" fill="none"/>
+<line x1="321" y1="45" x2="335" y2="45" stroke="black"/>
+
+</svg>
+
 </section>
 
 <section id="signals" class="section">
 
-<h2>8. Waveforms & Signals</h2>
+<h2>9. Waveforms & Signals</h2>
+
+<p>
+A waveform represents the variation of voltage or current with respect to time.
+</p>
 
 <table>
 <tr>
-<th>Signal</th>
+<th>Waveform</th>
 <th>Application</th>
 </tr>
 
 <tr>
-<td>Sine</td>
-<td>AC power supply</td>
+<td>Sine Wave</td>
+<td>AC Power Supply</td>
 </tr>
 
 <tr>
-<td>Square</td>
-<td>Digital electronics</td>
+<td>Square Wave</td>
+<td>Digital Electronics</td>
 </tr>
 
 <tr>
-<td>Triangular</td>
-<td>Function generators</td>
+<td>Triangular Wave</td>
+<td>Function Generator</td>
 </tr>
 
 </table>
+
+<h3>Common Waveforms</h3>
+
+<svg viewBox="0 0 420 140">
+
+<line x1="10" y1="20" x2="10" y2="120" stroke="#555"/>
+<line x1="10" y1="70" x2="400" y2="70" stroke="#999"/>
+
+<path d="M10 70
+C30 20 50 20 70 70
+S110 120 130 70
+S170 20 190 70
+S230 120 250 70
+S290 20 310 70
+S350 120 370 70"
+stroke="#1976D2" fill="none" stroke-width="2"/>
+
+<text x="20" y="15" font-size="8" fill="#1976D2">Sine</text>
+
+<polyline points="10,125 10,110 40,110 40,125 70,125 70,110 100,110 100,125"
+stroke="#16A34A" fill="none" stroke-width="2"/>
+
+<text x="120" y="118" font-size="8" fill="#16A34A">Square</text>
+
+<polyline points="220,125 240,95 260,125 280,95 300,125 320,95 340,125"
+stroke="#EA580C" fill="none" stroke-width="2"/>
+
+<text x="345" y="118" font-size="8" fill="#EA580C">Triangular</text>
+
+</svg>
 
 </section>
 
 <section id="ohm" class="section">
 
-<h2>9. Ohm's Law</h2>
+<h2>10. Ohm's Law</h2>
 
 <div class="info">
-At constant temperature, the current flowing through a conductor is directly
-proportional to the applied voltage and inversely proportional to its resistance.
+<b>Statement:</b> At constant temperature, the current flowing through a
+conductor is directly proportional to the applied voltage and inversely
+proportional to its resistance.
 </div>
 
-<h3>Formula</h3>
+<div class="formula">
+V = I × R
+</div>
 
-<p style="font-size:34px;text-align:center;color:#0B4AA2;"><b>V = I × R</b></p>
+<h3>Ohm's Law Triangle</h3>
 
-<h3>Simple Circuit</h3>
+<svg viewBox="0 0 220 180">
 
-<svg viewBox="0 0 320 140">
-<rect x="20" y="55" width="40" height="30" fill="#F59E0B"/>
-<text x="40" y="72" font-size="8" text-anchor="middle" fill="white">12V</text>
+<polygon points="110,15 25,155 195,155"
+fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
 
-<line x1="60" y1="70" x2="120" y2="70" stroke="#0B4AA2" stroke-width="2"/>
+<line x1="67" y1="85" x2="153" y2="85"
+stroke="#1976D2" stroke-width="2"/>
 
-<rect x="120" y="55" width="60" height="30" fill="#64748B"/>
-<text x="150" y="72" font-size="8" text-anchor="middle" fill="white">4 Ω</text>
+<line x1="110" y1="85" x2="110" y2="155"
+stroke="#1976D2" stroke-width="2"/>
 
-<line x1="180" y1="70" x2="260" y2="70" stroke="#0B4AA2" stroke-width="2"/>
+<text x="110" y="55" font-size="22" text-anchor="middle"
+font-weight="bold" fill="#0B4AA2">V</text>
 
-<polygon points="90,65 105,70 90,75" fill="#16A34A"/>
-<text x="95" y="50" font-size="8" fill="#16A34A">I</text>
+<text x="68" y="128" font-size="22" text-anchor="middle"
+font-weight="bold" fill="#16A34A">I</text>
+
+<text x="152" y="128" font-size="22" text-anchor="middle"
+font-weight="bold" fill="#EA580C">R</text>
+
 </svg>
 
-<h3>Worked Example</h3>
+<h3>Electrical Circuit</h3>
+
+<svg viewBox="0 0 340 120">
+
+<rect x="15" y="40" width="45" height="40"
+fill="#F59E0B"/>
+
+<text x="38" y="60" font-size="8" text-anchor="middle"
+fill="white">12V</text>
+
+<line x1="60" y1="60" x2="120" y2="60"
+stroke="#0B4AA2" stroke-width="2"/>
+
+<rect x="120" y="42" width="70" height="36"
+fill="#64748B"/>
+
+<text x="155" y="61" font-size="9" text-anchor="middle"
+fill="white">4 Ω</text>
+
+<line x1="190" y1="60" x2="280" y2="60"
+stroke="#0B4AA2" stroke-width="2"/>
+
+<polygon points="95,55 110,60 95,65"
+fill="#16A34A"/>
+
+<text x="92" y="42" font-size="8"
+fill="#16A34A">I</text>
+
+</svg>
+
+<h3>Worked Numerical</h3>
 
 <table>
-<tr><td>Voltage (V)</td><td>12 V</td></tr>
-<tr><td>Resistance (R)</td><td>4 Ω</td></tr>
-<tr><td>Current (I)</td><td>?</td></tr>
+<tr><th>Given</th><th>Value</th></tr>
+<tr><td>Voltage</td><td>12 V</td></tr>
+<tr><td>Resistance</td><td>4 Ω</td></tr>
+<tr><td>Current</td><td>?</td></tr>
 </table>
 
-**Solution**
+<h3>Solution</h3>
 
 <pre>
-I = V/R
+V = I × R
 
-I = 12/4
+I = V / R
 
-I = 3 Ampere
+I = 12 / 4
+
+I = 3 A
 </pre>
 
 <div class="info">
-<b>Answer:</b> The current flowing through the circuit is <b>3 A</b>.
+<b>Answer:</b> Current flowing through the circuit = <b>3 Ampere</b>
 </div>
 
 </section>
@@ -417,7 +552,7 @@ I = 3 Ampere
 </div>
 
 <footer>
-Learn with Abhi | Version 1.0 | Unit 1
+Version 2.0 | Learn with Abhi | © 2026
 </footer>
 
 </body>
