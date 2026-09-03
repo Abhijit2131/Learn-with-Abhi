@@ -1,99 +1,469 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learn with Abhi | FEEE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn with Abhi | Free Engineering Notes</title>
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+background:#0B4AA2;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-area img{
+width:52px;
+height:52px;
+border-radius:50%;
+background:white;
+padding:4px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:22px;
+font-size:15px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:55px 8%;
+display:grid;
+grid-template-columns:2fr 1fr;
+align-items:center;
+gap:30px;
+}
+
+.hero h1{
+font-size:46px;
+margin-bottom:12px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.6;
+opacity:.95;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+background:white;
+color:#0B4AA2;
+padding:12px 26px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.profile{
+text-align:center;
+}
+
+.profile img{
+width:240px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.profile h3{
+margin-top:18px;
+font-size:24px;
+}
+
+.profile p{
+font-size:15px;
+}
+
+/* ---------- STATS ---------- */
+
+.stats{
+width:88%;
+margin:-35px auto 40px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.stat h2{
+color:#0B4AA2;
+font-size:34px;
+}
+
+.stat p{
+margin-top:8px;
+color:#64748B;
+}
+
+/* ---------- SECTION ---------- */
+
+.section{
+width:88%;
+margin:auto;
+margin-bottom:55px;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h2{
+font-size:34px;
+color:#0B4AA2;
+}
+
+.title p{
+color:#64748B;
+margin-top:8px;
+}
+
+/* ---------- CARDS ---------- */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:16px;
+text-decoration:none;
+color:#17345E;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.icon{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.card h3{
+color:#0B4AA2;
+margin-bottom:8px;
+}
+
+.card p{
+color:#64748B;
+font-size:14px;
+line-height:1.5;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+background:#0B4AA2;
+color:white;
+padding:35px 8%;
+margin-top:60px;
+text-align:center;
+}
+
+footer h3{
+margin-bottom:10px;
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">
-    <img src="assets/images/logo.png" alt="Learn with Abhi">
-    <div>
-      <h2>Learn with Abhi</h2>
-      <p>Fundamental of Electrical & Electronics Engineering</p>
-    </div>
-  </div>
+<!-- ================= HEADER ================= -->
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="syllabus.html">Syllabus</a>
-    <a href="units/unit1.html">Units</a>
-    <a href="question-bank.html">Important Question Bank</a>
-    <a href="practical/index.html">Practical</a>
-    <a href="quiz/index.html">Quiz</a>
-    <a href="#">Downloads</a>
-  </nav>
+<header>
+
+<div class="logo-area">
+
+<img src="assets/images/logo.png" alt="logo">
+
+<div>
+<h2>Learn with Abhi</h2>
+<small>Free Engineering Learning Platform</small>
+</div>
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="syllabus.html">Syllabus</a>
+<a href="units/unit1.html">Notes</a>
+<a href="practical/index.html">Practical</a>
+<a href="quiz/index.html">Quiz</a>
+
+</nav>
+
 </header>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-  <div class="left">
+<div>
 
-    <span class="badge">Welcome to</span>
+<h1>Fundamental of Electrical & Electronics Engineering</h1>
 
-    <h1>Learn with <span>Abhi</span></h1>
+<p>
+Interactive engineering notes, practical manuals, quizzes,
+important question banks and previous papers specially designed
+for First Year B.Tech students.
+</p>
 
-    <p>
-      Your one-stop platform for high-quality notes, solved numericals,
-      practical manuals and interactive learning resources for first-year
-      engineering students.
-    </p>
+<a class="btn" href="units/unit1.html">
+Start Learning →
+</a>
 
-    <div class="faculty">
-      <h3>Mr. Abhijit S. Shinde</h3>
-      <p>Director, Students' Affairs</p>
-      <p>D Y Patil Agriculture & Technical University, Talsande</p>
-    </div>
+</div>
 
-  </div>
+<div class="profile">
 
-  <div class="right">
-    <img src="assets/images/abhi.png" alt="Abhijit Shinde">
-  </div>
+<img src="assets/images/abhi.png" alt="Abhijit Shinde">
+
+<h3>Mr. Abhijit S. Shinde</h3>
+
+<p>
+Director, Students' Affairs<br>
+D Y Patil Agriculture & Technical University, Talsande
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div class="stat">
+<h2>6</h2>
+<p>Units</p>
+</div>
+
+<div class="stat">
+<h2>12</h2>
+<p>Experiments</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>MCQs</p>
+</div>
+
+<div class="stat">
+<h2>24×7</h2>
+<p>Free Access</p>
+</div>
 
 </section>
 
-<section class="cards">
+<!-- ================= NAVIGATION ================= -->
 
-  <a class="card" href="units/unit1.html">
-    <h3>📘 Unit-wise Notes</h3>
-    <p>Detailed theory with diagrams, formulas and examples.</p>
-  </a>
+<section class="section">
 
-  <a class="card" href="#">
-    <h3>📄 Previous Papers</h3>
-    <p>University previous year question papers.</p>
-  </a>
+<div class="title">
 
-  <a class="card" href="#">
-    <h3>🧪 Practical Manual</h3>
-    <p>Laboratory experiments with viva and observations.</p>
-  </a>
+<h2>Learning Resources</h2>
 
-  <a class="card" href="#">
-    <h3>📝 Quiz Zone</h3>
-    <p>CO-wise MCQs with instant score and feedback.</p>
-  </a>
+<p>Everything you need in one place</p>
 
-  <a class="card" href="#">
-    <h3>⭐ Important Question Bank</h3>
-    <p>Unit-wise important questions for university exams.</p>
-  </a>
+</div>
+
+<div class="cards">
+
+<a class="card" href="syllabus.html">
+
+<div class="icon">📘</div>
+
+<h3>Course Syllabus</h3>
+
+<p>
+COs, PO Mapping, Unit-wise syllabus, books and references.
+</p>
+
+</a>
+
+<a class="card" href="units/unit1.html">
+
+<div class="icon">📖</div>
+
+<h3>Unit Wise Notes</h3>
+
+<p>
+Interactive digital textbook with diagrams and numericals.
+</p>
+
+</a>
+
+<a class="card" href="practical/index.html">
+
+<div class="icon">🔬</div>
+
+<h3>Practical Manual</h3>
+
+<p>
+12 laboratory experiments with circuit diagrams and viva.
+</p>
+
+</a>
+
+<a class="card" href="question-bank.html">
+
+<div class="icon">📝</div>
+
+<h3>Important Question Bank</h3>
+
+<p>
+Unit-wise important questions for university examination.
+</p>
+
+</a>
+
+<a class="card" href="quiz/index.html">
+
+<div class="icon">🎯</div>
+
+<h3>Quiz Zone</h3>
+
+<p>
+Practice MCQs with instant score and explanations.
+</p>
+
+</a>
+
+<a class="card" href="downloads/index.html">
+
+<div class="icon">📥</div>
+
+<h3>Downloads</h3>
+
+<p>
+PDF notes, formula sheet, PPTs and previous papers.
+</p>
+
+</a>
+
+</div>
 
 </section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section">
+
+<div class="title">
+
+<h2>Why Learn with Abhi?</h2>
+
+<p>Designed specifically for engineering students</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">💡</div>
+<h3>Concept Based</h3>
+<p>Easy explanations with engineering examples.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Interactive Learning</h3>
+<p>SVG diagrams, calculators and visual circuits.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>Exam Ready</h3>
+<p>Important questions, numericals and viva preparation.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  © 2026 Learn with Abhi • Empowering Students Through Smart Learning
-</footer>
 
-<script src="assets/js/script.js"></script>
+<h3>Learn with Abhi</h3>
+
+<p>
+Prepared & Developed by <b>Mr. Abhijit S. Shinde</b>
+</p>
+
+<p>
+Director, Students' Affairs<br>
+D Y Patil Agriculture & Technical University, Talsande
+</p>
+
+<br>
+
+<p>© 2026 Learn with Abhi | All Rights Reserved</p>
+
+</footer>
 
 </body>
 </html>
