@@ -1,11 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Unit 1 | DC Electric Circuit</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit 1 | DC Electric Circuit</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+body{
+    background:#F5F8FC;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+}
+.banner{
+    background:linear-gradient(135deg,#0B4AA2,#1E88E5);
+    color:white;
+    padding:40px 8%;
+}
+.banner h1{
+    margin:8px 0;
+    font-size:42px;
+}
+.container{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:25px;
+    width:90%;
+    margin:30px auto;
+}
+.sidebar{
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    position:sticky;
+    top:20px;
+    height:fit-content;
+}
+.sidebar h3{
+    color:#0B4AA2;
+}
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:#17345e;
+    padding:8px 0;
+}
+.content{
+    background:white;
+    border-radius:14px;
+    padding:35px;
+}
+.section{
+    margin-bottom:45px;
+}
+.section h2{
+    color:#0B4AA2;
+    border-left:6px solid #0B4AA2;
+    padding-left:12px;
+}
+.info{
+    background:#EAF3FF;
+    border-left:5px solid #1976D2;
+    padding:15px;
+    border-radius:8px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+th,td{
+    border:1px solid #D8E2EF;
+    padding:10px;
+    text-align:left;
+}
+th{
+    background:#0B4AA2;
+    color:white;
+}
+svg{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:auto;
+}
+footer{
+    text-align:center;
+    color:#64748B;
+    padding:20px;
+}
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+.sidebar{
+position:relative;
+}
+}
+</style>
 </head>
+
 <body>
-    <h1>Unit 1: DC Electric Circuit</h1>
-    <p>This page will contain complete notes of Unit 1.</p>
+
+<div class="banner">
+<p>Fundamental of Electrical & Electronics Engineering</p>
+<h1>UNIT 1 : DC ELECTRIC CIRCUIT</h1>
+<p>Prepared by <b>Mr. Abhijit S. Shinde</b> | Learn with Abhi</p>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>📘 Contents</h3>
+
+<a href="#intro">1. Introduction</a>
+<a href="#difference">2. Electrical vs Electronics</a>
+<a href="#applications">3. Applications</a>
+<a href="#current">4. Electric Current</a>
+<a href="#voltage">5. Potential Difference</a>
+<a href="#power">6. Power & Energy</a>
+<a href="#rcl">7. R, C & L</a>
+<a href="#signals">8. Signals</a>
+<a href="#ohm">9. Ohm's Law</a>
+
+<hr>
+
+<a href="../index.html">⬅ Back to Home</a>
+
+</aside>
+
+<main class="content">
+
+<section id="intro" class="section">
+
+<h2>1. Introduction</h2>
+
+<p>
+Electrical and Electronics Engineering deals with generation, control,
+transmission and utilization of electrical energy along with electronic
+devices used for communication, automation and digital systems.
+</p>
+
+<div class="info">
+<b>Learning Outcome:</b> Identify basic electrical quantities, passive elements
+and waveform parameters used in electrical and electronic circuits.
+</div>
+
+</section>
+
+<section id="difference" class="section">
+
+<h2>2. Difference Between Electrical & Electronics Engineering</h2>
+
+<table>
+<tr>
+<th>Electrical Engineering</th>
+<th>Electronics Engineering</th>
+</tr>
+
+<tr>
+<td>Deals with high power systems</td>
+<td>Deals with low power systems</td>
+</tr>
+
+<tr>
+<td>Mainly uses AC supply</td>
+<td>Mainly uses DC supply</td>
+</tr>
+
+<tr>
+<td>Power generation and transmission</td>
+<td>Signal processing and communication</td>
+</tr>
+
+<tr>
+<td>Machines and transformers</td>
+<td>Diodes, transistors and ICs</td>
+</tr>
+
+<tr>
+<td>Voltage range is high</td>
+<td>Voltage range is comparatively low</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="applications" class="section">
+
+<h2>3. Applications of Electrical & Electronics Engineering</h2>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Examples</th>
+</tr>
+
+<tr>
+<td>⚡ Electrical</td>
+<td>Power stations, transformers, EVs, motors, irrigation pumps</td>
+</tr>
+
+<tr>
+<td>📡 Electronics</td>
+<td>Radar, drones, smartphones, ECG, oscilloscopes, sensors</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="current" class="section">
+
+<h2>4. Electric Current</h2>
+
+<p>
+Electric current is the rate of flow of electric charge through a conductor.
+</p>
+
+**Formula**
+
+<p style="font-size:28px;text-align:center;"><b>I = Q / t</b></p>
+
+<table>
+<tr><th>Quantity</th><th>Value</th></tr>
+<tr><td>Symbol</td><td>I</td></tr>
+<tr><td>SI Unit</td><td>Ampere (A)</td></tr>
+<tr><td>Instrument</td><td>Ammeter</td></tr>
+<tr><td>Other name</td><td>Flow of electrons</td></tr>
+</table>
+
+<h3>Current Flow Diagram</h3>
+
+<svg viewBox="0 0 300 120">
+<rect x="15" y="45" width="45" height="30" rx="4" fill="#F59E0B"/>
+<text x="37" y="63" font-size="8" text-anchor="middle" fill="white">Battery</text>
+
+<line x1="60" y1="60" x2="240" y2="60" stroke="#0B4AA2" stroke-width="2"/>
+
+<rect x="240" y="45" width="45" height="30" rx="4" fill="#64748B"/>
+<text x="262" y="63" font-size="8" text-anchor="middle" fill="white">Load</text>
+
+<polygon points="120,55 140,60 120,65" fill="#16A34A"/>
+<text x="150" y="45" font-size="8" fill="#16A34A">Current (I)</text>
+</svg>
+
+</section>
+
+<section id="voltage" class="section">
+
+<h2>5. Potential Difference (Voltage)</h2>
+
+<p>
+Potential difference is the work done in moving one coulomb of charge from one
+point to another.
+</p>
+
+<p style="font-size:28px;text-align:center;"><b>V = W / Q</b></p>
+
+<table>
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td>Symbol</td><td>V</td></tr>
+<tr><td>Unit</td><td>Volt</td></tr>
+<tr><td>Instrument</td><td>Voltmeter</td></tr>
+<tr><td>Other Name</td><td>Voltage / EMF</td></tr>
+</table>
+
+</section>
+
+<section id="power" class="section">
+
+<h2>6. Electric Power & Energy</h2>
+
+<table>
+<tr>
+<th>Power</th>
+<th>Energy</th>
+</tr>
+
+<tr>
+<td>Rate of electrical work</td>
+<td>Total electrical work done</td>
+</tr>
+
+<tr>
+<td>P = VI</td>
+<td>E = P × t</td>
+</tr>
+
+<tr>
+<td>Unit : Watt</td>
+<td>Unit : Joule / kWh</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="rcl" class="section">
+
+<h2>7. Resistor, Capacitor & Inductor</h2>
+
+<table>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+
+<tr>
+<td>Resistor</td>
+<td>Opposes current flow</td>
+</tr>
+
+<tr>
+<td>Capacitor</td>
+<td>Stores electrical charge</td>
+</tr>
+
+<tr>
+<td>Inductor</td>
+<td>Stores magnetic energy</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="signals" class="section">
+
+<h2>8. Waveforms & Signals</h2>
+
+<table>
+<tr>
+<th>Signal</th>
+<th>Application</th>
+</tr>
+
+<tr>
+<td>Sine</td>
+<td>AC power supply</td>
+</tr>
+
+<tr>
+<td>Square</td>
+<td>Digital electronics</td>
+</tr>
+
+<tr>
+<td>Triangular</td>
+<td>Function generators</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="ohm" class="section">
+
+<h2>9. Ohm's Law</h2>
+
+<div class="info">
+At constant temperature, the current flowing through a conductor is directly
+proportional to the applied voltage and inversely proportional to its resistance.
+</div>
+
+<h3>Formula</h3>
+
+<p style="font-size:34px;text-align:center;color:#0B4AA2;"><b>V = I × R</b></p>
+
+<h3>Simple Circuit</h3>
+
+<svg viewBox="0 0 320 140">
+<rect x="20" y="55" width="40" height="30" fill="#F59E0B"/>
+<text x="40" y="72" font-size="8" text-anchor="middle" fill="white">12V</text>
+
+<line x1="60" y1="70" x2="120" y2="70" stroke="#0B4AA2" stroke-width="2"/>
+
+<rect x="120" y="55" width="60" height="30" fill="#64748B"/>
+<text x="150" y="72" font-size="8" text-anchor="middle" fill="white">4 Ω</text>
+
+<line x1="180" y1="70" x2="260" y2="70" stroke="#0B4AA2" stroke-width="2"/>
+
+<polygon points="90,65 105,70 90,75" fill="#16A34A"/>
+<text x="95" y="50" font-size="8" fill="#16A34A">I</text>
+</svg>
+
+<h3>Worked Example</h3>
+
+<table>
+<tr><td>Voltage (V)</td><td>12 V</td></tr>
+<tr><td>Resistance (R)</td><td>4 Ω</td></tr>
+<tr><td>Current (I)</td><td>?</td></tr>
+</table>
+
+**Solution**
+
+<pre>
+I = V/R
+
+I = 12/4
+
+I = 3 Ampere
+</pre>
+
+<div class="info">
+<b>Answer:</b> The current flowing through the circuit is <b>3 A</b>.
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+Learn with Abhi | Version 1.0 | Unit 1
+</footer>
+
 </body>
 </html>
