@@ -921,272 +921,155 @@ font-weight="bold" fill="#DC2626">I</text>
 
 </section>
 
-  <!-- ===================================================== -->
-<!-- SECTION 3 : PASSIVE ELECTRONIC COMPONENTS -->
+<!-- ===================================================== -->
+<!-- 3. PASSIVE ELECTRONIC COMPONENTS -->
 <!-- ===================================================== -->
 
-<section class="section" id="resistor">
+<div class="section" id="passive">
 
 <h2>3. Passive Electronic Components</h2>
 
 <p>
-Passive electronic components are devices that do not generate electrical energy.
-They either oppose, store or transfer electrical energy in an electrical circuit.
-The three fundamental passive components are <b>Resistor</b>, <b>Capacitor</b> and
-<b>Inductor</b>.
+Passive electronic components do not generate electrical energy. They either
+oppose, store or release electrical energy. The three fundamental passive
+components are <b>Resistor, Capacitor and Inductor</b>.
 </p>
 
-<div class="note">
-<b>Remember:</b><br>
-⚡ Resistor → Opposes Current &nbsp;&nbsp;&nbsp;
-🔋 Capacitor → Stores Electric Charge &nbsp;&nbsp;&nbsp;
-🧲 Inductor → Stores Magnetic Energy
 </div>
 
-<hr style="margin:25px 0;">
+<!-- ===================================================== -->
+<!-- 3.1 RESISTOR -->
+<!-- ===================================================== -->
 
-<!-- ===================================================== -->
-<!-- RESISTOR -->
-<!-- ===================================================== -->
+<div class="section" id="resistor">
 
 <h2>3.1 Resistor</h2>
 
 <p>
-A resistor is an electrical component that limits or regulates the flow of electric current in a circuit.
-It is one of the most basic and widely used components in electronics.
+A resistor is an electrical component that limits or regulates the flow of
+electric current in a circuit. It is one of the most basic and widely used
+components in electronics.
 </p>
 
-<div class="definition">
-<b>Important Concept</b><br><br>
-<b>Resistor</b> is the physical component, whereas <b>Resistance</b> is its electrical value measured in Ohms (Ω).
-</div>
-
-<h3>Definition</h3>
+<img src="../assets/images/unit1/res.jpg" class="component-img" alt="Resistor">
 
 <div class="definition">
-A resistor is a passive two-terminal device that opposes the flow of electric current
-by converting electrical energy into heat. The amount of resistance it offers is measured in <b>Ohms (Ω)</b>.
+<b>Definition</b><br><br>
+A resistor is a passive two-terminal device that opposes the flow of electric
+current by converting electrical energy into heat. The amount of resistance it
+offers is measured in <b>Ohm (Ω)</b>.
 </div>
 
-<h3>Denoted By</h3>
-
-<table class="comparison">
-<tr><th>Parameter</th><th>Value</th></tr>
-<tr><td>Symbol</td><td><b>R</b></td></tr>
-<tr><td>SI Unit</td><td>Ohm (Ω)</td></tr>
-<tr><td>Example</td><td>R = 10 Ω</td></tr>
+<table class="info-table">
+<tr><th>Component</th><td>Resistor</td></tr>
+<tr><th>Value</th><td>Resistance</td></tr>
+<tr><th>Symbol</th><td><math value="R"/></td></tr>
+<tr><th>Unit</th><td>Ohm (Ω)</td></tr>
+<tr><th>Denoted By</th><td>R</td></tr>
 </table>
 
-<h3>Resistor Symbol</h3>
+### Circuit Symbol
 
-<div style="text-align:center;margin:20px 0;">
-<svg viewBox="0 0 300 90" width="100%" height="90">
-<line x1="20" y1="45" x2="55" y2="45" stroke="#17345E" stroke-width="3"/>
-<path d="M55 45 L70 25 L85 65 L100 25 L115 65 L130 25 L145 65 L160 25 L175 45"
-stroke="#0B4AA2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<line x1="175" y1="45" x2="280" y2="45" stroke="#17345E" stroke-width="3"/>
-<text x="150" y="82" text-anchor="middle" font-size="13" fill="#64748B">
-Circuit Symbol of Resistor
-</text>
-</svg>
-</div>
-
-<h3>Types of Resistors</h3>
-
-<p>There are two main types of resistors:</p>
-
-<div class="grid">
-
-<div class="card">
-<div style="padding:18px;">
-<h3>Fixed Resistors</h3>
-<p>These have a fixed resistance value that does not change.</p>
-<ul style="margin-left:18px;margin-top:10px;">
-<li>Carbon Composition</li>
-<li>Wire Wound</li>
-<li>Metal Film</li>
-</ul>
-</div>
-</div>
-
-<div class="card">
-<div style="padding:18px;">
-<h3>Variable Resistors</h3>
-<p>These allow resistance to be adjusted manually.</p>
-<ul style="margin-left:18px;margin-top:10px;">
-<li>Potentiometer</li>
-<li>Trimmer</li>
-<li>Rheostat</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<!-- ===================================================== -->
-<!-- CLASSIFICATION DIAGRAM -->
-<!-- ===================================================== -->
-
-<h3>Classification of Resistor</h3>
-
-<div class="definition" style="text-align:center;">
-<b>Recreated from standard resistor classification</b>
-</div>
-
-<div style="overflow-x:auto;padding:10px 0;">
-
-<svg viewBox="0 0 700 300" width="100%" height="290">
-
-<!-- Root -->
-<rect x="280" y="15" width="140" height="36" rx="8" fill="#0B4AA2"/>
-<text x="350" y="38" fill="white" font-size="14" text-anchor="middle" font-weight="bold">Resistors</text>
-
-<!-- Branch -->
-<line x1="350" y1="51" x2="350" y2="72" stroke="#555" stroke-width="2"/>
-<line x1="150" y1="72" x2="550" y2="72" stroke="#555" stroke-width="2"/>
-
-<!-- Linear -->
-<line x1="150" y1="72" x2="150" y2="95" stroke="#555" stroke-width="2"/>
-<rect x="95" y="95" width="110" height="34" rx="6" fill="#DBEAFE" stroke="#60A5FA"/>
-<text x="150" y="116" font-size="12" text-anchor="middle" font-weight="bold">Linear</text>
-
-<!-- Nonlinear -->
-<line x1="550" y1="72" x2="550" y2="95" stroke="#555" stroke-width="2"/>
-<rect x="495" y="95" width="110" height="34" rx="6" fill="#FCE7F3" stroke="#EC4899"/>
-<text x="550" y="116" font-size="12" text-anchor="middle" font-weight="bold">Nonlinear</text>
-
-<!-- Linear Split -->
-<line x1="150" y1="129" x2="150" y2="150" stroke="#555" stroke-width="2"/>
-<line x1="40" y1="150" x2="260" y2="150" stroke="#555" stroke-width="2"/>
-
-<!-- Fixed -->
-<line x1="70" y1="150" x2="70" y2="172" stroke="#555" stroke-width="2"/>
-<rect x="20" y="172" width="100" height="32" rx="6" fill="#E0F2FE" stroke="#0EA5E9"/>
-<text x="70" y="191" font-size="11" text-anchor="middle" font-weight="bold">Fixed</text>
-
-<!-- Variable -->
-<line x1="230" y1="150" x2="230" y2="172" stroke="#555" stroke-width="2"/>
-<rect x="180" y="172" width="100" height="32" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
-<text x="230" y="191" font-size="11" text-anchor="middle" font-weight="bold">Variable</text>
-
-<!-- Fixed children -->
-<line x1="70" y1="204" x2="70" y2="225" stroke="#555" stroke-width="1.5"/>
-<line x1="10" y1="225" x2="130" y2="225" stroke="#555" stroke-width="1.5"/>
-
-<line x1="20" y1="225" x2="20" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="0" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="20" y="262" font-size="7" text-anchor="middle">Carbon Composition</text>
-
-<line x1="70" y1="225" x2="70" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="50" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="70" y="262" font-size="7" text-anchor="middle">Wire Wound</text>
-
-<line x1="120" y1="225" x2="120" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="100" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="120" y="262" font-size="7" text-anchor="middle">Metal Film</text>
-
-<!-- Variable children -->
-<line x1="230" y1="204" x2="230" y2="225" stroke="#555" stroke-width="1.5"/>
-<line x1="180" y1="225" x2="280" y2="225" stroke="#555" stroke-width="1.5"/>
-
-<line x1="180" y1="225" x2="180" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="160" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="180" y="262" font-size="7" text-anchor="middle">Potentiometer</text>
-
-<line x1="230" y1="225" x2="230" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="210" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="230" y="262" font-size="7" text-anchor="middle">Trimmer</text>
-
-<line x1="280" y1="225" x2="280" y2="245" stroke="#555" stroke-width="1.5"/>
-<rect x="260" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
-<text x="280" y="262" font-size="7" text-anchor="middle">Rheostat</text>
-
-<!-- Nonlinear children -->
-<line x1="550" y1="129" x2="550" y2="150" stroke="#555" stroke-width="2"/>
-<line x1="470" y1="150" x2="630" y2="150" stroke="#555" stroke-width="2"/>
-
-<line x1="470" y1="150" x2="470" y2="172" stroke="#555" stroke-width="2"/>
-<rect x="430" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
-<text x="470" y="192" font-size="11" text-anchor="middle" font-weight="bold">LDR</text>
-
-<line x1="550" y1="150" x2="550" y2="172" stroke="#555" stroke-width="2"/>
-<rect x="510" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
-<text x="550" y="192" font-size="11" text-anchor="middle" font-weight="bold">Thermistor</text>
-
-<line x1="630" y1="150" x2="630" y2="172" stroke="#555" stroke-width="2"/>
-<rect x="590" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
-<text x="630" y="192" font-size="11" text-anchor="middle" font-weight="bold">VDR</text>
-
+<svg viewBox="0 0 320 90" width="100%" stroke="currentColor" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <line x1="20" y1="45" x2="60" y2="45"/>
+  <polyline points="60,45 75,30 90,60 105,30 120,60 135,30 150,60 165,30 180,45"/>
+  <line x1="180" y1="45" x2="300" y2="45"/>
+  <text x="160" y="20" fontSize="11" fill="currentColor" textAnchor="middle">R</text>
 </svg>
 
+### Types of Resistors
+
+<div class="feature-box">
+  <div class="feature">
+    **Fixed Resistors**
+
+    Resistance value remains constant.
+
+    Examples:
+    - Carbon Composition
+    - Metal Film
+    - Wire Wound
+  </div>
+  <div class="feature">
+    **Variable Resistors**
+
+    Resistance can be adjusted manually.
+
+    Examples:
+    - Potentiometer
+    - Rheostat
+    - Trimmer
+  </div>
 </div>
 
-<h3>Formula of Resistance</h3>
+### Classification of Resistors
 
-<div class="definition" style="text-align:center;font-size:26px;">
-<b>R = ρL / A</b>
+<div class="classification">
+  <div class="tree">
+    <div class="branch">
+      <h4>Linear</h4>
+      <ul>
+        <li>Fixed Resistors</li>
+        <li>Carbon Composition</li>
+        <li>Wire Wound</li>
+        <li>Metal Film</li>
+        <li>Variable Resistors</li>
+        <li>Potentiometer</li>
+        <li>Trimmer</li>
+        <li>Rheostat</li>
+      </ul>
+    </div>
+    <div class="branch">
+      <h4>Non-Linear</h4>
+      <ul>
+        <li>Thermistor (TDR)</li>
+        <li>LDR</li>
+        <li>VDR</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<p><b>Where:</b></p>
+### Formula
 
-<ul style="margin-left:20px;">
-<li>R = Resistance (Ω)</li>
-<li>ρ = Resistivity of material</li>
-<li>L = Length of conductor</li>
-<li>A = Cross-sectional area of conductor</li>
-</ul>
+<div class="formula">
+<math value="R=\\rho\\frac{L}{A}"/>
+</div>
+
+Where:
+
+- **ρ** = Resistivity of material
+- **L** = Length of conductor
+- **A** = Cross-sectional area
+
+### Advantages
+
+- Simple and reliable design
+- Low cost
+- Stable operation
+- Protects circuits by limiting current
+
+### Disadvantages
+
+- Wastes energy as heat
+- Fixed resistors cannot be adjusted
+- Excessive heating may damage the circuit
+
+### Applications
+
+- Current limiting
+- Voltage divider circuits
+- Signal conditioning
+- Transistor biasing
+- Electric heating applications
+
+<div class="highlight">
+<b>Resistor Colour Coding:</b> Colour coding is used to identify the resistance value of fixed resistors. Detailed solved examples will be covered during lecture and practical sessions.
+</div>
+
+</div>
 
 <!-- ===================================================== -->
-<!-- ADVANTAGES / DISADVANTAGES / APPLICATIONS -->
-<!-- ===================================================== -->
-
-<div class="grid">
-
-<div class="card">
-<div style="padding:18px;">
-<h3>Advantages</h3>
-<ul style="margin-left:18px;">
-<li>Simple design</li>
-<li>Cost-effective</li>
-<li>Stable operation</li>
-<li>Heat dissipation protects circuits</li>
-</ul>
-</div>
-</div>
-
-<div class="card">
-<div style="padding:18px;">
-<h3>Disadvantages</h3>
-<ul style="margin-left:18px;">
-<li>Energy loss as heat</li>
-<li>Limited control in fixed resistors</li>
-<li>Heat generation during overload</li>
-</ul>
-</div>
-</div>
-
-<div class="card">
-<div style="padding:18px;">
-<h3>Applications</h3>
-<ul style="margin-left:18px;">
-<li>Current limiting</li>
-<li>Voltage divider circuits</li>
-<li>Signal conditioning</li>
-<li>Transistor biasing</li>
-<li>Electric heaters</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<div class="note">
-<b>Resistor Colour Coding:</b><br>
-Refer the solved classroom examples for 4-band and 5-band resistor colour code calculations.
-</div>
-
-</section>
-  <!-- ===================================================== -->
 <!-- 3.2 CAPACITOR -->
 <!-- ===================================================== -->
 
@@ -1195,205 +1078,96 @@ Refer the solved classroom examples for 4-band and 5-band resistor colour code c
 <h2>3.2 Capacitor</h2>
 
 <p>
-A capacitor is a passive electrical component that stores electrical energy in the form of an
-<strong>electric field</strong>. It consists of two conductive plates separated by an insulating material
-called a <strong>dielectric</strong>. Capacitors are widely used for filtering, timing circuits and energy storage.
+A capacitor is a passive electrical component that stores electrical energy in
+the form of an electric field between two conductive plates separated by an
+insulating material called dielectric.
 </p>
+
+<img src="../assets/images/unit1/capcon.png" class="component-img" alt="Capacitor Construction">
 
 <div class="definition">
 <b>Definition</b><br><br>
-A capacitor is a passive electronic component that stores electrical energy between two conductive
-plates in the form of an electric field. The amount of energy it can store is called <b>Capacitance</b>.
+A capacitor stores electrical energy temporarily and releases it whenever
+required. The amount of stored energy depends upon its capacitance.
 </div>
 
-<div class="note">
-<b>Remember:</b> Capacitor is the component, while <b>Capacitance</b> is its value.
-</div>
-
-<h3 style="color:#0B4AA2;margin-top:25px;">Denotation, Symbol & Unit</h3>
-
-<table class="comparison">
-<tr>
-<th width="30%">Property</th>
-<th>Details</th>
-</tr>
-<tr>
-<td><b>Denoted By</b></td>
-<td>C</td>
-</tr>
-<tr>
-<td><b>Circuit Symbol</b></td>
-<td>
-<svg width="120" height="45" viewBox="0 0 120 45">
-<line x1="5" y1="22" x2="42" y2="22" stroke="#17345E" stroke-width="2"/>
-<line x1="42" y1="8" x2="42" y2="36" stroke="#0B4AA2" stroke-width="3"/>
-<line x1="58" y1="8" x2="58" y2="36" stroke="#0B4AA2" stroke-width="3"/>
-<line x1="58" y1="22" x2="115" y2="22" stroke="#17345E" stroke-width="2"/>
-</svg>
-</td>
-</tr>
-<tr>
-<td><b>SI Unit</b></td>
-<td>Farad (F)</td>
-</tr>
-<tr>
-<td><b>Named After</b></td>
-<td>Michael Faraday</td>
-</tr>
+<table class="info-table">
+<tr><th>Component</th><td>Capacitor</td></tr>
+<tr><th>Value</th><td>Capacitance</td></tr>
+<tr><th>Symbol</th><td>C</td></tr>
+<tr><th>Unit</th><td>Farad (F)</td></tr>
+<tr><th>Denoted By</th><td>C</td></tr>
 </table>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Construction of Capacitor</h3>
+### Circuit Symbols
 
-<svg viewBox="0 0 620 180" width="100%">
-<rect width="620" height="180" rx="12" fill="#F8FBFF"/>
+<img src="../assets/images/unit1/capsym.png" class="component-img" alt="Capacitor Symbols">
 
-<rect x="160" y="30" width="16" height="120" fill="#0B4AA2"/>
-<rect x="444" y="30" width="16" height="120" fill="#0B4AA2"/>
+### Practical Units
 
-<rect x="176" y="30" width="268" height="120" fill="#D6F0FF" stroke="#2196F3" stroke-dasharray="4 4"/>
+| Unit | Value |
+|---|---:|
+| Farad | 1 F |
+| Microfarad | 10⁻⁶ F |
+| Nanofarad | 10⁻⁹ F |
+| Picofarad | 10⁻¹² F |
 
-<text x="168" y="18" font-size="12" fill="#17345E" text-anchor="middle">Plate</text>
-<text x="452" y="18" font-size="12" fill="#17345E" text-anchor="middle">Plate</text>
-<text x="310" y="92" font-size="15" font-weight="bold" fill="#0B4AA2" text-anchor="middle">Dielectric</text>
+### Types of Capacitors
 
-<line x1="40" y1="90" x2="160" y2="90" stroke="#17345E" stroke-width="2"/>
-<polygon points="152,84 160,90 152,96" fill="#17345E"/>
-<text x="36" y="78" font-size="12" fill="#17345E">+ Terminal</text>
+<div class="feature-box">
+  <div class="feature">
+    **Fixed Capacitors**
 
-<line x1="460" y1="90" x2="580" y2="90" stroke="#17345E" stroke-width="2"/>
-<polygon points="572,84 580,90 572,96" fill="#17345E"/>
-<text x="584" y="78" font-size="12" fill="#17345E">− Terminal</text>
-</svg>
+    - Ceramic
+    - Electrolytic
+    - Film
+    - Mica
+    - Paper
+    - Glass
+  </div>
+  <div class="feature">
+    **Variable Capacitors**
 
-<div class="note">
-The dielectric prevents direct current from flowing while allowing the capacitor to store electrical energy.
+    Capacitance can be adjusted manually and is mainly used in tuning circuits and RF applications.
+  </div>
 </div>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Capacitance Formula</h3>
+### Formula
 
-<div class="definition" style="text-align:center;">
-<math block value="C=\\frac{\\varepsilon A}{d}"/>
-<p><b>Where:</b> ε = Permittivity, A = Plate Area, d = Distance between Plates</p>
+<div class="formula">
+<math value="C=\\varepsilon\\frac{A}{d}"/>
 </div>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Units Used in Practice</h3>
+Where:
 
-<table class="comparison">
-<tr>
-<th>Unit</th>
-<th>Value</th>
-</tr>
-<tr>
-<td>Microfarad (µF)</td>
-<td><math value="1\\mu F=10^{-6}F"/></td>
-</tr>
-<tr>
-<td>Nanofarad (nF)</td>
-<td><math value="1nF=10^{-9}F"/></td>
-</tr>
-<tr>
-<td>Picofarad (pF)</td>
-<td><math value="1pF=10^{-12}F"/></td>
-</tr>
-</table>
+- **C** = Capacitance
+- **ε** = Permittivity
+- **A** = Plate Area
+- **d** = Distance between plates
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Types of Capacitors</h3>
+### Advantages
 
-<div class="grid">
+- Stores electrical energy
+- Filters voltage ripple
+- Blocks DC and passes AC
+- Long operational life
+- Useful in timing circuits
 
-<div class="card">
-  <AsyncImage query="Ceramic capacitor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Ceramic</h3>
-  <p>Most commonly used for high-frequency circuits.</p>
-</div>
+### Disadvantages
 
-<div class="card">
-  <AsyncImage query="Electrolytic capacitor radial" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Electrolytic</h3>
-  <p>High capacitance, polarized capacitor.</p>
-</div>
+- Limited energy storage
+- Leakage current
+- Large size for high capacitance
+- Electrolytic capacitors are polarized
+- Over-voltage may damage the capacitor
 
-<div class="card">
-  <AsyncImage query="Film capacitor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Film</h3>
-  <p>Excellent stability and long life.</p>
-</div>
+### Applications
 
-<div class="card">
-  <AsyncImage query="Mica capacitor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Mica</h3>
-  <p>High precision and RF applications.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Paper capacitor vintage electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Paper</h3>
-  <p>Used in older electronic equipment.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Glass capacitor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Glass</h3>
-  <p>Reliable in high-temperature environments.</p>
-</div>
-
-</div>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Advantages</h3>
-
-<ul style="padding-left:22px;">
-<li>Stores electrical energy efficiently.</li>
-<li>Reduces voltage ripple in power supplies.</li>
-<li>Blocks DC while allowing AC signals to pass.</li>
-<li>Long operational life for non-electrolytic capacitors.</li>
-<li>Consumes very little power.</li>
-</ul>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Disadvantages</h3>
-
-<ul style="padding-left:22px;">
-<li>Stores less energy than batteries.</li>
-<li>Electrolytic capacitors have leakage current.</li>
-<li>Higher capacitance increases physical size.</li>
-<li>Polarized capacitors fail if reverse connected.</li>
-<li>Exceeding rated voltage may permanently damage the capacitor.</li>
-</ul>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Applications</h3>
-
-<div class="grid">
-
-<div class="card">
-  <AsyncImage query="Camera flash capacitor" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Energy Storage</h3>
-  <p>Camera flash circuits and pulse power systems.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Power supply filter capacitor circuit" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Power Supply Filtering</h3>
-  <p>Removes ripple from rectifier output.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="555 timer circuit capacitor" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Timing Circuits</h3>
-  <p>Used with resistors to generate delays.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="AC coupling capacitor circuit" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Coupling</h3>
-  <p>Blocks DC and passes AC between amplifier stages.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Single phase induction motor capacitor" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Motor Starting</h3>
-  <p>Provides starting torque in AC induction motors.</p>
-</div>
-
-</div>
+- Power supply filtering
+- Flash camera energy storage
+- Timing circuits
+- Coupling and decoupling
+- AC motor starting circuits
 
 </div>
 
@@ -1406,188 +1180,94 @@ The dielectric prevents direct current from flowing while allowing the capacitor
 <h2>3.3 Inductor</h2>
 
 <p>
-An inductor is a passive electronic component that stores energy in a
-<strong>magnetic field</strong> whenever electric current flows through its coil.
-Inductors are widely used in filters, transformers and switch-mode power supplies.
+An inductor is a passive electronic component that stores energy in the form of
+a magnetic field whenever electric current flows through its coil.
 </p>
+
+<img src="../assets/images/unit1/indcon.png" class="component-img" alt="Inductor Construction">
 
 <div class="definition">
 <b>Definition</b><br><br>
-An inductor is a passive component that opposes sudden changes in current by creating
-a magnetic field. The ability to store magnetic energy is called <b>Inductance</b>.
+An inductor opposes sudden changes in current by generating a magnetic field. Its ability to store magnetic energy is called <b>Inductance</b>.
 </div>
 
-<div class="note">
-<b>Remember:</b> Inductor is the component, while <b>Inductance</b> is its value.
-</div>
-
-<h3 style="color:#0B4AA2;margin-top:25px;">Denotation, Symbol & Unit</h3>
-
-<table class="comparison">
-<tr>
-<th width="30%">Property</th>
-<th>Details</th>
-</tr>
-<tr>
-<td><b>Denoted By</b></td>
-<td>L</td>
-</tr>
-<tr>
-<td><b>Circuit Symbol</b></td>
-<td>
-<svg width="140" height="40" viewBox="0 0 140 40">
-<line x1="5" y1="20" x2="20" y2="20" stroke="#17345E" stroke-width="2"/>
-<path d="M20 20
-a8 8 0 0 1 16 0
-a8 8 0 0 1 16 0
-a8 8 0 0 1 16 0
-a8 8 0 0 1 16 0" fill="none" stroke="#0B4AA2" stroke-width="2.5"/>
-<line x1="84" y1="20" x2="135" y2="20" stroke="#17345E" stroke-width="2"/>
-</svg>
-</td>
-</tr>
-<tr>
-<td><b>SI Unit</b></td>
-<td>Henry (H)</td>
-</tr>
-<tr>
-<td><b>Named After</b></td>
-<td>Joseph Henry</td>
-</tr>
+<table class="info-table">
+<tr><th>Component</th><td>Inductor</td></tr>
+<tr><th>Value</th><td>Inductance</td></tr>
+<tr><th>Symbol</th><td>L</td></tr>
+<tr><th>Unit</th><td>Henry (H)</td></tr>
+<tr><th>Denoted By</th><td>L</td></tr>
 </table>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Construction of Inductor</h3>
+### Circuit Symbols
 
-<svg viewBox="0 0 620 180" width="100%">
-<rect width="620" height="180" rx="12" fill="#F8FBFF"/>
+<img src="../assets/images/unit1/indsym.png" class="component-img" alt="Inductor Symbols">
 
-<rect x="250" y="30" width="120" height="120" rx="6" fill="#E5E7EB" stroke="#9CA3AF"/>
-<text x="310" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">Iron / Ferrite Core</text>
+### Practical Units
 
-<g stroke="#0B4AA2" stroke-width="3" fill="none">
-<path d="M230 45 q8 8 16 0 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0"/>
-<path d="M230 65 q8 8 16 0 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0"/>
-<path d="M230 85 q8 8 16 0 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0"/>
-<path d="M230 105 q8 8 16 0 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0"/>
-<path d="M230 125 q8 8 16 0 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0"/>
-</g>
+| Unit | Value |
+|---|---:|
+| Henry | 1 H |
+| Millihenry | 10⁻³ H |
+| Microhenry | 10⁻⁶ H |
 
-<text x="140" y="18" font-size="12" fill="#17345E">Copper Coil</text>
-<line x1="160" y1="22" x2="230" y2="40" stroke="#17345E" stroke-width="1.5"/>
-</svg>
+### Types of Inductors
 
-<div class="note">
-Whenever current flows through the coil, a magnetic field is produced around it, storing energy.
+<div class="feature-box">
+  <div class="feature">
+    **Air Core**
+
+    No magnetic core. Used in high-frequency circuits.
+  </div>
+  <div class="feature">
+    **Iron Core**
+
+    Higher inductance. Used in power applications.
+  </div>
+  <div class="feature">
+    **Ferrite Core**
+
+    Excellent performance in RF and SMPS circuits.
+  </div>
 </div>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Inductance Formula</h3>
+### Formula
 
-<div class="definition" style="text-align:center;">
-<math block value="L=\\frac{N\\Phi}{I}"/>
-<p><b>Where:</b> N = Number of Turns, Φ = Magnetic Flux, I = Current</p>
+<div class="formula">
+<math value="L=\\frac{N\\Phi}{I}"/>
 </div>
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Practical Units</h3>
+Where:
 
-<table class="comparison">
-<tr>
-<th>Unit</th>
-<th>Value</th>
-</tr>
-<tr>
-<td>Millihenry (mH)</td>
-<td><math value="1mH=10^{-3}H"/></td>
-</tr>
-<tr>
-<td>Microhenry (µH)</td>
-<td><math value="1\\mu H=10^{-6}H"/></td>
-</tr>
-</table>
+- **N** = Number of turns
+- **Φ** = Magnetic Flux
+- **I** = Current
 
-<h3 style="color:#0B4AA2;margin-top:28px;">Types of Inductors</h3>
+### Advantages
 
-<div class="grid">
+- Stores magnetic energy
+- Smooths current fluctuations
+- Used in filters
+- Essential in transformers
+- Used in wireless charging
 
-<div class="card">
-  <AsyncImage query="Air core inductor coil" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Air Core</h3>
-  <p>Used for radio-frequency and high-frequency circuits.</p>
-</div>
+### Disadvantages
 
-<div class="card">
-  <AsyncImage query="Iron core inductor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Iron Core</h3>
-  <p>Provides high inductance for power applications.</p>
-</div>
+- Bulky in size
+- Heavy iron-core construction
+- Copper and core losses
+- Expensive high-quality inductors
+- Magnetic interference with nearby circuits
 
-<div class="card">
-  <AsyncImage query="Ferrite core inductor electronic component" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Ferrite Core</h3>
-  <p>Widely used in SMPS and communication circuits.</p>
-</div>
+### Applications
+
+- SMPS power supplies
+- Transformers
+- Low-pass and high-pass filters
+- Energy storage circuits
+- Metal detectors and RFID sensors
 
 </div>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Advantages</h3>
-
-<ul style="padding-left:22px;">
-<li>Stores energy in a magnetic field.</li>
-<li>Excellent current smoothing capability.</li>
-<li>Used in low-pass filters to suppress high-frequency noise.</li>
-<li>Essential component of transformers and wireless charging systems.</li>
-<li>Provides stable operation in power electronic circuits.</li>
-</ul>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Disadvantages</h3>
-
-<ul style="padding-left:22px;">
-<li>Bulky for high inductance values.</li>
-<li>Iron-core inductors are comparatively heavy.</li>
-<li>Energy losses occur due to winding resistance and core losses.</li>
-<li>High-quality inductors are relatively expensive.</li>
-<li>Can produce magnetic interference with nearby components.</li>
-</ul>
-
-<h3 style="color:#0B4AA2;margin-top:28px;">Applications</h3>
-
-<div class="grid">
-
-<div class="card">
-  <AsyncImage query="SMPS inductor power supply" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Power Supplies</h3>
-  <p>Reduces ripple in DC power supplies.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Transformer copper winding" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Transformers</h3>
-  <p>Voltage transformation using magnetic coupling.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="LC filter electronic circuit" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Filters</h3>
-  <p>Used in low-pass, high-pass and band-pass filters.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Inductive proximity sensor industrial" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Inductive Sensors</h3>
-  <p>Metal detectors, RFID and proximity sensing applications.</p>
-</div>
-
-<div class="card">
-  <AsyncImage query="Wireless charging coil inductor" aspectRatio="5:4" radius="lg" width="100%"/>
-  <h3>Wireless Charging</h3>
-  <p>Transfers energy through inductive coupling.</p>
-</div>
-
-</div>
-
-<div class="note">
-<b>Quick Comparison:</b> A <b>Capacitor</b> stores energy in an <b>electric field</b>, whereas an <b>Inductor</b> stores energy in a <b>magnetic field</b>.
-</div>
-
 </div>
 
 </div>
