@@ -5,91 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unit 1 | DC Electric Circuit</title>
 
-<link rel="stylesheet" href="../assets/css/style.css">
-
 <style>
-body{background:#F5F8FC;margin:0;font-family:Arial,Helvetica,sans-serif;}
-.hero{
-background:linear-gradient(135deg,#0B4AA2,#1976D2);
-color:#fff;
-padding:45px 8%;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
-.hero h1{font-size:44px;margin:8px 0;}
-.container{
-display:grid;
-grid-template-columns:250px 1fr;
-gap:25px;
-width:92%;
-margin:25px auto;
-}
-.sidebar{
-background:#fff;
-padding:20px;
-border-radius:14px;
-position:sticky;
-top:20px;
-height:fit-content;
-box-shadow:0 4px 10px rgba(0,0,0,.08);
-}
-.sidebar h3{color:#0B4AA2;}
-.sidebar a{
-display:block;
-padding:8px 0;
-text-decoration:none;
+
+body{
+background:#F4F8FC;
 color:#17345E;
-font-size:15px;
+line-height:1.7;
 }
-.content{
-background:#fff;
+
+header{
+background:#0B4AA2;
+color:white;
+padding:18px 8%;
+}
+
+header h1{
+font-size:32px;
+}
+
+header p{
+opacity:.9;
+}
+
+.container{
+width:88%;
+margin:35px auto;
+}
+
+.section{
+background:white;
 padding:30px;
-border-radius:14px;
-box-shadow:0 4px 10px rgba(0,0,0,.08);
+margin-bottom:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
-.section{margin-bottom:45px;}
-.section h2{
+
+h2{
 color:#0B4AA2;
-border-left:6px solid #0B4AA2;
+margin-bottom:15px;
+border-left:5px solid #2196F3;
 padding-left:12px;
 }
-.info{
+
+.definition{
 background:#EAF4FF;
-border-left:5px solid #1976D2;
-padding:14px;
-border-radius:8px;
-margin:15px 0;
-}
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:12px;
-}
-th,td{
-border:1px solid #D9E3F1;
-padding:10px;
-text-align:left;
-}
-th{
-background:#0B4AA2;
-color:#fff;
-}
-.formula{
-background:#FFF8E1;
-text-align:center;
-font-size:28px;
-padding:18px;
+padding:20px;
+border-left:6px solid #0B4AA2;
 border-radius:10px;
-margin:15px 0;
-font-weight:bold;
+margin-top:15px;
 }
-svg{display:block;margin:auto;max-width:100%;}
+
+.definition b{
+color:#0B4AA2;
+}
+
+.note{
+background:#FFF8E6;
+padding:15px;
+border-left:5px solid orange;
+border-radius:8px;
+margin-top:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+border:1px solid #E3EAF4;
+border-radius:12px;
+overflow:hidden;
+background:white;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 18px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px 15px 5px;
+color:#0B4AA2;
+}
+
+.card p{
+padding:0 15px 15px;
+font-size:14px;
+color:#555;
+}
+
 footer{
 text-align:center;
 padding:25px;
 color:#64748B;
+font-size:14px;
 }
-@media(max-width:900px){
-.container{grid-template-columns:1fr;}
-.sidebar{position:relative;}
+
+.back{
+display:inline-block;
+margin-bottom:20px;
+text-decoration:none;
+color:#0B4AA2;
+font-weight:bold;
 }
 </style>
 
@@ -97,810 +130,143 @@ color:#64748B;
 
 <body>
 
-<section class="hero">
-<p>Learn with Abhi</p>
-<h1>UNIT 1 : DC ELECTRIC CIRCUIT</h1>
-<p>Fundamental of Electrical & Electronics Engineering</p>
-</section>
+<header>
+
+<h1>UNIT 1 : DC Electric Circuit</h1>
+
+<p>Fundamentals of Electrical & Electronics Engineering</p>
+
+</header>
 
 <div class="container">
 
-<aside class="sidebar">
+<a href="../index.html" class="back">← Back to Home</a>
 
-<h3>📘 Contents</h3>
+<!-- Definition -->
 
-<a href="#intro">1. Introduction</a>
-<a href="#difference">2. Electrical vs Electronics</a>
-<a href="#applications">3. Applications</a>
-<a href="#current">4. Electric Current</a>
-<a href="#voltage">5. Potential Difference</a>
-<a href="#power">6. Power</a>
-<a href="#energy">7. Energy</a>
-<a href="#components">8. Circuit Elements</a>
-<a href="#signals">9. Waveforms</a>
-<a href="#ohm">10. Ohm's Law</a>
+<div class="section">
 
-<hr>
-
-<a href="../index.html">🏠 Home</a>
-
-</aside>
-
-<main class="content">
-
-<section id="intro" class="section">
-
-<h2>1. Introduction</h2>
+<h2>1.1 Definition of Electronics</h2>
 
 <p>
-Electrical and Electronics Engineering is a branch of engineering concerned
-with the generation, transmission, control and utilization of electrical
-energy along with the design and application of electronic devices for
-communication, automation and digital systems.
+Electronics is one of the most important branches of engineering that deals with
+the behaviour and control of electrons in electronic devices and circuits.
 </p>
 
-<div class="info">
-<b>Course Outcome Addressed:</b> CO1 – Identify basic electrical quantities,
-circuit elements and waveform parameters used in electrical and electronic
-circuits.
-</div>
+<div class="definition">
 
-</section>
-
-<section id="difference" class="section">
-
-<h2>2. Difference Between Electrical & Electronics Engineering</h2>
-
-<table>
-<tr>
-<th>Electrical Engineering</th>
-<th>Electronics Engineering</th>
-</tr>
-
-<tr>
-<td>Deals with high power systems</td>
-<td>Deals with low power systems</td>
-</tr>
-
-<tr>
-<td>Mainly uses AC supply</td>
-<td>Mainly uses DC supply</td>
-</tr>
-
-<tr>
-<td>Power generation & distribution</td>
-<td>Signal processing & communication</td>
-</tr>
-
-<tr>
-<td>Machines and transformers</td>
-<td>Diodes, transistors & ICs</td>
-</tr>
-
-<tr>
-<td>kW to MW range</td>
-<td>mW to W range</td>
-</tr>
-
-</table>
-
-</section>
-
-<section id="applications" class="section">
-
-<h2>3. Applications of Electrical & Electronics</h2>
-
-<table>
-<tr>
-<th>Field</th>
-<th>Major Applications</th>
-</tr>
-
-<tr>
-<td>⚡ Power Systems</td>
-<td>Power stations, transformers, substations, transmission lines</td>
-</tr>
-
-<tr>
-<td>🏭 Industrial</td>
-<td>Electric motors, industrial drives, robotics, automation</td>
-</tr>
-
-<tr>
-<td>🚆 Transportation</td>
-<td>Electric vehicles, metro rail, charging stations</td>
-</tr>
-
-<tr>
-<td>🌾 Agriculture</td>
-<td>Irrigation pumps, dairy equipment, solar pumping systems</td>
-</tr>
-
-<tr>
-<td>📡 Electronics</td>
-<td>Radar, smartphones, ECG, oscilloscopes, drones, sensors</td>
-</tr>
-
-</table>
-
-</section>
-
-<section id="current" class="section">
-
-<h2>4. Electric Current</h2>
+<p><b>Definition (IRE):</b></p>
 
 <p>
-Electric Current is the rate of flow of electric charge through a conductor.
+"According to the Institute of Radio Engineering (IRE), Electronics is a branch
+of Science and Engineering which deals with the study of electronic devices,
+their processing and utilization."
 </p>
 
-<div class="formula">
-I = Q / t
 </div>
 
-<table>
-<tr><th>Item</th><th>Description</th></tr>
-<tr><td>Symbol</td><td>I</td></tr>
-<tr><td>SI Unit</td><td>Ampere (A)</td></tr>
-<tr><td>Instrument</td><td>Ammeter</td></tr>
-<tr><td>Other Name</td><td>Flow of Electrons</td></tr>
-</table>
+<div class="note">
 
-<h3>Current Flow</h3>
+<b>Simple Meaning:</b><br>
+Electronics is the branch of engineering that studies devices such as
+<strong>Diodes, Transistors, ICs, Sensors and Microprocessors</strong> used for
+processing, controlling and transmitting electrical signals.
 
-<svg viewBox="0 0 320 120">
+</div>
 
-<rect x="15" y="45" width="45" height="30" rx="4" fill="#F59E0B"/>
-<text x="37" y="63" font-size="8" text-anchor="middle" fill="white">Battery</text>
+</div>
 
-<line x1="60" y1="60" x2="250" y2="60" stroke="#0B4AA2" stroke-width="2"/>
+<!-- Applications -->
 
-<rect x="250" y="45" width="45" height="30" rx="4" fill="#64748B"/>
-<text x="272" y="63" font-size="8" text-anchor="middle" fill="white">Load</text>
+<div class="section">
 
-<polygon points="120,55 140,60 120,65" fill="#16A34A"/>
-<text x="150" y="46" font-size="8" fill="#16A34A">Current</text>
-
-</svg>
-
-</section>
-
-<section id="voltage" class="section">
-
-<h2>5. Potential Difference (Voltage)</h2>
+<h2>1.2 Applications of Electronics</h2>
 
 <p>
-Potential Difference is the work done in moving one coulomb of charge from one
-point to another.
+Electronics plays a crucial role across many sectors including defense,
+industrial automation, healthcare, telecommunication and domestic appliances.
+Modern life is highly dependent on electronic systems for communication,
+automation and intelligent control.
 </p>
 
-<div class="formula">
-V = W / Q
-</div>
+<div class="grid">
 
-<table>
-<tr><th>Item</th><th>Value</th></tr>
-<tr><td>Symbol</td><td>V</td></tr>
-<tr><td>SI Unit</td><td>Volt</td></tr>
-<tr><td>Instrument</td><td>Voltmeter</td></tr>
-<tr><td>Other Name</td><td>Voltage / EMF</td></tr>
-</table>
+<div class="card">
 
-</section>
+<img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=600&q=80">
 
-<section id="power" class="section">
-
-<h2>6. Electric Power</h2>
+<h3>1. Defense</h3>
 
 <p>
-Electric Power is the rate at which electrical energy is consumed or produced.
+Radar systems, missile guidance, military drones, secure satellite
+communication, sonar and night vision equipment strengthen national security.
 </p>
 
-<div class="formula">
-P = V × I
 </div>
 
-<table>
-<tr><th>Parameter</th><th>Value</th></tr>
-<tr><td>Symbol</td><td>P</td></tr>
-<tr><td>Unit</td><td>Watt (W)</td></tr>
-<tr><td>Measuring Instrument</td><td>Wattmeter</td></tr>
-</table>
+<div class="card">
 
-</section>
+<img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=80">
 
-<section id="energy" class="section">
-
-<h2>7. Electrical Energy</h2>
+<h3>2. Industrial & Instrumentation</h3>
 
 <p>
-Electrical Energy is the total work done by an electrical circuit over a period
-of time.
+PLCs, industrial robots, inverters, oscilloscopes, multimeters,
+flow meters and pressure sensors are used for automation and process control.
 </p>
 
-<div class="formula">
-E = P × t
 </div>
 
-<table>
-<tr><th>Unit</th><th>Application</th></tr>
-<tr><td>Joule</td><td>Scientific calculations</td></tr>
-<tr><td>kWh</td><td>Electricity billing</td></tr>
-</table>
+<div class="card">
 
-</section>
+<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80">
 
-<section id="components" class="section">
-
-<h2>8. Basic Circuit Elements</h2>
-
-<table>
-<tr>
-<th>Component</th>
-<th>Symbol</th>
-<th>Function</th>
-</tr>
-
-<tr>
-<td>Resistor</td>
-<td>R</td>
-<td>Opposes current flow</td>
-</tr>
-
-<tr>
-<td>Capacitor</td>
-<td>C</td>
-<td>Stores electric charge</td>
-</tr>
-
-<tr>
-<td>Inductor</td>
-<td>L</td>
-<td>Stores magnetic energy</td>
-</tr>
-
-</table>
-
-<h3>Passive Components</h3>
-
-<svg viewBox="0 0 420 90">
-
-<text x="20" y="18" font-size="9">Resistor</text>
-<line x1="20" y1="45" x2="40" y2="45" stroke="black"/>
-<polyline points="40,45 50,35 60,55 70,35 80,55 90,35 100,45"
-stroke="black" fill="none"/>
-<line x1="100" y1="45" x2="120" y2="45" stroke="black"/>
-
-<text x="150" y="18" font-size="9">Capacitor</text>
-<line x1="150" y1="45" x2="170" y2="45" stroke="black"/>
-<line x1="170" y1="30" x2="170" y2="60" stroke="black" stroke-width="2"/>
-<line x1="185" y1="30" x2="185" y2="60" stroke="black" stroke-width="2"/>
-<line x1="185" y1="45" x2="205" y2="45" stroke="black"/>
-
-<text x="260" y="18" font-size="9">Inductor</text>
-<line x1="250" y1="45" x2="265" y2="45" stroke="black"/>
-<path d="M265 45 a7 7 0 0 1 14 0
-         a7 7 0 0 1 14 0
-         a7 7 0 0 1 14 0
-         a7 7 0 0 1 14 0"
-stroke="black" fill="none"/>
-<line x1="321" y1="45" x2="335" y2="45" stroke="black"/>
-
-</svg>
-
-</section>
-
-<section id="signals" class="section">
-
-<h2>9. Waveforms & Signals</h2>
+<h3>3. Medical</h3>
 
 <p>
-A waveform represents the variation of voltage or current with respect to time.
+MRI, CT Scanner, ECG machine, Pacemaker, Ultrasound and Pulse Oximeter help
+doctors in diagnosis and patient monitoring.
 </p>
 
-<table>
-<tr>
-<th>Waveform</th>
-<th>Application</th>
-</tr>
-
-<tr>
-<td>Sine Wave</td>
-<td>AC Power Supply</td>
-</tr>
-
-<tr>
-<td>Square Wave</td>
-<td>Digital Electronics</td>
-</tr>
-
-<tr>
-<td>Triangular Wave</td>
-<td>Function Generator</td>
-</tr>
-
-</table>
-
-<h3>Common Waveforms</h3>
-
-<svg viewBox="0 0 420 140">
-
-<line x1="10" y1="20" x2="10" y2="120" stroke="#555"/>
-<line x1="10" y1="70" x2="400" y2="70" stroke="#999"/>
-
-<path d="M10 70
-C30 20 50 20 70 70
-S110 120 130 70
-S170 20 190 70
-S230 120 250 70
-S290 20 310 70
-S350 120 370 70"
-stroke="#1976D2" fill="none" stroke-width="2"/>
-
-<text x="20" y="15" font-size="8" fill="#1976D2">Sine</text>
-
-<polyline points="10,125 10,110 40,110 40,125 70,125 70,110 100,110 100,125"
-stroke="#16A34A" fill="none" stroke-width="2"/>
-
-<text x="120" y="118" font-size="8" fill="#16A34A">Square</text>
-
-<polyline points="220,125 240,95 260,125 280,95 300,125 320,95 340,125"
-stroke="#EA580C" fill="none" stroke-width="2"/>
-
-<text x="345" y="118" font-size="8" fill="#EA580C">Triangular</text>
-
-</svg>
-
-</section>
-
-<section id="ohm" class="section">
-
-<h2>10. Ohm's Law</h2>
-
-<div class="info">
-<b>Statement:</b> At constant temperature, the current flowing through a
-conductor is directly proportional to the applied voltage and inversely
-proportional to its resistance.
 </div>
 
-<div class="formula">
-V = I × R
-</div>
+<div class="card">
 
-<h3>Ohm's Law Triangle</h3>
+<img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80">
 
-<svg viewBox="0 0 220 180">
-
-<polygon points="110,15 25,155 195,155"
-fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
-
-<line x1="67" y1="85" x2="153" y2="85"
-stroke="#1976D2" stroke-width="2"/>
-
-<line x1="110" y1="85" x2="110" y2="155"
-stroke="#1976D2" stroke-width="2"/>
-
-<text x="110" y="55" font-size="22" text-anchor="middle"
-font-weight="bold" fill="#0B4AA2">V</text>
-
-<text x="68" y="128" font-size="22" text-anchor="middle"
-font-weight="bold" fill="#16A34A">I</text>
-
-<text x="152" y="128" font-size="22" text-anchor="middle"
-font-weight="bold" fill="#EA580C">R</text>
-
-</svg>
-
-<h3>Electrical Circuit</h3>
-
-<svg viewBox="0 0 340 120">
-
-<rect x="15" y="40" width="45" height="40"
-fill="#F59E0B"/>
-
-<text x="38" y="60" font-size="8" text-anchor="middle"
-fill="white">12V</text>
-
-<line x1="60" y1="60" x2="120" y2="60"
-stroke="#0B4AA2" stroke-width="2"/>
-
-<rect x="120" y="42" width="70" height="36"
-fill="#64748B"/>
-
-<text x="155" y="61" font-size="9" text-anchor="middle"
-fill="white">4 Ω</text>
-
-<line x1="190" y1="60" x2="280" y2="60"
-stroke="#0B4AA2" stroke-width="2"/>
-
-<polygon points="95,55 110,60 95,65"
-fill="#16A34A"/>
-
-<text x="92" y="42" font-size="8"
-fill="#16A34A">I</text>
-
-</svg>
-
-<h3>Worked Numerical</h3>
-
-<table>
-<tr><th>Given</th><th>Value</th></tr>
-<tr><td>Voltage</td><td>12 V</td></tr>
-<tr><td>Resistance</td><td>4 Ω</td></tr>
-<tr><td>Current</td><td>?</td></tr>
-</table>
-
-<h3>Solution</h3>
-
-<pre>
-V = I × R
-
-I = V / R
-
-I = 12 / 4
-
-I = 3 A
-</pre>
-
-<div class="info">
-<b>Answer:</b> Current flowing through the circuit = <b>3 Ampere</b>
-</div>
-
-</section>
-<!-- ========================================================= -->
-<!-- UNIT 1 VERSION 3.0 : KCL, KVL, SERIES-PARALLEL & STAR DELTA -->
-<!-- ========================================================= -->
-
-<section id="kcl" class="section">
-
-<h2>11. Kirchhoff's Current Law (KCL)</h2>
-
-<div class="info">
-<b>Statement:</b> The algebraic sum of all currents entering and leaving a node is always zero.
-</div>
-
-<div class="formula">
-ΣI = 0
-</div>
+<h3>4. Telecommunication</h3>
 
 <p>
-Kirchhoff's Current Law is based on the <b>Law of Conservation of Charge</b>. It states that electric charge cannot accumulate at a junction.
+Smartphones, satellite communication, fiber optic networks,
+internet infrastructure and wireless communication connect the world.
 </p>
 
-<h3>Node Diagram</h3>
-
-<svg viewBox="0 0 300 200">
-
-<circle cx="150" cy="100" r="8" fill="#0B4AA2"/>
-
-<line x1="150" y1="20" x2="150" y2="92" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="20" y1="100" x2="142" y2="100" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="158" y1="100" x2="280" y2="100" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="150" y1="108" x2="150" y2="180" stroke="#0B4AA2" stroke-width="2"/>
-
-<polygon points="145,40 150,30 155,40" fill="#16A34A"/>
-<polygon points="40,95 30,100 40,105" fill="#16A34A"/>
-<polygon points="260,95 270,100 260,105" fill="#DC2626"/>
-<polygon points="145,160 150,170 155,160" fill="#DC2626"/>
-
-<text x="160" y="28" font-size="10" fill="#16A34A">I₁</text>
-<text x="8" y="92" font-size="10" fill="#16A34A">I₂</text>
-<text x="250" y="92" font-size="10" fill="#DC2626">I₃</text>
-<text x="160" y="178" font-size="10" fill="#DC2626">I₄</text>
-
-</svg>
-
-<h3>Mathematical Form</h3>
-
-<div class="formula">
-I₁ + I₂ = I₃ + I₄
 </div>
 
-<h3>Solved Numerical</h3>
+<div class="card">
 
-<table>
-<tr><th>Given</th><th>Value</th></tr>
-<tr><td>I₁</td><td>4 A</td></tr>
-<tr><td>I₂</td><td>2 A</td></tr>
-<tr><td>I₃</td><td>3 A</td></tr>
-<tr><td>I₄</td><td>?</td></tr>
-</table>
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80">
 
-<h3>Solution</h3>
-
-<pre>
-I₁ + I₂ = I₃ + I₄
-
-4 + 2 = 3 + I₄
-
-I₄ = 3 A
-</pre>
-
-<div class="info">
-<b>Answer:</b> Current leaving the junction = <b>3 A</b>
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-
-<section id="kvl" class="section">
-
-<h2>12. Kirchhoff's Voltage Law (KVL)</h2>
-
-<div class="info">
-<b>Statement:</b> The algebraic sum of all voltages around any closed loop is always zero.
-</div>
-
-<div class="formula">
-ΣV = 0
-</div>
+<h3>5. Domestic Applications</h3>
 
 <p>
-KVL is based on the <b>Law of Conservation of Energy</b>. The total voltage supplied equals the total voltage consumed.
+Smart TVs, refrigerators, washing machines, microwave ovens,
+smart lighting, laptops and wearable devices make everyday life easier.
 </p>
 
-<h3>Closed Loop Circuit</h3>
-
-<svg viewBox="0 0 340 170">
-
-<rect x="25" y="55" width="45" height="55" fill="#F59E0B"/>
-<text x="48" y="82" font-size="10" text-anchor="middle" fill="white">10V</text>
-
-<line x1="70" y1="55" x2="140" y2="55" stroke="#0B4AA2" stroke-width="2"/>
-<rect x="140" y="40" width="45" height="30" fill="#64748B"/>
-<text x="162" y="58" font-size="8" text-anchor="middle" fill="white">R₁</text>
-
-<line x1="185" y1="55" x2="260" y2="55" stroke="#0B4AA2" stroke-width="2"/>
-<rect x="260" y="40" width="45" height="30" fill="#64748B"/>
-<text x="282" y="58" font-size="8" text-anchor="middle" fill="white">R₂</text>
-
-<line x1="305" y1="55" x2="305" y2="110" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="305" y1="110" x2="25" y2="110" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="25" y1="110" x2="25" y2="55" stroke="#0B4AA2" stroke-width="2"/>
-
-<path d="M95 95 A55 55 0 1 0 245 95" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="4 4"/>
-<polygon points="248,88 258,96 246,98" fill="#16A34A"/>
-<text x="170" y="135" font-size="9" fill="#16A34A">Loop Direction</text>
-
-</svg>
-
-<h3>Voltage Equation</h3>
-
-<div class="formula">
-+10 − 4 − 6 = 0
 </div>
 
-<h3>Solved Numerical</h3>
-
-<table>
-<tr><th>Supply</th><th>10 V</th></tr>
-<tr><td>R₁ Drop</td><td>4 V</td></tr>
-<tr><td>R₂ Drop</td><td>6 V</td></tr>
-</table>
-
-<h3>Verification</h3>
-
-<pre>
-ΣV = 0
-
-10 - 4 - 6
-
-= 0 ✔
-</pre>
-
-</section>
-
-<!-- ========================================================= -->
-
-<section id="series" class="section">
-
-<h2>13. Series & Parallel Circuits</h2>
-
-<h3>Series Circuit</h3>
-
-<p>
-In a series circuit, components are connected one after another. The same current flows through every resistor.
-</p>
-
-<svg viewBox="0 0 320 90">
-
-<line x1="20" y1="45" x2="60" y2="45" stroke="#0B4AA2" stroke-width="2"/>
-<rect x="60" y="30" width="40" height="30" fill="#64748B"/>
-<text x="80" y="48" font-size="8" text-anchor="middle" fill="white">R₁</text>
-
-<line x1="100" y1="45" x2="140" y2="45" stroke="#0B4AA2" stroke-width="2"/>
-<rect x="140" y="30" width="40" height="30" fill="#64748B"/>
-<text x="160" y="48" font-size="8" text-anchor="middle" fill="white">R₂</text>
-
-<line x1="180" y1="45" x2="220" y2="45" stroke="#0B4AA2" stroke-width="2"/>
-<rect x="220" y="30" width="40" height="30" fill="#64748B"/>
-<text x="240" y="48" font-size="8" text-anchor="middle" fill="white">R₃</text>
-
-<line x1="260" y1="45" x2="300" y2="45" stroke="#0B4AA2" stroke-width="2"/>
-
-</svg>
-
-<div class="formula">
-R = R₁ + R₂ + R₃
 </div>
 
-<h3>Parallel Circuit</h3>
-
-<p>
-In a parallel circuit, voltage across each branch remains the same while current divides among the branches.
-</p>
-
-<svg viewBox="0 0 260 150">
-
-<line x1="30" y1="20" x2="30" y2="130" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="230" y1="20" x2="230" y2="130" stroke="#0B4AA2" stroke-width="2"/>
-
-<rect x="90" y="25" width="80" height="18" fill="#64748B"/>
-<text x="130" y="38" font-size="8" text-anchor="middle" fill="white">R₁</text>
-
-<rect x="90" y="65" width="80" height="18" fill="#64748B"/>
-<text x="130" y="78" font-size="8" text-anchor="middle" fill="white">R₂</text>
-
-<rect x="90" y="105" width="80" height="18" fill="#64748B"/>
-<text x="130" y="118" font-size="8" text-anchor="middle" fill="white">R₃</text>
-
-<line x1="30" y1="34" x2="90" y2="34" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="170" y1="34" x2="230" y2="34" stroke="#0B4AA2" stroke-width="2"/>
-
-<line x1="30" y1="74" x2="90" y2="74" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="170" y1="74" x2="230" y2="74" stroke="#0B4AA2" stroke-width="2"/>
-
-<line x1="30" y1="114" x2="90" y2="114" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="170" y1="114" x2="230" y2="114" stroke="#0B4AA2" stroke-width="2"/>
-
-</svg>
-
-<div class="formula">
-1/R = 1/R₁ + 1/R₂ + 1/R₃
 </div>
-
-<h3>Comparison</h3>
-
-<table>
-<tr><th>Series</th><th>Parallel</th></tr>
-<tr><td>Current is same</td><td>Voltage is same</td></tr>
-<tr><td>Voltage divides</td><td>Current divides</td></tr>
-<tr><td>R increases</td><td>R decreases</td></tr>
-</table>
-
-</section>
-
-<!-- ========================================================= -->
-
-<section id="star" class="section">
-
-<h2>14. Star–Delta Transformation</h2>
-
-<p>
-Star–Delta transformation is used to simplify complex resistor networks that cannot be solved directly by series or parallel reduction.
-</p>
-
-<h3>Star Network</h3>
-
-<svg viewBox="0 0 220 180">
-
-<circle cx="110" cy="90" r="5" fill="#0B4AA2"/>
-
-<line x1="110" y1="90" x2="110" y2="25" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="110" y1="90" x2="35" y2="145" stroke="#0B4AA2" stroke-width="2"/>
-<line x1="110" y1="90" x2="185" y2="145" stroke="#0B4AA2" stroke-width="2"/>
-
-<text x="116" y="55" font-size="9" fill="#16A34A">R₁</text>
-<text x="55" y="120" font-size="9" fill="#EA580C">R₂</text>
-<text x="145" y="120" font-size="9" fill="#7C3AED">R₃</text>
-
-<text x="106" y="15" font-size="10" font-weight="bold">A</text>
-<text x="22" y="160" font-size="10" font-weight="bold">B</text>
-<text x="190" y="160" font-size="10" font-weight="bold">C</text>
-
-</svg>
-
-<h3>Delta Network</h3>
-
-<svg viewBox="0 0 220 180">
-
-<polygon points="110,20 30,150 190,150"
-fill="none" stroke="#0B4AA2" stroke-width="2"/>
-
-<text x="72" y="88" font-size="9" fill="#16A34A">RAB</text>
-<text x="145" y="88" font-size="9" fill="#EA580C">RAC</text>
-<text x="95" y="165" font-size="9" fill="#7C3AED">RBC</text>
-
-<text x="106" y="12" font-size="10" font-weight="bold">A</text>
-<text x="20" y="160" font-size="10" font-weight="bold">B</text>
-<text x="194" y="160" font-size="10" font-weight="bold">C</text>
-
-</svg>
-
-<h3>Important Formula</h3>
-
-<div class="formula">
-RAB = (R₁R₂ + R₂R₃ + R₃R₁) / R₃
-</div>
-
-<p>
-Similarly, RAC and RBC are obtained by dividing the numerator by the opposite Star resistance.
-</p>
-
-</section>
-
-<!-- ========================================================= -->
-
-<section id="numericals" class="section">
-
-<h2>15. Practice Numericals</h2>
-
-<table>
-<tr>
-<th>Numerical</th>
-<th>Answer</th>
-</tr>
-
-<tr>
-<td>Find current when V = 24 V and R = 8 Ω</td>
-<td>3 A</td>
-</tr>
-
-<tr>
-<td>Find resistance when V = 18 V and I = 3 A</td>
-<td>6 Ω</td>
-</tr>
-
-<tr>
-<td>Find power when V = 12 V and I = 2 A</td>
-<td>24 W</td>
-</tr>
-
-<tr>
-<td>Find energy for 100 W lamp used for 2 hours</td>
-<td>0.2 kWh</td>
-</tr>
-
-<tr>
-<td>Equivalent resistance of 4 Ω and 6 Ω in series</td>
-<td>10 Ω</td>
-</tr>
-
-<tr>
-<td>Equivalent resistance of 6 Ω and 3 Ω in parallel</td>
-<td>2 Ω</td>
-</tr>
-
-</table>
-
-</section>
-
-<!-- ========================================================= -->
-
-<section id="viva" class="section">
-
-<h2>16. Viva Questions</h2>
-
-<ol>
-<li>State Ohm's Law.</li>
-<li>What is the SI unit of current?</li>
-<li>Differentiate voltage and EMF.</li>
-<li>State Kirchhoff's Current Law.</li>
-<li>State Kirchhoff's Voltage Law.</li>
-<li>Why does current remain constant in series circuit?</li>
-<li>Why does voltage remain constant in parallel circuit?</li>
-<li>What is Star–Delta transformation used for?</li>
-<li>Which instrument measures electrical power?</li>
-<li>Define electrical energy.</li>
-</ol>
-
-</section>
-</main>
 
 </div>
 
 <footer>
-Version 2.0 | Learn with Abhi | © 2026
+
+Prepared by <b>Mr. Abhijit S. Shinde</b> |
+Learn with Abhi
+
 </footer>
 
 </body>
