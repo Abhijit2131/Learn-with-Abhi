@@ -261,6 +261,15 @@ Section 3
 
 <hr style="margin:14px 0;">
 
+Section 4
+</p>
+
+<li><a href="#waveform">4. Waveform Representation</a></li>
+<li><a href="#wave-rep">4.1 Waveform</a></li>
+<li><a href="#signal-char">4.2 Signal Characteristics</a></li>
+
+<hr style="margin:14px 0;">
+
 <a href="../index.html">🏠 Back to Home</a>
 
 </aside>
@@ -1346,6 +1355,265 @@ I = Current
 <div class="note">
 <b>Quick Comparison</b><br>
 Resistor → Opposes current | Capacitor → Stores electric field energy | Inductor → Stores magnetic field energy
+</div>
+
+  <!-- ===================================================== -->
+<!-- 4. WAVEFORM REPRESENTATION & SIGNAL CHARACTERISTICS -->
+<!-- ===================================================== -->
+
+<div class="section" id="waveform">
+
+<h2>4. Waveform Representation & Signal Characteristics</h2>
+
+<p>
+In electrical and electronics engineering, voltage and current vary with time.
+This variation is represented graphically using a <b>waveform</b>. Understanding
+waveform characteristics is essential for analysing AC circuits and signals.
+</p>
+
+<div class="note">
+<b>Learning Outcome:</b><br>
+After this section you will be able to identify waveform, full cycle,
+frequency, time period and amplitude of an AC signal.
+</div>
+
+<!-- ===================================================== -->
+<!-- 4.1 Waveform Representation -->
+<!-- ===================================================== -->
+
+<h2 id="wave-rep">4.1 Waveform Representation</h2>
+
+<div style="text-align:center;margin:20px 0;">
+<img src="../assets/images/unit1/waveform.png"
+style="max-width:700px;width:100%;border-radius:12px;border:1px solid #DCE5F0;">
+<p style="color:#64748B;font-size:14px;margin-top:8px;">
+Sinusoidal AC Waveform Representation
+</p>
+</div>
+
+<h3>Definition</h3>
+
+<div class="definition">
+A <b>waveform</b> is the graphical representation of the magnitude of an electrical quantity
+(Voltage or Current) on the <b>Y-axis</b> with respect to <b>Time</b> on the X-axis.
+The most common waveform in AC systems is the <b>sine wave</b>, although square,
+triangular and sawtooth waveforms also exist.
+</div>
+
+<h3>Mathematical Expression of Instantaneous Voltage</h3>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:28px;font-weight:bold;color:#0B4AA2;">
+v(t) = V<sub>m</sub> sin ωt
+</div>
+</div>
+
+<h3>Where,</h3>
+
+<table class="comparison">
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>v(t)</td>
+<td>Instantaneous value of voltage (or current)</td>
+</tr>
+<tr>
+<td>V<sub>m</sub></td>
+<td>Maximum (Peak) Voltage</td>
+</tr>
+<tr>
+<td>ω</td>
+<td>Angular Frequency (ω = 2πf)</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Time in seconds</td>
+</tr>
+</table>
+
+<div class="note">
+<b>Important:</b> If the equation represents current, simply replace
+<b>V<sub>m</sub></b> with <b>I<sub>m</sub></b>.
+</div>
+
+<!-- ===================================================== -->
+<!-- 4.2 Signal Characteristics -->
+<!-- ===================================================== -->
+
+<h2 id="signal-char">4.2 Signal Characteristics</h2>
+
+<div style="text-align:center;margin:20px 0;">
+<img src="../assets/images/unit1/wavechar.png"
+style="max-width:700px;width:100%;border-radius:12px;border:1px solid #DCE5F0;">
+<p style="color:#64748B;font-size:14px;margin-top:8px;">
+Important Characteristics of an AC Waveform
+</p>
+</div>
+
+<!-- Full Cycle -->
+
+<h3>1. Full Cycle</h3>
+
+<div class="definition">
+A <b>Full Cycle</b> is one complete oscillation of an AC waveform consisting of one
+<b>positive half-cycle</b> and one <b>negative half-cycle</b>. This pattern repeats continuously.
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Positive Half Cycle</h3>
+<p>
+The portion of the waveform above the zero reference line.
+It starts from zero, reaches the maximum positive value and returns to zero.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Negative Half Cycle</h3>
+<p>
+The portion below the zero reference line.
+It starts from zero, reaches the maximum negative value and returns to zero.
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- Frequency -->
+
+<h3>2. Frequency (f)</h3>
+
+<div class="definition">
+Frequency is the number of complete cycles produced in <b>one second</b>.
+It is measured in <b>Hertz (Hz)</b>.
+</div>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:28px;font-weight:bold;color:#0B4AA2;">
+f = 1 / T
+</div>
+</div>
+
+<table class="comparison">
+<tr>
+<th>Country</th>
+<th>Supply Frequency</th>
+</tr>
+<tr>
+<td>India / Asian Countries</td>
+<td><b>50 Hz</b></td>
+</tr>
+<tr>
+<td>United States</td>
+<td><b>60 Hz</b></td>
+</tr>
+</table>
+
+<!-- Time Period -->
+
+<h3>3. Time Period (T)</h3>
+
+<div class="definition">
+Time period is the time required to complete <b>one full cycle</b> of an AC waveform.
+It is measured in <b>seconds (s)</b> or milliseconds.
+</div>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:28px;font-weight:bold;color:#0B4AA2;">
+T = 1 / f
+</div>
+</div>
+
+<!-- Amplitude -->
+
+<h3>4. Amplitude (Peak Value)</h3>
+
+<div class="definition">
+Amplitude is the <b>maximum value</b> of voltage or current reached during one cycle.
+It is also called the <b>Peak Value</b>.
+</div>
+
+<table class="comparison">
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+</tr>
+<tr>
+<td>Peak Voltage</td>
+<td>V<sub>m</sub></td>
+</tr>
+<tr>
+<td>Peak Current</td>
+<td>I<sub>m</sub></td>
+</tr>
+</table>
+
+<div class="note">
+<b>Remember:</b><br>
+Amplitude tells us <b>how high</b> the waveform rises,
+while Frequency tells us <b>how fast</b> it repeats.
+</div>
+
+<!-- Summary -->
+
+<h2>4.3 Summary Table</h2>
+
+<table class="comparison">
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Unit</th>
+<th>Formula</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Frequency</td>
+<td>f</td>
+<td>Hertz (Hz)</td>
+<td>f = 1/T</td>
+<td>Number of cycles per second</td>
+</tr>
+
+<tr>
+<td>Time Period</td>
+<td>T</td>
+<td>Second (s)</td>
+<td>T = 1/f</td>
+<td>Time required for one cycle</td>
+</tr>
+
+<tr>
+<td>Amplitude</td>
+<td>V<sub>m</sub>, I<sub>m</sub></td>
+<td>Volt / Ampere</td>
+<td>Maximum Value</td>
+<td>Peak value of waveform</td>
+</tr>
+
+<tr>
+<td>Full Cycle</td>
+<td>—</td>
+<td>Cycle</td>
+<td>Positive + Negative Half Cycle</td>
+<td>One complete oscillation</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Exam Tip:</b><br>
+Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
+<b>Amplitude</b> and draw a labelled AC waveform. Make sure your uploaded
+<b>wavechar.png</b> clearly shows all these parameters.
+</div>
+
 </div>
 
 </div>
