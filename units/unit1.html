@@ -11,6 +11,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -19,50 +20,98 @@ color:#17345E;
 line-height:1.7;
 }
 
+/* Header */
+
 header{
-background:#0B4AA2;
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
 color:white;
-padding:18px 8%;
+padding:22px 8%;
 }
 
 header h1{
-font-size:32px;
+font-size:34px;
+margin-bottom:5px;
 }
 
 header p{
-opacity:.9;
+opacity:.95;
 }
 
+/* Layout */
+
 .container{
-width:88%;
-margin:35px auto;
+width:92%;
+margin:30px auto;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:25px;
+align-items:start;
+}
+
+/* Left Navigation */
+
+.toc{
+position:sticky;
+top:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.toc h3{
+color:#0B4AA2;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.toc a{
+display:block;
+padding:10px 12px;
+text-decoration:none;
+color:#17345E;
+border-radius:8px;
+font-size:14px;
+margin-bottom:6px;
+transition:.3s;
+}
+
+.toc a:hover{
+background:#EAF4FF;
+color:#0B4AA2;
+padding-left:18px;
+font-weight:bold;
+}
+
+/* Content */
+
+.content{
+display:flex;
+flex-direction:column;
+gap:25px;
 }
 
 .section{
 background:white;
 padding:30px;
-margin-bottom:30px;
 border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-h2{
+.section h2{
 color:#0B4AA2;
-margin-bottom:15px;
 border-left:5px solid #2196F3;
 padding-left:12px;
+margin-bottom:15px;
 }
 
 .definition{
 background:#EAF4FF;
-padding:20px;
+padding:18px;
 border-left:6px solid #0B4AA2;
 border-radius:10px;
-margin-top:15px;
-}
-
-.definition b{
-color:#0B4AA2;
+margin:18px 0;
 }
 
 .note{
@@ -73,18 +122,20 @@ border-radius:8px;
 margin-top:15px;
 }
 
+/* Cards */
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:20px;
 margin-top:20px;
 }
 
 .card{
+background:white;
 border:1px solid #E3EAF4;
 border-radius:12px;
 overflow:hidden;
-background:white;
 transition:.3s;
 }
 
@@ -102,14 +153,16 @@ object-fit:cover;
 .card h3{
 padding:15px 15px 5px;
 color:#0B4AA2;
+font-size:18px;
 }
 
 .card p{
-padding:0 15px 15px;
+padding:0 15px 18px;
 font-size:14px;
 color:#555;
 }
-/* Comparison Table */
+
+/* Table */
 
 .comparison{
 width:100%;
@@ -122,7 +175,6 @@ font-size:15px;
 background:#0B4AA2;
 color:white;
 padding:14px;
-text-align:center;
 }
 
 .comparison td{
@@ -135,23 +187,28 @@ vertical-align:top;
 background:#F8FBFF;
 }
 
-.comparison tr:hover{
-background:#EEF6FF;
-}
-  
+/* Footer */
+
 footer{
 text-align:center;
-padding:25px;
+padding:30px;
 color:#64748B;
 font-size:14px;
 }
 
-.back{
-display:inline-block;
-margin-bottom:20px;
-text-decoration:none;
-color:#0B4AA2;
-font-weight:bold;
+/* Mobile */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.toc{
+position:relative;
+top:0;
+}
+
 }
 </style>
 
@@ -160,159 +217,140 @@ font-weight:bold;
 <body>
 
 <header>
-
 <h1>UNIT 1 : DC Electric Circuit</h1>
-
 <p>Fundamentals of Electrical & Electronics Engineering</p>
-
 </header>
 
 <div class="container">
 
-<a href="../index.html" class="back">← Back to Home</a>
+<!-- LEFT PALETTE -->
 
-<!-- Definition -->
+<aside class="toc">
 
-<div class="section">
+<h3>📘 Unit 1 Contents</h3>
+
+<a href="#electronics">1.1 Definition of Electronics</a>
+<a href="#eapp">1.2 Applications of Electronics</a>
+<a href="#electrical">1.3 Definition of Electrical</a>
+<a href="#elapp">1.4 Applications of Electrical</a>
+<a href="#difference">1.5 Electrical vs Electronics</a>
+
+<hr style="margin:15px 0;">
+
+<p style="font-size:13px;color:#64748B;margin-bottom:10px;">
+Upcoming Topics
+</p>
+
+<a href="#current">1.6 Electric Current</a>
+<a href="#emf">1.7 Electromotive Force</a>
+<a href="#voltage">1.8 Potential Difference</a>
+<a href="#power">1.9 Electric Power</a>
+<a href="#energy">1.10 Electrical Energy</a>
+<a href="#ohm">1.11 Ohm's Law</a>
+
+<hr style="margin:15px 0;">
+
+<a href="../index.html">🏠 Back to Home</a>
+
+</aside>
+
+<!-- RIGHT CONTENT -->
+
+<div class="content">
+
+<!-- Electronics -->
+
+<section class="section" id="electronics">
 
 <h2>1.1 Definition of Electronics</h2>
 
 <p>
 Electronics is one of the most important branches of engineering that deals with
-the behaviour and control of electrons in electronic devices and circuits.
+the behaviour, control and utilization of electrons in electronic devices and circuits.
 </p>
 
 <div class="definition">
 
-<p><b>Definition (IRE):</b></p>
+<b>Definition (Institute of Radio Engineering – IRE)</b>
 
-<p>
-"According to the Institute of Radio Engineering (IRE), Electronics is a branch
-of Science and Engineering which deals with the study of electronic devices,
-their processing and utilization."
+<p style="margin-top:10px;">
+“According to IRE (Institute of Radio Engineering), Electronics is a Branch of Science and Engineering which deals with the study of electronic devices, its processing and utilization.”
 </p>
 
 </div>
 
 <div class="note">
 
-<b>Simple Meaning:</b><br>
-Electronics is the branch of engineering that studies devices such as
-<strong>Diodes, Transistors, ICs, Sensors and Microprocessors</strong> used for
-processing, controlling and transmitting electrical signals.
+<b>Simple Meaning:</b><br><br>
+
+Electronics studies devices such as <b>Diodes, Transistors, ICs, Sensors and Microprocessors</b> which are used for processing, controlling and transmitting electrical signals.
 
 </div>
 
-</div>
+</section>
 
-<!-- Applications -->
+<!-- Electronics Applications -->
 
-<div class="section">
+<section class="section" id="eapp">
 
 <h2>1.2 Applications of Electronics</h2>
 
 <p>
-Electronics plays a crucial role across many sectors including defense,
-industrial automation, healthcare, telecommunication and domestic appliances.
-Modern life is highly dependent on electronic systems for communication,
-automation and intelligent control.
+Electronics plays a crucial role across many sectors, from defense and industrial automation to healthcare, telecommunication and domestic applications.
 </p>
 
 <div class="grid">
 
 <div class="card">
-
 <img src="../assets/images/unit1/defense.jpg">
-
 <h3>1. Defense</h3>
-
-<p>
-Radar systems, missile guidance, military drones, secure satellite
-communication, sonar and night vision equipment strengthen national security.
-</p>
-
+<p>Radar, missile guidance, drones, secure satellite communication, sonar and night vision systems enhance national security.</p>
 </div>
 
 <div class="card">
-
 <img src="../assets/images/unit1/industrial.jpg">
-
 <h3>2. Industrial & Instrumentation</h3>
-
-<p>
-PLCs, industrial robots, inverters, oscilloscopes, multimeters,
-flow meters and pressure sensors are used for automation and process control.
-</p>
-
+<p>PLCs, robots, inverters, oscilloscopes, multimeters, flow meters and pressure sensors are widely used for automation.</p>
 </div>
 
 <div class="card">
-
 <img src="../assets/images/unit1/medical.jpg">
-
 <h3>3. Medical</h3>
-
-<p>
-MRI, CT Scanner, ECG machine, Pacemaker, Ultrasound and Pulse Oximeter help
-doctors in diagnosis and patient monitoring.
-</p>
-
+<p>MRI, CT scanners, ECG machines, pacemakers, ultrasound equipment and pulse oximeters assist in diagnosis and patient care.</p>
 </div>
 
 <div class="card">
-
 <img src="../assets/images/unit1/telecom.jpg">
-
 <h3>4. Telecommunication</h3>
-
-<p>
-Smartphones, satellite communication, fiber optic networks,
-internet infrastructure and wireless communication connect the world.
-</p>
-
+<p>Smartphones, satellite communication, fiber optic networks and wireless communication enable global connectivity.</p>
 </div>
 
 <div class="card">
-
 <img src="../assets/images/unit1/domestic.jpg">
-
-<h3>5. Domestic Applications</h3>
-
-<p>
-Smart TVs, refrigerators, washing machines, microwave ovens,
-smart lighting, laptops and wearable devices make everyday life easier.
-</p>
-
+<h3>5. Domestic</h3>
+<p>Smart TVs, refrigerators, washing machines, microwave ovens, smart lighting and wearable devices improve daily life.</p>
 </div>
 
 </div>
 
-</div>
+</section>
 
-</div>
+<!-- Electrical -->
 
-  <!-- ===================================================== -->
-<!-- 1.3 Definition of Electrical Engineering -->
-<!-- ===================================================== -->
-
-<div class="section">
+<section class="section" id="electrical">
 
 <h2>1.3 Definition of Electrical Engineering</h2>
 
 <p>
-Electrical Engineering is one of the oldest branches of engineering concerned
-with the generation, transmission, distribution and utilization of electrical
-power for domestic, commercial and industrial applications.
+Electrical Engineering is the branch of engineering concerned with the generation, transmission, distribution and utilization of electrical power.
 </p>
 
 <div class="definition">
 
-<p><b>Definition:</b></p>
+<b>Definition</b>
 
-<p>
-Electrical Engineering is the branch of engineering that deals with the study of
-generation, transmission, distribution and utilization of electrical power using
-devices such as generators, transformers, motors and transmission lines.
+<p style="margin-top:10px;">
+Electrical Engineering is the branch of engineering that deals with the study of generation, transmission, distribution and utilization of electrical power using devices such as generators, transformers, motors and transmission lines.
 </p>
 
 </div>
@@ -323,166 +361,123 @@ devices such as generators, transformers, motors and transmission lines.
 
 </div>
 
-</div>
+</section>
 
-<!-- ===================================================== -->
-<!-- 1.4 Applications of Electrical Engineering -->
-<!-- ===================================================== -->
+<!-- Electrical Applications -->
 
-<div class="section">
+<section class="section" id="elapp">
 
 <h2>1.4 Applications of Electrical Engineering</h2>
 
 <p>
-Electrical engineering focuses on producing and delivering electrical energy from
-power plants to consumers. It plays an essential role in industries,
-transportation, agriculture and residential infrastructure.
+Electrical engineering deals with the generation, transmission, distribution and utilization of electrical power for domestic, commercial and industrial applications.
 </p>
 
 <div class="grid">
 
 <div class="card">
-
-<img src="../assets/images/unit1/powergen.jpg" alt="Power Generation">
-
-<h3>1. Power Generation & Distribution</h3>
-
-<p>
-Electricity is generated in thermal, hydro, solar and wind power plants and
-distributed through transformers, substations and transmission lines.
-</p>
-
+<img src="../assets/images/unit1/powergen.jpg">
+<h3>1. Power Generation</h3>
+<p>Thermal, hydro, solar and wind power plants generate electricity which is supplied through transformers, substations and transmission lines.</p>
 </div>
 
 <div class="card">
-
-<img src="../assets/images/unit1/industrialele.jpg" alt="Industrial Applications">
-
-<h3>2. Industrial Applications</h3>
-
-<p>
-Electric motors, generators, industrial drives and protection systems operate
-machines and improve productivity in modern industries.
-</p>
-
+<img src="../assets/images/unit1/industrialele.jpg">
+<h3>2. Industrial</h3>
+<p>Electric motors, generators, industrial drives and protection systems operate industrial machines efficiently.</p>
 </div>
 
 <div class="card">
-
-<img src="../assets/images/unit1/transp.jpg" alt="Transportation">
-
+<img src="../assets/images/unit1/transp.jpg">
 <h3>3. Transportation</h3>
-
-<p>
-Electric vehicles, metro railways, elevators, escalators and EV charging
-stations depend on reliable electrical power systems.
-</p>
-
+<p>Electric vehicles, metro railways, elevators, escalators and EV charging stations depend on electrical power.</p>
 </div>
 
 <div class="card">
-
-<img src="../assets/images/unit1/agri.jpg" alt="Agriculture">
-
-<h3>4. Agricultural Applications</h3>
-
-<p>
-Irrigation pumps, solar pumping systems, dairy equipment, grain processing
-machines and cold storage improve agricultural efficiency.
-</p>
-
+<img src="../assets/images/unit1/agri.jpg">
+<h3>4. Agriculture</h3>
+<p>Irrigation pumps, solar pumping systems, dairy equipment, grain processing machines and cold storage improve agricultural productivity.</p>
 </div>
 
 <div class="card">
-
-<img src="../assets/images/unit1/domele.jpg" alt="Domestic Applications">
-
+<img src="../assets/images/unit1/domele.jpg">
 <h3>5. Domestic & Commercial</h3>
-
-<p>
-Lighting systems, HVAC, water pumps, electrical wiring and commercial power
-distribution are essential in homes and buildings.
-</p>
-
+<p>Lighting systems, HVAC, water pumps, electrical wiring and commercial power distribution are essential in buildings.</p>
 </div>
 
 </div>
 
-</div>
+</section>
 
-<!-- ===================================================== -->
-<!-- 1.5 Difference Between Electrical & Electronics -->
-<!-- ===================================================== -->
+<!-- Difference -->
 
-<div class="section">
+<section class="section" id="difference">
 
 <h2>1.5 Difference Between Electrical & Electronics Engineering</h2>
 
 <p>
-Although both branches deal with electricity, their area of application and
-working principles are different. Electrical engineering mainly handles
-<strong>high-power AC systems</strong>, whereas electronics engineering deals
-with <strong>low-power DC electronic circuits</strong>.
+Electrical Engineering mainly deals with <b>power</b>, whereas Electronics Engineering deals with <b>signals and information processing</b>.
 </p>
 
 <table class="comparison">
 
 <tr>
-
 <th>Electrical Engineering</th>
-
 <th>Electronics Engineering</th>
-
 </tr>
 
 <tr>
-
-<td>Deals with <b>high voltage</b> and <b>high current</b> power systems.</td>
-
-<td>Deals with <b>low voltage</b> and <b>low current</b> electronic systems.</td>
-
+<td>High voltage & high current systems</td>
+<td>Low voltage & low current systems</td>
 </tr>
 
 <tr>
-
-<td>Mainly uses <b>AC (Alternating Current)</b>.</td>
-
-<td>Mainly uses <b>DC (Direct Current)</b>.</td>
-
+<td>Mainly uses AC</td>
+<td>Mainly uses DC</td>
 </tr>
 
 <tr>
-
-<td>Focuses on generation, transmission, distribution and utilization of electrical energy.</td>
-
-<td>Focuses on control, processing and communication of electronic signals.</td>
-
+<td>Generation, transmission & distribution of power</td>
+<td>Control, processing & communication of signals</td>
 </tr>
 
 <tr>
-
-<td>Uses generators, transformers, motors and transmission lines.</td>
-
-<td>Uses diodes, transistors, ICs and microprocessors.</td>
-
+<td>Generators, Transformers, Motors</td>
+<td>Diodes, Transistors, ICs, Microprocessors</td>
 </tr>
 
 <tr>
-
-<td>Examples: Power plants, substations and electric motors.</td>
-
-<td>Examples: Mobile phones, computers, televisions and medical devices.</td>
-
+<td>Power plants, substations, electric motors</td>
+<td>Mobile phones, computers, televisions, medical devices</td>
 </tr>
 
 </table>
 
 <div class="note">
 
-<b>Memory Tip:</b><br>
+<b>Memory Tip</b><br><br>
 
-⚡ <b>Electrical = Power</b> (Generation & Distribution)<br>
-🔋 <b>Electronics = Signals</b> (Control & Communication)
+⚡ <b>Electrical Engineering = Power Engineering</b><br>
+Generation • Transmission • Distribution • Utilization
+
+<br><br>
+
+🔋 <b>Electronics Engineering = Signal Engineering</b><br>
+Control • Processing • Communication • Automation
+
+</div>
+
+</section>
+
+<!-- Placeholder -->
+
+<section class="section" id="current">
+
+<h2>1.6 Electric Current</h2>
+
+<p><i>Next topic will be added in Part 2...</i></p>
+
+</section>
 
 </div>
 
@@ -490,8 +485,9 @@ with <strong>low-power DC electronic circuits</strong>.
 
 <footer>
 
-Prepared by <b>Mr. Abhijit S. Shinde</b> |
-Learn with Abhi
+Prepared & Developed by <b>Mr. Abhijit S. Shinde</b><br>
+
+Learn with Abhi © 2026
 
 </footer>
 
