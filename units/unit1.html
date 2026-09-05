@@ -252,6 +252,14 @@ Section 2
 <a href="#summary">2.4 Summary</a>
 
 <hr style="margin:14px 0;">
+Section 3
+</p>
+
+<a href="#resistor">3.1 Resistor</a>
+<a href="#capacitor">3.2 Capacitor</a>
+<a href="#inductor">3.3 Inductor</a>
+
+<hr style="margin:14px 0;">
 
 <a href="../index.html">🏠 Back to Home</a>
 
@@ -909,6 +917,272 @@ font-weight="bold" fill="#DC2626">I</text>
 
 <b>Remember:</b> Current is the **flow**, Voltage is the **driving force**, and Power is the **rate of energy consumption**.
 
+</div>
+
+</section>
+
+  <!-- ===================================================== -->
+<!-- SECTION 3 : PASSIVE ELECTRONIC COMPONENTS -->
+<!-- ===================================================== -->
+
+<section class="section" id="resistor">
+
+<h2>3. Passive Electronic Components</h2>
+
+<p>
+Passive electronic components are devices that do not generate electrical energy.
+They either oppose, store or transfer electrical energy in an electrical circuit.
+The three fundamental passive components are <b>Resistor</b>, <b>Capacitor</b> and
+<b>Inductor</b>.
+</p>
+
+<div class="note">
+<b>Remember:</b><br>
+⚡ Resistor → Opposes Current &nbsp;&nbsp;&nbsp;
+🔋 Capacitor → Stores Electric Charge &nbsp;&nbsp;&nbsp;
+🧲 Inductor → Stores Magnetic Energy
+</div>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- RESISTOR -->
+<!-- ===================================================== -->
+
+<h2>3.1 Resistor</h2>
+
+<p>
+A resistor is an electrical component that limits or regulates the flow of electric current in a circuit.
+It is one of the most basic and widely used components in electronics.
+</p>
+
+<div class="definition">
+<b>Important Concept</b><br><br>
+<b>Resistor</b> is the physical component, whereas <b>Resistance</b> is its electrical value measured in Ohms (Ω).
+</div>
+
+<h3>Definition</h3>
+
+<div class="definition">
+A resistor is a passive two-terminal device that opposes the flow of electric current
+by converting electrical energy into heat. The amount of resistance it offers is measured in <b>Ohms (Ω)</b>.
+</div>
+
+<h3>Denoted By</h3>
+
+<table class="comparison">
+<tr><th>Parameter</th><th>Value</th></tr>
+<tr><td>Symbol</td><td><b>R</b></td></tr>
+<tr><td>SI Unit</td><td>Ohm (Ω)</td></tr>
+<tr><td>Example</td><td>R = 10 Ω</td></tr>
+</table>
+
+<h3>Resistor Symbol</h3>
+
+<div style="text-align:center;margin:20px 0;">
+<svg viewBox="0 0 300 90" width="100%" height="90">
+<line x1="20" y1="45" x2="55" y2="45" stroke="#17345E" stroke-width="3"/>
+<path d="M55 45 L70 25 L85 65 L100 25 L115 65 L130 25 L145 65 L160 25 L175 45"
+stroke="#0B4AA2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="175" y1="45" x2="280" y2="45" stroke="#17345E" stroke-width="3"/>
+<text x="150" y="82" text-anchor="middle" font-size="13" fill="#64748B">
+Circuit Symbol of Resistor
+</text>
+</svg>
+</div>
+
+<h3>Types of Resistors</h3>
+
+<p>There are two main types of resistors:</p>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Fixed Resistors</h3>
+<p>These have a fixed resistance value that does not change.</p>
+<ul style="margin-left:18px;margin-top:10px;">
+<li>Carbon Composition</li>
+<li>Wire Wound</li>
+<li>Metal Film</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Variable Resistors</h3>
+<p>These allow resistance to be adjusted manually.</p>
+<ul style="margin-left:18px;margin-top:10px;">
+<li>Potentiometer</li>
+<li>Trimmer</li>
+<li>Rheostat</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- CLASSIFICATION DIAGRAM -->
+<!-- ===================================================== -->
+
+<h3>Classification of Resistor</h3>
+
+<div class="definition" style="text-align:center;">
+<b>Recreated from standard resistor classification</b>
+</div>
+
+<div style="overflow-x:auto;padding:10px 0;">
+
+<svg viewBox="0 0 700 300" width="100%" height="290">
+
+<!-- Root -->
+<rect x="280" y="15" width="140" height="36" rx="8" fill="#0B4AA2"/>
+<text x="350" y="38" fill="white" font-size="14" text-anchor="middle" font-weight="bold">Resistors</text>
+
+<!-- Branch -->
+<line x1="350" y1="51" x2="350" y2="72" stroke="#555" stroke-width="2"/>
+<line x1="150" y1="72" x2="550" y2="72" stroke="#555" stroke-width="2"/>
+
+<!-- Linear -->
+<line x1="150" y1="72" x2="150" y2="95" stroke="#555" stroke-width="2"/>
+<rect x="95" y="95" width="110" height="34" rx="6" fill="#DBEAFE" stroke="#60A5FA"/>
+<text x="150" y="116" font-size="12" text-anchor="middle" font-weight="bold">Linear</text>
+
+<!-- Nonlinear -->
+<line x1="550" y1="72" x2="550" y2="95" stroke="#555" stroke-width="2"/>
+<rect x="495" y="95" width="110" height="34" rx="6" fill="#FCE7F3" stroke="#EC4899"/>
+<text x="550" y="116" font-size="12" text-anchor="middle" font-weight="bold">Nonlinear</text>
+
+<!-- Linear Split -->
+<line x1="150" y1="129" x2="150" y2="150" stroke="#555" stroke-width="2"/>
+<line x1="40" y1="150" x2="260" y2="150" stroke="#555" stroke-width="2"/>
+
+<!-- Fixed -->
+<line x1="70" y1="150" x2="70" y2="172" stroke="#555" stroke-width="2"/>
+<rect x="20" y="172" width="100" height="32" rx="6" fill="#E0F2FE" stroke="#0EA5E9"/>
+<text x="70" y="191" font-size="11" text-anchor="middle" font-weight="bold">Fixed</text>
+
+<!-- Variable -->
+<line x1="230" y1="150" x2="230" y2="172" stroke="#555" stroke-width="2"/>
+<rect x="180" y="172" width="100" height="32" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+<text x="230" y="191" font-size="11" text-anchor="middle" font-weight="bold">Variable</text>
+
+<!-- Fixed children -->
+<line x1="70" y1="204" x2="70" y2="225" stroke="#555" stroke-width="1.5"/>
+<line x1="10" y1="225" x2="130" y2="225" stroke="#555" stroke-width="1.5"/>
+
+<line x1="20" y1="225" x2="20" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="0" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="20" y="262" font-size="7" text-anchor="middle">Carbon</text>
+
+<line x1="70" y1="225" x2="70" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="50" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="70" y="262" font-size="7" text-anchor="middle">Wire</text>
+
+<line x1="120" y1="225" x2="120" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="100" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="120" y="262" font-size="7" text-anchor="middle">Metal</text>
+
+<!-- Variable children -->
+<line x1="230" y1="204" x2="230" y2="225" stroke="#555" stroke-width="1.5"/>
+<line x1="180" y1="225" x2="280" y2="225" stroke="#555" stroke-width="1.5"/>
+
+<line x1="180" y1="225" x2="180" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="160" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="180" y="262" font-size="7" text-anchor="middle">Pot</text>
+
+<line x1="230" y1="225" x2="230" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="210" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="230" y="262" font-size="7" text-anchor="middle">Trim</text>
+
+<line x1="280" y1="225" x2="280" y2="245" stroke="#555" stroke-width="1.5"/>
+<rect x="260" y="245" width="40" height="28" rx="5" fill="#fff" stroke="#94A3B8"/>
+<text x="280" y="262" font-size="7" text-anchor="middle">Rheo</text>
+
+<!-- Nonlinear children -->
+<line x1="550" y1="129" x2="550" y2="150" stroke="#555" stroke-width="2"/>
+<line x1="470" y1="150" x2="630" y2="150" stroke="#555" stroke-width="2"/>
+
+<line x1="470" y1="150" x2="470" y2="172" stroke="#555" stroke-width="2"/>
+<rect x="430" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
+<text x="470" y="192" font-size="11" text-anchor="middle" font-weight="bold">LDR</text>
+
+<line x1="550" y1="150" x2="550" y2="172" stroke="#555" stroke-width="2"/>
+<rect x="510" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
+<text x="550" y="192" font-size="11" text-anchor="middle" font-weight="bold">Thermistor</text>
+
+<line x1="630" y1="150" x2="630" y2="172" stroke="#555" stroke-width="2"/>
+<rect x="590" y="172" width="80" height="32" rx="6" fill="#F3F4F6" stroke="#64748B"/>
+<text x="630" y="192" font-size="11" text-anchor="middle" font-weight="bold">VDR</text>
+
+</svg>
+
+</div>
+
+<h3>Formula of Resistance</h3>
+
+<div class="definition" style="text-align:center;font-size:26px;">
+<b>R = ρL / A</b>
+</div>
+
+<p><b>Where:</b></p>
+
+<ul style="margin-left:20px;">
+<li>R = Resistance (Ω)</li>
+<li>ρ = Resistivity of material</li>
+<li>L = Length of conductor</li>
+<li>A = Cross-sectional area of conductor</li>
+</ul>
+
+<!-- ===================================================== -->
+<!-- ADVANTAGES / DISADVANTAGES / APPLICATIONS -->
+<!-- ===================================================== -->
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Advantages</h3>
+<ul style="margin-left:18px;">
+<li>Simple design</li>
+<li>Cost-effective</li>
+<li>Stable operation</li>
+<li>Heat dissipation protects circuits</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Disadvantages</h3>
+<ul style="margin-left:18px;">
+<li>Energy loss as heat</li>
+<li>Limited control in fixed resistors</li>
+<li>Heat generation during overload</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Applications</h3>
+<ul style="margin-left:18px;">
+<li>Current limiting</li>
+<li>Voltage divider circuits</li>
+<li>Signal conditioning</li>
+<li>Transistor biasing</li>
+<li>Electric heaters</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div class="note">
+<b>Resistor Colour Coding:</b><br>
+Refer the solved classroom examples for 4-band and 5-band resistor colour code calculations.
 </div>
 
 </section>
