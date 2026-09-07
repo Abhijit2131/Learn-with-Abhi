@@ -297,6 +297,17 @@ Section 6
 
 <hr style="margin:14px 0;">
 
+Section 7
+</p>
+
+<a href="#stardelta">7.1 Star / Delta Transformation</a></li>
+<a href="#stardelta">7.2 Star Network</a></li>
+<a href="#stardelta">7.3 Delta Network</a></li>
+<a href="#stardelta">7.4 Live Demonstration</a></li>
+<a href="#stardelta">7.5 Numericals</a></li>
+
+<hr style="margin:14px 0;">
+
 <a href="../index.html">🏠 Back to Home</a>
 
 </aside>
@@ -3519,6 +3530,493 @@ RT = 1.09 Ω
 <b>Exam Tip:</b><br>
 If the question asks **same current**, think <b>Series Circuit</b>. If it asks **same voltage**, think <b>Parallel Circuit</b>.
 </div>
+
+<!-- ===================================================== -->
+<!-- 8. STAR / DELTA TRANSFORMATION -->
+<!-- ===================================================== -->
+
+<div class="section" id="stardelta">
+
+<h2>8. Star (Y) / Delta (Δ) Transformation</h2>
+
+<p>
+Star–Delta transformation is a network analysis technique used to convert a
+<b>Star (Y)</b> connected resistive network into an equivalent
+<b>Delta (Δ)</b> network and vice versa. It is especially useful when a circuit
+cannot be simplified using ordinary series–parallel reduction.
+</p>
+
+<div class="note">
+<b>Learning Outcome:</b><br>
+Students will be able to identify Star and Delta networks, perform Y–Δ conversion and solve numerical problems.
+</div>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- STAR NETWORK -->
+<!-- ===================================================== -->
+
+<h2>8.1 Star (Y) Network</h2>
+
+<div class="definition">
+A <b>Star (Y)</b> network consists of three resistors connected to a common central point. It is commonly used in three-phase electrical systems.
+</div>
+
+<h3>Star Circuit Diagram</h3>
+
+<div style="text-align:center;margin:20px 0;">
+
+<svg viewBox="0 0 320 220" width="100%" style="max-width:420px">
+
+<circle cx="160" cy="110" r="7" fill="#2563EB"/>
+
+<line x1="160" y1="103" x2="160" y2="40" stroke="#2563EB" stroke-width="3"/>
+<rect x="145" y="55" width="30" height="28" rx="4" fill="#DBEAFE" stroke="#2563EB"/>
+<text x="160" y="73" text-anchor="middle" font-size="10" font-weight="bold">Ra</text>
+
+<line x1="154" y1="116" x2="85" y2="160" stroke="#16A34A" stroke-width="3"/>
+<rect x="100" y="125" width="34" height="26" rx="4" fill="#D1FAE5" stroke="#16A34A" transform="rotate(-30 117 138)"/>
+<text x="117" y="142" text-anchor="middle" font-size="8" font-weight="bold" transform="rotate(-30 117 142)">Rb</text>
+
+<line x1="166" y1="116" x2="235" y2="160" stroke="#EC4899" stroke-width="3"/>
+<rect x="186" y="125" width="34" height="26" rx="4" fill="#FCE7F3" stroke="#EC4899" transform="rotate(30 203 138)"/>
+<text x="203" y="142" text-anchor="middle" font-size="8" font-weight="bold" transform="rotate(30 203 142)">Rc</text>
+
+<circle cx="160" cy="28" r="4" fill="#111827"/>
+<circle cx="70" cy="170" r="4" fill="#111827"/>
+<circle cx="250" cy="170" r="4" fill="#111827"/>
+
+<text x="168" y="22" font-size="11">A</text>
+<text x="52" y="184" font-size="11">B</text>
+<text x="258" y="184" font-size="11">C</text>
+<text x="170" y="122" font-size="10" fill="#2563EB">O</text>
+
+</svg>
+
+</div>
+
+<table class="comparison">
+<tr><th>Parameter</th><th>Star (Y)</th></tr>
+<tr><td>Shape</td><td>Y shaped</td></tr>
+<tr><td>Common Node</td><td>Present</td></tr>
+<tr><td>Number of Resistors</td><td>3</td></tr>
+<tr><td>Application</td><td>Three-phase systems</td></tr>
+</table>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- DELTA NETWORK -->
+<!-- ===================================================== -->
+
+<h2>8.2 Delta (Δ) Network</h2>
+
+<div class="definition">
+A <b>Delta (Δ)</b> network consists of three resistors connected in a closed triangular loop. Each resistor is connected between two terminals.
+</div>
+
+<h3>Delta Circuit Diagram</h3>
+
+<div style="text-align:center;margin:20px 0;">
+
+<svg viewBox="0 0 320 220" width="100%" style="max-width:420px">
+
+<circle cx="160" cy="30" r="4" fill="#111827"/>
+<circle cx="55" cy="170" r="4" fill="#111827"/>
+<circle cx="265" cy="170" r="4" fill="#111827"/>
+
+<line x1="160" y1="30" x2="55" y2="170" stroke="#2563EB" stroke-width="3"/>
+<line x1="160" y1="30" x2="265" y2="170" stroke="#16A34A" stroke-width="3"/>
+<line x1="55" y1="170" x2="265" y2="170" stroke="#EC4899" stroke-width="3"/>
+
+<text x="112" y="92" font-size="8" font-weight="bold" transform="rotate(-53 112 92)">Rab</text>
+<text x="206" y="92" font-size="8" font-weight="bold" transform="rotate(53 206 92)">Rca</text>
+<text x="160" y="160" font-size="8" font-weight="bold" text-anchor="middle">Rbc</text>
+
+<text x="168" y="22" font-size="11">A</text>
+<text x="37" y="184" font-size="11">B</text>
+<text x="273" y="184" font-size="11">C</text>
+
+</svg>
+
+</div>
+
+<table class="comparison">
+<tr><th>Parameter</th><th>Delta (Δ)</th></tr>
+<tr><td>Shape</td><td>Triangle</td></tr>
+<tr><td>Common Node</td><td>Not Present</td></tr>
+<tr><td>Number of Resistors</td><td>3</td></tr>
+<tr><td>Application</td><td>Motor winding & network analysis</td></tr>
+</table>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- FORMULAS -->
+<!-- ===================================================== -->
+
+<h2>8.3 Star to Delta Formula</h2>
+
+<div class="definition" style="text-align:center;">
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;margin-bottom:12px;">
+RAB = Ra + Rb + (Ra × Rb)/Rc
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#16A34A;margin-bottom:12px;">
+RBC = Rb + Rc + (Rb × Rc)/Ra
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#EC4899;">
+RCA = Rc + Ra + (Rc × Ra)/Rb
+</div>
+
+</div>
+
+<div class="note">
+<b>Memory Trick:</b><br>
+Each Delta resistor = Sum of adjacent Star resistors + Product ÷ Opposite resistor.
+</div>
+
+<h2>8.4 Delta to Star Formula</h2>
+
+<div class="definition" style="text-align:center;">
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;margin-bottom:12px;">
+Ra = (RAB × RCA)/(RAB + RBC + RCA)
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#16A34A;margin-bottom:12px;">
+Rb = (RAB × RBC)/(RAB + RBC + RCA)
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#EC4899;">
+Rc = (RBC × RCA)/(RAB + RBC + RCA)
+</div>
+
+</div>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- LIVE DEMO -->
+<!-- ===================================================== -->
+
+<h2>8.5 Live Star → Delta Demonstration</h2>
+
+<p>
+Move the sliders below and observe how the equivalent Delta resistances change instantly.
+</p>
+
+<div class="definition">
+
+<div class="grid">
+
+<div>
+<label><b>Ra</b></label>
+<input type="range" id="ra" min="1" max="10" value="2" style="width:100%;">
+<h2 id="raVal" style="color:#2563EB;">2 Ω</h2>
+</div>
+
+<div>
+<label><b>Rb</b></label>
+<input type="range" id="rb" min="1" max="10" value="3" style="width:100%;">
+<h2 id="rbVal" style="color:#16A34A;">3 Ω</h2>
+</div>
+
+<div>
+<label><b>Rc</b></label>
+<input type="range" id="rc" min="1" max="10" value="4" style="width:100%;">
+<h2 id="rcVal" style="color:#EC4899;">4 Ω</h2>
+</div>
+
+</div>
+
+<hr style="margin:20px 0;">
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>RAB</h3>
+<div id="rabRes" style="font-size:28px;font-weight:bold;color:#2563EB;">6.50 Ω</div>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>RBC</h3>
+<div id="rbcRes" style="font-size:28px;font-weight:bold;color:#16A34A;">13.00 Ω</div>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>RCA</h3>
+<div id="rcaRes" style="font-size:28px;font-weight:bold;color:#EC4899;">8.67 Ω</div>
+</div>
+</div>
+
+</div>
+
+<hr style="margin:20px 0;">
+
+<div style="text-align:center;">
+
+<h3>Live Formula Verification</h3>
+
+<p id="eq1" style="font-weight:bold;color:#2563EB;">RAB = 2 + 3 + (2×3)/4 = 6.50 Ω</p>
+<p id="eq2" style="font-weight:bold;color:#16A34A;">RBC = 3 + 4 + (3×4)/2 = 13.00 Ω</p>
+<p id="eq3" style="font-weight:bold;color:#EC4899;">RCA = 4 + 2 + (4×2)/3 = 8.67 Ω</p>
+
+</div>
+
+</div>
+
+<hr style="margin:25px 0;">
+
+<!-- ===================================================== -->
+<!-- NUMERICAL 1 -->
+<!-- ===================================================== -->
+
+<h2>8.6 Solved Numerical 1 (Star → Delta)</h2>
+
+<div class="card">
+<div style="padding:20px;">
+
+<b>Problem:</b><br>
+Convert the following Star network into an equivalent Delta network.
+
+<ul style="margin-left:18px;margin-top:10px;">
+<li>Ra = 2 Ω</li>
+<li>Rb = 3 Ω</li>
+<li>Rc = 6 Ω</li>
+</ul>
+
+<hr style="margin:15px 0;">
+
+<b>Step 1: Calculate RAB</b>
+
+<p>RAB = 2 + 3 + (2×3)/6</p>
+
+<p><b>RAB = 6 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Step 2: Calculate RBC</b>
+
+<p>RBC = 3 + 6 + (3×6)/2</p>
+
+<p><b>RBC = 18 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Step 3: Calculate RCA</b>
+
+<p>RCA = 6 + 2 + (6×2)/3</p>
+
+<p><b>RCA = 12 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Answer:</b>
+
+<table class="comparison">
+<tr><th>Delta Resistance</th><th>Value</th></tr>
+<tr><td>RAB</td><td>6 Ω</td></tr>
+<tr><td>RBC</td><td>18 Ω</td></tr>
+<tr><td>RCA</td><td>12 Ω</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ===================================================== -->
+<!-- NUMERICAL 2 -->
+<!-- ===================================================== -->
+
+<h2>8.7 Solved Numerical 2 (Delta → Star)</h2>
+
+<div class="card">
+<div style="padding:20px;">
+
+<b>Problem:</b><br>
+
+Convert the following Delta network into an equivalent Star network.
+
+<ul style="margin-left:18px;margin-top:10px;">
+<li>RAB = 6 Ω</li>
+<li>RBC = 18 Ω</li>
+<li>RCA = 12 Ω</li>
+</ul>
+
+<hr style="margin:15px 0;">
+
+<b>Total Delta Resistance</b>
+
+<p>6 + 18 + 12 = <b>36 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Calculate Ra</b>
+
+<p>Ra = (6×12)/36 = <b>2 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Calculate Rb</b>
+
+<p>Rb = (6×18)/36 = <b>3 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Calculate Rc</b>
+
+<p>Rc = (18×12)/36 = <b>6 Ω</b></p>
+
+<hr style="margin:12px 0;">
+
+<b>Answer:</b>
+
+<table class="comparison">
+<tr><th>Star Resistance</th><th>Value</th></tr>
+<tr><td>Ra</td><td>2 Ω</td></tr>
+<tr><td>Rb</td><td>3 Ω</td></tr>
+<tr><td>Rc</td><td>6 Ω</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ===================================================== -->
+<!-- APPLICATIONS -->
+<!-- ===================================================== -->
+
+<h2>8.8 Applications of Star–Delta Transformation</h2>
+
+<div class="grid">
+
+<div class="card">
+<AsyncImage query="three phase transformer star delta connection diagram" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Three-Phase Transformers</h3>
+<p>Used for voltage conversion in electrical power systems.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="star delta motor starter electrical panel" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Star–Delta Motor Starter</h3>
+<p>Reduces starting current of induction motors.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="electrical bridge resistor network PCB" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Bridge Network Analysis</h3>
+<p>Helps simplify complex resistor networks.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- SUMMARY -->
+<!-- ===================================================== -->
+
+<h2>8.9 Quick Revision Summary</h2>
+
+<table class="comparison">
+<tr>
+<th>Feature</th>
+<th>Star (Y)</th>
+<th>Delta (Δ)</th>
+</tr>
+
+<tr>
+<td>Shape</td>
+<td>Y</td>
+<td>Triangle</td>
+</tr>
+
+<tr>
+<td>Common Node</td>
+<td>Present</td>
+<td>Absent</td>
+</tr>
+
+<tr>
+<td>Formula</td>
+<td>Product / Sum</td>
+<td>Sum + Product / Opposite</td>
+</tr>
+
+<tr>
+<td>Applications</td>
+<td>3-Phase Supply</td>
+<td>Motor & Network Analysis</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Exam Tip:</b><br>
+If a circuit cannot be reduced using Series–Parallel rules, first identify whether it contains a Star (Y) or Delta (Δ) network and apply the appropriate transformation formula.
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script>
+
+(function(){
+
+const ra=document.getElementById("ra");
+const rb=document.getElementById("rb");
+const rc=document.getElementById("rc");
+
+function updateStar(){
+
+const Ra=Number(ra.value);
+const Rb=Number(rb.value);
+const Rc=Number(rc.value);
+
+const RAB=Ra+Rb+(Ra*Rb)/Rc;
+const RBC=Rb+Rc+(Rb*Rc)/Ra;
+const RCA=Rc+Ra+(Rc*Ra)/Rb;
+
+document.getElementById("raVal").innerHTML=Ra+" Ω";
+document.getElementById("rbVal").innerHTML=Rb+" Ω";
+document.getElementById("rcVal").innerHTML=Rc+" Ω";
+
+document.getElementById("rabRes").innerHTML=RAB.toFixed(2)+" Ω";
+document.getElementById("rbcRes").innerHTML=RBC.toFixed(2)+" Ω";
+document.getElementById("rcaRes").innerHTML=RCA.toFixed(2)+" Ω";
+
+document.getElementById("eq1").innerHTML=
+"RAB = "+Ra+" + "+Rb+" + ("+Ra+"×"+Rb+")/"+Rc+" = <b>"+RAB.toFixed(2)+" Ω</b>";
+
+document.getElementById("eq2").innerHTML=
+"RBC = "+Rb+" + "+Rc+" + ("+Rb+"×"+Rc+")/"+Ra+" = <b>"+RBC.toFixed(2)+" Ω</b>";
+
+document.getElementById("eq3").innerHTML=
+"RCA = "+Rc+" + "+Ra+" + ("+Rc+"×"+Ra+")/"+Rb+" = <b>"+RCA.toFixed(2)+" Ω</b>";
+
+}
+
+[ra,rb,rc].forEach(s=>s.addEventListener("input",updateStar));
+
+updateStar();
+
+})();
+
+</script>
 
 </div>
 
