@@ -4060,5 +4060,36 @@ Learn with Abhi © 2026
 
 </footer>
 
+<script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const sections=document.querySelectorAll("[data-topic]");
+
+sections.forEach(sec=>{
+
+const topic=Number(sec.dataset.topic);
+
+if(teacherMode) return;
+
+if(topic>unlockedTopic){
+
+const title=sec.querySelector("h2").innerText;
+
+sec.innerHTML=`
+<div class="locked">
+<h2>🔒 ${title}</h2>
+<p>This topic will be unlocked after the classroom lecture.</p>
+</div>
+`;
+
+}
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
