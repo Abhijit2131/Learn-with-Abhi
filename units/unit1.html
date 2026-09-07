@@ -1806,7 +1806,7 @@ fill="#EAF4FF" stroke="#2563EB" stroke-width="2"/>
 </div>
 
 <!-- ===================================================== -->
-<!-- 5.4 LIVE OHM'S LAW SIMULATOR -->
+<!-- 5.4 LIVE OHM'S LAW DEMONSTRATION -->
 <!-- ===================================================== -->
 
 <div class="section" id="liveohm">
@@ -1814,110 +1814,196 @@ fill="#EAF4FF" stroke="#2563EB" stroke-width="2"/>
 <h2>5.4 Live Ohm's Law Demonstration</h2>
 
 <p>
-Adjust the <b>Voltage</b> and <b>Resistance</b> using the sliders below.
-The simulator instantly calculates the current according to <b>Ohm's Law ( I = V/R )</b>.
+Move the sliders below and observe how changing <b>Voltage</b> or <b>Resistance</b>
+affects the value of <b>Current</b> instantly according to Ohm's Law.
 </p>
 
 <div class="ohm-box">
 
 <div class="live-tag">● LIVE SIMULATION</div>
 
+<!-- Digital Meters -->
+
 <div class="meter-grid">
 
 <div class="meter voltage">
 <div class="label">Voltage</div>
-<div class="value"><span id="vValue">12</span> V</div>
+<div class="value"><span id="displayV">12</span> V</div>
 </div>
 
 <div class="meter current">
 <div class="label">Current</div>
-<div class="value"><span id="iValue">2.00</span> A</div>
+<div class="value"><span id="displayI">2.00</span> A</div>
 </div>
 
 <div class="meter resistance">
 <div class="label">Resistance</div>
-<div class="value"><span id="rValue">6</span> Ω</div>
+<div class="value"><span id="displayR">6</span> Ω</div>
 </div>
 
 </div>
 
-<!-- Circuit Diagram -->
+<!-- Circuit -->
 
 <div class="circuit-area">
 
-<svg viewBox="0 0 620 180" width="100%" height="180">
+<svg viewBox="0 0 620 170" width="100%" height="170">
 
 <!-- Battery -->
 
-<line x1="40" y1="40" x2="40" y2="140" stroke="#17345E" stroke-width="3"/>
-<line x1="55" y1="25" x2="55" y2="155" stroke="#17345E" stroke-width="6"/>
+<line x1="40" y1="35" x2="40" y2="135" stroke="#17345E" stroke-width="3"/>
+<line x1="55" y1="20" x2="55" y2="150" stroke="#17345E" stroke-width="6"/>
 
-<text x="18" y="18" fill="#2563EB" font-size="14" font-weight="bold">
-12 V
-</text>
+<text x="12" y="15" fill="#2563EB" font-size="13" font-weight="bold">V</text>
 
 <!-- Wire -->
 
-<line x1="55" y1="90" x2="120" y2="90" stroke="#17345E" stroke-width="3"/>
+<line x1="55" y1="85" x2="125" y2="85" stroke="#17345E" stroke-width="3"/>
 
 <!-- Ammeter -->
 
-<circle cx="160" cy="90" r="24" fill="#ECFDF5" stroke="#10B981" stroke-width="3"/>
-<text x="160" y="97" text-anchor="middle" font-size="18" font-weight="bold" fill="#047857">A</text>
+<circle cx="165" cy="85" r="23" fill="#ECFDF5" stroke="#16A34A" stroke-width="3"/>
+<text x="165" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#047857">A</text>
 
-<text x="160" y="125" text-anchor="middle" font-size="11" fill="#047857">Current</text>
-
-<!-- Wire -->
-
-<line x1="184" y1="90" x2="240" y2="90" stroke="#17345E" stroke-width="3"/>
-
-<!-- Resistor -->
-
-<path d="M240 90
-L255 75
-L270 105
-L285 75
-L300 105
-L315 75
-L330 105
-L345 75
-L360 90"
-stroke="#EC4899" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-
-<text x="300" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#BE185D">
-R = <tspan id="rText">6</tspan> Ω
+<text x="165" y="120" text-anchor="middle" font-size="11" fill="#047857">
+I = <tspan id="svgCurrent">2.00</tspan>A
 </text>
 
 <!-- Wire -->
 
-<line x1="360" y1="90" x2="530" y2="90" stroke="#17345E" stroke-width="3"/>
-<line x1="530" y1="90" x2="530" y2="140" stroke="#17345E" stroke-width="3"/>
-<line x1="530" y1="140" x2="40" y2="140" stroke="#17345E" stroke-width="3"/>
+<line x1="188" y1="85" x2="255" y2="85" stroke="#17345E" stroke-width="3"/>
 
-<!-- Electron Flow -->
+<!-- Resistor -->
 
-<circle id="dot1" cx="90" cy="90" r="4" fill="#2563EB"/>
-<circle id="dot2" cx="125" cy="90" r="4" fill="#2563EB"/>
-<circle id="dot3" cx="200" cy="90" r="4" fill="#2563EB"/>
+<path d="M255 85
+L270 70 L285 100 L300 70 L315 100
+L330 70 L345 100 L360 70 L375 85"
+stroke="#EC4899" stroke-width="3.5" fill="none"/>
+
+<text x="315" y="55" text-anchor="middle" font-size="13" fill="#BE185D" font-weight="bold">
+R = <tspan id="svgR">6</tspan> Ω
+</text>
+
+<!-- Wire -->
+
+<line x1="375" y1="85" x2="540" y2="85" stroke="#17345E" stroke-width="3"/>
+<line x1="540" y1="85" x2="540" y2="135" stroke="#17345E" stroke-width="3"/>
+<line x1="540" y1="135" x2="40" y2="135" stroke="#17345E" stroke-width="3"/>
 
 </svg>
 
 </div>
 
-<!-- Controls -->
+<!-- Sliders -->
 
 <div class="controls">
 
 <div class="slider-group">
-<label>Voltage (1–24 V)</label>
-<input type="range" id="voltage" min="1" max="24" value="12">
+
+<label><b>Voltage (V)</b></label>
+
+<input
+type="range"
+id="sliderVoltage"
+min="1"
+max="24"
+value="12">
+
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#64748B;">
+<span>1 V</span>
+<span>24 V</span>
+</div>
+
 </div>
 
 <div class="slider-group">
-<label>Resistance (1–20 Ω)</label>
-<input type="range" id="resistance" min="1" max="20" value="6">
+
+<label><b>Resistance (Ω)</b></label>
+
+<input
+type="range"
+id="sliderResistance"
+min="1"
+max="20"
+value="6">
+
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#64748B;">
+<span>1 Ω</span>
+<span>20 Ω</span>
 </div>
 
+</div>
+
+</div>
+
+<!-- Formula -->
+
+<div class="formula-card">
+
+<div class="formula-title">Ohm's Law</div>
+
+<div class="formula-big">
+I =
+<span id="formulaV">12</span>
+/
+<span id="formulaR">6</span>
+=
+<span style="color:#16A34A;" id="formulaI">2.00</span>
+A
+</div>
+
+</div>
+
+<div class="observe">
+
+<h3>💡 Observation</h3>
+
+<ul>
+<li>Current is <b>directly proportional</b> to Voltage.</li>
+<li>Current is <b>inversely proportional</b> to Resistance.</li>
+<li>This experimentally verifies <b>Ohm's Law</b>.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- JavaScript -->
+
+<script>
+(function(){
+
+const voltage=document.getElementById("sliderVoltage");
+const resistance=document.getElementById("sliderResistance");
+
+function update(){
+
+const V=parseFloat(voltage.value);
+const R=parseFloat(resistance.value);
+const I=(V/R).toFixed(2);
+
+document.getElementById("displayV").textContent=V;
+document.getElementById("displayR").textContent=R;
+document.getElementById("displayI").textContent=I;
+
+document.getElementById("formulaV").textContent=V;
+document.getElementById("formulaR").textContent=R;
+document.getElementById("formulaI").textContent=I;
+
+document.getElementById("svgCurrent").textContent=I;
+document.getElementById("svgR").textContent=R;
+
+}
+
+voltage.addEventListener("input",update);
+resistance.addEventListener("input",update);
+
+update();
+
+})();
+</script>
 </div>
 
 <!-- Formula -->
