@@ -1614,6 +1614,469 @@ Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
 <b>wavechar.png</b> clearly shows all these parameters.
 </div>
 
+  <!-- ===================================================== -->
+<!-- 5. OHM'S LAW -->
+<!-- ===================================================== -->
+
+<div class="section" id="ohmslaw">
+
+<h2>5. Ohm's Law</h2>
+
+<p>
+Ohm's Law is the fundamental law of electrical engineering that establishes the relationship
+between <b>Voltage (V)</b>, <b>Current (I)</b> and <b>Resistance (R)</b>.
+It was proposed by the German physicist <b>Georg Simon Ohm</b> in 1827 and forms the basis
+for analysing DC electrical circuits.
+</p>
+
+<div class="note">
+<b>Learning Outcome:</b><br>
+After studying this topic, students will be able to calculate Voltage, Current and Resistance using Ohm's Law and apply it to solve basic DC circuit numericals.
+</div>
+
+<!-- ===================================================== -->
+<!-- Definition -->
+<!-- ===================================================== -->
+
+<h2>5.1 Definition</h2>
+
+<div class="definition">
+<b>Ohm's Law:</b><br><br>
+At constant temperature, the current flowing through a conductor is
+<b>directly proportional to the applied voltage</b> and
+<b>inversely proportional to its resistance</b>.
+</div>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:34px;font-weight:bold;color:#0B4AA2;">
+I = V / R
+</div>
+<p style="margin-top:8px;color:#64748B;">
+Basic Mathematical Expression of Ohm's Law
+</p>
+</div>
+
+<table class="comparison">
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>SI Unit</th>
+</tr>
+<tr>
+<td>I</td>
+<td>Electric Current</td>
+<td>Ampere (A)</td>
+</tr>
+<tr>
+<td>V</td>
+<td>Potential Difference / Voltage</td>
+<td>Volt (V)</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Resistance</td>
+<td>Ohm (Ω)</td>
+</tr>
+</table>
+
+<!-- ===================================================== -->
+<!-- Relationship -->
+<!-- ===================================================== -->
+
+<h2>5.2 Relationship Between Voltage, Current & Resistance</h2>
+
+<p>
+The three electrical quantities are interdependent. Increasing voltage increases current,
+whereas increasing resistance decreases current.
+</p>
+
+<div style="text-align:center;margin:25px 0;">
+
+<svg viewBox="0 0 320 220" width="100%" height="220">
+
+<circle cx="160" cy="35" r="28" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="160" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#1D4ED8">V</text>
+
+<circle cx="70" cy="170" r="28" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+<text x="70" y="177" text-anchor="middle" font-size="22" font-weight="bold" fill="#047857">I</text>
+
+<circle cx="250" cy="170" r="28" fill="#FCE7F3" stroke="#EC4899" stroke-width="2"/>
+<text x="250" y="177" text-anchor="middle" font-size="22" font-weight="bold" fill="#BE185D">R</text>
+
+<line x1="145" y1="58" x2="88" y2="145" stroke="#64748B" stroke-dasharray="5 5"/>
+<line x1="175" y1="58" x2="232" y2="145" stroke="#64748B" stroke-dasharray="5 5"/>
+
+<text x="95" y="98" font-size="10" fill="#374151">Direct</text>
+<text x="185" y="98" font-size="10" fill="#374151">Inverse</text>
+
+<text x="160" y="205" text-anchor="middle" font-size="11" fill="#374151">
+I ∝ V / R
+</text>
+
+</svg>
+
+</div>
+
+<table class="comparison">
+<tr>
+<th>Condition</th>
+<th>Effect on Current</th>
+</tr>
+<tr>
+<td>Voltage increases</td>
+<td>Current increases</td>
+</tr>
+<tr>
+<td>Voltage decreases</td>
+<td>Current decreases</td>
+</tr>
+<tr>
+<td>Resistance increases</td>
+<td>Current decreases</td>
+</tr>
+<tr>
+<td>Resistance decreases</td>
+<td>Current increases</td>
+</tr>
+</table>
+
+<!-- ===================================================== -->
+<!-- Triangle -->
+<!-- ===================================================== -->
+
+<h2>5.3 Ohm's Law Triangle</h2>
+
+<p>
+The Ohm's Triangle is a simple memory technique to derive all three formulas without memorising them separately.
+</p>
+
+<div style="text-align:center;margin:25px 0;">
+
+<svg viewBox="0 0 300 220" width="100%" height="220">
+
+<path d="M150 20 L30 200 L270 200 Z"
+fill="#EAF4FF" stroke="#2563EB" stroke-width="2"/>
+
+<line x1="90" y1="110" x2="210" y2="110" stroke="#2563EB" stroke-width="2"/>
+<line x1="150" y1="110" x2="150" y2="200" stroke="#2563EB" stroke-width="2"/>
+
+<text x="150" y="70" text-anchor="middle" font-size="30" font-weight="bold" fill="#1D4ED8">V</text>
+<text x="90" y="165" text-anchor="middle" font-size="26" font-weight="bold" fill="#047857">I</text>
+<text x="210" y="165" text-anchor="middle" font-size="26" font-weight="bold" fill="#BE185D">R</text>
+
+</svg>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>Current</h3>
+<div style="font-size:26px;font-weight:bold;color:#0B4AA2;">I = V / R</div>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>Voltage</h3>
+<div style="font-size:26px;font-weight:bold;color:#0B4AA2;">V = I × R</div>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;text-align:center;">
+<h3>Resistance</h3>
+<div style="font-size:26px;font-weight:bold;color:#0B4AA2;">R = V / I</div>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- LIVE DEMONSTRATION -->
+<!-- ===================================================== -->
+
+<h2>5.4 Live Demonstration Widget</h2>
+
+<p>
+Move the sliders below and observe how changing <b>Voltage</b> or <b>Resistance</b>
+affects the value of <b>Current</b> instantly according to Ohm's Law.
+</p>
+
+<div class="definition">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;text-align:center;">
+
+<div>
+<div style="font-size:30px;font-weight:bold;color:#2563EB;" id="voltVal">12</div>
+<div>Voltage (V)</div>
+</div>
+
+<div>
+<div style="font-size:30px;font-weight:bold;color:#EC4899;" id="resVal">6</div>
+<div>Resistance (Ω)</div>
+</div>
+
+<div>
+<div style="font-size:30px;font-weight:bold;color:#16A34A;" id="currVal">2.00</div>
+<div>Current (A)</div>
+</div>
+
+</div>
+
+<hr style="margin:18px 0;">
+
+<label><b>Voltage (V)</b></label>
+
+<input type="range" id="voltage" min="1" max="24" value="12"
+style="width:100%;margin-top:8px;">
+
+<br><br>
+
+<label><b>Resistance (Ω)</b></label>
+
+<input type="range" id="resistance" min="1" max="20" value="6"
+style="width:100%;margin-top:8px;">
+
+<hr style="margin:18px 0;">
+
+<div style="text-align:center;">
+
+<div style="font-size:18px;color:#64748B;">Calculated Using</div>
+
+<div style="font-size:30px;font-weight:bold;color:#0B4AA2;" id="formula">
+I = 12 / 6 = 2.00 A
+</div>
+
+</div>
+
+</div>
+
+<script>
+(function(){
+
+const V=document.getElementById('voltage');
+const R=document.getElementById('resistance');
+
+const vTxt=document.getElementById('voltVal');
+const rTxt=document.getElementById('resVal');
+const cTxt=document.getElementById('currVal');
+const formula=document.getElementById('formula');
+
+function update(){
+
+const v=Number(V.value);
+const r=Number(R.value);
+const i=(v/r).toFixed(2);
+
+vTxt.innerHTML=v;
+rTxt.innerHTML=r;
+cTxt.innerHTML=i;
+
+formula.innerHTML=`I = ${v} / ${r} = <span style="color:#16A34A">${i} A</span>`;
+
+}
+
+V.addEventListener('input',update);
+R.addEventListener('input',update);
+
+update();
+
+})();
+</script>
+
+<div class="note">
+<b>Observation:</b><br>
+Increasing the voltage while keeping resistance constant increases current.
+Increasing resistance while keeping voltage constant decreases current. This experimentally verifies Ohm's Law.
+</div>
+
+<!-- ===================================================== -->
+<!-- SOLVED NUMERICALS -->
+<!-- ===================================================== -->
+
+<h2>5.5 Solved Numerical Examples</h2>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Numerical 1</h3>
+<p><b>Given:</b><br>V = 12 V<br>R = 4 Ω</p>
+
+<p><b>Formula:</b> I = V / R</p>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;">
+I = 12/4 = 3 A
+</div>
+
+<p style="margin-top:10px;"><b>Answer:</b> 3 Ampere</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Numerical 2</h3>
+<p><b>Given:</b><br>I = 2 A<br>R = 10 Ω</p>
+
+<p><b>Formula:</b> V = I × R</p>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;">
+V = 2 × 10 = 20 V
+</div>
+
+<p style="margin-top:10px;"><b>Answer:</b> 20 Volt</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Numerical 3</h3>
+<p><b>Given:</b><br>V = 24 V<br>I = 3 A</p>
+
+<p><b>Formula:</b> R = V / I</p>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;">
+R = 24/3 = 8 Ω
+</div>
+
+<p style="margin-top:10px;"><b>Answer:</b> 8 Ohm</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- REAL LIFE APPLICATIONS -->
+<!-- ===================================================== -->
+
+<h2>5.6 Real-Life Applications of Ohm's Law</h2>
+
+<div class="grid">
+
+<div class="card">
+<AsyncImage query="LED resistor electronic circuit" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>LED Protection</h3>
+<p>Series resistors are used to limit current and protect LEDs from damage.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="digital multimeter measuring resistor" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Electrical Measurements</h3>
+<p>Engineers calculate unknown voltage, current and resistance using Ohm's Law.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="electric heater heating element resistor" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Heating Appliances</h3>
+<p>Electric irons, heaters and geysers convert electrical energy into heat through resistance.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="voltage divider resistor circuit" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Voltage Divider</h3>
+<p>Used in sensors, analog circuits and electronic measuring instruments.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- LIMITATIONS -->
+<!-- ===================================================== -->
+
+<h2>5.7 Limitations of Ohm's Law</h2>
+
+<p>
+Ohm's Law is applicable only to <b>ohmic conductors</b> where temperature and other physical conditions remain constant.
+It does not accurately describe the behaviour of nonlinear semiconductor devices.
+</p>
+
+<table class="comparison">
+<tr>
+<th>Applicable</th>
+<th>Not Applicable</th>
+</tr>
+
+<tr>
+<td>Metallic conductors</td>
+<td>PN Junction Diodes</td>
+</tr>
+
+<tr>
+<td>Constant temperature circuits</td>
+<td>Transistors</td>
+</tr>
+
+<tr>
+<td>Linear resistive networks</td>
+<td>Electrolytes</td>
+</tr>
+
+<tr>
+<td>DC resistive circuits</td>
+<td>Filament lamps (variable temperature)</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Conclusion:</b><br>
+Ohm's Law is one of the most important fundamental laws used for analysing DC electrical circuits and forms the foundation for Kirchhoff's Laws, network analysis and electrical measurements.
+</div>
+
+<!-- ===================================================== -->
+<!-- QUICK REVISION -->
+<!-- ===================================================== -->
+
+<h2>5.8 Quick Revision Summary</h2>
+
+<table class="comparison">
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Unit</th>
+<th>Formula</th>
+</tr>
+
+<tr>
+<td>Voltage</td>
+<td>V</td>
+<td>Volt</td>
+<td>V = I × R</td>
+</tr>
+
+<tr>
+<td>Current</td>
+<td>I</td>
+<td>Ampere</td>
+<td>I = V / R</td>
+</tr>
+
+<tr>
+<td>Resistance</td>
+<td>R</td>
+<td>Ohm</td>
+<td>R = V / I</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Memory Tip:</b><br>
+Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during examinations.
+</div>
+
+</div>
+
 </div>
 
 </div>
