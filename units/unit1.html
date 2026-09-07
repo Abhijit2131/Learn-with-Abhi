@@ -2682,6 +2682,388 @@ I₄ = 4 A
 Whenever you see a junction with multiple branches, immediately write **ΣI = 0** before solving the numerical. This is the standard university approach.
 </div>
 
+  <!-- ===================================================== -->
+<!-- 5.2 KIRCHHOFF'S VOLTAGE LAW -->
+<!-- ===================================================== -->
+
+<section class="section" id="kvl">
+
+<h2>5.2 Kirchhoff's Voltage Law (KVL)</h2>
+
+<p>
+Kirchhoff's Voltage Law is one of the most important laws used for analysing electrical circuits. It states that the algebraic sum of all voltages around any closed loop is always equal to zero. It is based on the <b>Law of Conservation of Energy</b>.
+</p>
+
+<div class="definition">
+<b>Definition:</b><br><br>
+<b>Kirchhoff's Voltage Law (KVL)</b> states that the algebraic sum of all voltage rises and voltage drops in a closed electrical loop is always zero.
+</div>
+
+<div class="note">
+<b>Memory Rule:</b><br>
+🔋 Voltage supplied by the source = Total voltage consumed by the loads.
+</div>
+
+<!-- Statement -->
+
+<h3>Kirchhoff's Voltage Law Statement</h3>
+
+<div class="definition" style="text-align:center;font-size:22px;">
+<b>∑V = 0</b>
+</div>
+
+<p><b>Mathematically:</b></p>
+
+<div class="definition" style="text-align:center;font-size:20px;">
+Vs − V₁ − V₂ − V₃ = 0
+</div>
+
+<p>Where:</p>
+
+<ul style="margin-left:20px;line-height:2;">
+<li><b>Vs</b> = Source Voltage</li>
+<li><b>V₁</b> = Voltage across Resistor 1</li>
+<li><b>V₂</b> = Voltage across Resistor 2</li>
+<li><b>V₃</b> = Voltage across Resistor 3</li>
+</ul>
+
+<!-- Circuit Diagram -->
+
+<h3>KVL Circuit Representation</h3>
+
+<div style="text-align:center;margin:20px 0;">
+<svg viewBox="0 0 560 220" width="100%" style="max-width:650px">
+
+<rect x="10" y="10" width="540" height="200" rx="12" fill="#F8FBFF" stroke="#D6E4F5"/>
+
+<!-- Battery -->
+<line x1="70" y1="45" x2="70" y2="165" stroke="#17345E" stroke-width="2"/>
+<line x1="55" y1="70" x2="85" y2="70" stroke="#0B4AA2" stroke-width="4"/>
+<line x1="60" y1="95" x2="80" y2="95" stroke="#0B4AA2" stroke-width="2"/>
+<text x="28" y="88" font-size="12" fill="#0B4AA2" font-weight="bold">Vs</text>
+
+<!-- Top Wire -->
+<line x1="70" y1="45" x2="130" y2="45" stroke="#17345E" stroke-width="2"/>
+
+<!-- R1 -->
+<rect x="130" y="30" width="70" height="30" rx="4" fill="#DBEAFE" stroke="#2563EB"/>
+<text x="165" y="49" text-anchor="middle" font-size="12" font-weight="bold">R1</text>
+
+<line x1="200" y1="45" x2="230" y2="45" stroke="#17345E" stroke-width="2"/>
+
+<!-- R2 -->
+<rect x="230" y="30" width="70" height="30" rx="4" fill="#DBEAFE" stroke="#2563EB"/>
+<text x="265" y="49" text-anchor="middle" font-size="12" font-weight="bold">R2</text>
+
+<line x1="300" y1="45" x2="330" y2="45" stroke="#17345E" stroke-width="2"/>
+
+<!-- R3 -->
+<rect x="330" y="30" width="70" height="30" rx="4" fill="#DBEAFE" stroke="#2563EB"/>
+<text x="365" y="49" text-anchor="middle" font-size="12" font-weight="bold">R3</text>
+
+<line x1="400" y1="45" x2="470" y2="45" stroke="#17345E" stroke-width="2"/>
+<line x1="470" y1="45" x2="470" y2="165" stroke="#17345E" stroke-width="2"/>
+<line x1="470" y1="165" x2="70" y2="165" stroke="#17345E" stroke-width="2"/>
+
+<!-- Current Arrow -->
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+<path d="M0,0 L0,6 L9,3 z" fill="#EF4444"/>
+</marker>
+</defs>
+
+<line x1="90" y1="20" x2="430" y2="20" stroke="#EF4444" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="250" y="15" text-anchor="middle" font-size="12" fill="#EF4444" font-weight="bold">Loop Current (I)</text>
+
+<!-- Voltage labels -->
+<text x="165" y="80" text-anchor="middle" font-size="11" fill="#64748B">V₁</text>
+<text x="265" y="80" text-anchor="middle" font-size="11" fill="#64748B">V₂</text>
+<text x="365" y="80" text-anchor="middle" font-size="11" fill="#64748B">V₃</text>
+
+</svg>
+</div>
+
+<div class="note">
+In a closed loop, the battery provides voltage while each resistor consumes a portion of it. Their total must always equal the source voltage.
+</div>
+
+<!-- Sign Convention -->
+
+<h3>Voltage Sign Convention</h3>
+
+<table class="comparison">
+<tr>
+<th>Traversal Direction</th>
+<th>Voltage Sign</th>
+</tr>
+<tr>
+<td>Across Battery (− → +)</td>
+<td style="color:#16A34A;font-weight:bold">+ Voltage Rise</td>
+</tr>
+<tr>
+<td>Across Battery (+ → −)</td>
+<td style="color:#DC2626;font-weight:bold">− Voltage Drop</td>
+</tr>
+<tr>
+<td>Across Resistor (Current Direction)</td>
+<td style="color:#DC2626;font-weight:bold">− IR Drop</td>
+</tr>
+<tr>
+<td>Opposite Current Direction</td>
+<td style="color:#16A34A;font-weight:bold">+ IR Rise</td>
+</tr>
+</table>
+
+<!-- Steps -->
+
+<h3>Steps to Apply KVL</h3>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px">
+<h3>Step 1</h3>
+<p>Select any one closed loop in the circuit.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px">
+<h3>Step 2</h3>
+<p>Choose clockwise or anticlockwise direction.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px">
+<h3>Step 3</h3>
+<p>Assign + for voltage rise and − for voltage drop.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px">
+<h3>Step 4</h3>
+<p>Add all voltages and equate the sum to zero.</p>
+</div>
+</div>
+
+</div>
+
+<!-- Live Demo -->
+
+<h3>Live KVL Demonstration</h3>
+
+<div id="kvl-demo" style="background:#F8FBFF;padding:25px;border-radius:14px;border:1px solid #DCE5F0">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+
+<div>
+<label><b>Source Voltage (Vs)</b></label>
+<input type="range" id="vs" min="5" max="30" value="18" style="width:100%">
+<h2 id="vsVal" style="color:#16A34A">18 V</h2>
+</div>
+
+<div>
+<label><b>Resistor R1</b></label>
+<input type="range" id="r1" min="1" max="20" value="3" style="width:100%">
+<h2 id="r1Val">3 Ω</h2>
+</div>
+
+<div>
+<label><b>Resistor R2</b></label>
+<input type="range" id="r2" min="1" max="20" value="6" style="width:100%">
+<h2 id="r2Val">6 Ω</h2>
+</div>
+
+<div>
+<label><b>Resistor R3</b></label>
+<input type="range" id="r3" min="1" max="20" value="9" style="width:100%">
+<h2 id="r3Val">9 Ω</h2>
+</div>
+
+</div>
+
+<hr style="margin:25px 0">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px">
+
+<div class="stat">
+<h2 id="currentVal">1.00 A</h2>
+<p>Loop Current</p>
+</div>
+
+<div class="stat">
+<h2 id="v1Drop">3.00 V</h2>
+<p>Drop across R1</p>
+</div>
+
+<div class="stat">
+<h2 id="v2Drop">6.00 V</h2>
+<p>Drop across R2</p>
+</div>
+
+<div class="stat">
+<h2 id="v3Drop">9.00 V</h2>
+<p>Drop across R3</p>
+</div>
+
+</div>
+
+<hr style="margin:25px 0">
+
+<div style="text-align:center">
+
+<h3>KVL Verification</h3>
+
+<h2 id="kvlEq" style="color:#0B4AA2;margin:15px 0">
+18 − 3 − 6 − 9 = 0
+</h2>
+
+<div id="kvlResult" style="display:inline-block;background:#DCFCE7;color:#166534;padding:10px 18px;border-radius:25px;font-weight:bold">
+✔ Kirchhoff's Voltage Law Satisfied
+</div>
+
+</div>
+
+</div>
+
+<!-- Numerical -->
+
+<h3>Worked Numerical</h3>
+
+<div class="definition">
+
+<b>Problem:</b><br>
+
+A 24 V battery supplies three resistors connected in series:
+
+- R₁ = 2 Ω
+- R₂ = 4 Ω
+- R₃ = 6 Ω
+
+Find the loop current and verify KVL.
+
+</div>
+
+<div class="card" style="margin-top:18px">
+<div style="padding:20px">
+
+**Step 1: Total Resistance**
+
+<math block value="R_T=2+4+6=12\\Omega"/>
+
+**Step 2: Current**
+
+<math block value="I=\\frac{24}{12}=2A"/>
+
+**Step 3: Voltage Drops**
+
+- V₁ = I × R₁ = 2 × 2 = **4 V**
+- V₂ = I × R₂ = 2 × 4 = **8 V**
+- V₃ = I × R₃ = 2 × 6 = **12 V**
+
+**Verification**
+
+<math block value="24-4-8-12=0"/>
+
+**Answer:** Loop current = **2 A** and KVL is verified successfully.
+
+</div>
+</div>
+
+<!-- Key Points -->
+
+<h3>Important Observations</h3>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px">
+<h3>Conservation of Energy</h3>
+<p>The total energy supplied by the source equals the energy consumed by all loads.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px">
+<h3>Closed Loop Only</h3>
+<p>KVL can be applied only to a complete closed electrical path.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px">
+<h3>Series Circuits</h3>
+<p>The source voltage is divided among resistors according to their resistance values.</p>
+</div>
+</div>
+
+</div>
+
+<div class="note">
+<b>Exam Tip:</b><br>
+Always mention the traversal direction (Clockwise/Anticlockwise) before writing the KVL equation. This earns presentation marks in university examinations.
+</div>
+
+</section>
+
+<script>
+(function(){
+
+const vs=document.getElementById("vs");
+const r1=document.getElementById("r1");
+const r2=document.getElementById("r2");
+const r3=document.getElementById("r3");
+
+function updateKVL(){
+
+const VS=Number(vs.value);
+const R1=Number(r1.value);
+const R2=Number(r2.value);
+const R3=Number(r3.value);
+
+const RT=R1+R2+R3;
+const I=VS/RT;
+
+const V1=I*R1;
+const V2=I*R2;
+const V3=I*R3;
+
+document.getElementById("vsVal").innerHTML=VS+" V";
+document.getElementById("r1Val").innerHTML=R1+" Ω";
+document.getElementById("r2Val").innerHTML=R2+" Ω";
+document.getElementById("r3Val").innerHTML=R3+" Ω";
+
+document.getElementById("currentVal").innerHTML=I.toFixed(2)+" A";
+document.getElementById("v1Drop").innerHTML=V1.toFixed(2)+" V";
+document.getElementById("v2Drop").innerHTML=V2.toFixed(2)+" V";
+document.getElementById("v3Drop").innerHTML=V3.toFixed(2)+" V";
+
+const sum=(VS-V1-V2-V3);
+
+document.getElementById("kvlEq").innerHTML=
+VS+" − "+V1.toFixed(2)+" − "+V2.toFixed(2)+" − "+V3.toFixed(2)+" = "+sum.toFixed(2);
+
+if(Math.abs(sum)<0.01){
+document.getElementById("kvlResult").innerHTML="✔ Kirchhoff's Voltage Law Satisfied";
+document.getElementById("kvlResult").style.background="#DCFCE7";
+document.getElementById("kvlResult").style.color="#166534";
+}else{
+document.getElementById("kvlResult").innerHTML="✖ Calculation Error";
+document.getElementById("kvlResult").style.background="#FEE2E2";
+document.getElementById("kvlResult").style.color="#991B1B";
+}
+
+}
+
+[vs,r1,r2,r3].forEach(sl=>sl.addEventListener("input",updateKVL));
+
+updateKVL();
+
+})();
+</script>
+
 </div>
 
 </div>
