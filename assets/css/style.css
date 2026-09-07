@@ -141,7 +141,10 @@ nav{
 
 .hero h1{
   font-size:42px;
+  
 }
+}   /* closes .hero h1 */
+}   /* closes @media */
 
 /* ===== Passive Components ===== */
 
@@ -434,4 +437,30 @@ font-size:22px;
 }
 
 }
+
+/* ========================================= */
+/* STUDENT LOCKED TOPIC CARD */
+/* ========================================= */
+
+.locked{
+    background:#F8FAFC;
+    border:2px dashed #CBD5E1;
+    border-radius:16px;
+    padding:40px 25px;
+    text-align:center;
+    margin:20px 0;
+}
+
+.locked h2{
+    border:none;
+    padding:0;
+    margin-bottom:12px;
+    color:#64748B;
+}
+
+.locked p{
+    color:#64748B;
+    font-size:15px;
+    line-height:1.6;
+    margin-top:8px;
 }
