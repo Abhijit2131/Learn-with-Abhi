@@ -2253,6 +2253,433 @@ Ohm's Law is one of the most important fundamental laws used for analysing DC el
 Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during examinations.
 </div>
 
+  <!-- ===================================================== -->
+<!-- 6. KIRCHHOFF'S CURRENT LAW (KCL) -->
+<!-- ===================================================== -->
+
+<div class="section" id="kcl">
+
+<h2>6. Kirchhoff's Current Law (KCL)</h2>
+
+<p>
+Kirchhoff's Current Law (KCL) is one of the fundamental laws used for analysing electrical circuits. It is based on the <b>Law of Conservation of Charge</b>, which states that electric charge can neither be created nor destroyed. Therefore, the total current entering a junction must always equal the total current leaving the junction.
+</p>
+
+<div class="note">
+<b>Learning Outcome:</b><br>
+After studying this topic, students will be able to apply KCL to determine unknown branch currents in electrical circuits and solve junction-based numerical problems.
+</div>
+
+<!-- ===================================================== -->
+<!-- Definition -->
+<!-- ===================================================== -->
+
+<h2>6.1 Definition</h2>
+
+<div class="definition">
+<b>Kirchhoff's Current Law:</b><br><br>
+
+The algebraic sum of all currents meeting at a node (junction) is always zero.
+
+In simple words,
+
+**Total Current Entering = Total Current Leaving**
+</div>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:32px;font-weight:bold;color:#0B4AA2;">
+ΣI = 0
+</div>
+
+<p style="margin-top:8px;color:#64748B;">
+or &nbsp; I₁ + I₂ = I₃ + I₄
+</p>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- Node Explanation -->
+<!-- ===================================================== -->
+
+<h2>6.2 What is a Node (Junction)?</h2>
+
+<p>
+A <b>Node</b> is a common connecting point where two or more conductors meet. KCL is always applied at a node to analyse the flow of current.
+</p>
+
+<div style="text-align:center;margin:25px 0;">
+
+<svg viewBox="0 0 320 220" width="100%" height="220">
+
+<line x1="160" y1="20" x2="160" y2="190" stroke="#17345E" stroke-width="3"/>
+<line x1="40" y1="105" x2="280" y2="105" stroke="#17345E" stroke-width="3"/>
+
+<circle cx="160" cy="105" r="12" fill="#2563EB"/>
+
+<polygon points="150,35 160,20 170,35" fill="#16A34A"/>
+<polygon points="55,95 40,105 55,115" fill="#16A34A"/>
+
+<polygon points="265,95 280,105 265,115" fill="#DC2626"/>
+<polygon points="150,175 160,190 170,175" fill="#DC2626"/>
+
+<text x="175" y="35" font-size="12" fill="#16A34A" font-weight="bold">I₁</text>
+<text x="55" y="90" font-size="12" fill="#16A34A" font-weight="bold">I₂</text>
+
+<text x="235" y="90" font-size="12" fill="#DC2626" font-weight="bold">I₃</text>
+<text x="175" y="175" font-size="12" fill="#DC2626" font-weight="bold">I₄</text>
+
+<text x="160" y="205" text-anchor="middle" font-size="12" fill="#64748B">
+Electrical Junction (Node)
+</text>
+
+</svg>
+
+</div>
+
+<div class="note">
+<b>Memory Tip:</b><br>
+🟢 Entering currents are considered positive. 🔴 Leaving currents are considered negative. The algebraic sum is always zero.
+</div>
+
+<!-- ===================================================== -->
+<!-- Live Demonstration -->
+<!-- ===================================================== -->
+
+<h2>6.3 Live KCL Demonstration</h2>
+
+<p>
+Move the sliders below and observe how the outgoing current automatically changes to satisfy Kirchhoff's Current Law.
+</p>
+
+<AppBlock variant=inline bind={{}}>
+  <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+    <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+      <span class="h-2 w-2 rounded-full bg-green-500"></span>
+      LIVE KCL SIMULATION
+    </div>
+    <div class="mt-5 grid grid-cols-1 gap-3 md:grid-cols-3">
+      <div class="rounded-xl bg-emerald-500 p-4 text-white text-center">
+        <div class="text-sm opacity-90">Incoming I₁</div>
+        <div id="i1Display" class="mt-1 text-3xl font-bold">4</div>
+        <div class="text-sm">Ampere</div>
+      </div>
+      <div class="rounded-xl bg-emerald-600 p-4 text-white text-center">
+        <div class="text-sm opacity-90">Incoming I₂</div>
+        <div id="i2Display" class="mt-1 text-3xl font-bold">3</div>
+        <div class="text-sm">Ampere</div>
+      </div>
+      <div class="rounded-xl bg-rose-500 p-4 text-white text-center">
+        <div class="text-sm opacity-90">Outgoing I₃</div>
+        <div id="i3Display" class="mt-1 text-3xl font-bold">7</div>
+        <div class="text-sm">Ampere</div>
+      </div>
+    </div>
+    <div class="mt-5 rounded-xl bg-slate-50 p-4">
+      <svg viewBox="0 0 320 170" class="w-full h-auto">
+        <line x1="160" y1="20" x2="160" y2="145" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="35" y1="82" x2="285" y2="82" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="160" cy="82" r="9" fill="#2563EB"/>
+        <polygon points="154,32 160,20 166,32" fill="#16A34A"/>
+        <polygon points="47,76 35,82 47,88" fill="#16A34A"/>
+        <polygon points="273,76 285,82 273,88" fill="#DC2626"/>
+        <text x="172" y="30" font-size="9" font-weight="700" fill="#047857">I₁</text>
+        <text x="52" y="72" font-size="9" font-weight="700" fill="#047857">I₂</text>
+        <text x="238" y="72" font-size="9" font-weight="700" fill="#B91C1C">I₃</text>
+        <text x="160" y="158" text-anchor="middle" font-size="9" fill="#64748B">Current Junction</text>
+      </svg>
+    </div>
+    <div class="mt-5 space-y-4">
+      <div>
+        <div class="mb-2 flex items-center justify-between text-sm font-medium text-slate-700">
+          <span>Incoming Current I₁</span>
+          <span><span id="i1Value">4</span> A</span>
+        </div>
+        <input id="i1Slider" type="range" min="1" max="10" value="4" class="w-full accent-blue-600"/>
+      </div>
+      <div>
+        <div class="mb-2 flex items-center justify-between text-sm font-medium text-slate-700">
+          <span>Incoming Current I₂</span>
+          <span><span id="i2Value">3</span> A</span>
+        </div>
+        <input id="i2Slider" type="range" min="1" max="10" value="3" class="w-full accent-blue-600"/>
+      </div>
+    </div>
+    <div class="mt-5 rounded-xl bg-blue-50 p-4 text-center">
+      <div class="text-sm font-semibold text-blue-700">Kirchhoff's Current Law</div>
+      <div class="mt-2 text-2xl font-bold text-slate-800">
+        <span id="formula1">4</span> A + <span id="formula2">3</span> A = <span id="formula3" class="text-green-600">7</span> A
+      </div>
+      <div class="mt-1 text-sm text-slate-600">Total Current Entering = Total Current Leaving</div>
+    </div>
+    <div class="mt-5 rounded-xl bg-amber-50 p-4">
+      <div class="font-semibold text-amber-800">💡 Observation</div>
+      <ul class="mt-2 list-disc pl-5 text-sm text-amber-900 space-y-1">
+        <li>Increasing I₁ increases the outgoing current.</li>
+        <li>Increasing I₂ also increases the outgoing current.</li>
+        <li>The node always satisfies ΣI = 0.</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const i1=document.getElementById("i1Slider");
+    const i2=document.getElementById("i2Slider");
+    function updateKCL(){
+      const I1=Number(i1.value);
+      const I2=Number(i2.value);
+      const I3=I1+I2;
+      ["i1Display","i1Value","formula1"].forEach(id=>document.getElementById(id).textContent=I1);
+      ["i2Display","i2Value","formula2"].forEach(id=>document.getElementById(id).textContent=I2);
+      ["i3Display","formula3"].forEach(id=>document.getElementById(id).textContent=I3);
+    }
+    i1.addEventListener("input",updateKCL);
+    i2.addEventListener("input",updateKCL);
+    updateKCL();
+  </script>
+</AppBlock>
+
+<!-- ===================================================== -->
+<!-- Mathematical Expression -->
+<!-- ===================================================== -->
+
+<h2>6.4 Mathematical Expression</h2>
+
+<p>
+If currents I₁ and I₂ enter the node while I₃ and I₄ leave the node:
+</p>
+
+<div class="definition" style="text-align:center;">
+<div style="font-size:28px;font-weight:bold;color:#0B4AA2;">
+I₁ + I₂ = I₃ + I₄
+</div>
+
+<p style="margin-top:10px;">or</p>
+
+<div style="font-size:24px;font-weight:bold;color:#16A34A;">
+I₁ + I₂ − I₃ − I₄ = 0
+</div>
+</div>
+
+<table class="comparison">
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>I₁, I₂</td>
+<td>Incoming branch currents</td>
+</tr>
+<tr>
+<td>I₃, I₄</td>
+<td>Outgoing branch currents</td>
+</tr>
+<tr>
+<td>ΣI</td>
+<td>Algebraic sum of currents at a node</td>
+</tr>
+</table>
+
+<!-- ===================================================== -->
+<!-- Solved Numericals -->
+<!-- ===================================================== -->
+
+<h2>6.5 Solved Numerical Examples</h2>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Example 1</h3>
+
+<p><b>Given:</b></p>
+
+<ul style="margin-left:18px;">
+<li>I₁ = 4 A</li>
+<li>I₂ = 6 A</li>
+</ul>
+
+<p>Find outgoing current I₃.</p>
+
+<div class="definition" style="text-align:center;">
+I₃ = I₁ + I₂
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;text-align:center;">
+I₃ = 10 A
+</div>
+
+<p><b>Answer:</b> 10 Ampere</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Example 2</h3>
+
+<p><b>Given:</b></p>
+
+<ul style="margin-left:18px;">
+<li>Incoming = 12 A</li>
+<li>Outgoing I₁ = 5 A</li>
+</ul>
+
+<p>Find I₂.</p>
+
+<div class="definition" style="text-align:center;">
+12 = 5 + I₂
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;text-align:center;">
+I₂ = 7 A
+</div>
+
+<p><b>Answer:</b> 7 Ampere</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Example 3</h3>
+
+<p><b>Given:</b></p>
+
+<ul style="margin-left:18px;">
+<li>I₁ = 3 A</li>
+<li>I₂ = 2 A</li>
+<li>I₃ = 1 A</li>
+</ul>
+
+<p>Find I₄.</p>
+
+<div class="definition" style="text-align:center;">
+3 + 2 = 1 + I₄
+</div>
+
+<div style="font-size:22px;font-weight:bold;color:#0B4AA2;text-align:center;">
+I₄ = 4 A
+</div>
+
+<p><b>Answer:</b> 4 Ampere</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- Real Life Applications -->
+<!-- ===================================================== -->
+
+<h2>6.6 Applications of KCL</h2>
+
+<div class="grid">
+
+<div class="card">
+<AsyncImage query="electrical distribution junction box" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Distribution Networks</h3>
+<p>Used for analysing current distribution in electrical wiring systems.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="PCB electronic circuit board traces" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>PCB Design</h3>
+<p>Helps engineers determine branch currents in electronic circuits.</p>
+</div>
+</div>
+
+<div class="card">
+<AsyncImage query="parallel resistor electronic circuit" aspectRatio="5:4" width="100%" radius="12px"/>
+<div style="padding:15px;">
+<h3>Parallel Circuits</h3>
+<p>Current divides among branches according to circuit resistance.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- Advantages -->
+<!-- ===================================================== -->
+
+<h2>6.7 Advantages of KCL</h2>
+
+<div class="grid">
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Accurate Analysis</h3>
+<p>Provides accurate calculation of branch currents in complex networks.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Simple Method</h3>
+<p>Requires only current values at a single junction.</p>
+</div>
+</div>
+
+<div class="card">
+<div style="padding:18px;">
+<h3>Foundation Law</h3>
+<p>Forms the basis of nodal analysis used in electrical engineering.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- Summary -->
+<!-- ===================================================== -->
+
+<h2>6.8 Quick Revision Summary</h2>
+
+<table class="comparison">
+<tr>
+<th>Concept</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Law Name</td>
+<td>Kirchhoff's Current Law (KCL)</td>
+</tr>
+
+<tr>
+<td>Based On</td>
+<td>Conservation of Electric Charge</td>
+</tr>
+
+<tr>
+<td>Statement</td>
+<td>Total Incoming Current = Total Outgoing Current</td>
+</tr>
+
+<tr>
+<td>Formula</td>
+<td>ΣI = 0</td>
+</tr>
+
+<tr>
+<td>Applied At</td>
+<td>Node / Junction</td>
+</tr>
+
+<tr>
+<td>Used For</td>
+<td>Finding Unknown Branch Currents</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Exam Tip:</b><br>
+Whenever you see a junction with multiple branches, immediately write **ΣI = 0** before solving the numerical. This is the standard university approach.
+</div>
+
+</div>
+
 </div>
 
 </div>
