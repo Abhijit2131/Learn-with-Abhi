@@ -216,6 +216,33 @@ top:0;
 
 <body>
 
+<!-- ===================================================== -->
+<!-- TEACHER / STUDENT MODE CONTROLLER -->
+<!-- ===================================================== -->
+
+<script>
+
+// ===== ONLY CHANGE THESE VALUES =====
+
+// false = Students (GitHub Website)
+// true = Teacher (All topics visible)
+const teacherMode = false;
+
+// Highest unlocked topic
+// 1 Intro
+// 2 Basic Quantities
+// 3 Passive Components
+// 4 Waveform
+// 5 Ohm's Law
+// 6 KCL
+// 7 KVL
+// 8 Series Parallel
+// 9 Star Delta
+
+const unlockedTopic = 1;
+
+</script>
+
 <header>
 <h1>UNIT 1 : DC Electric Circuit</h1>
 <p>Fundamentals of Electrical & Electronics Engineering</p>
@@ -317,8 +344,7 @@ Section 7
 <div class="content">
 
 <!-- Electronics -->
-
-<section class="section" id="electronics">
+<div class="section" id="intro" data-topic="1">
 
 <h2>1.1 Definition of Electronics</h2>
 
@@ -531,7 +557,7 @@ Control • Processing • Communication • Automation
 <!-- 2. BASIC ELECTRICAL QUANTITIES -->
 <!-- ===================================================== -->
 
-<section class="section" id="current">
+<div class="section" id="basic" data-topic="2">
 
 <h2>2. Basic Electrical Quantities</h2>
 
@@ -972,7 +998,7 @@ font-weight="bold" fill="#DC2626">I</text>
 <!-- 3. PASSIVE ELECTRONIC COMPONENTS -->
 <!-- ===================================================== -->
 
-<div class="section" id="passive">
+<div class="section" id="passive" data-topic="3">
 
 <h2>3. Passive Electronic Components</h2>
 
@@ -1399,7 +1425,7 @@ Resistor → Opposes current | Capacitor → Stores electric field energy | Indu
 <!-- 4. WAVEFORM REPRESENTATION & SIGNAL CHARACTERISTICS -->
 <!-- ===================================================== -->
 
-<div class="section" id="waveform">
+<div class="section" id="waveform" data-topic="4">
 
 <h2>4. Waveform Representation & Signal Characteristics</h2>
 
@@ -1656,7 +1682,7 @@ Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
 <!-- 5. OHM'S LAW -->
 <!-- ===================================================== -->
 
-<div class="section" id="ohmslaw">
+<div class="section" id="ohm" data-topic="5">
 
 <h2>5. Ohm's Law</h2>
 
@@ -2283,7 +2309,7 @@ Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during ex
 <!-- 6. KIRCHHOFF'S CURRENT LAW (KCL) -->
 <!-- ===================================================== -->
 
-<div class="section" id="kcl">
+<div class="section" id="kcl" data-topic="6">
 
 <h2>6. Kirchhoff's Current Law (KCL)</h2>
 
@@ -2708,7 +2734,7 @@ Whenever you see a junction with multiple branches, immediately write **ΣI = 0*
 <!-- 5.2 KIRCHHOFF'S VOLTAGE LAW -->
 <!-- ===================================================== -->
 
-<section class="section" id="kvl">
+<div class="section" id="kvl" data-topic="7">
 
 <h2>5.2 Kirchhoff's Voltage Law (KVL)</h2>
 
@@ -3092,7 +3118,7 @@ updateKVL();
 <!-- 7. SERIES & PARALLEL CIRCUIT -->
 <!-- ===================================================== -->
 
-<div class="section" id="seriesparallel">
+<div class="section" id="seriesparallel" data-topic="8">
 
 <h2>7. Series & Parallel Circuit</h2>
 
@@ -3534,8 +3560,7 @@ If the question asks **same current**, think <b>Series Circuit</b>. If it asks *
 <!-- ===================================================== -->
 <!-- 8. STAR / DELTA TRANSFORMATION -->
 <!-- ===================================================== -->
-
-<div class="section" id="stardelta">
+<div class="section" id="stardelta" data-topic="9">
 
 <h2>8. Star (Y) / Delta (Δ) Transformation</h2>
 
