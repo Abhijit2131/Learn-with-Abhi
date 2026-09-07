@@ -1806,59 +1806,145 @@ fill="#EAF4FF" stroke="#2563EB" stroke-width="2"/>
 </div>
 
 <!-- ===================================================== -->
-<!-- LIVE DEMONSTRATION -->
+<!-- 5.4 LIVE OHM'S LAW SIMULATOR -->
 <!-- ===================================================== -->
 
-<h2>5.4 Live Demonstration Widget</h2>
+<div class="section" id="liveohm">
+
+<h2>5.4 Live Ohm's Law Demonstration</h2>
 
 <p>
-Move the sliders below and observe how changing <b>Voltage</b> or <b>Resistance</b>
-affects the value of <b>Current</b> instantly according to Ohm's Law.
+Adjust the <b>Voltage</b> and <b>Resistance</b> using the sliders below.
+The simulator instantly calculates the current according to <b>Ohm's Law ( I = V/R )</b>.
 </p>
 
-<div class="definition">
+<div class="ohm-box">
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;text-align:center;">
+<div class="live-tag">● LIVE SIMULATION</div>
 
-<div>
-<div style="font-size:30px;font-weight:bold;color:#2563EB;" id="voltVal">12</div>
-<div>Voltage (V)</div>
+<div class="meter-grid">
+
+<div class="meter voltage">
+<div class="label">Voltage</div>
+<div class="value"><span id="vValue">12</span> V</div>
 </div>
 
-<div>
-<div style="font-size:30px;font-weight:bold;color:#EC4899;" id="resVal">6</div>
-<div>Resistance (Ω)</div>
+<div class="meter current">
+<div class="label">Current</div>
+<div class="value"><span id="iValue">2.00</span> A</div>
 </div>
 
-<div>
-<div style="font-size:30px;font-weight:bold;color:#16A34A;" id="currVal">2.00</div>
-<div>Current (A)</div>
+<div class="meter resistance">
+<div class="label">Resistance</div>
+<div class="value"><span id="rValue">6</span> Ω</div>
 </div>
 
 </div>
 
-<hr style="margin:18px 0;">
+<!-- Circuit Diagram -->
 
-<label><b>Voltage (V)</b></label>
+<div class="circuit-area">
 
-<input type="range" id="voltage" min="1" max="24" value="12"
-style="width:100%;margin-top:8px;">
+<svg viewBox="0 0 620 180" width="100%" height="180">
 
-<br><br>
+<!-- Battery -->
 
-<label><b>Resistance (Ω)</b></label>
+<line x1="40" y1="40" x2="40" y2="140" stroke="#17345E" stroke-width="3"/>
+<line x1="55" y1="25" x2="55" y2="155" stroke="#17345E" stroke-width="6"/>
 
-<input type="range" id="resistance" min="1" max="20" value="6"
-style="width:100%;margin-top:8px;">
+<text x="18" y="18" fill="#2563EB" font-size="14" font-weight="bold">
+12 V
+</text>
 
-<hr style="margin:18px 0;">
+<!-- Wire -->
 
-<div style="text-align:center;">
+<line x1="55" y1="90" x2="120" y2="90" stroke="#17345E" stroke-width="3"/>
 
-<div style="font-size:18px;color:#64748B;">Calculated Using</div>
+<!-- Ammeter -->
 
-<div style="font-size:30px;font-weight:bold;color:#0B4AA2;" id="formula">
-I = 12 / 6 = 2.00 A
+<circle cx="160" cy="90" r="24" fill="#ECFDF5" stroke="#10B981" stroke-width="3"/>
+<text x="160" y="97" text-anchor="middle" font-size="18" font-weight="bold" fill="#047857">A</text>
+
+<text x="160" y="125" text-anchor="middle" font-size="11" fill="#047857">Current</text>
+
+<!-- Wire -->
+
+<line x1="184" y1="90" x2="240" y2="90" stroke="#17345E" stroke-width="3"/>
+
+<!-- Resistor -->
+
+<path d="M240 90
+L255 75
+L270 105
+L285 75
+L300 105
+L315 75
+L330 105
+L345 75
+L360 90"
+stroke="#EC4899" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+<text x="300" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#BE185D">
+R = <tspan id="rText">6</tspan> Ω
+</text>
+
+<!-- Wire -->
+
+<line x1="360" y1="90" x2="530" y2="90" stroke="#17345E" stroke-width="3"/>
+<line x1="530" y1="90" x2="530" y2="140" stroke="#17345E" stroke-width="3"/>
+<line x1="530" y1="140" x2="40" y2="140" stroke="#17345E" stroke-width="3"/>
+
+<!-- Electron Flow -->
+
+<circle id="dot1" cx="90" cy="90" r="4" fill="#2563EB"/>
+<circle id="dot2" cx="125" cy="90" r="4" fill="#2563EB"/>
+<circle id="dot3" cx="200" cy="90" r="4" fill="#2563EB"/>
+
+</svg>
+
+</div>
+
+<!-- Controls -->
+
+<div class="controls">
+
+<div class="slider-group">
+<label>Voltage (1–24 V)</label>
+<input type="range" id="voltage" min="1" max="24" value="12">
+</div>
+
+<div class="slider-group">
+<label>Resistance (1–20 Ω)</label>
+<input type="range" id="resistance" min="1" max="20" value="6">
+</div>
+
+</div>
+
+<!-- Formula -->
+
+<div class="formula-card">
+
+<div class="formula-title">Calculated using Ohm's Law</div>
+
+<div class="formula-big">
+I = <span id="fv">12</span> / <span id="fr">6</span> =
+<span id="fi">2.00</span> A
+</div>
+
+</div>
+
+<!-- Observation -->
+
+<div class="observe">
+
+<h3>🔍 What do you observe?</h3>
+
+<ul>
+<li>Increasing <b>Voltage</b> increases the Current.</li>
+<li>Increasing <b>Resistance</b> decreases the Current.</li>
+<li>The relationship follows <b>Ohm's Law (I = V/R)</b>.</li>
+</ul>
+
 </div>
 
 </div>
@@ -1866,38 +1952,32 @@ I = 12 / 6 = 2.00 A
 </div>
 
 <script>
-(function(){
+const voltage=document.getElementById("voltage");
+const resistance=document.getElementById("resistance");
 
-const V=document.getElementById('voltage');
-const R=document.getElementById('resistance');
+function updateOhm(){
 
-const vTxt=document.getElementById('voltVal');
-const rTxt=document.getElementById('resVal');
-const cTxt=document.getElementById('currVal');
-const formula=document.getElementById('formula');
+const V=Number(voltage.value);
+const R=Number(resistance.value);
+const I=(V/R).toFixed(2);
 
-function update(){
+document.getElementById("vValue").innerHTML=V;
+document.getElementById("rValue").innerHTML=R;
+document.getElementById("iValue").innerHTML=I;
 
-const v=Number(V.value);
-const r=Number(R.value);
-const i=(v/r).toFixed(2);
+document.getElementById("rText").textContent=R;
 
-vTxt.innerHTML=v;
-rTxt.innerHTML=r;
-cTxt.innerHTML=i;
-
-formula.innerHTML=`I = ${v} / ${r} = <span style="color:#16A34A">${i} A</span>`;
+document.getElementById("fv").textContent=V;
+document.getElementById("fr").textContent=R;
+document.getElementById("fi").textContent=I;
 
 }
 
-V.addEventListener('input',update);
-R.addEventListener('input',update);
+voltage.addEventListener("input",updateOhm);
+resistance.addEventListener("input",updateOhm);
 
-update();
-
-})();
+updateOhm();
 </script>
-
 <div class="note">
 <b>Observation:</b><br>
 Increasing the voltage while keeping resistance constant increases current.
