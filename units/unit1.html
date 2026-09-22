@@ -99,6 +99,11 @@ border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
+/* Student mode: unreleased whole sections stay out of the LMS page. */
+.section.locked-section{
+display:none;
+}
+
 .section h2{
 color:#0B4AA2;
 border-left:5px solid #2196F3;
@@ -218,8 +223,6 @@ top:0;
 
 <script>
 
-<script>
-
 // ===============================
 // TEACHER / STUDENT MODE
 // ===============================
@@ -234,8 +237,6 @@ const teacherMode = false;
 // 3 = Passive Components
 // 4 = Waveform Representation
 // 5 = Ohm's Law + KCL + KVL
-// 6 = Series Parallel Circuits
-// 7 = Star Delta conversions
 const unlockedSection = 2;
 
 </script>
@@ -2306,7 +2307,7 @@ Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during ex
 <!-- 6. KIRCHHOFF'S CURRENT LAW (KCL) -->
 <!-- ===================================================== -->
 
-<div class="section" id="kcl" data-topic="6">
+<div class="section" id="kcl" data-subsection="6">
 
 <h2>6. Kirchhoff's Current Law (KCL)</h2>
 
@@ -2731,7 +2732,7 @@ Whenever you see a junction with multiple branches, immediately write **ΣI = 0*
 <!-- 5.2 KIRCHHOFF'S VOLTAGE LAW -->
 <!-- ===================================================== -->
 
-<div class="section" id="kvl" data-topic="7">
+<div class="section" id="kvl" data-subsection="7">
 
 <h2>5.2 Kirchhoff's Voltage Law (KVL)</h2>
 
@@ -3115,7 +3116,7 @@ updateKVL();
 <!-- 7. SERIES & PARALLEL CIRCUIT -->
 <!-- ===================================================== -->
 
-<div class="section" id="series" data-section="6">
+<div class="section" id="series" data-subsection="6">
 
 <h2>7. Series & Parallel Circuit</h2>
 
@@ -3558,7 +3559,7 @@ If the question asks **same current**, think <b>Series Circuit</b>. If it asks *
 <!-- 8. STAR / DELTA TRANSFORMATION -->
 <!-- ===================================================== -->
 
-<div class="section" id="star" data-section="7">
+<div class="section" id="star" data-subsection="7">
 
 <h2>8. Star (Y) / Delta (Δ) Transformation</h2>
 
@@ -4059,45 +4060,17 @@ Learn with Abhi © 2026
 </footer>
 
 <script>
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const sections=document.querySelectorAll("[data-topic]");
-
-sections.forEach(sec=>{
-
-const topic=Number(sec.dataset.topic);
-
-<script>
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const sections=document.querySelectorAll("[data-section]");
-
-sections.forEach(sec=>{
-
-const sectionNo=Number(sec.dataset.section);
-
-<script>
 document.addEventListener("DOMContentLoaded", () => {
-
   if (teacherMode) return;
 
-  document.querySelectorAll(".section[data-section]").forEach(section => {
-
-    const no = Number(section.dataset.section);
-
-    if (no > unlockedSection) {
-
-      const title = section.querySelector("h2")?.innerText || "Upcoming Section";
-
-      section.innerHTML = `
-        <div class="locked">
-          <h2>🔒 ${title}</h2>
-          <p>This complete section will be unlocked after classroom teaching.</p>
-        </div>`;
+  document.querySelectorAll(".section[data-section]").forEach((section) => {
+    if (Number(section.dataset.section) > unlockedSection) {
+      section.classList.add("locked-section");
+      section.setAttribute("aria-hidden", "true");
     }
   });
-
 });
 </script>
+
+</body>
+</html>
