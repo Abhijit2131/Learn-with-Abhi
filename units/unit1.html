@@ -4078,28 +4078,26 @@ sections.forEach(sec=>{
 
 const sectionNo=Number(sec.dataset.section);
 
-if(teacherMode) return;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-if(sectionNo>unlockedSection){
+  if (teacherMode) return;
 
-const title=sec.querySelector("h2")?.innerText || "Upcoming Section";
+  document.querySelectorAll(".section[data-section]").forEach(section => {
 
-sec.innerHTML=`
-<div class="locked">
-<h2>🔒 ${title}</h2>
-<p>This complete section will be unlocked after classroom teaching.</p>
-</div>
-`;
+    const no = Number(section.dataset.section);
 
-}
+    if (no > unlockedSection) {
+
+      const title = section.querySelector("h2")?.innerText || "Upcoming Section";
+
+      section.innerHTML = `
+        <div class="locked">
+          <h2>🔒 ${title}</h2>
+          <p>This complete section will be unlocked after classroom teaching.</p>
+        </div>`;
+    }
+  });
 
 });
-
-});
-
 </script>
-
-</script>
-
-</body>
-</html>
