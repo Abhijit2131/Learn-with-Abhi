@@ -216,30 +216,27 @@ top:0;
 
 <body>
 
-<!-- ===================================================== -->
-<!-- TEACHER / STUDENT MODE CONTROLLER -->
-<!-- ===================================================== -->
+<script>
 
 <script>
 
-// ===== ONLY CHANGE THESE VALUES =====
+// ===============================
+// TEACHER / STUDENT MODE
+// ===============================
 
-// false = Students (GitHub Website)
-// true = Teacher (All topics visible)
-const teacherMode = true;
+// true  = Teacher (all sections visible)
+// false = Student (GitHub Live)
+const teacherMode = false;
 
-// Highest unlocked topic
-// 1 Intro
-// 2 Basic Quantities
-// 3 Passive Components
-// 4 Waveform
-// 5 Ohm's Law
-// 6 KCL
-// 7 KVL
-// 8 Series Parallel
-// 9 Star Delta
-
-const unlockedTopic = 2;
+// Unlock complete sections
+// 1 = Introduction
+// 2 = Basic Electrical Quantities
+// 3 = Passive Components
+// 4 = Waveform Representation
+// 5 = Ohm's Law + KCL + KVL
+// 6 = Series Parallel Circuits
+// 7 = Star Delta conversions
+const unlockedSection = 2;
 
 </script>
 
@@ -344,7 +341,7 @@ Section 7
 <div class="content">
 
 <!-- Electronics -->
-<div class="section" id="intro" data-topic="1">
+<div class="section" id="intro" data-section="1">
 
 <h2>1.1 Definition of Electronics</h2>
 
@@ -557,7 +554,7 @@ Control • Processing • Communication • Automation
 <!-- 2. BASIC ELECTRICAL QUANTITIES -->
 <!-- ===================================================== -->
 
-<div class="section" id="basic" data-topic="2">
+<div class="section" id="current" data-section="2">
 
 <h2>2. Basic Electrical Quantities</h2>
 
@@ -998,7 +995,7 @@ font-weight="bold" fill="#DC2626">I</text>
 <!-- 3. PASSIVE ELECTRONIC COMPONENTS -->
 <!-- ===================================================== -->
 
-<div class="section" id="passive" data-topic="3">
+<div class="section" id="resistor" data-section="3">
 
 <h2>3. Passive Electronic Components</h2>
 
@@ -1425,7 +1422,7 @@ Resistor → Opposes current | Capacitor → Stores electric field energy | Indu
 <!-- 4. WAVEFORM REPRESENTATION & SIGNAL CHARACTERISTICS -->
 <!-- ===================================================== -->
 
-<div class="section" id="waveform" data-topic="4">
+<div class="section" id="waveform" data-section="4">
 
 <h2>4. Waveform Representation & Signal Characteristics</h2>
 
@@ -1682,7 +1679,7 @@ Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
 <!-- 5. OHM'S LAW -->
 <!-- ===================================================== -->
 
-<div class="section" id="ohm" data-topic="5">
+<div class="section" id="ohm" data-section="5">
 
 <h2>5. Ohm's Law</h2>
 
@@ -3118,7 +3115,7 @@ updateKVL();
 <!-- 7. SERIES & PARALLEL CIRCUIT -->
 <!-- ===================================================== -->
 
-<div class="section" id="seriesparallel" data-topic="8">
+<div class="section" id="series" data-section="6">
 
 <h2>7. Series & Parallel Circuit</h2>
 
@@ -3560,7 +3557,8 @@ If the question asks **same current**, think <b>Series Circuit</b>. If it asks *
 <!-- ===================================================== -->
 <!-- 8. STAR / DELTA TRANSFORMATION -->
 <!-- ===================================================== -->
-<div class="section" id="stardelta" data-topic="9">
+
+<div class="section" id="star" data-section="7">
 
 <h2>8. Star (Y) / Delta (Δ) Transformation</h2>
 
@@ -4070,16 +4068,26 @@ sections.forEach(sec=>{
 
 const topic=Number(sec.dataset.topic);
 
+<script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const sections=document.querySelectorAll("[data-section]");
+
+sections.forEach(sec=>{
+
+const sectionNo=Number(sec.dataset.section);
+
 if(teacherMode) return;
 
-if(topic>unlockedTopic){
+if(sectionNo>unlockedSection){
 
-const title=sec.querySelector("h2").innerText;
+const title=sec.querySelector("h2")?.innerText || "Upcoming Section";
 
 sec.innerHTML=`
 <div class="locked">
 <h2>🔒 ${title}</h2>
-<p>This topic will be unlocked after the classroom lecture.</p>
+<p>This complete section will be unlocked after classroom teaching.</p>
 </div>
 `;
 
@@ -4088,6 +4096,8 @@ sec.innerHTML=`
 });
 
 });
+
+</script>
 
 </script>
 
