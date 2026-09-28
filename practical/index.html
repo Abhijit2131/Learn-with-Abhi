@@ -116,11 +116,6 @@ border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-/* Student mode: experiments not yet unlocked stay out of the LMS page. */
-.section.locked-section{
-display:none;
-}
-
 .section h2{
 color:#0B4AA2;
 border-left:5px solid #2196F3;
@@ -234,31 +229,6 @@ background:#F1F5F9;
 color:#64748B;
 }
 
-/* Locked placeholder card shown in place of an unreleased experiment */
-
-.locked-card{
-background:#F8FAFC;
-border:2px dashed #CBD5E1;
-border-radius:16px;
-padding:40px 25px;
-text-align:center;
-margin:0;
-}
-
-.locked-card h2{
-border:none;
-padding:0;
-margin-bottom:12px;
-color:#64748B;
-}
-
-.locked-card p{
-color:#64748B;
-font-size:15px;
-line-height:1.6;
-margin-top:8px;
-}
-
 footer{
 background:#0B4AA2;
 color:white;
@@ -286,25 +256,12 @@ top:0;
 
 <body>
 
-<script>
-
-// ===============================
-// TEACHER / STUDENT MODE
-// ===============================
-
-// true  = Teacher (all experiments visible, regardless of unlock status)
-// false = Student (GitHub Live)
-const teacherMode = false;
-
-// Unlock complete experiments
-// Bump this number only after an experiment has been performed/covered in
-// class, then commit + push. Everything above this number stays hidden
-// from students behind the locked-card placeholder below.
-// 1 = Introduction to Lab Equipment, Symbols & Safety Rules
-// 2 = Identify Active & Passive Electronic Components and Verify Its Values
-const unlockedExperiment = 0;
-
-</script>
+<!--
+  No lock/unlock system on this page: the Practical Manual is available to
+  students at all times as soon as an experiment is added. Only the
+  Unit-wise Notes pages (units/unitN.html) use the teacherMode /
+  unlockedSection release mechanism.
+-->
 
 <header>
 <h1>Practical Manual</h1>
@@ -324,8 +281,8 @@ const unlockedExperiment = 0;
 
 <hr style="margin:14px 0;">
 
-<a href="#exp1">Exp. 1 <span class="tag" id="tag-1">–</span></a>
-<a href="#exp2">Exp. 2 <span class="tag" id="tag-2">–</span></a>
+<a href="#exp1">Exp. 1</a>
+<a href="#exp2">Exp. 2</a>
 
 <hr style="margin:14px 0;">
 
@@ -371,8 +328,8 @@ Department of First Year Engineering
 <tr><th>#</th><th>Title of Experiment</th><th>Hours</th><th>Status</th></tr>
 </thead>
 <tbody>
-<tr><td>1</td><td><a href="#exp1">Experiment 1 — <span data-exp-title="1">Title pending</span></a></td><td>2</td><td><span class="status-badge" id="status-1">–</span></td></tr>
-<tr><td>2</td><td><a href="#exp2">Experiment 2 — <span data-exp-title="2">Title pending</span></a></td><td>2</td><td><span class="status-badge" id="status-2">–</span></td></tr>
+<tr><td>1</td><td><a href="#exp1">Experiment 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
+<tr><td>2</td><td><a href="#exp2">Experiment 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>3</td><td>Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>4</td><td>Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>5</td><td>Test the Performance of the Given PN Junction Diode</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
@@ -390,22 +347,18 @@ Department of First Year Engineering
 
 <!--
   TEACHER NOTE: This is the master index of experiments (from the lab
-  manual's official list). Rows 3-14 are text-only placeholders — "Not
-  Added" means no section for that experiment exists on this page yet,
-  which is different from "Locked" (a section that exists but isn't
-  released to students). When you build out experiment N below, change its
-  row to match the exp1/exp2 pattern: link to #expN with a data-exp-title
-  span and a status-badge with id="status-N" so it plugs into the sync
-  script at the bottom of the page.
+  manual's official list). Rows 3-14 are text-only "Not Added" placeholders
+  until their content is provided — there is no locking on this page, so
+  "Not Added" simply means the section doesn't exist here yet. When you add
+  experiment N below, change its row to link to #expN and mark it
+  "Available", same as rows 1-2.
 -->
 
 </section>
 
 <!-- ================= EXPERIMENT 1 ================= -->
-<!-- data-experiment must match the number used in the TOC link (#exp1),
-     the List of Experiments row above, and unlockedExperiment below. -->
 
-<section class="section" id="exp1" data-experiment="1">
+<section class="section" id="exp1">
 
 <h2>Experiment No. 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</h2>
 
@@ -532,7 +485,7 @@ Department of First Year Engineering
 
 <!-- ================= EXPERIMENT 2 ================= -->
 
-<section class="section" id="exp2" data-experiment="2">
+<section class="section" id="exp2">
 
 <h2>Experiment No. 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</h2>
 
@@ -635,23 +588,18 @@ Department of First Year Engineering
 
 <!--
   TEACHER NOTE — adding Experiment 3 onward:
-  1. Copy an entire <section class="section" id="expN" data-experiment="N"> ...
-     </section> block above and renumber N. Use whatever numbered
-     sub-headings (h3/h4) the experiment's manual actually has (Aim,
-     Apparatus, Theory, Circuit Diagram, Procedure, Observation Table,
-     Precautions, Conclusion, etc. — order and count vary per experiment,
-     as seen between Exp. 1 and Exp. 2 above); don't force every
-     experiment into one fixed template.
-  2. Add "<a href="#expN">Exp. N <span class="tag" id="tag-N">–</span></a>"
-     to the TOC on the left.
+  1. Copy an entire <section class="section" id="expN"> ... </section>
+     block above and renumber N. Use whatever numbered sub-headings
+     (h3/h4) the experiment's manual actually has (Aim, Apparatus,
+     Theory, Circuit Diagram, Procedure, Observation Table, Precautions,
+     Conclusion, etc. — order and count vary per experiment, as seen
+     between Exp. 1 and Exp. 2 above); don't force every experiment into
+     one fixed template.
+  2. Add "<a href="#expN">Exp. N</a>" to the TOC on the left.
   3. Change experiment N's row in the List of Experiments table from the
-     plain "Not Added" text row to the linked exp1/exp2 pattern
-     (<a href="#expN">... <span data-exp-title="N">...</span></a> plus
-     <span class="status-badge" id="status-N">).
-  4. Update the "Unlock complete experiments" comment above unlockedExperiment
-     with the new experiment's name, for your own reference.
-  The lock script at the bottom of the page finds sections by
-  [data-experiment] automatically, so no script changes are needed.
+     plain "Not Added" text row to a link + "Available" badge, same as
+     rows 1-2. This page has no lock/unlock step — once a section exists
+     here it's visible to students immediately.
 -->
 
 </div>
@@ -662,57 +610,6 @@ Department of First Year Engineering
 Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
 Learn with Abhi © 2026
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const experiments = document.querySelectorAll(".section[data-experiment]");
-
-  experiments.forEach((section) => {
-    const num = Number(section.dataset.experiment);
-    const isUnlocked = teacherMode || num <= unlockedExperiment;
-
-    // Keep the List of Experiments status badges and TOC tags in sync
-    // with the lock state, and pull each experiment's title from its <h2>.
-    const statusEl = document.getElementById("status-" + num);
-    const tagEl = document.getElementById("tag-" + num);
-    const titleEl = document.querySelector('[data-exp-title="' + num + '"]');
-
-    if (titleEl) {
-      const h2 = section.querySelector("h2");
-      if (h2) titleEl.textContent = h2.textContent.replace(/^Experiment No\.\s*\d+\s*—\s*/, "");
-    }
-
-    if (statusEl) {
-      statusEl.textContent = isUnlocked ? "Unlocked" : "Locked";
-      statusEl.className = "status-badge " + (isUnlocked ? "open" : "closed");
-    }
-
-    if (tagEl) {
-      tagEl.textContent = isUnlocked ? "Open" : "Locked";
-      tagEl.className = "tag " + (isUnlocked ? "open" : "closed");
-    }
-
-    if (teacherMode) return;
-
-    if (!isUnlocked) {
-      section.classList.add("locked-section");
-      section.setAttribute("aria-hidden", "true");
-
-      // Give students a visible placeholder card at the experiment's
-      // position in the list, instead of the experiment silently vanishing.
-      const placeholder = document.createElement("div");
-      placeholder.className = "locked-card";
-      placeholder.id = "locked-placeholder-" + num;
-      placeholder.innerHTML =
-        "<h2>🔒 Experiment " + num + " — Coming Soon</h2>" +
-        "<p>This experiment will be unlocked here once it has been covered in the lab.</p>";
-      section.after(placeholder);
-    }
-  });
-
-});
-</script>
 
 </body>
 </html>
