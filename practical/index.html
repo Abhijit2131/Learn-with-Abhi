@@ -142,15 +142,60 @@ margin:8px 0 8px 22px;
 margin-bottom:6px;
 }
 
-.fig-placeholder{
-background:#F8FAFC;
-border:1px dashed #CBD5E1;
+.fig-img{
+max-width:100%;
+display:block;
+margin:14px auto;
+border:1px solid #DCE5F0;
 border-radius:10px;
-padding:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.fig-caption{
+text-align:center;
 color:#64748B;
-font-style:italic;
+font-size:13px;
+margin-top:-4px;
+margin-bottom:10px;
+}
+
+/* Experiment tabs: click a tab to show only that experiment's content */
+
+.exp-tabs{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
+
+.exp-tab-btn{
+background:#EAF4FF;
+color:#0B4AA2;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
 font-size:14px;
-margin:10px 0;
+cursor:pointer;
+font-family:inherit;
+transition:.2s;
+}
+
+.exp-tab-btn:hover{
+background:#DCEAFB;
+}
+
+.exp-tab-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.exp-tab-panel{
+display:none;
+}
+
+.exp-tab-panel.active{
+display:block;
 }
 
 .meta-table{
@@ -356,9 +401,20 @@ Department of First Year Engineering
 
 </section>
 
-<!-- ================= EXPERIMENT 1 ================= -->
+<!-- ================= EXPERIMENTS (tabbed) ================= -->
 
-<section class="section" id="exp1">
+<section class="section" id="experiments">
+
+<h2>Experiments</h2>
+
+<div class="exp-tabs">
+<button type="button" class="exp-tab-btn" data-exp="1" onclick="location.hash='exp1'">Experiment 1</button>
+<button type="button" class="exp-tab-btn" data-exp="2" onclick="location.hash='exp2'">Experiment 2</button>
+</div>
+
+<!-- ============ EXPERIMENT 1 PANEL ============ -->
+
+<div class="exp-tab-panel" id="exp1">
 
 <h2>Experiment No. 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</h2>
 
@@ -403,7 +459,8 @@ Department of First Year Engineering
 
 <h4>4.2 Standard Electrical &amp; Electronic Symbols</h4>
 <p>Every electrical/electronic component is represented on a circuit diagram by a standardized graphical symbol so that circuits can be drawn and interpreted uniformly. Commonly used symbols are shown below.</p>
-<div class="fig-placeholder">Fig. 1.1 – Common Electrical and Electronic Symbols (image to be added)</div>
+<img class="fig-img" src="../assets/images/practical/exp1-symbols-chart.png" alt="Common Electrical and Electronic Symbols chart">
+<p class="fig-caption">Fig. 1.1 – Common Electrical and Electronic Symbols</p>
 
 <h3>5. General Safety Rules</h3>
 
@@ -481,11 +538,11 @@ Department of First Year Engineering
 <h3>9. Conclusion</h3>
 <p>The common equipment, instruments and standard symbols used in the Electrical and Electronics Engineering laboratory were studied, and the general safety rules to be followed in the laboratory were understood.</p>
 
-</section>
+</div>
 
-<!-- ================= EXPERIMENT 2 ================= -->
+<!-- ============ EXPERIMENT 2 PANEL ============ -->
 
-<section class="section" id="exp2">
+<div class="exp-tab-panel" id="exp2">
 
 <h2>Experiment No. 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</h2>
 
@@ -541,7 +598,8 @@ Department of First Year Engineering
 <p>Ceramic and mica capacitors are usually marked with a 3-digit numeric code (the first two digits are significant figures and the third is the multiplier, giving the value in pF), while electrolytic capacitors have their capacitance and voltage rating printed directly on the body along with polarity markings. Diode and transistor terminals/types are identified using the diode-check and hFE modes of a digital multimeter.</p>
 
 <h4>5.4 Classification of Components – Symbols</h4>
-<div class="fig-placeholder">Fig. 2.1 – Standard symbols of common Active and Passive components (image to be added)</div>
+<img class="fig-img" src="../assets/images/practical/exp2-component-classification.png" alt="Classification of Active and Passive electronic component symbols">
+<p class="fig-caption">Fig. 2.1 – Standard symbols of common Active and Passive components</p>
 
 <h3>6. Precautions</h3>
 <ul>
@@ -584,22 +642,30 @@ Department of First Year Engineering
 <h3>10. Conclusion</h3>
 <p>Based on the above observations, write your conclusion mentioning the components identified, their standard and measured values, and their classification as Active or Passive.</p>
 
+</div>
+
 </section>
 
 <!--
-  TEACHER NOTE — adding Experiment 3 onward:
-  1. Copy an entire <section class="section" id="expN"> ... </section>
-     block above and renumber N. Use whatever numbered sub-headings
-     (h3/h4) the experiment's manual actually has (Aim, Apparatus,
-     Theory, Circuit Diagram, Procedure, Observation Table, Precautions,
-     Conclusion, etc. — order and count vary per experiment, as seen
-     between Exp. 1 and Exp. 2 above); don't force every experiment into
-     one fixed template.
-  2. Add "<a href="#expN">Exp. N</a>" to the TOC on the left.
-  3. Change experiment N's row in the List of Experiments table from the
-     plain "Not Added" text row to a link + "Available" badge, same as
-     rows 1-2. This page has no lock/unlock step — once a section exists
-     here it's visible to students immediately.
+  TEACHER NOTE — adding Experiment 3 onward (tabbed layout):
+  1. Add a new button to .exp-tabs above:
+     <button type="button" class="exp-tab-btn" data-exp="N" onclick="location.hash='expN'">Experiment N</button>
+  2. Copy an entire <div class="exp-tab-panel" id="expN"> ... </div> block
+     (one of Experiment 1/2 above) and fill it in. Use whatever numbered
+     sub-headings (h3/h4) the experiment's manual actually has (Aim,
+     Apparatus, Theory, Circuit Diagram, Procedure, Observation Table,
+     Precautions, Conclusion, etc. — order and count vary per experiment,
+     as seen between Exp. 1 and Exp. 2); don't force every experiment
+     into one fixed template. Add the new panel inside the same
+     <section id="experiments"> as a sibling of the exp1/exp2 panels.
+  3. Add "<a href="#expN">Exp. N</a>" to the TOC on the left.
+  4. Change experiment N's row in the List of Experiments table from the
+     plain "Not Added" text row to a link (href="#expN") + "Available"
+     badge, same as rows 1-2. This page has no lock/unlock step — once a
+     panel exists here it's visible to students immediately.
+  The tab-switch script at the bottom of the page reads the "#expN" hash
+  generically via [data-exp] / .exp-tab-panel, so no script changes are
+  needed — it just needs the button + panel added above.
 -->
 
 </div>
@@ -610,6 +676,27 @@ Department of First Year Engineering
 Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
 Learn with Abhi © 2026
 </footer>
+
+<script>
+(function () {
+  function showExperiment(num) {
+    document.querySelectorAll(".exp-tab-panel").forEach(function (panel) {
+      panel.classList.toggle("active", panel.id === "exp" + num);
+    });
+    document.querySelectorAll(".exp-tab-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.exp === String(num));
+    });
+  }
+
+  var initial = window.location.hash.replace("#exp", "");
+  showExperiment(/^[0-9]+$/.test(initial) ? initial : "1");
+
+  window.addEventListener("hashchange", function () {
+    var num = window.location.hash.replace("#exp", "");
+    if (/^[0-9]+$/.test(num)) showExperiment(num);
+  });
+})();
+</script>
 
 </body>
 </html>
