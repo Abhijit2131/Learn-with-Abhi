@@ -6,34 +6,499 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Practical Manual | Learn with Abhi</title>
 
-<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:22px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+.container{
+width:92%;
+margin:30px auto;
+display:grid;
+grid-template-columns:280px 1fr;
+gap:25px;
+align-items:start;
+}
+
+/* Left Navigation */
+
+.toc{
+position:sticky;
+top:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.toc h3{
+color:#0B4AA2;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.toc a{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+padding:10px 12px;
+text-decoration:none;
+color:#17345E;
+border-radius:8px;
+font-size:14px;
+margin-bottom:6px;
+transition:.3s;
+}
+
+.toc a:hover{
+background:#EAF4FF;
+color:#0B4AA2;
+}
+
+.toc .tag{
+font-size:11px;
+font-weight:bold;
+padding:3px 8px;
+border-radius:20px;
+white-space:nowrap;
+}
+
+.tag.open{
+background:#DCFCE7;
+color:#166534;
+}
+
+.tag.closed{
+background:#F1F5F9;
+color:#64748B;
+}
+
+/* Content */
+
+.content{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.section{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Student mode: experiments not yet unlocked stay out of the LMS page. */
+.section.locked-section{
+display:none;
+}
+
+.section h2{
+color:#0B4AA2;
+border-left:5px solid #2196F3;
+padding-left:12px;
+margin-bottom:15px;
+}
+
+.section h3{
+color:#0B4AA2;
+margin:20px 0 10px;
+}
+
+.meta-table{
+width:100%;
+border-collapse:collapse;
+margin:15px 0;
+}
+
+.meta-table th{
+background:#0B4AA2;
+color:#fff;
+padding:10px 14px;
+width:160px;
+text-align:left;
+font-size:14px;
+}
+
+.meta-table td{
+border:1px solid #DCE5F0;
+padding:10px 14px;
+font-size:14px;
+}
+
+.info-table{
+width:100%;
+border-collapse:collapse;
+margin:15px 0;
+}
+
+.info-table th{
+background:#0B4AA2;
+color:#fff;
+padding:12px;
+text-align:left;
+}
+
+.info-table td{
+border:1px solid #DCE5F0;
+padding:12px;
+}
+
+.exp-list{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+.exp-list th{
+background:#EAF4FF;
+color:#0B4AA2;
+padding:12px;
+text-align:left;
+font-size:14px;
+}
+
+.exp-list td{
+border-bottom:1px solid #EAF4FF;
+padding:12px;
+font-size:14px;
+}
+
+.status-badge{
+font-size:12px;
+font-weight:bold;
+padding:4px 10px;
+border-radius:20px;
+}
+
+.status-badge.open{
+background:#DCFCE7;
+color:#166534;
+}
+
+.status-badge.closed{
+background:#F1F5F9;
+color:#64748B;
+}
+
+/* Locked placeholder card shown in place of an unreleased experiment */
+
+.locked-card{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+border-radius:16px;
+padding:40px 25px;
+text-align:center;
+margin:0;
+}
+
+.locked-card h2{
+border:none;
+padding:0;
+margin-bottom:12px;
+color:#64748B;
+}
+
+.locked-card p{
+color:#64748B;
+font-size:15px;
+line-height:1.6;
+margin-top:8px;
+}
+
+footer{
+background:#0B4AA2;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:10px;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.toc{
+position:relative;
+top:0;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="banner">
+<script>
+
+// ===============================
+// TEACHER / STUDENT MODE
+// ===============================
+
+// true  = Teacher (all experiments visible, regardless of unlock status)
+// false = Student (GitHub Live)
+const teacherMode = false;
+
+// Unlock complete experiments
+// Bump this number only after an experiment has been performed/covered in
+// class, then commit + push. Everything above this number stays hidden
+// from students behind the locked-card placeholder below.
+// 1 = Experiment 1
+// 2 = Experiment 2
+const unlockedExperiment = 0;
+
+</script>
+
+<header>
 <h1>Practical Manual</h1>
-<p>Fundamental of Electrical & Electronics Engineering Lab</p>
+<p>Fundamentals of Electrical &amp; Electronics Engineering Lab</p>
+</header>
+
+<div class="container">
+
+<!-- LEFT PALETTE -->
+
+<aside class="toc">
+
+<h3>🔬 Lab Manual Contents</h3>
+
+<a href="#titlepage">📄 Title Page</a>
+<a href="#exp-list">📋 List of Experiments</a>
+
+<hr style="margin:14px 0;">
+
+<a href="#exp1">Exp. 1 <span class="tag" id="tag-1">–</span></a>
+<a href="#exp2">Exp. 2 <span class="tag" id="tag-2">–</span></a>
+
+<hr style="margin:14px 0;">
+
+<a href="../index.html">🏠 Back to Home</a>
+
+</aside>
+
+<!-- RIGHT CONTENT -->
+
+<div class="content">
+
+<!-- ================= TITLE PAGE ================= -->
+
+<section class="section" id="titlepage">
+
+<h2>Lab Manual — Title Page</h2>
+
+<table class="meta-table">
+<tr><th>Course</th><td>Fundamentals of Electrical &amp; Electronics Engineering</td></tr>
+<tr><th>Laboratory</th><td>Electrical &amp; Electronics Engineering Lab</td></tr>
+<tr><th>Prepared By</th><td>Mr. Abhijit S. Shinde</td></tr>
+<tr><th>Designation</th><td>Director, Students' Affairs</td></tr>
+<tr><th>Institute</th><td>D Y Patil Agriculture &amp; Technical University, Talsande</td></tr>
+</table>
+
+<!--
+  TEACHER NOTE: Replace/extend the rows above once the actual cover page
+  content is provided (program, semester, academic year, index/certificate
+  page, etc.). This section is always visible to students — it is not
+  locked, since a manual's title page is not "content" that needs release.
+-->
+
+</section>
+
+<!-- ================= LIST OF EXPERIMENTS ================= -->
+
+<section class="section" id="exp-list">
+
+<h2>List of Experiments</h2>
+
+<table class="exp-list">
+<thead>
+<tr><th>#</th><th>Experiment Title</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><a href="#exp1">Experiment 1 — <span data-exp-title="1">Title pending</span></a></td><td><span class="status-badge" id="status-1">–</span></td></tr>
+<tr><td>2</td><td><a href="#exp2">Experiment 2 — <span data-exp-title="2">Title pending</span></a></td><td><span class="status-badge" id="status-2">–</span></td></tr>
+</tbody>
+</table>
+
+<!--
+  TEACHER NOTE: This is the master index of experiments. When you add a new
+  experiment section further down this file, add its matching <tr> here too
+  (same experiment number) so the list, the TOC and the section itself never
+  drift out of sync. Titles here are filled in automatically by the script
+  at the bottom of the page from each experiment's <h2>, once you fill it in.
+-->
+
+</section>
+
+<!-- ================= EXPERIMENT 1 ================= -->
+<!-- data-experiment must match the number used in the TOC link (#exp1),
+     the List of Experiments row above, and unlockedExperiment below. -->
+
+<section class="section" id="exp1" data-experiment="1">
+
+<h2>Experiment No. 1 — [Experiment 1 title goes here]</h2>
+
+<h3>Aim</h3>
+<p>[Paste Experiment 1 aim here]</p>
+
+<h3>Apparatus Required</h3>
+<p>[Paste Experiment 1 apparatus list here]</p>
+
+<h3>Circuit Diagram</h3>
+<p>[Insert circuit diagram image/description here]</p>
+
+<h3>Procedure</h3>
+<p>[Paste Experiment 1 procedure here]</p>
+
+<h3>Observation Table</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Observation</th><th>Result</th></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Result</h3>
+<p>[Paste Experiment 1 result/conclusion here]</p>
+
+<h3>Viva Questions</h3>
+<p>[Paste Experiment 1 viva questions here]</p>
+
+</section>
+
+<!-- ================= EXPERIMENT 2 ================= -->
+
+<section class="section" id="exp2" data-experiment="2">
+
+<h2>Experiment No. 2 — [Experiment 2 title goes here]</h2>
+
+<h3>Aim</h3>
+<p>[Paste Experiment 2 aim here]</p>
+
+<h3>Apparatus Required</h3>
+<p>[Paste Experiment 2 apparatus list here]</p>
+
+<h3>Circuit Diagram</h3>
+<p>[Insert circuit diagram image/description here]</p>
+
+<h3>Procedure</h3>
+<p>[Paste Experiment 2 procedure here]</p>
+
+<h3>Observation Table</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Observation</th><th>Result</th></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Result</h3>
+<p>[Paste Experiment 2 result/conclusion here]</p>
+
+<h3>Viva Questions</h3>
+<p>[Paste Experiment 2 viva questions here]</p>
+
+</section>
+
+<!--
+  TEACHER NOTE — adding Experiment 3 onward:
+  1. Copy an entire <section class="section" id="expN" data-experiment="N"> ...
+     </section> block above and renumber N.
+  2. Add "<a href="#expN">Exp. N <span class="tag" id="tag-N">–</span></a>"
+     to the TOC on the left.
+  3. Add a matching <tr> to the List of Experiments table.
+  4. Update the "Unlock complete experiments" comment above unlockedExperiment
+     with the new experiment's name, for your own reference.
+  The lock script at the bottom of the page finds sections by
+  [data-experiment] automatically, so no script changes are needed.
+-->
+
 </div>
 
-<div class="content" style="width:90%;margin:30px auto;">
-
-<h2>12 Laboratory Experiments</h2>
-
-<p>This section will contain:</p>
-
-<ul>
-<li>Experiment Aim</li>
-<li>Apparatus Required</li>
-<li>Circuit Diagram</li>
-<li>Observation Table</li>
-<li>Result</li>
-<li>Viva Questions</li>
-</ul>
-
-<p><a href="../index.html">← Back to Home</a></p>
-
 </div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const experiments = document.querySelectorAll(".section[data-experiment]");
+
+  experiments.forEach((section) => {
+    const num = Number(section.dataset.experiment);
+    const isUnlocked = teacherMode || num <= unlockedExperiment;
+
+    // Keep the List of Experiments status badges and TOC tags in sync
+    // with the lock state, and pull each experiment's title from its <h2>.
+    const statusEl = document.getElementById("status-" + num);
+    const tagEl = document.getElementById("tag-" + num);
+    const titleEl = document.querySelector('[data-exp-title="' + num + '"]');
+
+    if (titleEl) {
+      const h2 = section.querySelector("h2");
+      if (h2) titleEl.textContent = h2.textContent.replace(/^Experiment No\.\s*\d+\s*—\s*/, "");
+    }
+
+    if (statusEl) {
+      statusEl.textContent = isUnlocked ? "Unlocked" : "Locked";
+      statusEl.className = "status-badge " + (isUnlocked ? "open" : "closed");
+    }
+
+    if (tagEl) {
+      tagEl.textContent = isUnlocked ? "Open" : "Locked";
+      tagEl.className = "tag " + (isUnlocked ? "open" : "closed");
+    }
+
+    if (teacherMode) return;
+
+    if (!isUnlocked) {
+      section.classList.add("locked-section");
+      section.setAttribute("aria-hidden", "true");
+
+      // Give students a visible placeholder card at the experiment's
+      // position in the list, instead of the experiment silently vanishing.
+      const placeholder = document.createElement("div");
+      placeholder.className = "locked-card";
+      placeholder.id = "locked-placeholder-" + num;
+      placeholder.innerHTML =
+        "<h2>🔒 Experiment " + num + " — Coming Soon</h2>" +
+        "<p>This experiment will be unlocked here once it has been covered in the lab.</p>";
+      section.after(placeholder);
+    }
+  });
+
+});
+</script>
 
 </body>
 </html>
