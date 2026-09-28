@@ -133,6 +133,31 @@ color:#0B4AA2;
 margin:20px 0 10px;
 }
 
+.section h4{
+color:#17345E;
+margin:14px 0 8px;
+font-size:15px;
+}
+
+.section ul{
+margin:8px 0 8px 22px;
+}
+
+.section li{
+margin-bottom:6px;
+}
+
+.fig-placeholder{
+background:#F8FAFC;
+border:1px dashed #CBD5E1;
+border-radius:10px;
+padding:16px;
+color:#64748B;
+font-style:italic;
+font-size:14px;
+margin:10px 0;
+}
+
 .meta-table{
 width:100%;
 border-collapse:collapse;
@@ -275,8 +300,8 @@ const teacherMode = false;
 // Bump this number only after an experiment has been performed/covered in
 // class, then commit + push. Everything above this number stays hidden
 // from students behind the locked-card placeholder below.
-// 1 = Experiment 1
-// 2 = Experiment 2
+// 1 = Introduction to Lab Equipment, Symbols & Safety Rules
+// 2 = Identify Active & Passive Electronic Components and Verify Its Values
 const unlockedExperiment = 0;
 
 </script>
@@ -316,22 +341,22 @@ const unlockedExperiment = 0;
 
 <section class="section" id="titlepage">
 
-<h2>Lab Manual — Title Page</h2>
+<h2>LAB MANUAL — Fundamentals of Electrical &amp; Electronics Engineering</h2>
+
+<p style="margin-bottom:10px;">
+Prepared By <b>Mr. Abhijit S. Shinde</b>, Assistant Professor<br>
+Department of First Year Engineering
+</p>
 
 <table class="meta-table">
-<tr><th>Course</th><td>Fundamentals of Electrical &amp; Electronics Engineering</td></tr>
-<tr><th>Laboratory</th><td>Electrical &amp; Electronics Engineering Lab</td></tr>
-<tr><th>Prepared By</th><td>Mr. Abhijit S. Shinde</td></tr>
-<tr><th>Designation</th><td>Director, Students' Affairs</td></tr>
-<tr><th>Institute</th><td>D Y Patil Agriculture &amp; Technical University, Talsande</td></tr>
+<tr><th>Course Code</th><td>261BTFY1105</td></tr>
+<tr><th>Semester</th><td>I</td></tr>
+<tr><th>Programme</th><td>First Year B.Tech</td></tr>
+<tr><th>L–T–P</th><td>3–0–2</td></tr>
+<tr><th>Credits</th><td>1</td></tr>
+<tr><th>Academic Year</th><td>2026–27</td></tr>
+<tr><th>Total Practical Hours</th><td>28</td></tr>
 </table>
-
-<!--
-  TEACHER NOTE: Replace/extend the rows above once the actual cover page
-  content is provided (program, semester, academic year, index/certificate
-  page, etc.). This section is always visible to students — it is not
-  locked, since a manual's title page is not "content" that needs release.
--->
 
 </section>
 
@@ -343,20 +368,35 @@ const unlockedExperiment = 0;
 
 <table class="exp-list">
 <thead>
-<tr><th>#</th><th>Experiment Title</th><th>Status</th></tr>
+<tr><th>#</th><th>Title of Experiment</th><th>Hours</th><th>Status</th></tr>
 </thead>
 <tbody>
-<tr><td>1</td><td><a href="#exp1">Experiment 1 — <span data-exp-title="1">Title pending</span></a></td><td><span class="status-badge" id="status-1">–</span></td></tr>
-<tr><td>2</td><td><a href="#exp2">Experiment 2 — <span data-exp-title="2">Title pending</span></a></td><td><span class="status-badge" id="status-2">–</span></td></tr>
+<tr><td>1</td><td><a href="#exp1">Experiment 1 — <span data-exp-title="1">Title pending</span></a></td><td>2</td><td><span class="status-badge" id="status-1">–</span></td></tr>
+<tr><td>2</td><td><a href="#exp2">Experiment 2 — <span data-exp-title="2">Title pending</span></a></td><td>2</td><td><span class="status-badge" id="status-2">–</span></td></tr>
+<tr><td>3</td><td>Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>4</td><td>Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>5</td><td>Test the Performance of the Given PN Junction Diode</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>6</td><td>Measure Amplitude, Time Period &amp; Frequency of Half Wave Rectifier Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>7</td><td>Construct Centre Tap Full Wave Rectifier and Measure Input/Output Waveforms Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>8</td><td>Construct Bridge Full Wave Rectifier and Measure Input/Output Waveforms Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>9</td><td>Measure Amplitude, Frequency, Time Period &amp; Vpp of LC Filter Circuit</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>10</td><td>Measure Amplitude, Frequency, Time Period &amp; Vpp of CLC Filter Circuit</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>11</td><td>Verify Logic Gates and Interpret Truth Tables (OR, NOT, AND, NAND, NOR, EX-OR &amp; EX-NOR)</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>12</td><td>Study the 8085 Microprocessor: Block Diagram, Pin Diagram &amp; Applications</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>13</td><td>Write an ALP to Add, Subtract &amp; Multiply Two 8-bit Numbers</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>14</td><td>Find 1's &amp; 2's Complement of an 8-bit Number</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 </tbody>
 </table>
 
 <!--
-  TEACHER NOTE: This is the master index of experiments. When you add a new
-  experiment section further down this file, add its matching <tr> here too
-  (same experiment number) so the list, the TOC and the section itself never
-  drift out of sync. Titles here are filled in automatically by the script
-  at the bottom of the page from each experiment's <h2>, once you fill it in.
+  TEACHER NOTE: This is the master index of experiments (from the lab
+  manual's official list). Rows 3-14 are text-only placeholders — "Not
+  Added" means no section for that experiment exists on this page yet,
+  which is different from "Locked" (a section that exists but isn't
+  released to students). When you build out experiment N below, change its
+  row to match the exp1/exp2 pattern: link to #expN with a data-exp-title
+  span and a status-badge with id="status-N" so it plugs into the sync
+  script at the bottom of the page.
 -->
 
 </section>
@@ -367,31 +407,126 @@ const unlockedExperiment = 0;
 
 <section class="section" id="exp1" data-experiment="1">
 
-<h2>Experiment No. 1 — [Experiment 1 title goes here]</h2>
+<h2>Experiment No. 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</h2>
 
-<h3>Aim</h3>
-<p>[Paste Experiment 1 aim here]</p>
+<h3>1. Aim</h3>
+<p>To familiarise students with the common equipment, instruments, components and standard graphical symbols used in the Electrical and Electronics Engineering laboratory, and to understand the general safety rules to be observed while working in the laboratory.</p>
 
-<h3>Apparatus Required</h3>
-<p>[Paste Experiment 1 apparatus list here]</p>
+<h3>2. Objectives</h3>
+<ul>
+<li>To identify and understand the function of common electrical laboratory equipment and instruments.</li>
+<li>To recognise standard circuit symbols used for electrical and electronic components.</li>
+<li>To learn the correct handling procedure for each instrument.</li>
+<li>To understand general electrical safety rules and precautions to prevent accidents in the laboratory.</li>
+<li>To learn basic first-aid measures for electric shock.</li>
+</ul>
 
-<h3>Circuit Diagram</h3>
-<p>[Insert circuit diagram image/description here]</p>
+<h3>3. Apparatus</h3>
+<p>Digital Multimeter (DMM), Regulated DC Power Supply (RPS), Digital Storage Oscilloscope (DSO), Function Generator, Breadboard, Analog Ammeter, Analog Voltmeter, LCR Meter, Connecting Wires / Probes, Soldering Iron &amp; Stand, Tool Kit (screwdriver, cutter, plier, tester).</p>
 
-<h3>Procedure</h3>
-<p>[Paste Experiment 1 procedure here]</p>
+<h3>4. Theory</h3>
 
-<h3>Observation Table</h3>
+<h4>4.1 Brief Description of Key Equipment</h4>
+<p><b>Digital Multimeter:</b> A portable instrument capable of measuring AC/DC voltage, current, resistance and checking diode/continuity, selected using a rotary or push-button range selector. It is the most frequently used instrument in the lab.</p>
+<p><b>Regulated Power Supply:</b> Converts AC mains supply into a stable, adjustable DC output, with separate knobs for voltage and current limit control, and is used to energise experimental circuits safely.</p>
+<p><b>Cathode Ray Oscilloscope (CRO):</b> Displays the instantaneous variation of voltage with time on a screen, allowing measurement of amplitude, time period, frequency and phase difference of a signal.</p>
+<p><b>Function Generator:</b> Produces standard test waveforms (sine, square, triangular) with adjustable frequency and amplitude, used to test the response of circuits.</p>
+<p><b>Breadboard:</b> A prototyping board with a grid of interconnected spring clips beneath its holes, allowing components to be inserted and connected without soldering for quick circuit testing.</p>
+
 <table class="info-table">
-<tr><th>Sr. No.</th><th>Observation</th><th>Result</th></tr>
-<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><th>S. No.</th><th>Equipment / Instrument</th><th>Function</th></tr>
+<tr><td>1</td><td>Digital Multimeter (DMM)</td><td>Measures voltage, current, resistance and continuity</td></tr>
+<tr><td>2</td><td>Regulated DC Power Supply (RPS)</td><td>Provides a variable, regulated DC voltage/current source</td></tr>
+<tr><td>3</td><td>Digital Storage Oscilloscope (DSO)</td><td>Displays and measures waveform amplitude, frequency &amp; phase</td></tr>
+<tr><td>4</td><td>Function Generator</td><td>Generates sine, square and triangular test signals of variable frequency</td></tr>
+<tr><td>5</td><td>Breadboard</td><td>Solderless platform for building and testing temporary circuits</td></tr>
+<tr><td>6</td><td>Analog Ammeter</td><td>Measures current in a circuit (connected in series)</td></tr>
+<tr><td>7</td><td>Analog Voltmeter</td><td>Measures potential difference across a component (connected in parallel)</td></tr>
+<tr><td>8</td><td>LCR Meter</td><td>Measures Resistance, Capacitance, Inductance</td></tr>
+<tr><td>9</td><td>Connecting Wires / Probes</td><td>Used to make electrical connections between components</td></tr>
+<tr><td>10</td><td>Soldering Iron &amp; Stand</td><td>Used to make permanent joints between components/wires</td></tr>
+<tr><td>11</td><td>Tool Kit (screwdriver, cutter, plier, tester)</td><td>General-purpose hand tools for wiring and assembly work</td></tr>
 </table>
 
-<h3>Result</h3>
-<p>[Paste Experiment 1 result/conclusion here]</p>
+<h4>4.2 Standard Electrical &amp; Electronic Symbols</h4>
+<p>Every electrical/electronic component is represented on a circuit diagram by a standardized graphical symbol so that circuits can be drawn and interpreted uniformly. Commonly used symbols are shown below.</p>
+<div class="fig-placeholder">Fig. 1.1 – Common Electrical and Electronic Symbols (image to be added)</div>
 
-<h3>Viva Questions</h3>
-<p>[Paste Experiment 1 viva questions here]</p>
+<h3>5. General Safety Rules</h3>
+
+<h4>5.1 Before Starting Work</h4>
+<ul>
+<li>Inspect all wires, plugs and instruments for damage before use; never use frayed or damaged cables.</li>
+<li>Ensure the power supply is switched OFF before making or changing any circuit connections.</li>
+<li>Check that the multimeter/ammeter/voltmeter is set to the correct range and function before connecting it to the circuit.</li>
+<li>Wear closed (non-conductive, rubber-soled) footwear; avoid wet hands or wet clothing while working.</li>
+<li>Remove metallic jewellery (rings, chains, watches) before handling live circuits.</li>
+</ul>
+
+<h4>5.2 While Working</h4>
+<ul>
+<li>Never touch live/bare conductors or terminals with bare hands.</li>
+<li>Connect the circuit completely, get it verified by the faculty/instructor, and only then switch ON the supply.</li>
+<li>Always connect an ammeter in series and a voltmeter in parallel with the circuit element; never connect an ammeter directly across a supply.</li>
+<li>Do not exceed the rated voltage/current of any instrument or component; start with minimum supply value and increase gradually.</li>
+<li>Use only one hand while operating a live circuit, keeping the other hand away from any earthed/grounded object, to avoid a path through the heart.</li>
+<li>Do not overload sockets/extension boards; use a properly earthed 3-pin plug for all equipment.</li>
+</ul>
+
+<h4>5.3 After Completing Work</h4>
+<ul>
+<li>Switch OFF the power supply and disconnect it before dismantling the circuit.</li>
+<li>Discharge capacitors safely before touching circuit terminals.</li>
+<li>Return all instruments, tools and components to their designated place after use.</li>
+<li>Report any equipment malfunction, spark, unusual smell or overheating to the faculty/lab technician immediately.</li>
+</ul>
+
+<h4>5.4 First Aid for Electric Shock</h4>
+<ul>
+<li>Immediately switch OFF the mains supply; if not possible, separate the victim from the source using a dry, non-conductive object (wooden stick, dry cloth) — never touch the victim directly.</li>
+<li>Check breathing and pulse; if absent, start CPR immediately and call for medical help.</li>
+<li>Keep the victim warm and lying down; do not give water/food if the person is unconscious.</li>
+<li>Report the incident to the faculty-in-charge and the institute's medical/first-aid centre without delay.</li>
+</ul>
+
+<h3>6. General Precautions</h3>
+<ul>
+<li>Study the circuit diagram thoroughly and identify all component symbols before wiring the circuit.</li>
+<li>Make all connections neat, tight and along the shortest possible path to minimize the chance of loose contacts.</li>
+<li>Never work on a live circuit; always double-check connections with the supply OFF.</li>
+<li>Handle DSO, function generator and power supply gently; avoid sudden knob movements at extreme settings.</li>
+<li>Note down the least count and range of every measuring instrument before taking readings.</li>
+</ul>
+
+<h3>7. Procedure</h3>
+<ul>
+<li>Visit each workbench/rack in the laboratory and note down the name, make and rating of every instrument and equipment present.</li>
+<li>Identify the front-panel controls (range selector, knobs, terminals, display) of the multimeter, power supply, CRO and function generator, and note their function.</li>
+<li>Observe and sketch the standard circuit symbol for each basic component listed in Section 3, along with its unit of measurement.</li>
+<li>List the safety rules displayed in the laboratory and note the location of the mains ON/OFF switch, earthing point, fire extinguisher and first-aid box.</li>
+<li>Prepare a laboratory equipment list and symbol chart in the practical record as directed by the faculty.</li>
+</ul>
+
+<h3>8. Observation Table</h3>
+<h4>Table 1: Identification of Standard Symbols</h4>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Component Name</th><th>Symbol (to be sketched)</th><th>Unit of Measurement</th></tr>
+<tr><td>1</td><td>Resistor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>Capacitor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>Inductor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>Battery / DC Source</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>Switch (SPST)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>Fuse</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>Ammeter</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>8</td><td>Voltmeter</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>9</td><td>Diode</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>10</td><td>LED</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>11</td><td>NPN Transistor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>12</td><td>Earth / Ground</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>9. Conclusion</h3>
+<p>The common equipment, instruments and standard symbols used in the Electrical and Electronics Engineering laboratory were studied, and the general safety rules to be followed in the laboratory were understood.</p>
 
 </section>
 
@@ -399,41 +534,120 @@ const unlockedExperiment = 0;
 
 <section class="section" id="exp2" data-experiment="2">
 
-<h2>Experiment No. 2 — [Experiment 2 title goes here]</h2>
+<h2>Experiment No. 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</h2>
 
-<h3>Aim</h3>
-<p>[Paste Experiment 2 aim here]</p>
+<h3>1. Aim</h3>
+<p>To identify active and passive electronic components on the basis of physical appearance and terminal characteristics, and to verify their standard/rated values using a Digital Multimeter and LCR meter.</p>
 
-<h3>Apparatus Required</h3>
-<p>[Paste Experiment 2 apparatus list here]</p>
+<h3>2. Practical Significance</h3>
+<p>In industries, to build any hardware, it is necessary to identify electronic components, their terminals, values and packaging. Depending on the application, appropriate components need to be selected for better performance. In this experiment, the student will identify active and passive electronic components on the basis of physical verification and basic knowledge about the components. A Multimeter / LCR-Q meter is used to verify the component values.</p>
 
-<h3>Circuit Diagram</h3>
-<p>[Insert circuit diagram image/description here]</p>
+<h3>3. Objectives</h3>
+<ul>
+<li>To distinguish between active and passive electronic components based on their operating principle.</li>
+<li>To identify various types of resistors, capacitors, inductors, diodes and transistors by physical appearance.</li>
+<li>To read the standard value of a component from its colour code or printed marking.</li>
+<li>To measure the actual value of a component using a Digital Multimeter and LCR meter.</li>
+<li>To compare the standard and measured values and classify each component as Active or Passive.</li>
+</ul>
 
-<h3>Procedure</h3>
-<p>[Paste Experiment 2 procedure here]</p>
+<h3>4. Apparatus</h3>
+<p>Active &amp; Passive Electronic Components, Transformer, Digital Multimeter, LCR Meter, Probes etc.</p>
 
-<h3>Observation Table</h3>
+<h3>5. Theory</h3>
+
+<h4>5.1 Active Components</h4>
+<p>Those devices or components which require an external source for their operation are called Active Components. An active component may provide power gain to a circuit.</p>
+<p><i>Example: Diodes &amp; Transistors</i></p>
+<p>A diode allows current to flow in only one direction (forward biased) and blocks it in the reverse direction; it requires an external bias to operate in a circuit. A transistor is used for amplification and switching applications, and requires an external DC supply to control the larger current/voltage at its output terminals.</p>
+
+<h4>5.2 Passive Components</h4>
+<p>Those devices or components which do not require an external source for their operation are called Passive Components. A passive component does not provide any power gain to a circuit.</p>
+<p><i>Example: Resistor, Capacitor and Inductor</i></p>
+<p>A resistor opposes the flow of current and dissipates energy as heat (measured in Ohms). A capacitor stores energy in the form of an electric field between two plates (measured in Farads). An inductor stores energy in the form of a magnetic field when current flows through it (measured in Henries).</p>
+
+<h4>5.3 Identification of Component Values</h4>
+<p>Standard/rated values of passive components are commonly indicated either by a colour code printed on the component body or by a numeric code, as summarised below.</p>
+
 <table class="info-table">
-<tr><th>Sr. No.</th><th>Observation</th><th>Result</th></tr>
-<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><th>Colour</th><th>Significant Figure</th><th>Multiplier</th><th>Tolerance</th></tr>
+<tr><td>Black</td><td>0</td><td>×10⁰</td><td>—</td></tr>
+<tr><td>Brown</td><td>1</td><td>×10¹</td><td>± 1%</td></tr>
+<tr><td>Red</td><td>2</td><td>×10²</td><td>± 2%</td></tr>
+<tr><td>Orange</td><td>3</td><td>×10³</td><td>—</td></tr>
+<tr><td>Yellow</td><td>4</td><td>×10⁴</td><td>—</td></tr>
+<tr><td>Green</td><td>5</td><td>×10⁵</td><td>± 0.5%</td></tr>
+<tr><td>Blue</td><td>6</td><td>×10⁶</td><td>—</td></tr>
+<tr><td>Violet</td><td>7</td><td>×10⁷</td><td>—</td></tr>
+<tr><td>Grey</td><td>8</td><td>×10⁸</td><td>—</td></tr>
+<tr><td>White</td><td>9</td><td>×10⁹</td><td>—</td></tr>
+<tr><td>Gold</td><td>—</td><td>×10⁻¹</td><td>± 5%</td></tr>
+<tr><td>Silver</td><td>—</td><td>×10⁻²</td><td>± 10%</td></tr>
 </table>
 
-<h3>Result</h3>
-<p>[Paste Experiment 2 result/conclusion here]</p>
+<p>Ceramic and mica capacitors are usually marked with a 3-digit numeric code (the first two digits are significant figures and the third is the multiplier, giving the value in pF), while electrolytic capacitors have their capacitance and voltage rating printed directly on the body along with polarity markings. Diode and transistor terminals/types are identified using the diode-check and hFE modes of a digital multimeter.</p>
 
-<h3>Viva Questions</h3>
-<p>[Paste Experiment 2 viva questions here]</p>
+<h4>5.4 Classification of Components – Symbols</h4>
+<div class="fig-placeholder">Fig. 2.1 – Standard symbols of common Active and Passive components (image to be added)</div>
+
+<h3>6. Precautions</h3>
+<ul>
+<li>Care should be taken while handling terminals of components.</li>
+<li>Select proper range &amp; mode of Multimeter and LCR Meter.</li>
+<li>Connect probes of measuring instrument tightly to terminals of a component.</li>
+<li>Observe correct polarity while testing diodes, LEDs and electrolytic capacitors.</li>
+<li>Avoid touching the metallic tips of the probes with bare hands while taking measurements, as body resistance may affect the reading.</li>
+</ul>
+
+<h3>7. Procedure</h3>
+<ul>
+<li>Collect the given set of active and passive electronic components from the component tray.</li>
+<li>Visually examine each component and identify its type from its shape, size, colour bands and printed markings.</li>
+<li>Note the standard/rated value of each component from its colour code or printed marking.</li>
+<li>Select the appropriate range and mode (resistance / capacitance / inductance / diode) on the Digital Multimeter or LCR meter.</li>
+<li>Connect the probes of the measuring instrument to the terminals of the component and record the measured value.</li>
+<li>Repeat steps 2–5 for all components listed in the observation table (resistor, capacitor, inductor, diode, transistor, transformer, AC/DC voltage source).</li>
+<li>Classify each component as Active or Passive based on the theory studied.</li>
+<li>Tabulate all observations in the Observation Table.</li>
+</ul>
+
+<h3>9. Observation Table</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Component Name</th><th>Type of Component</th><th>Standard/Colour Code Value</th><th>Measured Value</th><th>Active/Passive</th></tr>
+<tr><td rowspan="1">1</td><td>Resistor</td><td>Carbon Composition</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td rowspan="3">2</td><td>Capacitor</td><td>Ceramic</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Capacitor</td><td>Mica</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Capacitor</td><td>Electrolytic</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>Inductor</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td rowspan="3">4</td><td>Diode</td><td>P-N Junction</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Diode</td><td>Zener</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Diode</td><td>LED</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>Transistor</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>Transformer</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td rowspan="2">7</td><td>Voltage</td><td>AC</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Voltage</td><td>DC</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>10. Conclusion</h3>
+<p>Based on the above observations, write your conclusion mentioning the components identified, their standard and measured values, and their classification as Active or Passive.</p>
 
 </section>
 
 <!--
   TEACHER NOTE — adding Experiment 3 onward:
   1. Copy an entire <section class="section" id="expN" data-experiment="N"> ...
-     </section> block above and renumber N.
+     </section> block above and renumber N. Use whatever numbered
+     sub-headings (h3/h4) the experiment's manual actually has (Aim,
+     Apparatus, Theory, Circuit Diagram, Procedure, Observation Table,
+     Precautions, Conclusion, etc. — order and count vary per experiment,
+     as seen between Exp. 1 and Exp. 2 above); don't force every
+     experiment into one fixed template.
   2. Add "<a href="#expN">Exp. N <span class="tag" id="tag-N">–</span></a>"
      to the TOC on the left.
-  3. Add a matching <tr> to the List of Experiments table.
+  3. Change experiment N's row in the List of Experiments table from the
+     plain "Not Added" text row to the linked exp1/exp2 pattern
+     (<a href="#expN">... <span data-exp-title="N">...</span></a> plus
+     <span class="status-badge" id="status-N">).
   4. Update the "Unlock complete experiments" comment above unlockedExperiment
      with the new experiment's name, for your own reference.
   The lock script at the bottom of the page finds sections by
