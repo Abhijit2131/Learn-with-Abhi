@@ -84,6 +84,32 @@ padding-left:18px;
 font-weight:bold;
 }
 
+.toc-group-btn{
+display:block;
+width:100%;
+text-align:left;
+background:none;
+border:none;
+font-family:inherit;
+font-size:14px;
+font-weight:bold;
+color:#0B4AA2;
+padding:9px 12px;
+margin-bottom:6px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.toc-group-btn:hover{
+background:#EAF4FF;
+}
+
+.toc-group-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
 /* Content */
 
 .content{
@@ -101,6 +127,11 @@ box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 /* Student mode: unreleased whole sections stay out of the LMS page. */
 .section.locked-section{
+display:none;
+}
+
+/* Section palette: only the clicked "Section N" group is shown at a time. */
+.section.toc-hidden{
 display:none;
 }
 
@@ -254,11 +285,9 @@ const unlockedSection = 3;
 
 <h3>📘 Unit 1 Contents</h3>
 
-<p style="font-size:14px;color:#64748B;margin-bottom:8px;">
-Section 1
-</p>
+<button type="button" class="toc-group-btn" data-section-jump="1">Section 1</button>
 
-<a href="#electronics">1.1 Definition of Electronics</a>
+<a href="#intro">1.1 Definition of Electronics</a>
 <a href="#eapp">1.2 Applications of Electronics</a>
 <a href="#electrical">1.3 Definition of Electrical</a>
 <a href="#elapp">1.4 Applications of Electrical</a>
@@ -266,9 +295,7 @@ Section 1
 
 <hr style="margin:14px 0;">
 
-<p style="font-size:14px;color:#64748B;margin-bottom:8px;">
-Section 2
-</p>
+<button type="button" class="toc-group-btn" data-section-jump="2">Section 2</button>
 
 <a href="#current">2. Basic Electrical Quantities</a>
 <a href="#current1">2.1 Electric Current</a>
@@ -277,8 +304,8 @@ Section 2
 <a href="#summary">2.4 Summary</a>
 
 <hr style="margin:14px 0;">
-Section 3
-</p>
+
+<button type="button" class="toc-group-btn" data-section-jump="3">Section 3</button>
 
 <a href="#resistor">3.1 Resistor</a>
 <a href="#capacitor">3.2 Capacitor</a>
@@ -286,50 +313,45 @@ Section 3
 
 <hr style="margin:14px 0;">
 
-Section 4
-</p>
+<button type="button" class="toc-group-btn" data-section-jump="4">Section 4</button>
 
-<a href="#waveform">4.1 Waveform Representation</a></li>
-<a href="#wave-rep">4.2 Waveform</a></li>
-<a href="#signal-char">4.3 Signal Characteristics</a></li>
-
-<hr style="margin:14px 0;">
-
-
-Section 5
-</p>
-
-<a href="#waveform">5.1 Ohm's Law</a></li>
-<a href="#relationship">5.2 V-I-R Relation</a></li>
-<a href="#triangle">5.3 Ohm's Triangle</a></li>
-<a href="#liveohm">5.4 Live Demonstration</a></li>
-<a href="#numericals">5.5 Numericals</a></li>
-<a href="#kcl">5.6 Kirchhoff's Current Law</a></li>
-<a href="#liveohm">5.7 Live KCL Demo</a></li>
-<a href="#kcl">5.8 Kirchhoff's Current Law</a></li>
-<a href="#liveohm">5.9 Live KCL Demo</a></li>
-<a href="#kcl">5.10 Kirchhoff's Voltage Law</a></li>
+<a href="#waveform">4.1 Waveform Representation</a>
+<a href="#wave-rep">4.2 Waveform</a>
+<a href="#signal-char">4.3 Signal Characteristics</a>
 
 <hr style="margin:14px 0;">
 
-Section 6
-</p>
+<button type="button" class="toc-group-btn" data-section-jump="5">Section 5</button>
 
-<a href="#seriesparallel">6.1 Series & Parallel Circuit</a></li>
-<a href="#seriesparallel">6.2 Series Circuit</a></li>
-<a href="#seriesparallel">6.3 Parallel Circuit</a></li>
-<a href="#seriesparallel">6.4 Live Demonstration</a></li>
+<a href="#ohm">5.1 Ohm's Law</a>
+<a href="#relationship">5.2 V-I-R Relation</a>
+<a href="#triangle">5.3 Ohm's Triangle</a>
+<a href="#liveohm">5.4 Live Demonstration</a>
+<a href="#numericals">5.5 Numericals</a>
+<a href="#kcl">5.6 Kirchhoff's Current Law</a>
+<a href="#liveohm">5.7 Live KCL Demo</a>
+<a href="#kcl">5.8 Kirchhoff's Current Law</a>
+<a href="#liveohm">5.9 Live KCL Demo</a>
+<a href="#kcl">5.10 Kirchhoff's Voltage Law</a>
 
 <hr style="margin:14px 0;">
 
-Section 7
-</p>
+<button type="button" class="toc-group-btn" data-section-jump="6">Section 6</button>
 
-<a href="#stardelta">7.1 Star / Delta Transformation</a></li>
-<a href="#stardelta">7.2 Star Network</a></li>
-<a href="#stardelta">7.3 Delta Network</a></li>
-<a href="#stardelta">7.4 Live Demonstration</a></li>
-<a href="#stardelta">7.5 Numericals</a></li>
+<a href="#seriesparallel">6.1 Series & Parallel Circuit</a>
+<a href="#seriesparallel">6.2 Series Circuit</a>
+<a href="#seriesparallel">6.3 Parallel Circuit</a>
+<a href="#seriesparallel">6.4 Live Demonstration</a>
+
+<hr style="margin:14px 0;">
+
+<button type="button" class="toc-group-btn" data-section-jump="7">Section 7</button>
+
+<a href="#stardelta">7.1 Star / Delta Transformation</a>
+<a href="#stardelta">7.2 Star Network</a>
+<a href="#stardelta">7.3 Delta Network</a>
+<a href="#stardelta">7.4 Live Demonstration</a>
+<a href="#stardelta">7.5 Numericals</a>
 
 <hr style="margin:14px 0;">
 
@@ -342,7 +364,7 @@ Section 7
 <div class="content">
 
 <!-- Electronics -->
-<div class="section" id="intro" data-section="1">
+<div class="section" id="intro" data-section="1" data-toc-section="1">
 
 <h2>1.1 Definition of Electronics</h2>
 
@@ -373,7 +395,7 @@ Electronics studies devices such as <b>Diodes, Transistors, ICs, Sensors and Mic
 
 <!-- Electronics Applications -->
 
-<section class="section" id="eapp">
+<section class="section" id="eapp" data-toc-section="1">
 
 <h2>1.2 Applications of Electronics</h2>
 
@@ -419,7 +441,7 @@ Electronics plays a crucial role across many sectors, from defense and industria
 
 <!-- Electrical -->
 
-<section class="section" id="electrical">
+<section class="section" id="electrical" data-toc-section="1">
 
 <h2>1.3 Definition of Electrical Engineering</h2>
 
@@ -447,7 +469,7 @@ Electrical Engineering is the branch of engineering that deals with the study of
 
 <!-- Electrical Applications -->
 
-<section class="section" id="elapp">
+<section class="section" id="elapp" data-toc-section="1">
 
 <h2>1.4 Applications of Electrical Engineering</h2>
 
@@ -493,7 +515,7 @@ Electrical engineering deals with the generation, transmission, distribution and
 
 <!-- Difference -->
 
-<section class="section" id="difference">
+<section class="section" id="difference" data-toc-section="1">
 
 <h2>1.5 Difference Between Electrical & Electronics Engineering</h2>
 
@@ -555,7 +577,7 @@ Control • Processing • Communication • Automation
 <!-- 2. BASIC ELECTRICAL QUANTITIES -->
 <!-- ===================================================== -->
 
-<div class="section" id="current" data-section="2">
+<div class="section" id="current" data-section="2" data-toc-section="2">
 
 <h2>2. Basic Electrical Quantities</h2>
 
@@ -572,7 +594,7 @@ of an electrical circuit. The three most fundamental quantities are
 <!-- 2.1 CURRENT -->
 <!-- ===================================================== -->
 
-<section class="section" id="current1">
+<section class="section" id="current1" data-toc-section="2">
 
 <h2>2.1 Electric Current (I)</h2>
 
@@ -670,7 +692,7 @@ Current • Electric Current • Flow of Charge • Line Current
 <!-- 2.2 VOLTAGE -->
 <!-- ===================================================== -->
 
-<section class="section" id="voltage">
+<section class="section" id="voltage" data-toc-section="2">
 
 <h2>2.2 Potential Difference (Voltage)</h2>
 
@@ -770,7 +792,7 @@ Voltage • Potential Difference • Electric Potential • EMF (when produced b
 <!-- 2.3 POWER -->
 <!-- ===================================================== -->
 
-<section class="section" id="power">
+<section class="section" id="power" data-toc-section="2">
 
 <h2>2.3 Electrical Power (P)</h2>
 
@@ -920,7 +942,7 @@ font-weight="bold" fill="#DC2626">I</text>
 <!-- SUMMARY TABLE -->
 <!-- ===================================================== -->
 
-<section class="section" id="summary">
+<section class="section" id="summary" data-toc-section="2">
 
 <h2>2.4 Summary of Basic Electrical Quantities</h2>
 
@@ -996,7 +1018,7 @@ font-weight="bold" fill="#DC2626">I</text>
 <!-- 3. PASSIVE ELECTRONIC COMPONENTS -->
 <!-- ===================================================== -->
 
-<div class="section" id="resistor" data-section="3">
+<div class="section" id="resistor" data-section="3" data-toc-section="3">
 
 <h2>3. Passive Electronic Components</h2>
 
@@ -1423,7 +1445,7 @@ Resistor → Opposes current | Capacitor → Stores electric field energy | Indu
 <!-- 4. WAVEFORM REPRESENTATION & SIGNAL CHARACTERISTICS -->
 <!-- ===================================================== -->
 
-<div class="section" id="waveform" data-section="4">
+<div class="section" id="waveform" data-section="4" data-toc-section="4">
 
 <h2>4. Waveform Representation & Signal Characteristics</h2>
 
@@ -1680,7 +1702,7 @@ Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
 <!-- 5. OHM'S LAW -->
 <!-- ===================================================== -->
 
-<div class="section" id="ohm" data-section="5">
+<div class="section" id="ohm" data-section="5" data-toc-section="5">
 
 <h2>5. Ohm's Law</h2>
 
@@ -1859,7 +1881,7 @@ fill="#EAF4FF" stroke="#2563EB" stroke-width="2"/>
 <!-- 5.4 LIVE OHM'S LAW DEMONSTRATION -->
 <!-- ===================================================== -->
 
-<div class="section" id="liveohm">
+<div class="section" id="liveohm" data-toc-section="5">
 
 <h2>5.4 Live Ohm's Law Demonstration</h2>
 
@@ -2307,7 +2329,7 @@ Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during ex
 <!-- 6. KIRCHHOFF'S CURRENT LAW (KCL) -->
 <!-- ===================================================== -->
 
-<div class="section" id="kcl" data-subsection="6">
+<div class="section" id="kcl" data-subsection="6" data-toc-section="5">
 
 <h2>6. Kirchhoff's Current Law (KCL)</h2>
 
@@ -2732,7 +2754,7 @@ Whenever you see a junction with multiple branches, immediately write **ΣI = 0*
 <!-- 5.2 KIRCHHOFF'S VOLTAGE LAW -->
 <!-- ===================================================== -->
 
-<div class="section" id="kvl" data-subsection="7">
+<div class="section" id="kvl" data-subsection="7" data-toc-section="5">
 
 <h2>5.2 Kirchhoff's Voltage Law (KVL)</h2>
 
@@ -3116,8 +3138,8 @@ updateKVL();
 <!-- 7. SERIES & PARALLEL CIRCUIT -->
 <!-- ===================================================== -->
 
-<div class="section" id="series" data-subsection="6">
-<div class="section" id="series" data-section="6">
+<div class="section" id="series" data-subsection="6" data-toc-section="6">
+<div class="section" id="series" data-section="6" data-toc-section="6">
 
 <h2>7. Series & Parallel Circuit</h2>
 
@@ -3560,8 +3582,8 @@ If the question asks **same current**, think <b>Series Circuit</b>. If it asks *
 <!-- 8. STAR / DELTA TRANSFORMATION -->
 <!-- ===================================================== -->
 
-<div class="section" id="star" data-subsection="7">
-<div class="section" id="star" data-section="7">
+<div class="section" id="star" data-subsection="7" data-toc-section="7">
+<div class="section" id="star" data-section="7" data-toc-section="7">
 
 <h2>8. Star (Y) / Delta (Δ) Transformation</h2>
 
@@ -4071,6 +4093,53 @@ document.addEventListener("DOMContentLoaded", () => {
       section.setAttribute("aria-hidden", "true");
     }
   });
+});
+</script>
+
+<!--
+  Left-palette "Section N" click behaviour: clicking a Section header in the
+  TOC shows only that section's content blocks (elements tagged
+  data-toc-section="N") on the right and hides every other section's
+  blocks. This is independent of, and does not change, the teacherMode /
+  unlockedSection lock above: a section that is locked stays hidden either
+  way, and a section that is unlocked but not the currently-selected group
+  stays hidden until its own "Section N" button (or one of its sub-topic
+  links) is clicked.
+-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const groups = document.querySelectorAll(".section[data-toc-section]");
+  const groupButtons = document.querySelectorAll(".toc-group-btn");
+
+  function showTocSection(num) {
+    groups.forEach((section) => {
+      section.classList.toggle("toc-hidden", section.dataset.tocSection !== String(num));
+    });
+    groupButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.sectionJump === String(num));
+    });
+  }
+
+  groupButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const num = btn.dataset.sectionJump;
+      showTocSection(num);
+      const firstBlock = document.querySelector('.section[data-toc-section="' + num + '"]');
+      if (firstBlock) firstBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  // A sub-topic link (e.g. "2.3 Electrical Power") also reveals its parent
+  // Section group, so jumping straight to a sub-topic works from anywhere.
+  document.querySelectorAll(".toc a[href^='#']").forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.getAttribute("href").slice(1));
+      const group = target ? target.closest("[data-toc-section]") : null;
+      if (group) showTocSection(group.dataset.tocSection);
+    });
+  });
+
+  showTocSection("1");
 });
 </script>
 
