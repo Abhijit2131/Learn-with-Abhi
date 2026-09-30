@@ -328,6 +328,7 @@ top:0;
 
 <a href="#exp1">Exp. 1</a>
 <a href="#exp2">Exp. 2</a>
+<a href="#exp3">Exp. 3</a>
 
 <hr style="margin:14px 0;">
 
@@ -375,7 +376,7 @@ Department of First Year Engineering
 <tbody>
 <tr><td>1</td><td><a href="#exp1">Experiment 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>2</td><td><a href="#exp2">Experiment 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
-<tr><td>3</td><td>Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>3</td><td><a href="#exp3">Experiment 3 — Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>4</td><td>Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>5</td><td>Test the Performance of the Given PN Junction Diode</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>6</td><td>Measure Amplitude, Time Period &amp; Frequency of Half Wave Rectifier Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
@@ -410,6 +411,7 @@ Department of First Year Engineering
 <div class="exp-tabs">
 <button type="button" class="exp-tab-btn" data-exp="1" onclick="location.hash='exp1'">Experiment 1</button>
 <button type="button" class="exp-tab-btn" data-exp="2" onclick="location.hash='exp2'">Experiment 2</button>
+<button type="button" class="exp-tab-btn" data-exp="3" onclick="location.hash='exp3'">Experiment 3</button>
 </div>
 
 <!-- ============ EXPERIMENT 1 PANEL ============ -->
@@ -644,24 +646,102 @@ Department of First Year Engineering
 
 </div>
 
+<!-- ============ EXPERIMENT 3 PANEL ============ -->
+
+<div class="exp-tab-panel" id="exp3">
+
+<h2>Experiment No. 3 — Measure Amplitude, Time Period and Frequency of Sine Wave, Square Wave, Triangular Wave Using Digital Storage Oscilloscope (DSO)</h2>
+
+<h3>1. Aim</h3>
+<p>To measure the amplitude, time period and frequency of a Sine wave, Square wave and Triangular wave using a Digital Storage Oscilloscope (DSO).</p>
+
+<h3>2. Practical Significance</h3>
+<p>In industries, for the manufacture and maintenance of electronic circuits, measurement and testing are a prime requirement. Various parameters are to be tested with utmost accuracy and precision, and for this purpose testing instruments like the DSO are used. Through this experiment, the student will be able to handle the DSO and multimeter efficiently for measuring the amplitude, time period and frequency of a given input signal.</p>
+
+<h3>3. Objectives</h3>
+<ul>
+<li>To understand the working principle of a Digital Storage Oscilloscope (DSO) and a Function/Signal Generator.</li>
+<li>To identify and distinguish between sine, square and triangular waveforms.</li>
+<li>To measure the amplitude (Vm), time period (T) and frequency (f) of each waveform using a DSO.</li>
+<li>To verify the relation between time period and frequency, f = 1/T.</li>
+<li>To develop proficiency in the correct use of DSO probes and controls.</li>
+</ul>
+
+<h3>4. Apparatus</h3>
+<p>Function/Signal Generator, Digital Storage Oscilloscope, Digital Multimeter, Probes etc.</p>
+
+<h3>5. Theory</h3>
+
+<h4>5.1 Digital Storage Oscilloscope (DSO)</h4>
+<p>A Digital Storage Oscilloscope (DSO) is an electronic test instrument that captures, stores and displays the input signal in digital form, rather than using analog display techniques. It is the most common type of oscilloscope in use today because of the advanced trigger, storage, display and measurement features it typically provides. A DSO stores the signal/waveform in digital memory, which also allows digital signal processing techniques to be applied to it. The traces on a DSO are bright, highly defined, and displayed within seconds.</p>
+
+<h4>5.2 Function / Signal Generator</h4>
+<p>A signal generator is a piece of electronic test equipment used to generate different types of waveforms over a wide range of frequencies. Signal generators are capable of producing repetitive waveforms such as sine, square and triangular waves, as described below.</p>
+
+<h4>5.3 Types of Waveforms</h4>
+<p><b>Sine wave:</b> A signal generator will normally have the capability to produce a standard sine wave output. This is the standard waveform that oscillates between two levels with a standard sinusoidal shape.</p>
+<p><b>Square wave:</b> A square wave consists of a signal moving directly between high and low levels.</p>
+<p><b>Triangular wave:</b> A triangular wave is a periodic, non-sinusoidal waveform characterised by linear, symmetric rising and falling ramps, resembling a series of triangles.</p>
+<img class="fig-img" src="../assets/images/practical/exp3-waveforms.png" alt="Sine, Square and Triangular waveforms with amplitude Vm and time period T marked">
+<p class="fig-caption">Fig. 3.2 – Sine, Square and Triangular waveforms with amplitude (Vm) and time period (T) marked</p>
+
+<h4>5.4 Waveform Parameters</h4>
+<table class="info-table">
+<tr><th>Parameter</th><th>Meaning</th><th>Unit</th></tr>
+<tr><td>Amplitude (Vm)</td><td>Maximum value attained by the waveform</td><td>Volt (V)</td></tr>
+<tr><td>Time Period (T)</td><td>Time taken to complete one full cycle of the waveform</td><td>Second (s)</td></tr>
+<tr><td>Frequency (f)</td><td>Number of cycles completed per second; f = 1/T</td><td>Hertz (Hz)</td></tr>
+</table>
+
+<h4>5.5 Experimental Setup</h4>
+<p>The output of the Function/Signal Generator is connected to Channel-1 (CH1) of the DSO through a coaxial probe. The DSO displays the waveform on its screen, from which the amplitude, time period and frequency can be read directly using the on-screen grid/cursors or the DSO's automatic measurement function.</p>
+<img class="fig-img" src="../assets/images/practical/exp3-test-setup.png" alt="Test setup: Function/Signal Generator connected via CH1 probe to DSO, displaying on screen">
+<p class="fig-caption">Fig. 3.1 – Test setup for waveform measurement</p>
+
+<h3>6. Procedure</h3>
+<ul>
+<li>Switch ON the Function/Signal Generator and the DSO, and allow both to initialise.</li>
+<li>Connect the output of the Function Generator to Channel-1 (CH1) of the DSO using a coaxial probe.</li>
+<li>Select the Sine wave function on the Function Generator and set the desired frequency and amplitude.</li>
+<li>Adjust the Volts/Div and Time/Div controls on the DSO to obtain a clear, stable display of the waveform on the screen.</li>
+<li>Using the DSO's on-screen grid (or the Auto-measure function), note the amplitude (Vm) and time period (T) of the displayed waveform.</li>
+<li>Calculate the frequency using f = 1/T and record all readings in the observation table.</li>
+<li>Repeat steps 3 to 6 for the Square wave and Triangular wave functions of the signal generator.</li>
+<li>Compare the measured frequency with the frequency set on the signal generator and note the observations.</li>
+</ul>
+
+<h3>7. Observation Table</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Parameter</th><th>Sine Wave</th><th>Square Wave</th><th>Triangular Wave</th></tr>
+<tr><td>1</td><td>Amplitude (Vm)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>Frequency (f)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>Time Period (T)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>8. Conclusion</h3>
+<p>Based on the above observations, write your conclusion mentioning the amplitude, time period and frequency measured for each waveform, and how they compare with the values set on the signal generator.</p>
+
+</div>
+
 </section>
 
 <!--
-  TEACHER NOTE — adding Experiment 3 onward (tabbed layout):
+  TEACHER NOTE — adding Experiment 4 onward (tabbed layout):
   1. Add a new button to .exp-tabs above:
      <button type="button" class="exp-tab-btn" data-exp="N" onclick="location.hash='expN'">Experiment N</button>
   2. Copy an entire <div class="exp-tab-panel" id="expN"> ... </div> block
-     (one of Experiment 1/2 above) and fill it in. Use whatever numbered
+     (one of Experiment 1/2/3 above) and fill it in. Use whatever numbered
      sub-headings (h3/h4) the experiment's manual actually has (Aim,
      Apparatus, Theory, Circuit Diagram, Procedure, Observation Table,
      Precautions, Conclusion, etc. — order and count vary per experiment,
-     as seen between Exp. 1 and Exp. 2); don't force every experiment
-     into one fixed template. Add the new panel inside the same
-     <section id="experiments"> as a sibling of the exp1/exp2 panels.
+     as seen between Exp. 1, Exp. 2 and Exp. 3); don't force every
+     experiment into one fixed template. Add the new panel inside the
+     same <section id="experiments"> as a sibling of the exp1/exp2/exp3
+     panels.
   3. Add "<a href="#expN">Exp. N</a>" to the TOC on the left.
   4. Change experiment N's row in the List of Experiments table from the
      plain "Not Added" text row to a link (href="#expN") + "Available"
-     badge, same as rows 1-2. This page has no lock/unlock step — once a
+     badge, same as rows 1-3. This page has no lock/unlock step — once a
      panel exists here it's visible to students immediately.
   The tab-switch script at the bottom of the page reads the "#expN" hash
   generically via [data-exp] / .exp-tab-panel, so no script changes are
