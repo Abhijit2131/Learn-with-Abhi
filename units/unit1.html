@@ -110,6 +110,15 @@ background:#0B4AA2;
 color:#fff;
 }
 
+.toc-group-btn.locked{
+color:#94A3B8;
+}
+
+.toc-group-btn.locked.active{
+background:#94A3B8;
+color:#fff;
+}
+
 /* Content */
 
 .content{
@@ -133,6 +142,27 @@ display:none;
 /* Section palette: only the clicked "Section N" group is shown at a time. */
 .section.toc-hidden{
 display:none;
+}
+
+/* Shown at the right when a student clicks into a still-locked section. */
+.locked-message{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+text-align:center;
+padding:50px 25px;
+}
+
+.locked-message h2{
+border:none;
+padding:0;
+margin-bottom:12px;
+color:#64748B;
+}
+
+.locked-message p{
+color:#64748B;
+font-size:15px;
+line-height:1.6;
 }
 
 .section h2{
@@ -268,7 +298,7 @@ const teacherMode = false;
 // 3 = Passive Components
 // 4 = Waveform Representation
 // 5 = Ohm's Law + KCL + KVL
-const unlockedSection = 3;
+const unlockedSection = 5;
 
 </script>
 
@@ -4087,10 +4117,35 @@ Learn with Abhi © 2026
 document.addEventListener("DOMContentLoaded", () => {
   if (teacherMode) return;
 
+  const lockedGroups = new Set();
+
   document.querySelectorAll(".section[data-section]").forEach((section) => {
     if (Number(section.dataset.section) > unlockedSection) {
       section.classList.add("locked-section");
       section.setAttribute("aria-hidden", "true");
+
+      // Show one "locked" placeholder card per Section group (not per
+      // content block) at the position of its first locked block, and mark
+      // that Section's TOC button so students can see it's locked before
+      // they even click it.
+      const groupNum = section.dataset.tocSection;
+      if (groupNum && !lockedGroups.has(groupNum)) {
+        lockedGroups.add(groupNum);
+
+        const message = document.createElement("div");
+        message.className = "section locked-message";
+        message.dataset.tocSection = groupNum;
+        message.innerHTML =
+          "<h2>🔒 Section " + groupNum + " is Locked</h2>" +
+          "<p>This section will be unlocked here once it has been delivered in class.</p>";
+        section.after(message);
+
+        const groupBtn = document.querySelector('.toc-group-btn[data-section-jump="' + groupNum + '"]');
+        if (groupBtn) {
+          groupBtn.classList.add("locked");
+          groupBtn.textContent += " 🔒";
+        }
+      }
     }
   });
 });
