@@ -421,7 +421,7 @@ Electronics studies devices such as <b>Diodes, Transistors, ICs, Sensors and Mic
 
 </div>
 
-</section>
+</div>
 
 <!-- Electronics Applications -->
 
@@ -618,7 +618,7 @@ of an electrical circuit. The three most fundamental quantities are
 <strong>Power (P)</strong>.
 </p>
 
-</section>
+</div>
 
 <!-- ===================================================== -->
 <!-- 2.1 CURRENT -->
@@ -1471,6 +1471,8 @@ I = Current
 Resistor → Opposes current | Capacitor → Stores electric field energy | Inductor → Stores magnetic field energy
 </div>
 
+</div>
+
   <!-- ===================================================== -->
 <!-- 4. WAVEFORM REPRESENTATION & SIGNAL CHARACTERISTICS -->
 <!-- ===================================================== -->
@@ -1726,6 +1728,8 @@ while Frequency tells us <b>how fast</b> it repeats.
 Students are frequently asked to define <b>Frequency</b>, <b>Time Period</b>,
 <b>Amplitude</b> and draw a labelled AC waveform. Make sure your uploaded
 <b>wavechar.png</b> clearly shows all these parameters.
+</div>
+
 </div>
 
   <!-- ===================================================== -->
@@ -2106,75 +2110,20 @@ update();
 
 })();
 </script>
-</div>
 
-<!-- Formula -->
-
-<div class="formula-card">
-
-<div class="formula-title">Calculated using Ohm's Law</div>
-
-<div class="formula-big">
-I = <span id="fv">12</span> / <span id="fr">6</span> =
-<span id="fi">2.00</span> A
-</div>
-
-</div>
-
-<!-- Observation -->
-
-<div class="observe">
-
-<h3>🔍 What do you observe?</h3>
-
-<ul>
-<li>Increasing <b>Voltage</b> increases the Current.</li>
-<li>Increasing <b>Resistance</b> decreases the Current.</li>
-<li>The relationship follows <b>Ohm's Law (I = V/R)</b>.</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-const voltage=document.getElementById("voltage");
-const resistance=document.getElementById("resistance");
-
-function updateOhm(){
-
-const V=Number(voltage.value);
-const R=Number(resistance.value);
-const I=(V/R).toFixed(2);
-
-document.getElementById("vValue").innerHTML=V;
-document.getElementById("rValue").innerHTML=R;
-document.getElementById("iValue").innerHTML=I;
-
-document.getElementById("rText").textContent=R;
-
-document.getElementById("fv").textContent=V;
-document.getElementById("fr").textContent=R;
-document.getElementById("fi").textContent=I;
-
-}
-
-voltage.addEventListener("input",updateOhm);
-resistance.addEventListener("input",updateOhm);
-
-updateOhm();
-</script>
 <div class="note">
 <b>Observation:</b><br>
 Increasing the voltage while keeping resistance constant increases current.
 Increasing resistance while keeping voltage constant decreases current. This experimentally verifies Ohm's Law.
 </div>
 
+</div>
+
 <!-- ===================================================== -->
 <!-- SOLVED NUMERICALS -->
 <!-- ===================================================== -->
+
+<div class="section" data-toc-section="5">
 
 <h2>5.5 Solved Numerical Examples</h2>
 
@@ -2353,6 +2302,8 @@ Ohm's Law is one of the most important fundamental laws used for analysing DC el
 <div class="note">
 <b>Memory Tip:</b><br>
 Use the <b>VIR Triangle</b> to derive any Ohm's Law equation instantly during examinations.
+</div>
+
 </div>
 
   <!-- ===================================================== -->
@@ -3104,7 +3055,7 @@ Find the loop current and verify KVL.
 Always mention the traversal direction (Clockwise/Anticlockwise) before writing the KVL equation. This earns presentation marks in university examinations.
 </div>
 
-</section>
+</div>
 
 <script>
 (function(){
@@ -3606,6 +3557,9 @@ RT = 1.09 Ω
 <div class="note">
 <b>Exam Tip:</b><br>
 If the question asks **same current**, think <b>Series Circuit</b>. If it asks **same voltage**, think <b>Parallel Circuit</b>.
+</div>
+
+</div>
 </div>
 
 <!-- ===================================================== -->
@@ -4179,8 +4133,13 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const num = btn.dataset.sectionJump;
       showTocSection(num);
-      const firstBlock = document.querySelector('.section[data-toc-section="' + num + '"]');
-      if (firstBlock) firstBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Scroll to whichever block is actually visible for this group: the
+      // locked-message card if the section is locked, otherwise its first
+      // real content block.
+      const target =
+        document.querySelector('.locked-message[data-toc-section="' + num + '"]') ||
+        document.querySelector('.section[data-toc-section="' + num + '"]:not(.locked-section)');
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
