@@ -329,6 +329,7 @@ top:0;
 <a href="#exp1">Exp. 1</a>
 <a href="#exp2">Exp. 2</a>
 <a href="#exp3">Exp. 3</a>
+<a href="#exp4">Exp. 4</a>
 
 <hr style="margin:14px 0;">
 
@@ -377,7 +378,7 @@ Department of First Year Engineering
 <tr><td>1</td><td><a href="#exp1">Experiment 1 — Introduction to Electrical Engineering Laboratory Equipment, Symbols &amp; Safety Rules</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>2</td><td><a href="#exp2">Experiment 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>3</td><td><a href="#exp3">Experiment 3 — Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
-<tr><td>4</td><td>Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>4</td><td><a href="#exp4">Experiment 4 — Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>5</td><td>Test the Performance of the Given PN Junction Diode</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>6</td><td>Measure Amplitude, Time Period &amp; Frequency of Half Wave Rectifier Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>7</td><td>Construct Centre Tap Full Wave Rectifier and Measure Input/Output Waveforms Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
@@ -412,6 +413,7 @@ Department of First Year Engineering
 <button type="button" class="exp-tab-btn" data-exp="1" onclick="location.hash='exp1'">Experiment 1</button>
 <button type="button" class="exp-tab-btn" data-exp="2" onclick="location.hash='exp2'">Experiment 2</button>
 <button type="button" class="exp-tab-btn" data-exp="3" onclick="location.hash='exp3'">Experiment 3</button>
+<button type="button" class="exp-tab-btn" data-exp="4" onclick="location.hash='exp4'">Experiment 4</button>
 </div>
 
 <!-- ============ EXPERIMENT 1 PANEL ============ -->
@@ -723,25 +725,194 @@ Department of First Year Engineering
 
 </div>
 
+<!-- ============ EXPERIMENT 4 PANEL ============ -->
+
+<div class="exp-tab-panel" id="exp4">
+
+<h2>Experiment No. 4 — Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</h2>
+
+<h3>1. Aim</h3>
+<p>To verify Ohm's law, Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) in DC electrical circuits.</p>
+
+<h3>2. Practical Significance</h3>
+<p>Ohm's law and Kirchhoff's laws are the basic tools used to analyse, design and troubleshoot electrical and electronic circuits, from house wiring and battery-operated equipment to control panels and printed circuit boards. Engineers use them to calculate branch currents and voltage drops, to select resistor values and meter ranges, and to locate faults such as open or short circuits. Through this experiment, the student will connect simple series and parallel resistive circuits, use voltmeters and milliammeters correctly, and confirm these laws from measured readings.</p>
+
+<h3>3. Objectives</h3>
+<ul>
+<li>To state Ohm's law, KCL and KVL and identify the circuit conditions under which each law applies.</li>
+<li>To connect series and parallel DC resistive circuits on the experimental kit with correct meter polarity.</li>
+<li>To measure DC voltage and current using voltmeters, milliammeters and a digital multimeter.</li>
+<li>To verify that the current through a resistor is proportional to the voltage across it and to determine its resistance, R = V / I.</li>
+<li>To verify that the supplied current is equal to the sum of the branch currents (KCL).</li>
+<li>To verify that the supply voltage is equal to the sum of the voltage drops around a closed loop (KVL).</li>
+</ul>
+
+<h3>4. Apparatus</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Apparatus</th><th>Range / Specification</th><th>Quantity</th></tr>
+<tr><td>1</td><td>Variable DC regulated power supply</td><td>0 – 20 V</td><td>1</td></tr>
+<tr><td>2</td><td>DC milliammeter</td><td>0 – 10 mA</td><td>4</td></tr>
+<tr><td>3</td><td>DC voltmeter</td><td>0 – 30 V</td><td>3</td></tr>
+<tr><td>4</td><td>Digital multimeter (DMM)</td><td>—</td><td>1</td></tr>
+<tr><td>5</td><td>Experimental kit (resistor board for Ohm's law, KCL &amp; KVL)</td><td>Values as marked on kit</td><td>1</td></tr>
+<tr><td>6</td><td>Connecting wires</td><td>—</td><td>As required</td></tr>
+</table>
+
+<h3>5. Theory</h3>
+
+<h4>5.1 Ohm's Law</h4>
+<p>Ohm's law states that the current flowing through a conductor is directly proportional to the potential difference applied across its ends, provided the temperature and other physical conditions of the conductor remain constant.</p>
+<div class="definition" style="text-align:center;">V ∝ I &nbsp; or &nbsp; V = I × R &nbsp; or &nbsp; R = V / I</div>
+<p>where V is the voltage across the resistor in volt (V), I is the current through it in ampere (A) and R is the resistance in ohm (Ω). If the current is read in milliampere, convert it to ampere before calculating R (1 mA = 10<sup>−3</sup> A). For an ohmic (linear) resistor, the graph of V against I is a straight line passing through the origin, and its slope is equal to R. Ohm's law does not apply to non-linear devices such as diodes, transistors and filament lamps whose resistance changes with current.</p>
+
+<h4>5.2 Kirchhoff's Laws</h4>
+<p>Kirchhoff's laws are particularly useful in determining the equivalent resistance of a complicated network of conductors and in calculating the currents flowing in the various conductors. They are two in number: the Current Law and the Voltage Law.</p>
+
+<h4>5.3 Kirchhoff's Current Law (KCL)</h4>
+<p>In any electrical network, the algebraic sum of the currents meeting at a point (junction or node) is zero. In other words, the total current entering a junction is equal to the total current leaving that junction. KCL is based on the law of conservation of electric charge: charge cannot accumulate at a junction.</p>
+<div class="definition" style="text-align:center;">Σ I = 0 &nbsp; (at any junction)</div>
+<p>Consider the case of five conductors meeting at a point A, as shown in Fig. 4.1. Some conductors have currents leading to point A, whereas some have currents leading away from point A. Assuming the incoming currents to be positive and the outgoing currents to be negative:</p>
+<img class="fig-img" style="max-width:420px" src="../assets/images/practical/exp4-kcl-junction.png" alt="Five conductors I1-I5 meeting at junction A">
+<p class="fig-caption">Fig. 4.1 – Five conductors meeting at junction A</p>
+<div class="definition" style="text-align:center;">I<sub>1</sub> + (−I<sub>2</sub>) + (−I<sub>3</sub>) + I<sub>4</sub> + (−I<sub>5</sub>) = 0</div>
+<div class="definition" style="text-align:center;">∴ &nbsp; I<sub>1</sub> + I<sub>4</sub> = I<sub>2</sub> + I<sub>3</sub> + I<sub>5</sub></div>
+<p>i.e. Incoming current = Outgoing current at the junction. Applying KCL to the experimental circuit of Fig. 4.3, the current I supplied through resistor R divides into three parallel branches R1, R2 and R3, so that:</p>
+<div class="definition" style="text-align:center;">I = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub></div>
+
+<h4>5.4 Kirchhoff's Voltage Law (KVL)</h4>
+<p>In any closed path (loop or mesh) of an electrical network, the algebraic sum of the products of current and resistance (IR drops) in each conductor of that path, plus the algebraic sum of the emfs in that path, is zero. In simple words, the sum of the voltage rises is equal to the sum of the voltage drops around a closed loop. KVL is based on the law of conservation of energy.</p>
+<div class="definition" style="text-align:center;">Σ IR + Σ emf = 0 &nbsp; (around any closed path)</div>
+<p><b>Sign convention:</b> while tracing the loop, a rise in potential (moving from the − terminal to the + terminal of a source) is taken as positive, and a fall in potential (moving across a resistor in the direction of current) is taken as negative.</p>
+<p>Applying KVL to the series circuit of Fig. 4.4 (traced clockwise), with supply voltage V and voltage drops V1, V2 and V3 across R1, R2 and R3 respectively:</p>
+<div class="definition" style="text-align:center;">V − V<sub>1</sub> − V<sub>2</sub> − V<sub>3</sub> = 0 &nbsp; ∴ &nbsp; V = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub></div>
+<p>where V1 = I R1, V2 = I R2 and V3 = I R3, I being the common series current.</p>
+
+<h4>5.5 Summary of Formulae</h4>
+<table class="info-table">
+<tr><th>Law</th><th>Statement</th><th>Formula</th><th>Unit</th></tr>
+<tr><td>Ohm's law</td><td>Voltage across a resistor is proportional to the current through it</td><td>R = V / I</td><td>Ω</td></tr>
+<tr><td>KCL</td><td>Current entering a junction = current leaving it</td><td>I = I₁ + I₂ + I₃</td><td>mA</td></tr>
+<tr><td>KVL</td><td>Supply voltage = sum of voltage drops in a closed loop</td><td>V = V₁ + V₂ + V₃</td><td>V</td></tr>
+</table>
+
+<h3>6. Circuit Diagrams</h3>
+
+<h4>6.1 Verification of Ohm's Law</h4>
+<img class="fig-img" style="max-width:480px" src="../assets/images/practical/exp4-ohms-law-circuit.png" alt="Circuit for verification of Ohm's law: variable DC supply, milliammeter and resistor R with voltmeter across it">
+<p class="fig-caption">Fig. 4.2 – Circuit for verification of Ohm's law</p>
+<p>Value of resistor used: R = ____________ Ω (from kit marking) &nbsp;/&nbsp; ____________ Ω (measured by DMM)</p>
+
+<h4>6.2 Verification of Kirchhoff's Current Law</h4>
+<img class="fig-img" style="max-width:600px" src="../assets/images/practical/exp4-kcl-circuit.png" alt="Circuit for verification of KCL: supply current I dividing into three parallel branches R1, R2, R3 carrying I1, I2, I3">
+<p class="fig-caption">Fig. 4.3 – Circuit for verification of KCL (Apply KCL to the above circuit: I = I₁ + I₂ + I₃)</p>
+<p>Resistor values: R = ________ Ω, &nbsp; R₁ = ________ Ω, &nbsp; R₂ = ________ Ω, &nbsp; R₃ = ________ Ω</p>
+
+<h4>6.3 Verification of Kirchhoff's Voltage Law</h4>
+<img class="fig-img" style="max-width:560px" src="../assets/images/practical/exp4-kvl-circuit.png" alt="Series loop circuit for verification of KVL: supply V with resistors R1, R2, R3 and voltmeters V1, V2, V3 across each">
+<p class="fig-caption">Fig. 4.4 – Circuit for verification of KVL (Apply KVL to the above circuit: V = V₁ + V₂ + V₃)</p>
+<p>Resistor values: R₁ = ________ Ω, &nbsp; R₂ = ________ Ω, &nbsp; R₃ = ________ Ω</p>
+
+<h3>7. Procedure</h3>
+
+<h4>7.1 Part A – Ohm's Law</h4>
+<ul>
+<li>Note the value of resistor R from the kit and measure it with the DMM (supply OFF). Record both values below Fig. 4.2.</li>
+<li>Make the connections as per the circuit diagram of Fig. 4.2.</li>
+<li>Keep the supply voltage at zero, get the connections checked and switch ON the supply.</li>
+<li>Increase the supply voltage in small steps. At each step note the voltmeter reading (V) and the milliammeter reading (I) in Table 4.1.</li>
+<li>Take at least six readings, keeping the current within the range of the milliammeter.</li>
+<li>Calculate R = V / I for each reading and find the mean value of R. Plot a graph of V (y-axis) against I (x-axis) on graph paper.</li>
+<li>Reduce the supply voltage to zero and switch OFF the supply.</li>
+</ul>
+
+<h4>7.2 Part B – Kirchhoff's Current Law</h4>
+<ul>
+<li>Note the values of R, R₁, R₂ and R₃ from the kit and record them below Fig. 4.3.</li>
+<li>Make the connections as per the circuit diagram of Fig. 4.3: one milliammeter in the main line to read the supplied current I, and one milliammeter in each branch to read I₁, I₂ and I₃.</li>
+<li>Keep the supply voltage at zero, check the connections and switch ON the supply.</li>
+<li>Slowly increase the supply voltage (e.g. 5 V, 10 V, 15 V …) such that no milliammeter exceeds its range.</li>
+<li>At each setting, note the readings of all milliammeters (I, I₁, I₂ and I₃) in Table 4.2.</li>
+<li>Repeat for five different supply voltages.</li>
+<li>Calculate I₁ + I₂ + I₃ for each reading and prove that I = I₁ + I₂ + I₃.</li>
+<li>Reduce the supply voltage to zero and switch OFF the supply.</li>
+</ul>
+
+<h4>7.3 Part C – Kirchhoff's Voltage Law</h4>
+<ul>
+<li>Note the values of R₁, R₂ and R₃ from the kit and record them below Fig. 4.4.</li>
+<li>Make the connections as per the circuit diagram of Fig. 4.4, connecting voltmeters V₁, V₂ and V₃ across R₁, R₂ and R₃ respectively.</li>
+<li>Check the connections and switch ON the supply with the voltage control at zero.</li>
+<li>Slowly increase the supply voltage. Measure the supply voltage V across the supply terminals using the DMM.</li>
+<li>Note the readings of all voltmeters V₁, V₂ and V₃ in Table 4.3.</li>
+<li>Repeat for six different supply voltages.</li>
+<li>Calculate V₁ + V₂ + V₃ for each reading and compare it with the measured supply voltage V.</li>
+<li>Reduce the supply voltage to zero and switch OFF the supply.</li>
+</ul>
+
+<h3>8. Observation Tables</h3>
+
+<h4>Table 4.1 – Verification of Ohm's Law</h4>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Voltage across R, V (V)</th><th>Current through R, I (mA)</th><th>Resistance R = V / I (Ω)</th></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<p>Mean resistance R = ____________ Ω &nbsp;&nbsp;&nbsp; Resistance measured by DMM = ____________ Ω</p>
+
+<h4>Table 4.2 – Verification of Kirchhoff's Current Law</h4>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Supplied current I (mA)</th><th>Current through R1, I₁ (mA)</th><th>Current through R2, I₂ (mA)</th><th>Current through R3, I₃ (mA)</th><th>Total I₁ + I₂ + I₃ (mA)</th></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h4>Table 4.3 – Verification of Kirchhoff's Voltage Law</h4>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Supply voltage V (volts)</th><th>Voltage drop across R1, V₁ (V)</th><th>Voltage drop across R2, V₂ (V)</th><th>Voltage drop across R3, V₃ (V)</th></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>9. Calculations</h3>
+<p>Show one complete calculation for each part using your own readings. Percentage difference = (Measured value − Calculated value) / Measured value × 100%.</p>
+<p><b>Part A – Ohm's Law:</b> &nbsp; R = V / I = ____________</p>
+<p><b>Part B – KCL:</b> &nbsp; I = I₁ + I₂ + I₃ = ____________</p>
+<p><b>Part C – KVL:</b> &nbsp; V = V₁ + V₂ + V₃ = ____________</p>
+
+<h3>10. Conclusion</h3>
+<p>Based on the above observations and calculations, write your conclusion stating whether Ohm's law, KCL and KVL are verified, how closely the measured and calculated values agree, and the possible reasons for any difference (meter errors, resistance of connecting wires and meters, reading errors, etc.).</p>
+
+</div>
+
 </section>
 
 <!--
-  TEACHER NOTE — adding Experiment 4 onward (tabbed layout):
+  TEACHER NOTE — adding Experiment 5 onward (tabbed layout):
   1. Add a new button to .exp-tabs above:
      <button type="button" class="exp-tab-btn" data-exp="N" onclick="location.hash='expN'">Experiment N</button>
   2. Copy an entire <div class="exp-tab-panel" id="expN"> ... </div> block
-     (one of Experiment 1/2/3 above) and fill it in. Use whatever numbered
+     (one of Experiment 1-4 above) and fill it in. Use whatever numbered
      sub-headings (h3/h4) the experiment's manual actually has (Aim,
      Apparatus, Theory, Circuit Diagram, Procedure, Observation Table,
      Precautions, Conclusion, etc. — order and count vary per experiment,
-     as seen between Exp. 1, Exp. 2 and Exp. 3); don't force every
-     experiment into one fixed template. Add the new panel inside the
-     same <section id="experiments"> as a sibling of the exp1/exp2/exp3
-     panels.
+     as seen between Exp. 1-4); don't force every experiment into one
+     fixed template. Add the new panel inside the same
+     <section id="experiments"> as a sibling of the exp1-exp4 panels.
   3. Add "<a href="#expN">Exp. N</a>" to the TOC on the left.
   4. Change experiment N's row in the List of Experiments table from the
      plain "Not Added" text row to a link (href="#expN") + "Available"
-     badge, same as rows 1-3. This page has no lock/unlock step — once a
+     badge, same as rows 1-4. This page has no lock/unlock step — once a
      panel exists here it's visible to students immediately.
   The tab-switch script at the bottom of the page reads the "#expN" hash
   generically via [data-exp] / .exp-tab-panel, so no script changes are
