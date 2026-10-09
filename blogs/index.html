@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Blogs | Learn with Abhi</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:35px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+.wrap{
+width:90%;
+max-width:1100px;
+margin:35px auto;
+}
+
+.intro{
+background:white;
+padding:25px 30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#0B4AA2;
+margin-bottom:10px;
+}
+
+.intro a{
+color:#0B4AA2;
+font-weight:bold;
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.blog-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-decoration:none;
+color:#17345E;
+display:flex;
+flex-direction:column;
+transition:.3s;
+}
+
+.blog-card:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 26px rgba(0,0,0,.14);
+}
+
+.blog-cover{
+height:170px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:52px;
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+}
+
+.blog-body{
+padding:20px;
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.blog-source{
+font-size:12px;
+font-weight:bold;
+color:#0B4AA2;
+background:#EAF4FF;
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+margin-bottom:10px;
+width:fit-content;
+}
+
+.blog-body h3{
+color:#0B4AA2;
+font-size:19px;
+margin-bottom:8px;
+}
+
+.blog-body p{
+color:#64748B;
+font-size:14px;
+flex:1;
+}
+
+.blog-link{
+margin-top:14px;
+font-weight:bold;
+color:#0B4AA2;
+font-size:14px;
+}
+
+footer{
+background:#0B4AA2;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>✍️ My Blogs</h1>
+<p>Articles on electronics fundamentals, written on Medium</p>
+</header>
+
+<div class="wrap">
+
+<div class="intro">
+<h2>Why I write</h2>
+<p>
+Alongside these notes, I write short, practical articles that explain electronics concepts the way
+I wish they'd been explained to me — on
+<a href="https://medium.com/@abhijeetshinde70" target="_blank" rel="noopener">Medium</a>.
+Each card below opens the full article in a new tab.
+</p>
+</div>
+
+<div class="blog-grid">
+
+<a class="blog-card" href="https://medium.com/@abhijeetshinde70/why-most-electronics-students-struggle-and-how-to-actually-master-circuits-b8e044fdce5b" target="_blank" rel="noopener">
+
+<div class="blog-cover">⚡</div>
+
+<div class="blog-body">
+<span class="blog-source">Medium</span>
+<h3>Why Most Electronics Students Struggle (And How to Actually Master Circuits)</h3>
+<p>A look at why circuit theory trips up so many first-year students, and a practical approach to actually building intuition instead of memorising formulas.</p>
+<div class="blog-link">Read on Medium →</div>
+</div>
+
+</a>
+
+<a class="blog-card" href="https://medium.com/@abhijeetshinde70/what-happens-inside-your-charger-86fe1bdbecde" target="_blank" rel="noopener">
+
+<div class="blog-cover">🔌</div>
+
+<div class="blog-body">
+<span class="blog-source">Medium</span>
+<h3>What Happens Inside Your Charger?</h3>
+<p>A plain-language breakdown of what's actually going on inside the phone charger on your desk — from AC mains to the DC voltage your device sees.</p>
+<div class="blog-link">Read on Medium →</div>
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="wrap" style="margin-top:0;">
+<p><a href="../index.html" style="color:#0B4AA2;font-weight:bold;text-decoration:none;">🏠 Back to Home</a></p>
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+</body>
+</html>
