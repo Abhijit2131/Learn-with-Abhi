@@ -6,22 +6,179 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Important Question Bank | Learn with Abhi</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:35px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+.wrap{
+width:90%;
+max-width:1000px;
+margin:35px auto;
+}
+
+.section-card{
+background:white;
+padding:25px 30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.section-card h2{
+color:#0B4AA2;
+border-left:5px solid #2196F3;
+padding-left:12px;
+margin-bottom:12px;
+}
+
+.section-card > p{
+margin-bottom:10px;
+}
+
+.section-card ul{
+margin-left:20px;
+}
+
+/* Viva tabs (same pattern as the Practical Manual's experiment tabs) */
+
+.viva-tabs{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin:20px 0;
+}
+
+.viva-tab-btn{
+background:#EAF4FF;
+color:#0B4AA2;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+font-family:inherit;
+transition:.2s;
+}
+
+.viva-tab-btn:hover{
+background:#DCEAFB;
+}
+
+.viva-tab-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.viva-tab-panel{
+display:none;
+}
+
+.viva-tab-panel.active{
+display:block;
+}
+
+.viva-tab-panel h3{
+color:#0B4AA2;
+margin-bottom:14px;
+}
+
+/* Collapsible Q&A */
+
+details.qa{
+background:#F8FBFF;
+border:1px solid #DCE5F0;
+border-radius:10px;
+margin-bottom:10px;
+padding:12px 16px;
+}
+
+details.qa summary{
+cursor:pointer;
+font-weight:bold;
+color:#17345E;
+list-style:none;
+}
+
+details.qa summary::-webkit-details-marker{
+display:none;
+}
+
+details.qa summary::before{
+content:"▸ ";
+color:#0B4AA2;
+}
+
+details.qa[open] summary::before{
+content:"▾ ";
+}
+
+details.qa[open]{
+border-color:#2196F3;
+}
+
+details.qa .ans{
+margin-top:10px;
+padding-top:10px;
+border-top:1px dashed #DCE5F0;
+color:#3B4D66;
+}
+
+details.qa .ans b{
+color:#0B4AA2;
+}
+
+footer{
+background:#0B4AA2;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:10px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="banner">
-<h1>Important Question Bank</h1>
-<p>Unit-wise University Important Questions</p>
-</div>
+<header>
+<h1>📝 Important Question Bank</h1>
+<p>Unit-wise University Important Questions &amp; Lab Viva-Voce</p>
+</header>
 
-<div class="content" style="width:90%;margin:30px auto;">
+<div class="wrap">
 
-<h2>Coming Soon</h2>
-
-<p>Important questions will be arranged as:</p>
-
+<div class="section-card">
+<h2>Unit-Wise University Questions</h2>
+<p>Coming soon. Important questions will be arranged as:</p>
 <ul>
 <li>2 Marks Questions</li>
 <li>4 Marks Questions</li>
@@ -29,10 +186,279 @@
 <li>Numericals</li>
 <li>Previous University Questions</li>
 </ul>
+</div>
 
-<p><a href="index.html">← Back to Home</a></p>
+<div class="section-card">
+
+<h2>🎤 Lab Viva-Voce Questions &amp; Answers</h2>
+<p>Practice these questions before your practical exam — they cover Experiments 1 to 4 of the Practical Manual. Tap a question to reveal its answer.</p>
+
+<div class="viva-tabs">
+<button type="button" class="viva-tab-btn" data-viva="1" onclick="location.hash='viva1'">Experiment 1</button>
+<button type="button" class="viva-tab-btn" data-viva="2" onclick="location.hash='viva2'">Experiment 2</button>
+<button type="button" class="viva-tab-btn" data-viva="3" onclick="location.hash='viva3'">Experiment 3</button>
+<button type="button" class="viva-tab-btn" data-viva="4" onclick="location.hash='viva4'">Experiment 4</button>
+</div>
+
+<!-- ============ EXPERIMENT 1 VIVA ============ -->
+
+<div class="viva-tab-panel" id="viva1">
+<h3>Experiment 1 — Lab Equipment, Symbols &amp; Safety Rules</h3>
+
+<details class="qa">
+<summary>Q1. What is a Digital Multimeter (DMM) and what quantities can it measure?</summary>
+<p class="ans"><b>Ans:</b> A DMM is a portable measuring instrument that displays readings in digital form. It can measure AC and DC voltage, AC and DC current and resistance, and can also check continuity and diodes. Many DMMs can additionally measure capacitance, frequency and transistor gain (hFE).</p>
+</details>
+
+<details class="qa">
+<summary>Q2. Why is an ammeter always connected in series and a voltmeter in parallel?</summary>
+<p class="ans"><b>Ans:</b> An ammeter measures the current flowing through an element, so the same current must pass through it; hence it is connected in series. It has very low resistance so that it does not change the circuit current. A voltmeter measures the potential difference between two points, so it is connected across (in parallel with) the element. It has very high resistance so that it draws negligible current.</p>
+</details>
+
+<details class="qa">
+<summary>Q3. What will happen if an ammeter is connected directly across the supply (in parallel)?</summary>
+<p class="ans"><b>Ans:</b> Because the ammeter has very low resistance, connecting it across the supply acts almost like a short circuit. A very large current will flow, which can damage the ammeter, blow its fuse or damage the power supply.</p>
+</details>
+
+<details class="qa">
+<summary>Q4. What is a Regulated Power Supply (RPS)? Why is it called 'regulated'?</summary>
+<p class="ans"><b>Ans:</b> An RPS converts the AC mains supply into a smooth, adjustable DC output. It is called regulated because it keeps the output voltage constant even when the load current or the AC mains voltage changes. Most RPS units also have a current-limit control to protect the circuit.</p>
+</details>
+
+<details class="qa">
+<summary>Q5. What is a breadboard? How are its holes internally connected?</summary>
+<p class="ans"><b>Ans:</b> A breadboard is a solderless board used to build and test temporary circuits. In the central area, each short row of five holes is connected internally by a metal spring clip; the two halves are separated by a central groove. The long rows (rails) along the top and bottom edges are connected along their length and are used for the supply (+) and ground (−) lines.</p>
+</details>
+
+<details class="qa">
+<summary>Q6. What is the purpose of a fuse in an electrical circuit?</summary>
+<p class="ans"><b>Ans:</b> A fuse is a protective device consisting of a thin wire of low melting point. When the current exceeds the safe value (due to overload or short circuit), the wire melts and opens the circuit, thereby protecting the equipment and wiring from damage.</p>
+</details>
+
+<details class="qa">
+<summary>Q7. What is earthing and why is it necessary?</summary>
+<p class="ans"><b>Ans:</b> Earthing is connecting the metallic body of electrical equipment to the earth through a low-resistance conductor. If a live wire accidentally touches the body, the fault current flows safely to earth, the fuse/MCB operates, and the body remains near earth potential. This protects the user from electric shock.</p>
+</details>
+
+<details class="qa">
+<summary>Q8. Why should a student use only one hand while working on a live circuit?</summary>
+<p class="ans"><b>Ans:</b> If both hands touch different points of a live circuit, current can flow from one hand to the other through the chest and heart, which can be fatal. Using one hand and keeping the other hand away from earthed objects avoids such a path through the heart.</p>
+</details>
+
+<details class="qa">
+<summary>Q9. What first-aid steps should be taken if a person gets an electric shock?</summary>
+<p class="ans"><b>Ans:</b> Switch OFF the mains supply immediately; if that is not possible, separate the person from the live conductor using a dry, non-conductive object such as a wooden stick or dry cloth — never touch the person directly. Check breathing and pulse and start CPR if they are absent, call for medical help, keep the person lying down and warm, and report the incident to the faculty-in-charge.</p>
+</details>
+
+<details class="qa">
+<summary>Q10. What is meant by the range and least count of a measuring instrument? Why should a higher range be selected first?</summary>
+<p class="ans"><b>Ans:</b> The range is the maximum value an instrument can measure on a selected setting, and the least count is the smallest value that can be read accurately on it. A higher range is selected first so that the instrument is not damaged if the actual value is larger than expected; the range is then reduced to obtain a more accurate reading.</p>
+</details>
 
 </div>
+
+<!-- ============ EXPERIMENT 2 VIVA ============ -->
+
+<div class="viva-tab-panel" id="viva2">
+<h3>Experiment 2 — Active &amp; Passive Components</h3>
+
+<details class="qa">
+<summary>Q1. What is the difference between active and passive components?</summary>
+<p class="ans"><b>Ans:</b> Active components require an external source (bias) for their operation and can provide power gain or control the flow of current, e.g. diodes and transistors. Passive components do not require an external source for their operation and cannot provide power gain; they only consume, store or release energy, e.g. resistors, capacitors and inductors.</p>
+</details>
+
+<details class="qa">
+<summary>Q2. State the units of resistance, capacitance and inductance.</summary>
+<p class="ans"><b>Ans:</b> Resistance is measured in ohm (Ω), capacitance in farad (F) and inductance in henry (H). In practice, capacitors are usually in µF, nF or pF and inductors in mH or µH.</p>
+</details>
+
+<details class="qa">
+<summary>Q3. How is the value of a four-band carbon resistor read using the colour code?</summary>
+<p class="ans"><b>Ans:</b> The first two bands give the significant figures, the third band gives the multiplier (power of 10) and the fourth band gives the tolerance. For example, Brown–Black–Red–Gold = 1, 0, ×10², ±5% = 1000 Ω = 1 kΩ ± 5%.</p>
+</details>
+
+<details class="qa">
+<summary>Q4. What is meant by the tolerance of a resistor?</summary>
+<p class="ans"><b>Ans:</b> Tolerance is the permissible variation of the actual resistance from its marked (nominal) value, expressed as a percentage. For a 1 kΩ resistor with ±5% tolerance, the actual value may lie anywhere between 950 Ω and 1050 Ω.</p>
+</details>
+
+<details class="qa">
+<summary>Q5. What is the value of a ceramic capacitor marked '104'?</summary>
+<p class="ans"><b>Ans:</b> The first two digits (10) are significant figures and the third digit (4) is the multiplier, giving 10 × 10⁴ pF = 100 000 pF = 100 nF = 0.1 µF.</p>
+</details>
+
+<details class="qa">
+<summary>Q6. How do you identify the polarity of an electrolytic capacitor? What happens if it is connected in reverse?</summary>
+<p class="ans"><b>Ans:</b> The longer lead is positive, and a stripe with a minus (−) sign printed on the body marks the negative lead. If it is connected with reverse polarity, the dielectric oxide layer breaks down; the capacitor may heat up, leak, bulge or even burst.</p>
+</details>
+
+<details class="qa">
+<summary>Q7. How is a diode tested using a digital multimeter?</summary>
+<p class="ans"><b>Ans:</b> Set the DMM to diode-test mode. With the red probe on the anode and the black probe on the cathode (forward bias), a good silicon diode shows a reading of about 0.5–0.7 V. On reversing the probes (reverse bias), the meter shows OL (open). A reading near zero in both directions indicates a shorted diode, and OL in both directions indicates an open diode.</p>
+</details>
+
+<details class="qa">
+<summary>Q8. How is a Zener diode different from an ordinary P-N junction diode?</summary>
+<p class="ans"><b>Ans:</b> A Zener diode is heavily doped and is designed to operate in the reverse-breakdown region without damage. In this region the voltage across it remains almost constant, so it is used as a voltage regulator. An ordinary P-N diode is used mainly in forward bias for rectification and may be damaged by reverse breakdown.</p>
+</details>
+
+<details class="qa">
+<summary>Q9. How do you identify the anode and cathode of an LED?</summary>
+<p class="ans"><b>Ans:</b> The longer lead of an LED is the anode (+) and the shorter lead is the cathode (−). The cathode side is also indicated by a flat edge on the rim of the LED body. The LED glows only when it is forward biased.</p>
+</details>
+
+<details class="qa">
+<summary>Q10. Name the terminals of a bipolar junction transistor. How can a DMM identify whether it is NPN or PNP?</summary>
+<p class="ans"><b>Ans:</b> The terminals are Emitter (E), Base (B) and Collector (C). In diode-test mode, with the red probe on the base: if both base–emitter and base–collector junctions conduct (show about 0.6–0.7 V), it is an NPN transistor; if they conduct with the black probe on the base, it is a PNP transistor. The hFE socket of the DMM can also be used to confirm the type and terminals.</p>
+</details>
+
+</div>
+
+<!-- ============ EXPERIMENT 3 VIVA ============ -->
+
+<div class="viva-tab-panel" id="viva3">
+<h3>Experiment 3 — Waveform Measurement Using DSO</h3>
+
+<details class="qa">
+<summary>Q1. What is a Digital Storage Oscilloscope (DSO)? How does it differ from a CRO?</summary>
+<p class="ans"><b>Ans:</b> A DSO is an oscilloscope that converts the input signal into digital form using an ADC, stores it in memory and displays it on an LCD screen. Unlike an analog CRO, a DSO can store and recall waveforms, capture single (non-repetitive) events, and provide automatic measurements of amplitude, frequency, time period, etc.</p>
+</details>
+
+<details class="qa">
+<summary>Q2. What is the relation between frequency and time period? State their units.</summary>
+<p class="ans"><b>Ans:</b> Frequency is the reciprocal of time period: f = 1 / T. Frequency is measured in hertz (Hz) and time period in seconds (s). For example, if T = 1 ms, then f = 1 / (1 × 10⁻³) = 1000 Hz = 1 kHz.</p>
+</details>
+
+<details class="qa">
+<summary>Q3. How is the time period of a waveform measured from the DSO screen?</summary>
+<p class="ans"><b>Ans:</b> Count the number of horizontal divisions occupied by one complete cycle of the waveform and multiply it by the Time/Div setting: T = (number of horizontal divisions per cycle) × (Time/Div).</p>
+</details>
+
+<details class="qa">
+<summary>Q4. How is the amplitude of a waveform measured from the DSO screen?</summary>
+<p class="ans"><b>Ans:</b> Count the number of vertical divisions from the zero (centre) line to the positive peak and multiply it by the Volts/Div setting: Vm = (number of vertical divisions) × (Volts/Div). The peak-to-peak value is obtained by counting divisions from the negative peak to the positive peak; for a symmetrical wave, Vpp = 2 Vm.</p>
+</details>
+
+<details class="qa">
+<summary>Q5. Define peak value, peak-to-peak value and RMS value. What is the RMS value of a sine wave?</summary>
+<p class="ans"><b>Ans:</b> Peak value (Vm) is the maximum value of the waveform measured from zero. Peak-to-peak value is the difference between the positive and negative peaks. RMS value is the equivalent DC value that produces the same heating effect. For a sine wave, Vrms = Vm / √2 ≈ 0.707 Vm.</p>
+</details>
+
+<details class="qa">
+<summary>Q6. What is the function of the Volts/Div and Time/Div controls?</summary>
+<p class="ans"><b>Ans:</b> The Volts/Div control sets the vertical (voltage) scale — how many volts each vertical division represents. The Time/Div control sets the horizontal (time) scale — how much time each horizontal division represents. They are adjusted to obtain a clear, full-size display of one or more cycles.</p>
+</details>
+
+<details class="qa">
+<summary>Q7. What is the purpose of triggering in an oscilloscope?</summary>
+<p class="ans"><b>Ans:</b> Triggering makes the oscilloscope start each sweep at the same point (level and slope) of the waveform. This keeps the displayed waveform stable and stationary on the screen instead of drifting or appearing as overlapping traces.</p>
+</details>
+
+<details class="qa">
+<summary>Q8. What is the function of a function (signal) generator?</summary>
+<p class="ans"><b>Ans:</b> A function generator produces standard test waveforms — sine, square and triangular — whose frequency, amplitude and DC offset can be varied. It is used as a signal source for testing and analysing electronic circuits.</p>
+</details>
+
+<details class="qa">
+<summary>Q9. What is the difference between ×1 and ×10 probe settings?</summary>
+<p class="ans"><b>Ans:</b> In the ×1 setting, the signal is applied to the oscilloscope without attenuation. In the ×10 setting, the probe attenuates the signal by a factor of 10 and presents a higher input impedance, which reduces loading of the circuit and increases bandwidth. The probe-attenuation setting of the DSO channel must match the probe switch for correct readings.</p>
+</details>
+
+<details class="qa">
+<summary>Q10. What is the difference between AC and DC coupling on an oscilloscope?</summary>
+<p class="ans"><b>Ans:</b> In DC coupling, both the AC and DC components of the signal are displayed. In AC coupling, a capacitor blocks the DC component, so only the AC (varying) part of the signal is displayed, centred on the zero line.</p>
+</details>
+
+</div>
+
+<!-- ============ EXPERIMENT 4 VIVA ============ -->
+
+<div class="viva-tab-panel" id="viva4">
+<h3>Experiment 4 — Ohm's Law, KCL &amp; KVL</h3>
+
+<details class="qa">
+<summary>Q1. State Ohm's law.</summary>
+<p class="ans"><b>Ans:</b> Ohm's law states that the current flowing through a conductor is directly proportional to the potential difference across its ends, provided the temperature and other physical conditions remain constant: V = I R, where V is in volt, I in ampere and R in ohm.</p>
+</details>
+
+<details class="qa">
+<summary>Q2. What are the limitations of Ohm's law?</summary>
+<p class="ans"><b>Ans:</b> Ohm's law does not apply to non-linear devices such as diodes, transistors, thermistors and filament lamps, whose resistance changes with voltage, current or temperature. It also does not apply to unilateral devices (which conduct differently in the two directions) and holds only when temperature is constant.</p>
+</details>
+
+<details class="qa">
+<summary>Q3. What is the nature of the V–I graph for a resistor? What does its slope represent?</summary>
+<p class="ans"><b>Ans:</b> For an ohmic resistor, the graph of V against I is a straight line passing through the origin. The slope of the V (y-axis) versus I (x-axis) graph gives the resistance R = ΔV / ΔI.</p>
+</details>
+
+<details class="qa">
+<summary>Q4. State Kirchhoff's Current Law (KCL). On which principle is it based?</summary>
+<p class="ans"><b>Ans:</b> KCL states that the algebraic sum of the currents meeting at a junction (node) is zero, i.e. ΣI = 0; the total current entering a junction equals the total current leaving it. It is based on the law of conservation of electric charge.</p>
+</details>
+
+<details class="qa">
+<summary>Q5. State Kirchhoff's Voltage Law (KVL). On which principle is it based?</summary>
+<p class="ans"><b>Ans:</b> KVL states that in any closed path (loop) of a network, the algebraic sum of the IR drops and the emfs is zero, i.e. ΣIR + Σemf = 0; the sum of the voltage rises equals the sum of the voltage drops. It is based on the law of conservation of energy.</p>
+</details>
+
+<details class="qa">
+<summary>Q6. Define node, branch, loop and mesh.</summary>
+<p class="ans"><b>Ans:</b> A node (junction) is a point where two or more circuit elements are connected. A branch is a part of the circuit between two nodes containing one or more elements. A loop is any closed path in a circuit. A mesh is a loop that does not contain any other loop inside it.</p>
+</details>
+
+<details class="qa">
+<summary>Q7. In the KCL experiment, why is I = I₁ + I₂ + I₃? Which quantity is common to the three branches?</summary>
+<p class="ans"><b>Ans:</b> The supplied current I reaches the junction and divides among the three parallel branches; by KCL, the current entering the junction equals the sum of the currents leaving it, so I = I₁ + I₂ + I₃. Since the branches are in parallel, the voltage across all three branches is the same.</p>
+</details>
+
+<details class="qa">
+<summary>Q8. In the KVL experiment, why is V = V₁ + V₂ + V₃? Which quantity is common to the three resistors?</summary>
+<p class="ans"><b>Ans:</b> The resistors are in series, so the same current I flows through all of them. Tracing the closed loop, the supply voltage (rise) equals the sum of the drops: V − V₁ − V₂ − V₃ = 0, hence V = V₁ + V₂ + V₃, where V₁ = I R₁, V₂ = I R₂ and V₃ = I R₃.</p>
+</details>
+
+<details class="qa">
+<summary>Q9. Why may the measured values not exactly satisfy KCL or KVL in the laboratory?</summary>
+<p class="ans"><b>Ans:</b> Small differences arise due to the accuracy (class) and least count of the meters, the internal resistance of ammeters and the finite resistance of voltmeters (loading effect), resistance of connecting wires and loose contacts, tolerance and heating of resistors, and reading (parallax) errors.</p>
+</details>
+
+<details class="qa">
+<summary>Q10. Are Kirchhoff's laws applicable to AC circuits?</summary>
+<p class="ans"><b>Ans:</b> Yes. Kirchhoff's laws are applicable to both DC and AC circuits. In AC circuits they are applied using instantaneous values or phasor (complex) quantities, taking the phase angles of the currents and voltages into account.</p>
+</details>
+
+</div>
+
+</div>
+
+<p><a href="index.html" style="color:#0B4AA2;font-weight:bold;text-decoration:none;">🏠 Back to Home</a></p>
+
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+<script>
+(function () {
+  function showViva(num) {
+    document.querySelectorAll(".viva-tab-panel").forEach(function (panel) {
+      panel.classList.toggle("active", panel.id === "viva" + num);
+    });
+    document.querySelectorAll(".viva-tab-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.viva === String(num));
+    });
+  }
+
+  var initial = window.location.hash.replace("#viva", "");
+  showViva(/^[0-9]+$/.test(initial) ? initial : "1");
+
+  window.addEventListener("hashchange", function () {
+    var num = window.location.hash.replace("#viva", "");
+    if (/^[0-9]+$/.test(num)) showViva(num);
+  });
+})();
+</script>
 
 </body>
 </html>
