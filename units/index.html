@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Wise Notes | Learn with Abhi</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:35px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+.wrap{
+width:90%;
+max-width:1100px;
+margin:35px auto;
+}
+
+.intro{
+background:white;
+padding:25px 30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#0B4AA2;
+margin-bottom:10px;
+}
+
+.unit-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.unit-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-decoration:none;
+color:#17345E;
+display:flex;
+flex-direction:column;
+transition:.3s;
+}
+
+.unit-card:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 26px rgba(0,0,0,.14);
+}
+
+.unit-cover{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+}
+
+.unit-card.locked .unit-cover{
+background:#CBD5E1;
+}
+
+.unit-body{
+padding:20px;
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.unit-tag{
+font-size:12px;
+font-weight:bold;
+color:#0B4AA2;
+background:#EAF4FF;
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+margin-bottom:10px;
+width:fit-content;
+}
+
+.unit-card.locked .unit-tag{
+color:#64748B;
+background:#F1F5F9;
+}
+
+.unit-body h3{
+color:#0B4AA2;
+font-size:19px;
+margin-bottom:8px;
+}
+
+.unit-card.locked .unit-body h3{
+color:#64748B;
+}
+
+.unit-body p{
+color:#64748B;
+font-size:14px;
+flex:1;
+}
+
+.unit-link{
+margin-top:14px;
+font-weight:bold;
+color:#0B4AA2;
+font-size:14px;
+}
+
+.unit-card.locked .unit-link{
+color:#94A3B8;
+}
+
+footer{
+background:#0B4AA2;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>📖 Unit Wise Notes</h1>
+<p>Interactive digital textbook, unit by unit</p>
+</header>
+
+<div class="wrap">
+
+<div class="intro">
+<h2>How these notes are organised</h2>
+<p>
+Each unit has its own page with a table of contents, diagrams, definitions and (where available) interactive demos.
+Pick a unit below to start reading.
+</p>
+</div>
+
+<div class="unit-grid">
+
+<a class="unit-card" href="unit1.html">
+<div class="unit-cover">⚡</div>
+<div class="unit-body">
+<span class="unit-tag">Unit 1</span>
+<h3>DC Electric Circuit</h3>
+<p>Electrical &amp; Electronics basics, Current, Voltage, Resistor, Capacitor, Inductor, Ohm's Law, Waveforms, KCL, KVL, Series-Parallel Circuit, Star-Delta Transformation and Numericals.</p>
+<div class="unit-link">Open Unit 1 →</div>
+</div>
+</a>
+
+<a class="unit-card" href="unit2.html">
+<div class="unit-cover">⚙️</div>
+<div class="unit-body">
+<span class="unit-tag">Unit 2</span>
+<h3>DC Motor &amp; Single Phase Transformers</h3>
+<p>Part A — DC Motor: Principle, Construction, Working, Types and Speed-Torque Characteristics. Part B — Single Phase Transformer (coming soon).</p>
+<div class="unit-link">Open Unit 2 →</div>
+</div>
+</a>
+
+<div class="unit-card locked">
+<div class="unit-cover">🔒</div>
+<div class="unit-body">
+<span class="unit-tag">Unit 3</span>
+<h3>Semiconductor Basics</h3>
+<p>PN Junction Diode, LED, Zener Diode, Rectifiers, Half Wave, Full Wave, Bridge Rectifier and Comparison.</p>
+<div class="unit-link">Coming soon</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="wrap" style="margin-top:0;">
+<p><a href="../index.html" style="color:#0B4AA2;font-weight:bold;text-decoration:none;">🏠 Back to Home</a></p>
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+</body>
+</html>
