@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 | DC Motor</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:22px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+/* Layout */
+
+.container{
+width:92%;
+margin:30px auto;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:25px;
+align-items:start;
+}
+
+/* Left Navigation */
+
+.toc{
+position:sticky;
+top:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.toc h3{
+color:#0B4AA2;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.toc a{
+display:block;
+padding:10px 12px;
+text-decoration:none;
+color:#17345E;
+border-radius:8px;
+font-size:14px;
+margin-bottom:6px;
+transition:.3s;
+}
+
+.toc a:hover{
+background:#EAF4FF;
+color:#0B4AA2;
+padding-left:18px;
+font-weight:bold;
+}
+
+.toc-group-btn{
+display:block;
+width:100%;
+text-align:left;
+background:none;
+border:none;
+font-family:inherit;
+font-size:14px;
+font-weight:bold;
+color:#0B4AA2;
+padding:9px 12px;
+margin-bottom:6px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.toc-group-btn:hover{
+background:#EAF4FF;
+}
+
+.toc-group-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.toc-group-btn.locked{
+color:#94A3B8;
+}
+
+.toc-group-btn.locked.active{
+background:#94A3B8;
+color:#fff;
+}
+
+/* Content */
+
+.content{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.section{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.section.locked-section{
+display:none;
+}
+
+.section.toc-hidden{
+display:none;
+}
+
+.locked-message{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+text-align:center;
+padding:50px 25px;
+}
+
+.locked-message h2{
+border:none;
+padding:0;
+margin-bottom:12px;
+color:#64748B;
+}
+
+.locked-message p{
+color:#64748B;
+font-size:15px;
+line-height:1.6;
+}
+
+.section h2{
+color:#0B4AA2;
+border-left:5px solid #2196F3;
+padding-left:12px;
+margin-bottom:15px;
+}
+
+.section h3{
+color:#0B4AA2;
+margin-top:22px;
+margin-bottom:10px;
+font-size:18px;
+}
+
+.definition{
+background:#EAF4FF;
+padding:18px;
+border-left:6px solid #0B4AA2;
+border-radius:10px;
+margin:18px 0;
+}
+
+.note{
+background:#FFF8E6;
+padding:15px;
+border-left:5px solid orange;
+border-radius:8px;
+margin-top:15px;
+}
+
+.diagram-img{
+max-width:100%;
+height:auto;
+object-fit:contain;
+display:block;
+margin:20px auto;
+border:1px solid #E3EAF4;
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+.fig-caption{
+text-align:center;
+font-size:13px;
+color:#64748B;
+margin-top:-6px;
+margin-bottom:10px;
+}
+
+.comparison{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+font-size:15px;
+}
+
+.comparison th{
+background:#0B4AA2;
+color:white;
+padding:14px;
+}
+
+.comparison td{
+border:1px solid #DCE5F0;
+padding:14px;
+vertical-align:top;
+}
+
+.comparison tr:nth-child(even){
+background:#F8FBFF;
+}
+
+.video-wrap{
+margin:20px auto;
+max-width:640px;
+}
+
+.video-wrap video{
+width:100%;
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+background:#000;
+display:block;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:30px;
+color:#64748B;
+font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.toc{
+position:relative;
+top:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+// ===============================
+// TEACHER / STUDENT MODE
+// ===============================
+
+// true  = Teacher (all sections visible)
+// false = Student (GitHub Live)
+const teacherMode = false;
+
+// Unlock complete sections
+// 1 = DC Motor
+const unlockedSection = 1;
+
+</script>
+
+<header>
+<h1>UNIT 2 : DC Motor</h1>
+<p>Fundamentals of Electrical & Electronics Engineering</p>
+</header>
+
+<div class="container">
+
+<!-- LEFT PALETTE -->
+
+<aside class="toc">
+
+<h3>📘 Unit 2 Contents</h3>
+
+<button type="button" class="toc-group-btn" data-section-jump="1">Section 1</button>
+
+<a href="#principle">2.1 Basic Principle of Electric Motor</a>
+<a href="#construction">2.2 Construction of DC Motor</a>
+
+<hr style="margin:14px 0;">
+
+<a href="unit1.html">⬅ Unit 1 – DC Electric Circuit</a>
+<a href="../index.html">🏠 Back to Home</a>
+
+</aside>
+
+<!-- RIGHT CONTENT -->
+
+<div class="content">
+
+<!-- Basic Principle -->
+<div class="section" id="principle" data-section="1" data-toc-section="1">
+
+<h2>2.1 Basic Principle of Electric Motor</h2>
+
+<p>
+An electric motor is a device that converts <b>electrical energy into mechanical energy</b> (motion). It is the working opposite of a generator, which converts mechanical energy into electrical energy.
+</p>
+
+<div class="definition">
+
+<b>Working Principle</b>
+
+<p style="margin-top:10px;">
+When a current-carrying conductor is placed inside a magnetic field, it experiences a mechanical force. In a motor, this force acts on the armature conductors and produces a turning effect called <b>torque</b>, which makes the motor shaft rotate continuously.
+</p>
+
+</div>
+
+<div class="note">
+<b>Remember:</b><br><br>
+An electric motor works on the principle that a <b>current-carrying conductor placed in a magnetic field experiences a force</b> — this is the same force studied as F&nbsp;=&nbsp;B·I·L·sin&theta;, where B is flux density, I is current, L is conductor length and &theta; is the angle between the conductor and the field.
+</div>
+
+<h3>Everyday Example — Electric Fan</h3>
+
+<p>
+When a fan is switched ON, electrical energy is supplied to its motor. Current flows through the motor winding, and this current-carrying winding experiences a force in the surrounding magnetic field. The force produces rotation of the motor shaft, turning the fan blades and producing airflow — converting electrical energy into mechanical energy.
+</p>
+
+<h3>Finding the Direction of Force — Fleming's Left Hand Rule</h3>
+
+<p>
+Once the direction of current and the direction of the magnetic field are known, Fleming's Left Hand Rule tells us the direction in which the conductor will move.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit2/force-on-conductor.png" style="max-width:420px;" alt="Force on a current-carrying conductor in a magnetic field">
+<p class="fig-caption">Fig 2.1 — Force on a current-carrying conductor placed in a magnetic field</p>
+
+<div class="definition">
+<b>Fleming's Left Hand Rule (FLHR)</b>
+<p style="margin-top:10px;">
+Stretch the <b>thumb</b>, <b>first finger</b> and <b>middle finger</b> of the left hand mutually perpendicular to one another:
+</p>
+<ul style="margin:12px 0 0 20px;">
+<li><b>First finger</b> → direction of the magnetic <b>Field</b> (N to S)</li>
+<li><b>Middle finger</b> → direction of <b>Current</b> in the conductor</li>
+<li><b>Thumb</b> → direction of the <b>Motion / Force</b> on the conductor</li>
+</ul>
+<p style="margin-top:10px;">Easy to remember as <b>F</b>irst – <b>F</b>ield, <b>M</b>iddle – <b>M</b>otor-current, <b>T</b>humb – <b>T</b>hrust.</p>
+</div>
+
+<div class="note">
+<b>Note:</b> Fleming's Left Hand Rule is used for <b>motors</b> (finding force from known current and field). Fleming's Right Hand Rule is the corresponding rule used for <b>generators</b> (finding induced current from known motion and field) — don't mix the two up.
+</div>
+
+<h3>Video — Fleming's Left Hand Rule Explained (Hindi)</h3>
+
+<div class="video-wrap">
+<video controls preload="metadata">
+<source src="../assets/videos/unit2/flhr-explained-hindi.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+</div>
+
+<!-- Construction -->
+<section class="section" id="construction" data-toc-section="1">
+
+<h2>2.2 Construction of DC Motor</h2>
+
+<p>
+A DC motor is physically identical to a DC generator — the same machine behaves as a motor or a generator depending on how it is used. Its parts are divided into two groups: a <b>stationary part (Stator)</b> that stays fixed, and a <b>rotating part (Rotor)</b> that turns inside it.
+</p>
+
+<div class="definition">
+<b>Stator</b>
+<p style="margin-top:10px;">
+The stator is the <b>stationary (non-rotating) part</b> of the motor. It is mounted on the outer frame and its job is to produce the main magnetic field in which the rotor turns. It consists of the yoke, pole core, pole shoe and field winding.
+</p>
+</div>
+
+<div class="definition">
+<b>Rotor</b>
+<p style="margin-top:10px;">
+The rotor is the <b>rotating part</b> of the motor, mounted on the shaft and free to turn inside the stator. It carries the armature current on which the magnetic force acts, producing the torque that rotates the motor. It consists of the armature core, armature winding, commutator and shaft.
+</p>
+</div>
+
+<img class="diagram-img" src="../assets/images/unit2/dc-motor-construction.webp" style="max-width:640px;" alt="Construction of DC Motor - front and side view">
+<p class="fig-caption">Fig 2.2 — Construction of a DC Motor: Front View and Side (Cut Section) View, with parts labelled</p>
+
+<table class="comparison">
+<tr><th>Stator (Stationary Part)</th><th>Rotor (Rotating Part)</th></tr>
+<tr><td>Yoke (Outer Frame)</td><td>Armature Core</td></tr>
+<tr><td>Pole Core &amp; Pole Shoe</td><td>Armature Winding</td></tr>
+<tr><td>Field Winding</td><td>Commutator</td></tr>
+<tr><td>Brushes &amp; Bearing</td><td>Shaft</td></tr>
+</table>
+
+<h3>Part &amp; Function</h3>
+
+<table class="comparison">
+<tr><th>Part</th><th>Function</th></tr>
+<tr><td><b>Yoke</b></td><td>Outer protective frame; also completes the magnetic circuit and provides mechanical support. Usually made of cast iron or silicon steel.</td></tr>
+<tr><td><b>Pole Core &amp; Pole Shoe</b></td><td>Pole core holds the field winding; pole shoe spreads the flux over the armature and reduces its reluctance.</td></tr>
+<tr><td><b>Field Winding</b></td><td>Carries current to produce the main magnetic field needed for motor action.</td></tr>
+<tr><td><b>Armature Core</b></td><td>Laminated iron core that houses the armature winding and carries magnetic flux.</td></tr>
+<tr><td><b>Armature Winding</b></td><td>Carries the load current; this is the conductor on which the force (torque) acts.</td></tr>
+<tr><td><b>Commutator</b></td><td>Converts the supplied DC into the correct current direction in each armature coil for continuous rotation in one direction.</td></tr>
+<tr><td><b>Brushes</b></td><td>Carbon/graphite contacts that supply current from the external circuit to the rotating commutator.</td></tr>
+<tr><td><b>Shaft</b></td><td>Transmits the mechanical torque developed to the connected load.</td></tr>
+<tr><td><b>Bearing</b></td><td>Supports the shaft and allows smooth, low-friction rotation.</td></tr>
+</table>
+
+<div class="note">
+<b>Additional points worth remembering:</b>
+<ul style="margin:10px 0 0 20px;">
+<li>The <b>armature core is laminated</b> (thin silicon-steel sheets insulated from each other) rather than solid, to reduce <b>eddy current losses</b>.</li>
+<li>Brushes are kept <b>spring-loaded</b> so they press against the commutator with constant pressure despite wear, ensuring uninterrupted current flow.</li>
+<li>A small, uniform <b>air gap</b> is maintained between the pole shoe and the armature core — too large a gap wastes magnetic flux, too small a gap risks mechanical rubbing.</li>
+<li>A DC motor and a DC generator share the same construction; only the direction of energy conversion (electrical→mechanical vs. mechanical→electrical) differs.</li>
+</ul>
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (teacherMode) return;
+
+  const lockedGroups = new Set();
+
+  document.querySelectorAll(".section[data-section]").forEach((section) => {
+    if (Number(section.dataset.section) > unlockedSection) {
+      section.classList.add("locked-section");
+      section.setAttribute("aria-hidden", "true");
+
+      const groupNum = section.dataset.tocSection;
+      if (groupNum && !lockedGroups.has(groupNum)) {
+        lockedGroups.add(groupNum);
+
+        const message = document.createElement("div");
+        message.className = "section locked-message";
+        message.dataset.tocSection = groupNum;
+        message.innerHTML =
+          "<h2>🔒 Section " + groupNum + " is Locked</h2>" +
+          "<p>This section will be unlocked here once it has been delivered in class.</p>";
+        section.after(message);
+
+        const groupBtn = document.querySelector('.toc-group-btn[data-section-jump="' + groupNum + '"]');
+        if (groupBtn) {
+          groupBtn.classList.add("locked");
+          groupBtn.textContent += " 🔒";
+        }
+      }
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const groups = document.querySelectorAll(".section[data-toc-section]");
+  const groupButtons = document.querySelectorAll(".toc-group-btn");
+
+  function showTocSection(num) {
+    groups.forEach((section) => {
+      section.classList.toggle("toc-hidden", section.dataset.tocSection !== String(num));
+    });
+    groupButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.sectionJump === String(num));
+    });
+  }
+
+  groupButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const num = btn.dataset.sectionJump;
+      showTocSection(num);
+      const target =
+        document.querySelector('.locked-message[data-toc-section="' + num + '"]') ||
+        document.querySelector('.section[data-toc-section="' + num + '"]:not(.locked-section)');
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  document.querySelectorAll(".toc a[href^='#']").forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.getAttribute("href").slice(1));
+      const group = target ? target.closest("[data-toc-section]") : null;
+      if (group) showTocSection(group.dataset.tocSection);
+    });
+  });
+
+  showTocSection("1");
+});
+</script>
+
+</body>
+</html>
