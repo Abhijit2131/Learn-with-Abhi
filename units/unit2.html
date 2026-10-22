@@ -322,6 +322,7 @@ const unlockedSection = 1;
 <a href="#principle">2.1 Basic Principle of Electric Motor</a>
 <a href="#construction">2.2 Construction of DC Motor</a>
 <a href="#working">2.3 Working of DC Motor</a>
+<a href="#types">2.4 Types of DC Motor</a>
 
 <hr style="margin:14px 0;">
 
@@ -560,7 +561,73 @@ Your browser does not support the video tag.
 </div>
 
 <div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
-<b>Coming up next in Unit 2:</b> Types of DC Motor and Speed-Torque Characteristics — building directly on the back EMF idea introduced above.
+<b>Coming up next in Unit 2:</b> Types of DC Motor — classified by how the field winding is connected — followed by Speed-Torque Characteristics, building directly on the back EMF idea introduced above.
+</div>
+
+</section>
+
+<!-- Types -->
+<section class="section" id="types" data-toc-section="1">
+
+<h2>2.4 Types of DC Motor</h2>
+
+<p>
+A DC motor can be classified by <b>how its field winding is connected to the armature</b> — this connection decides how the motor behaves under load, which is why it's the standard basis for classification.
+</p>
+
+<div class="definition">
+<b>Classification based on field winding connection</b>
+<ul style="margin:10px 0 0 20px;">
+<li><b>Separately Excited DC Motor</b> — field winding is supplied from a separate DC source, independent of the armature supply.</li>
+<li><b>Self-Excited DC Motors</b> — field winding is connected with the armature and supplied from the same DC source. Based on how it is connected, this is further split into:
+<ul style="margin:8px 0 0 20px;">
+<li><b>Shunt Motor</b> — field winding connected in parallel with the armature.</li>
+<li><b>Series Motor</b> — field winding connected in series with the armature.</li>
+<li><b>Compound Motor</b> — both shunt and series field windings are used together.</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<img class="diagram-img" src="../assets/images/unit2/dc-motor-types.webp" style="max-width:900px;" alt="Classification of DC Motors: Separately Excited, Shunt, Series and Compound, with circuit diagrams and applications">
+<p class="fig-caption">Fig 2.3 — Classification of DC Motors based on field winding connection, with connection diagrams and typical applications</p>
+
+<table class="comparison">
+<tr><th>Type</th><th>One-line Explanation</th><th>Typical Applications</th></tr>
+<tr>
+<td><b>Separately Excited DC Motor</b></td>
+<td>Field winding is supplied from a separate DC source, independent of the armature supply.</td>
+<td>Machine tools (lathes, milling), Ward–Leonard control systems, laboratory and testing setups, and applications needing wide speed control.</td>
+</tr>
+<tr>
+<td><b>Shunt DC Motor</b></td>
+<td>Field winding is connected in parallel with the armature, hence it receives the full supply voltage.</td>
+<td>Fans, blowers, centrifugal pumps, conveyor belts, general-purpose drives.</td>
+</tr>
+<tr>
+<td><b>Series DC Motor</b></td>
+<td>Field winding is connected in series with the armature, so the same current flows through both.</td>
+<td>Electric traction (trains, trams), cranes, hoists, elevators, and other heavy starting-torque loads.</td>
+</tr>
+<tr>
+<td><b>Compound DC Motor</b></td>
+<td>Both shunt and series field windings are used (either cumulative or differential type).</td>
+<td>Presses, shears, rolling mills, elevators, and loads requiring high starting torque with good speed regulation.</td>
+</tr>
+</table>
+
+<div class="note">
+<b>Additional points worth remembering:</b>
+<ul style="margin:10px 0 0 20px;">
+<li>In a <b>shunt motor</b>, since the field is connected across the constant supply voltage, flux stays almost constant — this gives it fairly good, nearly constant speed under varying load (good speed regulation).</li>
+<li>In a <b>series motor</b>, field current equals armature current, so flux rises sharply with load. This gives very high starting torque, but speed falls drastically as load increases — and a series motor must <b>never be started on no-load</b>, as it can dangerously over-speed ("run away") with no load to oppose it.</li>
+<li>A <b>compound motor</b> combines both behaviours: the shunt field gives speed stability while the series field adds starting torque. It can be <b>cumulative</b> (series flux adds to shunt flux) or <b>differential</b> (series flux opposes shunt flux, rarely used as it is inherently less stable).</li>
+<li>The separately excited motor's independent field control is the basis of the classic <b>Ward–Leonard speed control system</b>, still referenced in industrial drive systems.</li>
+</ul>
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Coming up next in Unit 2:</b> Speed-Torque Characteristics — how speed and torque actually vary with load for each of these motor types.
 </div>
 
 </section>
