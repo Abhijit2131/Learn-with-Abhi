@@ -321,6 +321,7 @@ const unlockedSection = 1;
 
 <a href="#principle">2.1 Basic Principle of Electric Motor</a>
 <a href="#construction">2.2 Construction of DC Motor</a>
+<a href="#working">2.3 Working of DC Motor</a>
 
 <hr style="margin:14px 0;">
 
@@ -464,6 +465,102 @@ The rotor is the <b>rotating part</b> of the motor, mounted on the shaft and fre
 <li>A small, uniform <b>air gap</b> is maintained between the pole shoe and the armature core — too large a gap wastes magnetic flux, too small a gap risks mechanical rubbing.</li>
 <li>A DC motor and a DC generator share the same construction; only the direction of energy conversion (electrical→mechanical vs. mechanical→electrical) differs.</li>
 </ul>
+</div>
+
+</section>
+
+<!-- Working -->
+<section class="section" id="working" data-toc-section="1">
+
+<h2>2.3 Working of DC Motor</h2>
+
+<p>
+The working of a DC motor connects everything studied so far: <b>principle → construction → current flow → force → rotation → continuous rotation.</b> The key idea is this — the magnetic field produces a force on the current-carrying armature conductors, and the <b>commutator keeps the armature rotating in the same direction</b> instead of oscillating back and forth.
+</p>
+
+<h3>Working in One Flow</h3>
+
+<div class="definition">
+<ol style="margin-left:18px;">
+<li><b>DC supply is switched ON</b> — current flows through the motor windings.</li>
+<li><b>Magnetic field is established</b> — field poles produce a magnetic field around the armature.</li>
+<li><b>Force acts on armature conductors</b> — direction found using Fleming's Left Hand Rule.</li>
+<li><b>Torque is produced</b> — forces on opposite sides of the armature create a turning effect.</li>
+<li><b>Armature and shaft rotate</b> — the commutator keeps the torque acting in the same rotational direction.</li>
+</ol>
+</div>
+
+<h3>Step-by-Step Working</h3>
+
+<div class="note">
+<b>Step 1 — Supply the motor:</b><br>
+When the DC supply is switched ON, current flows through the motor circuit. In a wound-field DC motor, the field winding carries current to produce the magnetic field, while current also flows through the armature winding.
+</div>
+
+<div class="note">
+<b>Step 2 — Magnetic field is established:</b><br>
+The field winding is wound around the pole cores. When current flows through it, the poles act as electromagnets, setting up a magnetic field from the North pole (N) towards the South pole (S) across the air gap.
+</div>
+
+<div class="note">
+<b>Step 3 — Force acts on the armature conductors:</b><br>
+The armature conductors carry current and lie inside this magnetic field. By the basic principle of an electric motor, a current-carrying conductor in a magnetic field experiences a force — and the direction of that force is found using Fleming's Left Hand Rule.
+</div>
+
+<div class="note">
+<b>Step 4 — The armature starts rotating:</b><br>
+Consider a simple rectangular coil placed between the N and S poles. One side of the coil experiences a force in one direction, while the opposite side experiences a force in the opposite direction. These two forces, acting on opposite sides of the coil, create a turning effect called <b>torque</b>, and the armature starts rotating.
+</div>
+
+<div class="note">
+<b>Step 5 — How the motor keeps rotating (commutator action):</b><br>
+As the armature rotates, the sides of the coil keep changing position. If the current direction in the coil stayed the same, the torque would reverse after every half turn and the motor would just oscillate. The commutator prevents this:
+<ol style="margin:10px 0 0 20px;">
+<li>The commutator rotates along with the armature.</li>
+<li>The brushes maintain electrical contact with the commutator.</li>
+<li>After every half-turn, the commutator reverses the current direction in that armature coil.</li>
+<li>This reversal changes the force direction on the conductors at exactly the right moment.</li>
+<li>As a result, torque continues to act in the same rotational direction, and the armature keeps rotating.</li>
+</ol>
+<p style="margin-top:10px;">The commutator therefore works as a <b>mechanical switching arrangement</b> that converts the alternating force on each coil into continuous, one-directional rotation of the shaft.</p>
+</div>
+
+<h3>Construction Part → Role in Working</h3>
+
+<table class="comparison">
+<tr><th>Part</th><th>Role During Working</th></tr>
+<tr><td><b>Yoke</b></td><td>Supports the motor and provides a path for the magnetic flux.</td></tr>
+<tr><td><b>Pole Core &amp; Pole Shoe</b></td><td>Support the field winding and guide the magnetic flux into the air gap.</td></tr>
+<tr><td><b>Field Winding</b></td><td>Produces the magnetic field in which the armature rotates.</td></tr>
+<tr><td><b>Armature Core</b></td><td>Supports the armature winding and rotates along with the shaft.</td></tr>
+<tr><td><b>Armature Winding</b></td><td>Carries current and experiences the force that produces torque.</td></tr>
+<tr><td><b>Commutator</b></td><td>Reverses the armature-coil current at the right moment, keeping torque unidirectional.</td></tr>
+<tr><td><b>Brushes</b></td><td>Transfer current from the external DC supply to the rotating commutator.</td></tr>
+<tr><td><b>Shaft</b></td><td>Transfers the developed rotation to the connected mechanical load.</td></tr>
+<tr><td><b>Bearings</b></td><td>Support the shaft and allow smooth, low-friction rotation.</td></tr>
+</table>
+
+<h3>Video — Working of a DC Motor Explained (Hindi)</h3>
+
+<div class="video-wrap">
+<video controls preload="metadata">
+<source src="../assets/videos/unit2/dc-motor-working-hindi.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<div class="note">
+<b>Additional points worth remembering:</b>
+<ul style="margin:10px 0 0 20px;">
+<li>A practical armature is never a single coil — it has <b>many coils placed around the core</b>, each connected to its own pair of commutator segments. This keeps at least one coil always producing near-maximum torque, giving smooth, continuous rotation instead of a pulsating one.</li>
+<li>As the armature rotates inside the magnetic field, it also behaves like a tiny generator and develops an internal voltage called the <b>back EMF (E<sub>b</sub>)</b>, which opposes the applied supply voltage. Back EMF is what naturally limits the armature current once the motor is running — you'll study this in detail under Speed-Torque Characteristics.</li>
+<li>At the instant of starting, the armature is not yet rotating, so back EMF is zero and the starting current can be very high. This is why DC motors are normally started through a <b>starter</b> rather than connected directly across full supply voltage.</li>
+<li>Reversing the direction of rotation needs reversing either the field current or the armature current (not both) — reversing both leaves the direction of rotation unchanged.</li>
+</ul>
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Coming up next in Unit 2:</b> Types of DC Motor and Speed-Torque Characteristics — building directly on the back EMF idea introduced above.
 </div>
 
 </section>
