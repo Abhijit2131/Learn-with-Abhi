@@ -298,7 +298,8 @@ const teacherMode = false;
 
 // Unlock complete sections
 // 1 = DC Motor
-const unlockedSection = 1;
+// 2 = Single Phase Transformer
+const unlockedSection = 2;
 
 </script>
 
@@ -327,8 +328,18 @@ const unlockedSection = 1;
 
 <hr style="margin:14px 0;">
 
-<p style="font-size:12px;font-weight:bold;color:#94A3B8;text-transform:uppercase;letter-spacing:.5px;padding:0 12px;margin-bottom:6px;">Part B — Single Phase Transformer</p>
-<p style="font-size:12px;color:#94A3B8;padding:0 12px;">Coming soon</p>
+<p style="font-size:12px;font-weight:bold;color:#0B4AA2;text-transform:uppercase;letter-spacing:.5px;padding:0 12px;margin-bottom:10px;">Part B — Single Phase Transformer</p>
+
+<button type="button" class="toc-group-btn" data-section-jump="2">Section 2</button>
+
+<a href="#transformer-principle">2.6 Working Principle of Transformer</a>
+<a href="#transformer-construction">2.7 Construction of Transformer</a>
+<a href="#transformer-working">2.8 Working of Transformer</a>
+<a href="#transformer-classification">2.9 Classification of Transformers</a>
+<a href="#voltage-ratio">2.10 Voltage Ratio</a>
+<a href="#current-ratio">2.11 Current Ratio</a>
+<a href="#transformer-losses">2.12 Losses in a Transformer</a>
+<a href="#transformer-efficiency">2.13 Efficiency of a Transformer</a>
 
 <hr style="margin:14px 0;">
 
@@ -706,6 +717,234 @@ The compound motor has both shunt and series field windings, combining the chara
 <li><b>Series:</b> High starting torque; speed varies considerably with load.</li>
 <li><b>Compound:</b> Combines the advantages of shunt and series motors.</li>
 </ul>
+</div>
+
+</section>
+
+<div class="part-banner" style="margin-top:5px;">Part B — Single Phase Transformer</div>
+
+<!-- Transformer Working Principle -->
+<div class="section" id="transformer-principle" data-section="2" data-toc-section="2">
+
+<h2>2.6 Working Principle of a Single-Phase Transformer</h2>
+
+<p>
+A single-phase transformer works on the principle of <b>mutual electromagnetic induction</b>. When an AC supply is connected to the primary winding, alternating current flows through it and produces a changing magnetic flux in the transformer core. This changing magnetic flux links with the secondary winding and induces an electromotive force (EMF) in it, according to Faraday's law of electromagnetic induction.
+</p>
+
+<div class="definition">
+<b>Working Principle</b>
+<p style="margin-top:10px;">
+When a load is connected to the secondary winding, current flows through the secondary circuit, and electrical energy is transferred from the primary circuit to the secondary circuit through magnetic flux — without any direct electrical connection between the two windings. The transformer can increase or decrease the AC voltage depending on the number of turns in the primary and secondary windings, while the <b>frequency remains unchanged</b>.
+</p>
+</div>
+
+<img class="diagram-img" src="../assets/images/unit2/transformer-schematic.jpeg" style="max-width:560px;" alt="Schematic of a single-phase transformer showing primary winding Np turns, secondary winding Ns turns, magnetic flux through the core, primary current Ip and voltage Vp, secondary current Is and voltage Vs">
+<p class="fig-caption">Fig 2.7 — Primary and secondary windings linked by magnetic flux through the transformer core</p>
+
+</div>
+
+<!-- Transformer Construction -->
+<section class="section" id="transformer-construction" data-toc-section="2">
+
+<h2>2.7 Constructional Details of a Single-Phase Transformer</h2>
+
+<p>
+A single-phase transformer mainly consists of a magnetic core, primary winding, secondary winding, insulation, and core clamps or frame. Each part has a specific function in the construction and operation of the transformer.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit2/transformer-construction-detailed.jpeg" style="max-width:900px;" alt="Construction of a single-phase transformer: laminated iron core, primary winding N1, secondary winding N2, insulation and core clamp/frame, with a cross-sectional view showing magnetic flux path through the limbs and yokes">
+<p class="fig-caption">Fig 2.8 — Construction of a single-phase transformer, with a cross-sectional view showing the flux path</p>
+
+<table class="comparison">
+<tr><th>Part</th><th>Function</th></tr>
+<tr><td><b>Magnetic Core</b></td><td>Made of thin, insulated silicon-steel sheets laminated together. Provides a low-reluctance path for magnetic flux linking the primary and secondary windings; laminations reduce eddy current losses. The core consists of two vertical <b>limbs</b> and two horizontal <b>yokes</b>.</td></tr>
+<tr><td><b>Primary Winding (N<sub>1</sub>)</b></td><td>Made of insulated copper or aluminium wire, connected to the AC input supply. Carries the alternating current that produces the changing magnetic flux in the core.</td></tr>
+<tr><td><b>Secondary Winding (N<sub>2</sub>)</b></td><td>Made of insulated copper or aluminium wire, magnetically linked with the primary winding through the core. The changing flux induces an EMF in it; it is connected to the output circuit/load.</td></tr>
+<tr><td><b>Insulation</b></td><td>Insulating paper, pressboard and varnish, placed between turns, between the primary and secondary windings, and between the windings and the core. Prevents short circuits and improves safety and reliability.</td></tr>
+<tr><td><b>Core Clamps &amp; Frame</b></td><td>Hold the laminated core sheets firmly together and provide mechanical support to the whole assembly, maintaining alignment and reducing vibration.</td></tr>
+</table>
+
+</section>
+
+<!-- Transformer Working -->
+<section class="section" id="transformer-working" data-toc-section="2">
+
+<h2>2.8 Working of a Single-Phase Transformer</h2>
+
+<p>
+A single-phase transformer works on the principle of mutual electromagnetic induction. It transfers electrical energy from the primary winding to the secondary winding through a changing magnetic field, without any direct electrical connection between the two windings.
+</p>
+
+<h3>Step-by-Step Working</h3>
+
+<div class="definition">
+<ol style="margin-left:18px;">
+<li><b>AC supply to the primary winding</b> — when an AC voltage is applied to the primary winding, alternating current flows through it.</li>
+<li><b>Production of magnetic flux</b> — the alternating current produces changing magnetic flux in the transformer core.</li>
+<li><b>Linking of magnetic flux</b> — the magnetic flux passes through the core and links with both the primary and secondary windings.</li>
+<li><b>Induction of EMF</b> — according to Faraday's law of electromagnetic induction, the changing magnetic flux induces an EMF in the secondary winding. An EMF is also induced in the primary winding.</li>
+<li><b>Supply to the load</b> — when a load is connected to the secondary winding, current flows through the secondary circuit, and electrical energy is delivered to the load.</li>
+</ol>
+</div>
+
+<h3>Important Points to Remember</h3>
+
+<div class="note">
+<ul style="margin:0 0 0 20px;">
+<li>The primary winding receives electrical energy from the AC supply.</li>
+<li>The core provides a path for magnetic flux.</li>
+<li>The secondary winding receives energy through electromagnetic induction.</li>
+<li>The frequency of the secondary voltage remains the same as the primary supply frequency.</li>
+<li>The secondary voltage may be higher or lower than the primary voltage, depending on the turns ratio.</li>
+</ul>
+</div>
+
+<h3>In Short</h3>
+<p>
+A single-phase transformer operates on the principle of mutual electromagnetic induction. When AC supply is applied to the primary winding, it produces changing magnetic flux in the core. This flux links with the secondary winding and induces an EMF according to Faraday's law. When a load is connected to the secondary winding, current flows and electrical energy is transferred to the load without direct electrical contact between the two windings.
+</p>
+
+</section>
+
+<!-- Transformer Classification -->
+<section class="section" id="transformer-classification" data-toc-section="2">
+
+<h2>2.9 Classification of Single-Phase Transformers</h2>
+
+<p>
+A single-phase transformer can be classified according to its voltage transformation, construction, and application.
+</p>
+
+<h3>A. Based on Voltage Transformation</h3>
+
+<table class="comparison">
+<tr><th>Type</th><th>Description</th><th>Example</th></tr>
+<tr><td><b>Step-up transformer</b></td><td>Increases the AC voltage from primary to secondary; the secondary winding has more turns than the primary winding.</td><td>Increasing voltage for power transmission.</td></tr>
+<tr><td><b>Step-down transformer</b></td><td>Decreases the AC voltage from primary to secondary; the secondary winding has fewer turns than the primary winding.</td><td>Reducing voltage in electronic power supplies.</td></tr>
+<tr><td><b>Isolation transformer</b></td><td>Usually has equal primary and secondary turns, giving approximately equal input and output voltages; provides electrical isolation between the input and output circuits.</td><td>Electrical testing equipment and isolated power supplies.</td></tr>
+</table>
+
+<h3>B. Based on Construction</h3>
+
+<div class="note">
+<ul style="margin:0 0 0 20px;">
+<li><b>Core-type transformer:</b> The primary and secondary windings are placed around the core limbs.</li>
+<li><b>Shell-type transformer:</b> The core surrounds a major portion of the primary and secondary windings.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- Voltage Ratio -->
+<section class="section" id="voltage-ratio" data-toc-section="2">
+
+<h2>2.10 Voltage Ratio of a Transformer</h2>
+
+<p>The voltage ratio describes the relationship between the primary and secondary voltages. For an ideal transformer:</p>
+
+<div class="definition" style="text-align:center;">V<sub>1</sub> / V<sub>2</sub> = N<sub>1</sub> / N<sub>2</sub></div>
+
+<p>where V<sub>1</sub> = primary voltage (V), V<sub>2</sub> = secondary voltage (V), N<sub>1</sub> = number of primary turns, N<sub>2</sub> = number of secondary turns.</p>
+
+<h3>Types Based on Voltage Ratio</h3>
+<ul style="margin:8px 0 0 22px;">
+<li><b>Step-up:</b> V<sub>2</sub> &gt; V<sub>1</sub>, so N<sub>2</sub> &gt; N<sub>1</sub>.</li>
+<li><b>Step-down:</b> V<sub>2</sub> &lt; V<sub>1</sub>, so N<sub>2</sub> &lt; N<sub>1</sub>.</li>
+<li><b>Isolation:</b> V<sub>2</sub> ≈ V<sub>1</sub>, so N<sub>2</sub> ≈ N<sub>1</sub>.</li>
+</ul>
+
+<div class="note">
+<b>Example:</b> A transformer has 1,000 primary turns and 200 secondary turns. The primary voltage is 230 V.
+<p style="margin-top:8px;">V<sub>2</sub> = V<sub>1</sub> × (N<sub>2</sub> / N<sub>1</sub>) = 230 × (200 / 1000) = <b>46 V</b></p>
+<p style="margin-top:6px;">Therefore, it is a step-down transformer.</p>
+</div>
+
+</section>
+
+<!-- Current Ratio -->
+<section class="section" id="current-ratio" data-toc-section="2">
+
+<h2>2.11 Current Ratio of a Transformer</h2>
+
+<p>For an ideal transformer, the primary and secondary currents are <b>inversely proportional</b> to their number of turns:</p>
+
+<div class="definition" style="text-align:center;">I<sub>1</sub> / I<sub>2</sub> = N<sub>2</sub> / N<sub>1</sub></div>
+
+<p>where I<sub>1</sub> = primary current (A), I<sub>2</sub> = secondary current (A).</p>
+
+<h3>Important Relationship</h3>
+<ul style="margin:8px 0 0 22px;">
+<li>In a <b>step-up transformer</b>, the secondary voltage increases and the secondary current decreases for the same transferred power.</li>
+<li>In a <b>step-down transformer</b>, the secondary voltage decreases and the secondary current increases for the same transferred power.</li>
+</ul>
+
+<p style="margin-top:10px;">For an ideal transformer, input power equals output power:</p>
+<div class="definition" style="text-align:center;">V<sub>1</sub> I<sub>1</sub> = V<sub>2</sub> I<sub>2</sub></div>
+
+<div class="note">
+<b>Example:</b> The primary current is 2 A, the primary turns are 1,000, and the secondary turns are 200.
+<p style="margin-top:8px;">I<sub>2</sub> = I<sub>1</sub> × (N<sub>1</sub> / N<sub>2</sub>) = 2 × (1000 / 200) = <b>10 A</b></p>
+<p style="margin-top:6px;">Therefore, the secondary current is 10 A under ideal conditions.</p>
+</div>
+
+</section>
+
+<!-- Losses -->
+<section class="section" id="transformer-losses" data-toc-section="2">
+
+<h2>2.12 Losses in a Single-Phase Transformer</h2>
+
+<p>A transformer has losses because not all the electrical energy supplied to it can be transferred to the output. The main losses are:</p>
+
+<h3>A. Core (Iron) Losses</h3>
+<p>These occur in the transformer core and are approximately constant at a given voltage and frequency.</p>
+<table class="comparison">
+<tr><th>Loss</th><th>Cause</th><th>How It Is Reduced</th></tr>
+<tr><td><b>Hysteresis loss</b></td><td>Repeated magnetisation and demagnetisation of the core.</td><td>Using suitable magnetic core materials, such as silicon steel.</td></tr>
+<tr><td><b>Eddy current loss</b></td><td>Circulating currents induced within the core.</td><td>Using thin, insulated laminations.</td></tr>
+</table>
+
+<h3>B. Copper Losses</h3>
+<p>Occur due to the resistance of the primary and secondary windings, and increase as the load current increases:</p>
+<div class="definition" style="text-align:center;">P<sub>cu</sub> = I<sub>1</sub>² R<sub>1</sub> + I<sub>2</sub>² R<sub>2</sub></div>
+<p>where R<sub>1</sub> and R<sub>2</sub> are the primary and secondary winding resistances.</p>
+
+<h3>C. Other Losses</h3>
+<div class="note">
+<ul style="margin:0 0 0 20px;">
+<li><b>Stray losses:</b> Caused by leakage magnetic flux inducing currents in nearby metallic parts.</li>
+<li><b>Dielectric losses:</b> Occur in the insulating materials, particularly in high-voltage transformers.</li>
+</ul>
+<p style="margin-top:10px;">For introductory study, the most important losses to remember are <b>hysteresis loss, eddy current loss, and copper loss</b>.</p>
+</div>
+
+</section>
+
+<!-- Efficiency -->
+<section class="section" id="transformer-efficiency" data-toc-section="2">
+
+<h2>2.13 Efficiency of a Single-Phase Transformer</h2>
+
+<p>Transformer efficiency indicates how effectively the transformer converts input electrical power into output electrical power.</p>
+
+<div class="definition" style="text-align:center;">η = (Output Power / Input Power) × 100%</div>
+
+<p>Since input power equals output power plus losses:</p>
+
+<div class="definition" style="text-align:center;">η = [P<sub>out</sub> / (P<sub>out</sub> + P<sub>loss</sub>)] × 100%</div>
+
+<p>where η = efficiency, P<sub>out</sub> = output power (W), P<sub>loss</sub> = total transformer losses (W).</p>
+
+<div class="note">
+<b>Example:</b> A transformer delivers 900 W of output power and has total losses of 100 W.
+<p style="margin-top:8px;"><b>Step 1 — Input power:</b> P<sub>in</sub> = 900 + 100 = 1000 W</p>
+<p style="margin-top:6px;"><b>Step 2 — Efficiency:</b> η = (900 / 1000) × 100 = <b>90%</b></p>
+<p style="margin-top:6px;">Therefore, the transformer efficiency is 90%.</p>
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Good to know:</b> A well-designed power transformer typically has an efficiency well above 90% (often 95-99%) at or near full load, since core losses stay fixed while copper losses only dominate at high load — efficiency is usually highest somewhere between half load and full load, not exactly at 100% load.
 </div>
 
 </section>
