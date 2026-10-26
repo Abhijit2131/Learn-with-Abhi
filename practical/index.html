@@ -330,6 +330,7 @@ top:0;
 <a href="#exp2">Exp. 2</a>
 <a href="#exp3">Exp. 3</a>
 <a href="#exp4">Exp. 4</a>
+<a href="#exp5">Exp. 5</a>
 
 <hr style="margin:14px 0;">
 
@@ -379,7 +380,7 @@ Department of First Year Engineering
 <tr><td>2</td><td><a href="#exp2">Experiment 2 — Identify Active &amp; Passive Electronic Components and Verify Its Values</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>3</td><td><a href="#exp3">Experiment 3 — Measure Amplitude, Time Period and Frequency of Sine, Square &amp; Triangular Wave Using DSO</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>4</td><td><a href="#exp4">Experiment 4 — Verify Ohm's Law, KCL &amp; KVL in DC Electrical Circuits</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
-<tr><td>5</td><td>Test the Performance of the Given PN Junction Diode</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
+<tr><td>5</td><td><a href="#exp5">Experiment 5 — Test the Performance of the Given PN Junction Diode</a></td><td>2</td><td><span class="status-badge open">Available</span></td></tr>
 <tr><td>6</td><td>Measure Amplitude, Time Period &amp; Frequency of Half Wave Rectifier Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>7</td><td>Construct Centre Tap Full Wave Rectifier and Measure Input/Output Waveforms Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
 <tr><td>8</td><td>Construct Bridge Full Wave Rectifier and Measure Input/Output Waveforms Using DSO</td><td>2</td><td><span class="status-badge closed">Not Added</span></td></tr>
@@ -414,6 +415,7 @@ Department of First Year Engineering
 <button type="button" class="exp-tab-btn" data-exp="2" onclick="location.hash='exp2'">Experiment 2</button>
 <button type="button" class="exp-tab-btn" data-exp="3" onclick="location.hash='exp3'">Experiment 3</button>
 <button type="button" class="exp-tab-btn" data-exp="4" onclick="location.hash='exp4'">Experiment 4</button>
+<button type="button" class="exp-tab-btn" data-exp="5" onclick="location.hash='exp5'">Experiment 5</button>
 </div>
 
 <!-- ============ EXPERIMENT 1 PANEL ============ -->
@@ -892,6 +894,148 @@ Department of First Year Engineering
 
 <h3>10. Conclusion</h3>
 <p>Based on the above observations and calculations, write your conclusion stating whether Ohm's law, KCL and KVL are verified, how closely the measured and calculated values agree, and the possible reasons for any difference (meter errors, resistance of connecting wires and meters, reading errors, etc.).</p>
+
+</div>
+
+<!-- ============ EXPERIMENT 5 PANEL ============ -->
+
+<div class="exp-tab-panel" id="exp5">
+
+<h2>Experiment No. 5 — Test the Performance of the Given PN Junction Diode</h2>
+
+<h3>1. Aim</h3>
+<p>To test the performance of the given PN junction diode by studying its forward-bias and reverse-bias conditions and plotting its V–I characteristics.</p>
+
+<h3>2. Practical Significance</h3>
+<p>In industries as well as in domestic appliances, the PN junction diode is used in detector circuits, wave-shaping circuits and in the rectification of DC power supplies. For these applications, the selection of a suitable diode plays a vital role. In this practical, students will draw the V–I characteristics of the given diode to understand the unidirectional behaviour of a diode, and will learn how to check whether a diode is healthy before using it in a circuit.</p>
+
+<h3>3. Objectives</h3>
+<ul>
+<li>To identify the anode and cathode terminals of a PN junction diode and draw its circuit symbol.</li>
+<li>To explain the forward-bias and reverse-bias conditions of a PN junction diode.</li>
+<li>To connect the forward-bias and reverse-bias test circuits with correct meter ranges and polarities.</li>
+<li>To measure the voltage across and the current through the diode in both bias conditions.</li>
+<li>To plot the forward and reverse V–I characteristics and determine the knee (cut-in) voltage from the graph.</li>
+<li>To conclude about the unidirectional (one-way) conduction of the diode from the observed characteristics.</li>
+</ul>
+
+<h3>4. Apparatus</h3>
+<table class="info-table">
+<tr><th>Sr. No.</th><th>Apparatus</th><th>Range / Specification</th><th>Quantity</th></tr>
+<tr><td>1</td><td>Variable DC regulated power supply (V<sub>s</sub>)</td><td>0 – 30 V</td><td>1</td></tr>
+<tr><td>2</td><td>PN junction diode</td><td>1N4007</td><td>1</td></tr>
+<tr><td>3</td><td>Resistor (current-limiting)</td><td>1 kΩ / 3.3 kΩ</td><td>1</td></tr>
+<tr><td>4</td><td>DC voltmeter</td><td>0 – 20 V</td><td>1</td></tr>
+<tr><td>5</td><td>DC milliammeter (forward bias)</td><td>0 – 200 mA</td><td>1</td></tr>
+<tr><td>6</td><td>DC microammeter (reverse bias)</td><td>0 – 200 µA</td><td>1</td></tr>
+<tr><td>7</td><td>Connecting wires</td><td>—</td><td>As required</td></tr>
+</table>
+
+<h3>5. Theory</h3>
+
+<h4>5.1 PN Junction Diode</h4>
+<p>A PN junction diode supports unidirectional current flow: it conducts easily when connected one way round in a circuit and offers very high opposition when connected the other way round. It has two terminals — the anode (A), connected to the p-side, and the cathode (K), connected to the n-side. On a 1N4007 diode the cathode end is marked by a line (band) printed on the body, as shown in the symbol below.</p>
+<img class="fig-img" style="max-width:420px" src="../assets/images/practical/exp5-diode-symbol.png" alt="Circuit symbol of a PN junction diode showing anode, cathode, p-side, n-side and direction of forward current">
+<p class="fig-caption">Fig. 5.1 – Circuit symbol of a PN junction diode (cathode end is marked by a line on the diode body)</p>
+
+<h4>5.2 Forward Bias</h4>
+<p>If the +ve terminal of the input supply is connected to the p-side (anode) and the –ve terminal of the input supply is connected to the n-side (cathode), the diode is said to be forward biased. A depletion region is formed in a PN diode due to the absence of charge carriers. This region gives rise to a barrier potential, called the cut-in voltage or knee voltage.</p>
+<p>When the diode is forward biased, the height of the barrier potential at the junction is lowered by an amount equal to the applied forward biasing voltage. Both the holes from the p-side and the electrons from the n-side cross the junction simultaneously and constitute a forward current. Once the forward voltage exceeds the knee voltage, the current rises rapidly and the diode can be considered as a closed (short-circuited) switch.</p>
+
+<h4>5.3 Reverse Bias</h4>
+<p>If the –ve terminal of the input supply is connected to the p-side (anode) and the +ve terminal of the input supply is connected to the n-side (cathode), the diode is said to be reverse biased. The barrier potential at the junction now increases by an amount equal to the reverse biasing voltage, and this increases the width of the depletion region. A very small current due to minority carriers, called the reverse saturation current, continues to flow in the diode. This current is negligible and hence the diode is approximated as an open-circuited switch.</p>
+
+<h4>5.4 V–I Characteristics</h4>
+<p>The V–I characteristic of a diode is the graph of the current through the diode against the voltage across it. In the forward direction the current is almost zero until the knee voltage is reached and then increases rapidly; in the reverse direction only a very small reverse saturation current flows over a wide range of reverse voltage. The knee voltage of a silicon diode is typically about 0.6 V to 0.7 V (for comparison, a germanium diode has a lower knee voltage, typically about 0.2 V to 0.3 V). The general shape of the characteristic is shown below; the actual graph is to be plotted by the student from the observations.</p>
+<img class="fig-img" style="max-width:620px" src="../assets/images/practical/exp5-vi-characteristic-shape.png" alt="Schematic V-I characteristic of a silicon PN junction diode showing reverse saturation current and the knee voltage on the forward side">
+<p class="fig-caption">Fig. 5.2 – General shape of the V–I characteristic of a silicon PN junction diode (schematic, not to scale)</p>
+
+<div class="note">
+<b>Good to know:</b> The 1N4007 used in this experiment is a general-purpose rectifier diode rated for a maximum forward current of 1 A and a peak inverse voltage (PIV) of 1000 V — far beyond what this low-voltage test circuit applies, which is why a current-limiting resistor and the supply ranges specified above are safe to use with it.
+</div>
+
+<h3>6. Practical Circuit Diagram</h3>
+
+<h4>6.1 Forward Bias Condition</h4>
+<img class="fig-img" style="max-width:600px" src="../assets/images/practical/exp5-forward-bias-circuit.png" alt="Forward bias test circuit: variable DC supply Vs, 1N4007 diode, milliammeter 0-200 mA in series, voltmeter 0-20 V across the diode, and a 1 kOhm or 3.3 kOhm series resistor">
+<p class="fig-caption">Fig. 5.3 – Circuit for forward bias condition</p>
+<p>Value of resistor used: &nbsp; R = ____________ Ω &nbsp; (1 kΩ / 3.3 kΩ – tick the one used)</p>
+
+<h4>6.2 Reverse Bias Condition</h4>
+<img class="fig-img" style="max-width:600px" src="../assets/images/practical/exp5-reverse-bias-circuit.png" alt="Reverse bias test circuit: supply polarity reversed, 1N4007 diode, microammeter 0-200 uA in series, voltmeter 0-20 V across the diode, and a 1 kOhm or 3.3 kOhm series resistor">
+<p class="fig-caption">Fig. 5.4 – Circuit for reverse bias condition</p>
+<p>Value of resistor used: &nbsp; R = ____________ Ω &nbsp; (1 kΩ / 3.3 kΩ – tick the one used)</p>
+
+<h3>7. Precautions</h3>
+<ul>
+<li>While doing the experiment, do not exceed the input voltage of the diode beyond the rated voltage of the diode. This may lead to damage of the diode.</li>
+<li>Connect the voltmeter and ammeter in the correct polarities as shown in the circuit diagram.</li>
+<li>Do not switch ON the power supply unless the circuit connections are checked as per the circuit diagram.</li>
+<li>Always keep the series resistor in the circuit; never connect the diode directly across the supply in forward bias.</li>
+<li>Use the 0 – 200 mA ammeter only in the forward-bias circuit. The 0 – 200 µA microammeter is to be used only in the reverse-bias circuit and must never be connected in the forward-bias circuit.</li>
+<li>Keep the supply voltage at zero before switching ON, increase it slowly, and bring it back to zero and switch OFF the supply before changing any connection.</li>
+</ul>
+
+<h3>8. Procedure</h3>
+
+<h4>8.1 Forward Bias Characteristics</h4>
+<ul>
+<li>Identify the anode and cathode of the given diode (the cathode end carries the line/band). Note the resistor value used.</li>
+<li>Make the connections as per the circuit diagram of Fig. 5.3, with the milliammeter (0 – 200 mA) in series and the voltmeter (0 – 20 V) connected across the diode.</li>
+<li>Keep the supply voltage at zero, get the connections checked and then switch ON the supply.</li>
+<li>Increase the supply voltage slowly in steps and note the voltmeter reading V<sub>F</sub> and the milliammeter reading I<sub>F</sub> at each step in Table 5.1. Take the readings so that they cover the region below as well as above the knee voltage.</li>
+<li>Take seven readings. Reduce the supply voltage to zero and switch OFF the supply.</li>
+</ul>
+
+<h4>8.2 Reverse Bias Characteristics</h4>
+<ul>
+<li>With the supply switched OFF, change the connections as per the circuit diagram of Fig. 5.4: reverse the supply polarity applied to the diode and replace the milliammeter by the microammeter (0 – 200 µA), observing the meter polarities shown.</li>
+<li>Keep the supply voltage at zero, get the connections checked and then switch ON the supply.</li>
+<li>Increase the supply voltage slowly in steps and note the voltmeter reading V<sub>R</sub> and the microammeter reading I<sub>R</sub> at each step in Table 5.2. Do not exceed the 0 – 20 V range of the voltmeter.</li>
+<li>Take seven readings. Reduce the supply voltage to zero and switch OFF the supply.</li>
+</ul>
+
+<h4>8.3 Graph</h4>
+<ul>
+<li>Plot the forward characteristics (I<sub>F</sub> on the y-axis against V<sub>F</sub> on the x-axis) and the reverse characteristics (I<sub>R</sub> on the y-axis against V<sub>R</sub> on the x-axis) on the graph grids given in Section 10, choosing a suitable scale.</li>
+<li>From the forward graph, determine the knee (cut-in) voltage of the diode.</li>
+</ul>
+
+<h3>9. Observation Tables</h3>
+
+<h4>Table 5.1 – Forward Bias Condition</h4>
+<table class="info-table">
+<tr><th>S. No.</th><th>Forward Voltage across the diode V<sub>F</sub> (Volts)</th><th>Forward Current through the diode I<sub>F</sub> (mA)</th></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h4>Table 5.2 – Reverse Bias Condition</h4>
+<table class="info-table">
+<tr><th>S. No.</th><th>Reverse Voltage across the diode V<sub>R</sub> (Volts)</th><th>Reverse Current through the diode I<sub>R</sub> (µA)</th></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>10. V–I Characteristics (Graph)</h3>
+<p>Choose a suitable scale for each axis, write the scale in the space below, mark the points from Tables 5.1 and 5.2 and draw a smooth curve through them.</p>
+<img class="fig-img" src="../assets/images/practical/exp5-graph-grid.png" alt="Blank graph grids for plotting forward characteristics (IF vs VF) and reverse characteristics (IR vs VR)">
+<p class="fig-caption">Fig. 5.5 – V–I characteristics of the given diode, plotted by the student (left: forward bias, right: reverse bias)</p>
+<p>Scale: &nbsp; X-axis: 1 big division = ___________ V &nbsp;&nbsp;&nbsp;&nbsp; Y-axis: 1 big division = ___________ (mA / µA)</p>
+<p>Knee (cut-in) voltage of the diode from the forward graph = ____________ V</p>
+
+<h3>11. Conclusion</h3>
+<p>Based on the above observations and graphs, write your conclusion stating the knee voltage of the diode, the order of the forward current and the reverse current, and whether the diode shows unidirectional (one-way) conduction.</p>
 
 </div>
 
