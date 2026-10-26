@@ -191,13 +191,14 @@ margin-top:10px;
 <div class="section-card">
 
 <h2>🎤 Lab Viva-Voce Questions &amp; Answers</h2>
-<p>Practice these questions before your practical exam — they cover Experiments 1 to 4 of the Practical Manual. Tap a question to reveal its answer.</p>
+<p>Practice these questions before your practical exam — they cover Experiments 1 to 5 of the Practical Manual. Tap a question to reveal its answer.</p>
 
 <div class="viva-tabs">
 <button type="button" class="viva-tab-btn" data-viva="1" onclick="location.hash='viva1'">Experiment 1</button>
 <button type="button" class="viva-tab-btn" data-viva="2" onclick="location.hash='viva2'">Experiment 2</button>
 <button type="button" class="viva-tab-btn" data-viva="3" onclick="location.hash='viva3'">Experiment 3</button>
 <button type="button" class="viva-tab-btn" data-viva="4" onclick="location.hash='viva4'">Experiment 4</button>
+<button type="button" class="viva-tab-btn" data-viva="5" onclick="location.hash='viva5'">Experiment 5</button>
 </div>
 
 <!-- ============ EXPERIMENT 1 VIVA ============ -->
@@ -424,6 +425,73 @@ margin-top:10px;
 <details class="qa">
 <summary>Q10. Are Kirchhoff's laws applicable to AC circuits?</summary>
 <p class="ans"><b>Ans:</b> Yes. Kirchhoff's laws are applicable to both DC and AC circuits. In AC circuits they are applied using instantaneous values or phasor (complex) quantities, taking the phase angles of the currents and voltages into account.</p>
+</details>
+
+</div>
+
+<!-- ============ EXPERIMENT 5 VIVA ============ -->
+
+<div class="viva-tab-panel" id="viva5">
+<h3>Experiment 5 — PN Junction Diode</h3>
+
+<details class="qa">
+<summary>Q1. What is a PN junction diode? Name its two terminals.</summary>
+<p class="ans"><b>Ans:</b> A PN junction diode is a two-terminal semiconductor device formed by joining p-type and n-type material. It allows current to flow easily in one direction only (unidirectional conduction). Its terminals are the anode (A), connected to the p-side, and the cathode (K), connected to the n-side.</p>
+</details>
+
+<details class="qa">
+<summary>Q2. How do you identify the cathode of a 1N4007 diode?</summary>
+<p class="ans"><b>Ans:</b> The cathode end is marked by a line (band) printed on the body of the diode. In the circuit symbol, the cathode is the side with the bar, towards which the triangle points.</p>
+</details>
+
+<details class="qa">
+<summary>Q3. What is the depletion region and the barrier potential?</summary>
+<p class="ans"><b>Ans:</b> At the PN junction, electrons from the n-side and holes from the p-side diffuse across and recombine, leaving a region near the junction with no free charge carriers, called the depletion region. The immobile ions in this region set up an electric field, which gives rise to a potential difference called the barrier potential.</p>
+</details>
+
+<details class="qa">
+<summary>Q4. What is forward bias? What happens to the depletion region and the current?</summary>
+<p class="ans"><b>Ans:</b> The diode is forward biased when the +ve terminal of the supply is connected to the p-side (anode) and the –ve terminal to the n-side (cathode). The barrier potential is reduced, the depletion region becomes narrow, holes and electrons cross the junction and a forward current flows. Once the voltage exceeds the knee voltage, the current rises rapidly.</p>
+</details>
+
+<details class="qa">
+<summary>Q5. What is reverse bias? Why does a small current still flow?</summary>
+<p class="ans"><b>Ans:</b> The diode is reverse biased when the –ve terminal of the supply is connected to the anode and the +ve terminal to the cathode. The barrier potential and the depletion region width increase, so majority carriers cannot cross. A very small current due to minority carriers, called the reverse saturation current, still flows; it is of the order of µA or less and is almost independent of the reverse voltage.</p>
+</details>
+
+<details class="qa">
+<summary>Q6. What is the knee (cut-in) voltage? State its typical value for silicon.</summary>
+<p class="ans"><b>Ans:</b> The knee or cut-in voltage is the forward voltage at which the diode starts conducting appreciably, i.e. the forward current begins to rise sharply. For a silicon diode it is typically about 0.6 V to 0.7 V (for germanium, about 0.2 V to 0.3 V).</p>
+</details>
+
+<details class="qa">
+<summary>Q7. Why is a resistor connected in series with the diode in the circuit?</summary>
+<p class="ans"><b>Ans:</b> The resistor limits the current through the diode. Above the knee voltage the diode resistance is very small, so without the resistor the current would rise to a very large value and could damage the diode, the ammeter or the supply.</p>
+</details>
+
+<details class="qa">
+<summary>Q8. Why are a milliammeter in forward bias and a microammeter in reverse bias used?</summary>
+<p class="ans"><b>Ans:</b> In forward bias the current is in the range of milliamperes, whereas in reverse bias it is only a few microamperes. A microammeter of 0–200 µA gives a readable deflection for the reverse current, but it would be damaged by the forward current, so it must never be used in the forward-bias circuit.</p>
+</details>
+
+<details class="qa">
+<summary>Q9. Why is the voltmeter connected directly across the diode and not across the supply?</summary>
+<p class="ans"><b>Ans:</b> The experiment requires the voltage across the diode itself (V<sub>F</sub> or V<sub>R</sub>). Part of the supply voltage is dropped across the series resistor, so a voltmeter across the supply would not give the diode voltage.</p>
+</details>
+
+<details class="qa">
+<summary>Q10. What does the V–I characteristic of a diode show? Differentiate the diode from an ordinary resistor on this basis.</summary>
+<p class="ans"><b>Ans:</b> It shows that the diode conducts heavily in forward bias above the knee voltage and blocks current (only a very small leakage) in reverse bias, i.e. it is a unidirectional and non-linear device. An ordinary resistor obeys Ohm's law, has a straight-line V–I graph and conducts equally in both directions.</p>
+</details>
+
+<details class="qa">
+<summary>Q11. What is the peak inverse voltage (PIV) of a diode, and what is it for the 1N4007?</summary>
+<p class="ans"><b>Ans:</b> PIV is the maximum reverse voltage a diode can withstand without breaking down. For the 1N4007 it is 1000 V — far above the supply range used in this experiment, so the diode is never at risk of reverse breakdown here.</p>
+</details>
+
+<details class="qa">
+<summary>Q12. What happens if the reverse voltage is increased well beyond the diode's rated value?</summary>
+<p class="ans"><b>Ans:</b> The diode enters reverse breakdown (avalanche/Zener breakdown) and the reverse current rises sharply, which can permanently damage an ordinary rectifier diode. Breakdown is deliberately used, under controlled conditions, in Zener diodes as voltage regulators.</p>
 </details>
 
 </div>
