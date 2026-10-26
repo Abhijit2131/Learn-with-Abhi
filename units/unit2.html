@@ -323,6 +323,7 @@ const unlockedSection = 1;
 <a href="#construction">2.2 Construction of DC Motor</a>
 <a href="#working">2.3 Working of DC Motor</a>
 <a href="#types">2.4 Types of DC Motor</a>
+<a href="#speed-torque">2.5 Speed-Torque Characteristics</a>
 
 <hr style="margin:14px 0;">
 
@@ -612,8 +613,99 @@ A DC motor can be classified by <b>how its field winding is connected to the arm
 </ul>
 </div>
 
-<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
-<b>Coming up next in Unit 2:</b> Speed-Torque Characteristics — how speed and torque actually vary with load for each of these motor types.
+</section>
+
+<!-- Speed-Torque Characteristics -->
+<section class="section" id="speed-torque" data-toc-section="1">
+
+<h2>2.5 Speed-Torque Characteristics of DC Motor</h2>
+
+<p>
+Having seen the different types of DC motor, the natural next question is: how does each type actually behave once it's running under load? <b>Speed-torque characteristics</b> answer exactly that — they show how a motor's speed changes as the torque it must deliver changes.
+</p>
+
+<h3>Understanding the Two Terms</h3>
+
+<div class="definition">
+<ul style="margin:10px 0 0 20px;">
+<li><b>Speed (N):</b> How fast the motor rotates, usually measured in revolutions per minute (RPM).</li>
+<li><b>Torque (T):</b> The turning force produced by the motor to rotate a load, measured in newton-metre (N·m).</li>
+</ul>
+<p style="margin-top:10px;">For example, imagine an electric motor lifting a heavy object. The motor needs sufficient torque to lift the object — speed tells us how fast it lifts it.</p>
+</div>
+
+<h3>What Are Speed-Torque Characteristics?</h3>
+
+<p>
+Speed-torque characteristics show the relationship between the speed of a DC motor and the torque it produces, plotted as a graph with <b>Torque on the X-axis</b> and <b>Speed on the Y-axis</b>. The graph helps us understand how a motor's speed changes when the load on it changes.
+</p>
+
+<h3>A. DC Shunt Motor</h3>
+
+<p>
+The field winding is connected in parallel with the armature, so its magnetic field remains approximately constant. When the load torque increases, the speed decreases only slightly — this is why the shunt motor is called an <b>approximately constant-speed motor</b>.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit2/shunt-speed-torque.jpeg" style="max-width:480px;" alt="Speed-torque characteristic of a DC shunt motor: speed drops only slightly as torque increases">
+<p class="fig-caption">Fig 2.4 — Speed-torque characteristics of a DC shunt motor</p>
+
+<p><b>Applications:</b> Fans, blowers, centrifugal pumps and machine tools.</p>
+
+<div class="note">
+<b>Remember:</b> Shunt motor = Nearly constant speed.
+</div>
+
+<h3>B. DC Series Motor</h3>
+
+<p>
+The field winding is connected in series with the armature. When the load increases, the armature current increases, and the magnetic field becomes stronger (before magnetic saturation), producing higher torque. As a result, the motor speed generally decreases sharply as load torque increases — approximately following N ∝ 1/√T.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit2/series-speed-torque.jpeg" style="max-width:480px;" alt="Speed-torque characteristic of a DC series motor: speed falls steeply as torque increases, following N proportional to 1 over root T">
+<p class="fig-caption">Fig 2.5 — Speed-torque characteristics of a DC series motor</p>
+
+<p><b>Applications:</b> Electric traction, cranes, hoists and applications requiring high starting torque.</p>
+
+<div class="note">
+<b>Important:</b> A DC series motor should never be operated without a load — because its flux depends on the load current, removing the load lets its speed rise to a dangerously high, uncontrolled value ("runs away"), which can damage the motor.
+</div>
+
+<div class="note">
+<b>Remember:</b> Series motor = High starting torque.
+</div>
+
+<h3>C. DC Compound Motor</h3>
+
+<p>
+The compound motor has both shunt and series field windings, combining the characteristics of the shunt and series motors. It can provide good starting torque while maintaining better speed regulation than a series motor — its speed-torque curve lies between the shunt and series curves.
+</p>
+
+<p><b>Applications:</b> Elevators, presses, shears and rolling mills.</p>
+
+<div class="note">
+<b>Remember:</b> Compound motor = Good starting torque with reasonably stable speed.
+</div>
+
+<h3>Compare All Three Motors</h3>
+
+<table class="comparison">
+<tr><th>Feature</th><th>Shunt Motor</th><th>Series Motor</th><th>Compound Motor</th></tr>
+<tr><td>Speed with increasing load</td><td>Decreases slightly</td><td>Decreases considerably</td><td>Intermediate behaviour</td></tr>
+<tr><td>Starting torque</td><td>Moderate</td><td>High</td><td>Higher than shunt, generally</td></tr>
+<tr><td>Speed regulation</td><td>Good</td><td>Poor</td><td>Good to moderate</td></tr>
+<tr><td>Typical applications</td><td>Fans, pumps</td><td>Cranes, traction</td><td>Elevators, presses</td></tr>
+</table>
+
+<img class="diagram-img" src="../assets/images/unit2/all-types-speed-torque-comparison.jpeg" style="max-width:620px;" alt="Comparison of typical speed-torque performance of various DC motor types, including shunt-wound, series-wound and compound-wound">
+<p class="fig-caption">Fig 2.6 — Typical speed-torque performance of various DC motor types (for reference; permanent-magnet and universal motors shown here are beyond this syllabus)</p>
+
+<div class="note">
+<b>Three statements worth remembering:</b>
+<ul style="margin:10px 0 0 20px;">
+<li><b>Shunt:</b> Speed remains almost constant.</li>
+<li><b>Series:</b> High starting torque; speed varies considerably with load.</li>
+<li><b>Compound:</b> Combines the advantages of shunt and series motors.</li>
+</ul>
 </div>
 
 </section>
