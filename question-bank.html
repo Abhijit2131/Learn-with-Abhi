@@ -110,6 +110,41 @@ color:#0B4AA2;
 margin-bottom:14px;
 }
 
+.theory-tab-btn{
+background:#EAF4FF;
+color:#0B4AA2;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+font-family:inherit;
+transition:.2s;
+}
+
+.theory-tab-btn:hover{
+background:#DCEAFB;
+}
+
+.theory-tab-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.theory-tab-panel{
+display:none;
+}
+
+.theory-tab-panel.active{
+display:block;
+}
+
+.theory-tab-panel h3{
+color:#0B4AA2;
+margin-bottom:14px;
+}
+
 /* Collapsible Q&A */
 
 details.qa{
@@ -155,6 +190,67 @@ details.qa .ans b{
 color:#0B4AA2;
 }
 
+/* Theory question list */
+
+.q-item{
+background:#F8FBFF;
+border:1px solid #DCE5F0;
+border-radius:10px;
+padding:14px 18px;
+margin-bottom:10px;
+}
+
+.q-item p{
+margin-bottom:0;
+}
+
+.q-meta{
+margin-top:8px;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.q-tag{
+font-size:11px;
+font-weight:bold;
+padding:3px 10px;
+border-radius:20px;
+white-space:nowrap;
+}
+
+.q-tag.marks{
+background:#EAF4FF;
+color:#0B4AA2;
+}
+
+.q-tag.bloom{
+background:#FFF1DC;
+color:#92610B;
+}
+
+.theory-note{
+background:#FFF8E6;
+padding:15px 18px;
+border-left:5px solid orange;
+border-radius:8px;
+margin-top:16px;
+}
+
+.theory-note a{
+color:#0B4AA2;
+font-weight:bold;
+}
+
+.coming-soon-box{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+text-align:center;
+padding:40px 20px;
+border-radius:10px;
+color:#64748B;
+}
+
 footer{
 background:#0B4AA2;
 color:white;
@@ -177,15 +273,153 @@ margin-top:10px;
 <div class="wrap">
 
 <div class="section-card">
-<h2>Unit-Wise University Questions</h2>
-<p>Coming soon. Important questions will be arranged as:</p>
-<ul>
-<li>2 Marks Questions</li>
-<li>4 Marks Questions</li>
-<li>6 Marks Questions</li>
-<li>Numericals</li>
-<li>Previous University Questions</li>
-</ul>
+
+<h2>📘 Theory Important Questions</h2>
+<p>Unit-wise important questions for the university theory exam, with marks and Bloom's Level for each question. Tap a unit to view its questions.</p>
+
+<div class="viva-tabs">
+<button type="button" class="theory-tab-btn" data-theory="1" onclick="location.hash='theory1'">Unit 1</button>
+<button type="button" class="theory-tab-btn" data-theory="2" onclick="location.hash='theory2'">Unit 2</button>
+<button type="button" class="theory-tab-btn" data-theory="3" onclick="location.hash='theory3'">Unit 3</button>
+<button type="button" class="theory-tab-btn" data-theory="4" onclick="location.hash='theory4'">Unit 4</button>
+<button type="button" class="theory-tab-btn" data-theory="5" onclick="location.hash='theory5'">Unit 5</button>
+<button type="button" class="theory-tab-btn" data-theory="6" onclick="location.hash='theory6'">Unit 6</button>
+</div>
+
+<!-- ============ UNIT 1 THEORY QUESTIONS ============ -->
+
+<div class="theory-tab-panel" id="theory1">
+<h3>Unit 1 — DC Electric Circuit</h3>
+
+<div class="q-item">
+<p><b>1.</b> Define Electronics and Electrical Engineering. Compare them with applications.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>2.</b> Define current, voltage and power. Write their units, formulae and measuring instruments.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L1 – Remember</span></div>
+</div>
+
+<div class="q-item">
+<p><b>3.</b> A charge of 360 C flows through a heater in 2 minutes, and the source does 79,200 J of work. Find the current, voltage, power and resistance of the heater.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>4.</b> Draw and explain in detail resistor with its construction.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>5.</b> Draw and explain the construction of a capacitor. Write its applications.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>6.</b> Define an inductor. List its types, applications, advantages and disadvantages.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L1 – Remember</span></div>
+</div>
+
+<div class="q-item">
+<p><b>7.</b> Draw and explain the AC sinusoidal waveform with full cycle, frequency, time period and amplitude.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>8.</b> Define any four important terms of AC sinusoidal waveform.</p>
+<div class="q-meta"><span class="q-tag bloom">L1 – Remember</span></div>
+</div>
+
+<div class="q-item">
+<p><b>9.</b> For v = 325 sin(100πt) V, find the peak value, angular frequency, frequency, time period and the instantaneous voltage at t = 2.5 ms.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>10.</b> State and explain Ohm's Law with an example.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>11.</b> A 2.2 kΩ resistor is connected across a 12 V supply. Find the current through it in milliamperes.</p>
+<div class="q-meta"><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>12.</b> Explain KCL and KVL with neat diagrams.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>13.</b> Three branches are connected in parallel across a supply. The ammeter in the main line reads 2.4 A. The ammeters in the first two branches read 0.9 A and 0.7 A. Find the reading of ammeter A₃ in the third branch.</p>
+<div class="q-meta"><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>14.</b> Compare series and parallel circuits with diagrams.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L2 – Understand</span></div>
+</div>
+
+<div class="q-item">
+<p><b>15.</b> Resistors of 3 Ω, 6 Ω and 9 Ω are connected across a 36 V supply. Find the equivalent resistance, current and total power for (a) series and (b) parallel connection.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>16.</b> Three resistors R₁ = 100 Ω, R₂ = 220 Ω and R₃ = 180 Ω are connected in series across a 24 V supply. Find the total resistance, the circuit current and the voltage across each resistor.</p>
+<div class="q-meta"><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>17.</b> Solve using KCL and KVL: (a) At a junction, 0.5 A, 1.2 A and 0.8 A enter and 0.9 A and 0.3 A leave. Find the sixth current. (b) A loop has V = 12 V, with 6 Ω, 3 Ω and 7 Ω in series. Find the loop current.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="q-item">
+<p><b>18.</b> Draw Star and Delta networks. Write the conversion formulae between them.</p>
+<div class="q-meta"><span class="q-tag marks">7 Marks</span><span class="q-tag bloom">L1 – Remember</span></div>
+</div>
+
+<div class="q-item">
+<p><b>19.</b> Convert a Star network with Ra = 4 Ω, Rb = 6 Ω and Rc = 12 Ω into Delta.</p>
+<div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
+</div>
+
+<div class="theory-note">
+<b>Very Important:</b> All the numericals from Current, Voltage, Power, Waveform Equation, Ohm's Law, KCL, KVL, Series Resistor, Parallel Resistor, Star to Delta and Delta to Star.<br>
+For numericals, refer to the solved examples in the <a href="downloads/index.html">Downloads section</a>.
+</div>
+
+</div>
+
+<!-- ============ UNIT 2-6 THEORY QUESTIONS (COMING SOON) ============ -->
+
+<div class="theory-tab-panel" id="theory2">
+<h3>Unit 2 — DC Motor &amp; Single Phase Transformers</h3>
+<div class="coming-soon-box">Important questions for this unit will be uploaded soon.</div>
+</div>
+
+<div class="theory-tab-panel" id="theory3">
+<h3>Unit 3 — Semiconductor Basics</h3>
+<div class="coming-soon-box">Important questions for this unit will be uploaded soon.</div>
+</div>
+
+<div class="theory-tab-panel" id="theory4">
+<h3>Unit 4</h3>
+<div class="coming-soon-box">Important questions for this unit will be uploaded soon.</div>
+</div>
+
+<div class="theory-tab-panel" id="theory5">
+<h3>Unit 5</h3>
+<div class="coming-soon-box">Important questions for this unit will be uploaded soon.</div>
+</div>
+
+<div class="theory-tab-panel" id="theory6">
+<h3>Unit 6</h3>
+<div class="coming-soon-box">Important questions for this unit will be uploaded soon.</div>
+</div>
+
 </div>
 
 <div class="section-card">
@@ -524,6 +758,28 @@ Learn with Abhi © 2026
   window.addEventListener("hashchange", function () {
     var num = window.location.hash.replace("#viva", "");
     if (/^[0-9]+$/.test(num)) showViva(num);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function showTheory(num) {
+    document.querySelectorAll(".theory-tab-panel").forEach(function (panel) {
+      panel.classList.toggle("active", panel.id === "theory" + num);
+    });
+    document.querySelectorAll(".theory-tab-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.theory === String(num));
+    });
+  }
+
+  var initial = window.location.hash.replace("#theory", "");
+  showTheory(window.location.hash.indexOf("#theory") === 0 && /^[0-9]+$/.test(initial) ? initial : "1");
+
+  window.addEventListener("hashchange", function () {
+    var hash = window.location.hash;
+    var num = hash.replace("#theory", "");
+    if (hash.indexOf("#theory") === 0 && /^[0-9]+$/.test(num)) showTheory(num);
   });
 })();
 </script>
