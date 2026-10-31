@@ -285,6 +285,52 @@ color:#0B4AA2;
 font-weight:bold;
 }
 
+/* Very Important callout: red, bold, with a gentle attention pulse */
+
+.vip-note{
+background:#FFF1F1;
+border:2px solid #E11D48;
+border-left-width:7px;
+border-radius:10px;
+padding:18px 20px;
+margin-top:22px;
+animation:vip-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes vip-pulse{
+0%,100%{ box-shadow:0 0 0 0 rgba(225,29,72,.25); }
+50%{ box-shadow:0 0 0 10px rgba(225,29,72,0); }
+}
+
+.vip-note .vip-label{
+display:flex;
+align-items:center;
+gap:8px;
+color:#E11D48;
+font-weight:bold;
+font-size:16px;
+text-transform:uppercase;
+letter-spacing:.4px;
+margin-bottom:8px;
+}
+
+.vip-note p{
+color:#17345E;
+font-size:15px;
+}
+
+.vip-note a{
+color:#E11D48;
+font-weight:bold;
+text-decoration:underline;
+}
+
+@media (prefers-reduced-motion:reduce){
+.vip-note{
+animation:none;
+}
+}
+
 .coming-soon-box{
 background:#F8FAFC;
 border:2px dashed #CBD5E1;
@@ -438,9 +484,10 @@ margin-top:10px;
 <div class="q-meta"><span class="q-tag marks">8 Marks</span><span class="q-tag bloom">L3 – Apply</span></div>
 </div>
 
-<div class="theory-note">
-<b>Very Important:</b> All the numericals from Current, Voltage, Power, Waveform Equation, Ohm's Law, KCL, KVL, Series Resistor, Parallel Resistor, Star to Delta and Delta to Star.<br>
-For numericals, refer to the solved examples in the <a href="downloads/index.html">Downloads section</a>.
+<div class="vip-note">
+<div class="vip-label">🔴 Very Important</div>
+<p>All the numericals from Current, Voltage, Power, Waveform Equation, Ohm's Law, KCL, KVL, Series Resistor, Parallel Resistor, Star to Delta and Delta to Star.<br>
+For numericals, refer to the solved examples in the <a href="downloads/index.html">Downloads section →</a></p>
 </div>
 
 </div>
