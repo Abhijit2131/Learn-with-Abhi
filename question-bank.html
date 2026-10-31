@@ -66,6 +66,49 @@ margin-bottom:10px;
 margin-left:20px;
 }
 
+/* Top-level tabs: Theory Important Questions vs Lab Viva-Voce */
+
+.main-tabs{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:25px;
+}
+
+.main-tab-btn{
+flex:1;
+min-width:220px;
+background:white;
+color:#0B4AA2;
+border:2px solid #DCE5F0;
+padding:18px 20px;
+border-radius:15px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+font-family:inherit;
+transition:.2s;
+box-shadow:0 8px 18px rgba(0,0,0,.06);
+}
+
+.main-tab-btn:hover{
+border-color:#2196F3;
+}
+
+.main-tab-btn.active{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:#fff;
+border-color:transparent;
+}
+
+.main-tab-panel{
+display:none;
+}
+
+.main-tab-panel.active{
+display:block;
+}
+
 /* Viva tabs (same pattern as the Practical Manual's experiment tabs) */
 
 .viva-tabs{
@@ -272,6 +315,13 @@ margin-top:10px;
 
 <div class="wrap">
 
+<div class="main-tabs">
+<button type="button" class="main-tab-btn active" data-main="theory" onclick="showMainTab('theory')">📘 Theory Important Questions</button>
+<button type="button" class="main-tab-btn" data-main="viva" onclick="showMainTab('viva')">🎤 Lab Viva-Voce Questions &amp; Answers</button>
+</div>
+
+<div class="main-tab-panel active" id="main-theory">
+
 <div class="section-card">
 
 <h2>📘 Theory Important Questions</h2>
@@ -353,6 +403,7 @@ margin-top:10px;
 
 <div class="q-item">
 <p><b>13.</b> Three branches are connected in parallel across a supply. The ammeter in the main line reads 2.4 A. The ammeters in the first two branches read 0.9 A and 0.7 A. Find the reading of ammeter A₃ in the third branch.</p>
+<img src="assets/images/question-bank/unit1-q13-parallel-circuit.png" alt="Three resistors R1, R2, R3 connected in parallel across a supply, with ammeter readings 2.4 A in the main line, 0.9 A in branch 1, 0.7 A in branch 2, and A3 unknown in branch 3" style="max-width:420px;width:100%;display:block;margin:12px auto 0;border:1px solid #DCE5F0;border-radius:8px;">
 <div class="q-meta"><span class="q-tag bloom">L3 – Apply</span></div>
 </div>
 
@@ -368,6 +419,7 @@ margin-top:10px;
 
 <div class="q-item">
 <p><b>16.</b> Three resistors R₁ = 100 Ω, R₂ = 220 Ω and R₃ = 180 Ω are connected in series across a 24 V supply. Find the total resistance, the circuit current and the voltage across each resistor.</p>
+<img src="assets/images/question-bank/unit1-q16-series-circuit.png" alt="24 V supply connected to three resistors R1 = 100 ohm, R2 = 220 ohm and R3 = 180 ohm in series, with loop current I unknown" style="max-width:420px;width:100%;display:block;margin:12px auto 0;border:1px solid #DCE5F0;border-radius:8px;">
 <div class="q-meta"><span class="q-tag bloom">L3 – Apply</span></div>
 </div>
 
@@ -421,6 +473,10 @@ For numericals, refer to the solved examples in the <a href="downloads/index.htm
 </div>
 
 </div>
+
+</div>
+
+<div class="main-tab-panel" id="main-viva">
 
 <div class="section-card">
 
@@ -732,6 +788,8 @@ For numericals, refer to the solved examples in the <a href="downloads/index.htm
 
 </div>
 
+</div>
+
 <p><a href="index.html" style="color:#0B4AA2;font-weight:bold;text-decoration:none;">🏠 Back to Home</a></p>
 
 </div>
@@ -740,6 +798,28 @@ For numericals, refer to the solved examples in the <a href="downloads/index.htm
 Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
 Learn with Abhi © 2026
 </footer>
+
+<script>
+function showMainTab(name) {
+  document.querySelectorAll(".main-tab-panel").forEach(function (panel) {
+    panel.classList.toggle("active", panel.id === "main-" + name);
+  });
+  document.querySelectorAll(".main-tab-btn").forEach(function (btn) {
+    btn.classList.toggle("active", btn.dataset.main === name);
+  });
+}
+
+(function () {
+  // Open the right top-level tab if the page was loaded with a direct
+  // link to a sub-tab, e.g. question-bank.html#viva3
+  var hash = window.location.hash;
+  if (hash.indexOf("#viva") === 0) {
+    showMainTab("viva");
+  } else {
+    showMainTab("theory");
+  }
+})();
+</script>
 
 <script>
 (function () {
@@ -757,7 +837,10 @@ Learn with Abhi © 2026
 
   window.addEventListener("hashchange", function () {
     var num = window.location.hash.replace("#viva", "");
-    if (/^[0-9]+$/.test(num)) showViva(num);
+    if (/^[0-9]+$/.test(num)) {
+      showViva(num);
+      showMainTab("viva");
+    }
   });
 })();
 </script>
@@ -779,7 +862,10 @@ Learn with Abhi © 2026
   window.addEventListener("hashchange", function () {
     var hash = window.location.hash;
     var num = hash.replace("#theory", "");
-    if (hash.indexOf("#theory") === 0 && /^[0-9]+$/.test(num)) showTheory(num);
+    if (hash.indexOf("#theory") === 0 && /^[0-9]+$/.test(num)) {
+      showTheory(num);
+      showMainTab("theory");
+    }
   });
 })();
 </script>
