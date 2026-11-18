@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 | Semiconductor Basics &amp; PN Junction Diode</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:22px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+/* Layout */
+
+.container{
+width:92%;
+margin:30px auto;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:25px;
+align-items:start;
+}
+
+/* Left Navigation */
+
+.toc{
+position:sticky;
+top:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.toc h3{
+color:#0B4AA2;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.toc a{
+display:block;
+padding:10px 12px;
+text-decoration:none;
+color:#17345E;
+border-radius:8px;
+font-size:14px;
+margin-bottom:6px;
+transition:.3s;
+}
+
+.toc a:hover{
+background:#EAF4FF;
+color:#0B4AA2;
+padding-left:18px;
+font-weight:bold;
+}
+
+.toc-group-btn{
+display:block;
+width:100%;
+text-align:left;
+background:none;
+border:none;
+font-family:inherit;
+font-size:14px;
+font-weight:bold;
+color:#0B4AA2;
+padding:9px 12px;
+margin-bottom:6px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.toc-group-btn:hover{
+background:#EAF4FF;
+}
+
+.toc-group-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.toc-group-btn.locked{
+color:#94A3B8;
+}
+
+.toc-group-btn.locked.active{
+background:#94A3B8;
+color:#fff;
+}
+
+/* Content */
+
+.content{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.section{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.section.locked-section{
+display:none;
+}
+
+.section.toc-hidden{
+display:none;
+}
+
+.locked-message{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+text-align:center;
+padding:50px 25px;
+}
+
+.locked-message h2{
+border:none;
+padding:0;
+margin-bottom:12px;
+color:#64748B;
+}
+
+.locked-message p{
+color:#64748B;
+font-size:15px;
+line-height:1.6;
+}
+
+.section h2{
+color:#0B4AA2;
+border-left:5px solid #2196F3;
+padding-left:12px;
+margin-bottom:15px;
+}
+
+.section h3{
+color:#0B4AA2;
+margin-top:22px;
+margin-bottom:10px;
+font-size:18px;
+}
+
+.definition{
+background:#EAF4FF;
+padding:18px;
+border-left:6px solid #0B4AA2;
+border-radius:10px;
+margin:18px 0;
+}
+
+.note{
+background:#FFF8E6;
+padding:15px;
+border-left:5px solid orange;
+border-radius:8px;
+margin-top:15px;
+}
+
+.diagram-img{
+max-width:100%;
+height:auto;
+object-fit:contain;
+display:block;
+margin:20px auto;
+border:1px solid #E3EAF4;
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+.fig-caption{
+text-align:center;
+font-size:13px;
+color:#64748B;
+margin-top:-6px;
+margin-bottom:10px;
+}
+
+.comparison{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+font-size:15px;
+}
+
+.comparison th{
+background:#0B4AA2;
+color:white;
+padding:14px;
+}
+
+.comparison td{
+border:1px solid #DCE5F0;
+padding:14px;
+vertical-align:top;
+}
+
+.comparison tr:nth-child(even){
+background:#F8FBFF;
+}
+
+.part-banner{
+background:#17345E;
+color:white;
+font-size:15px;
+font-weight:bold;
+letter-spacing:.4px;
+padding:12px 22px;
+border-radius:12px;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:30px;
+color:#64748B;
+font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.toc{
+position:relative;
+top:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+// ===============================
+// TEACHER / STUDENT MODE
+// ===============================
+
+// true  = Teacher (all sections visible)
+// false = Student (GitHub Live)
+const teacherMode = false;
+
+// Unlock complete sections
+// 1 = Semiconductor Basics & PN Junction Diode
+const unlockedSection = 1;
+
+</script>
+
+<header>
+<h1>UNIT 3 : Semiconductor Basics &amp; PN Junction Diode</h1>
+<p>Fundamentals of Electrical & Electronics Engineering</p>
+</header>
+
+<div class="container">
+
+<!-- LEFT PALETTE -->
+
+<aside class="toc">
+
+<h3>📘 Unit 3 Contents</h3>
+
+<button type="button" class="toc-group-btn" data-section-jump="1">Section 1</button>
+
+<a href="#semiconductor-basics">3.1 Semiconductor Basics</a>
+<a href="#pn-diode-intro">3.2 PN Junction Diode — Introduction &amp; Construction</a>
+<a href="#pn-diode-working">3.3 Working of PN Junction Diode</a>
+<a href="#pn-diode-applications">3.4 Applications of PN Junction Diode</a>
+
+<hr style="margin:14px 0;">
+
+<p style="font-size:12px;color:#94A3B8;padding:0 12px;">LED, Zener Diode, Rectifiers &amp; Comparison — coming soon</p>
+
+<hr style="margin:14px 0;">
+
+<a href="unit2.html">⬅ Unit 2 – DC Motor &amp; Transformers</a>
+<a href="../index.html">🏠 Back to Home</a>
+
+</aside>
+
+<!-- RIGHT CONTENT -->
+
+<div class="content">
+
+<!-- Semiconductor Basics -->
+<div class="section" id="semiconductor-basics" data-section="1" data-toc-section="1">
+
+<h2>3.1 Semiconductor Basics</h2>
+
+<div class="definition">
+<b>Definition</b>
+<p style="margin-top:10px;">
+A <b>semiconductor</b> is a material whose electrical conductivity lies between that of a conductor and an insulator. Its conductivity can be controlled by <b>doping, temperature, light and applied electric fields</b>. Common examples are <b>silicon (Si)</b> and <b>germanium (Ge)</b>. Semiconductor materials form the foundation of diodes, transistors, integrated circuits, sensors and solar cells.
+</p>
+</div>
+
+<table class="comparison">
+<tr><th>Material</th><th>Electrical Behaviour</th><th>Examples</th></tr>
+<tr><td>Conductor</td><td>High availability of mobile charge carriers</td><td>Copper, aluminium</td></tr>
+<tr><td>Semiconductor</td><td>Controllable conductivity</td><td>Silicon, germanium</td></tr>
+<tr><td>Insulator</td><td>Very low conductivity under ordinary conditions</td><td>Glass, rubber</td></tr>
+</table>
+
+<p style="margin-top:18px;">
+Silicon and germanium are <b>group-IV materials</b> with four valence electrons. In a pure crystal, each atom shares its valence electrons with four neighbouring atoms, forming <b>covalent bonds</b>. At low temperatures, few mobile carriers exist; at room temperature, thermal energy creates some free electrons and holes. Semiconductor material has two main types:
+</p>
+
+<h3>Intrinsic Semiconductor</h3>
+<div class="definition">
+<p>An <b>intrinsic semiconductor</b> is a pure semiconductor without intentional impurity doping.</p>
+</div>
+
+<h3>Extrinsic Semiconductor and Doping</h3>
+<p>
+<b>Doping</b> means deliberately adding a controlled, small concentration of impurity atoms to a pure semiconductor to increase its conductivity. The resulting material is an <b>extrinsic semiconductor</b>. The two types are <b>N-type</b> and <b>P-type</b>.
+</p>
+
+<div class="note">
+<b>N-type semiconductor:</b> A pentavalent donor impurity, such as <b>phosphorus or arsenic</b>, provides an additional electron. <b>Electrons are the majority carriers; holes are the minority carriers.</b> Despite the free electrons, the bulk semiconductor remains electrically neutral.
+</div>
+
+<div class="note">
+<b>P-type semiconductor:</b> A trivalent acceptor impurity, such as <b>boron or aluminium</b>, leaves an unfilled covalent bond represented as a hole. <b>Holes are the majority carriers; electrons are the minority carriers.</b> The bulk crystal remains electrically neutral.
+</div>
+
+<table class="comparison">
+<tr><th>Feature</th><th>P-type</th><th>N-type</th></tr>
+<tr><td>Dopant</td><td>Trivalent acceptor</td><td>Pentavalent donor</td></tr>
+<tr><td>Example impurity</td><td>Boron</td><td>Phosphorus</td></tr>
+<tr><td>Majority carriers</td><td>Holes</td><td>Electrons</td></tr>
+<tr><td>Minority carriers</td><td>Electrons</td><td>Holes</td></tr>
+</table>
+
+</div>
+
+<!-- PN Junction Diode - Intro & Construction -->
+<section class="section" id="pn-diode-intro" data-toc-section="1">
+
+<h2>3.2 PN Junction Diode — Introduction &amp; Construction</h2>
+
+<h3>Introduction</h3>
+<p>
+A diode, or <b>PN junction diode</b>, is also called a <b>semiconductor diode</b>, as Si and Ge are the two popular semiconductor materials used in the diode. It has two (di) terminals (electrodes): a terminal with <b>+ charge called the Anode</b>, denoted by the letter <b>A</b>, and a <b>– charge terminal called the Cathode</b>, denoted by the letter <b>C (K)</b>.
+</p>
+<div class="note">
+Diodes are used as a <b>switch</b>. A switch has two functions — ON and OFF; in the same way, a diode also acts as an ON switch and an OFF switch depending on the biasing conditions.
+</div>
+
+<p>Its schematic symbol and physical structure are given below:</p>
+
+<img class="diagram-img" src="../assets/images/unit3/diode-symbol-and-physical.png" style="max-width:720px;" alt="Schematic symbol of a diode showing anode and cathode with triangle pointing to the cathode line, next to a physical 1N4007 diode with anode and cathode marked, cathode indicated by a silver stripe">
+<p class="fig-caption">Fig 3.1 — Schematic symbol of a diode (left) and the physical 1N4007 diode (right), with anode and cathode marked</p>
+
+<div class="definition">
+A diode is a <b>two-terminal semiconductor device</b> that allows electric current to flow primarily in one direction and opposes current flow in the opposite direction.
+</div>
+
+<p>
+A commonly used semiconductor diode, such as the <b>1N4007</b> rectifier diode, has a small cylindrical body, generally black in colour, with two metallic terminals — usually made of a material like aluminium or copper — extending from opposite ends, called terminals, leads or electrodes.
+</p>
+
+<h3>Construction</h3>
+<ul style="margin:10px 0 0 22px;">
+<li>A PN junction diode is made up of two types of material: <b>P-type and N-type</b>.</li>
+<li>In P-type material, because of trivalent impurities, <b>holes act as majority charge carriers</b>, whereas electrons act as minority charge carriers.</li>
+<li>Similarly, in N-type material, because of pentavalent impurities, <b>electrons act as majority charge carriers</b> and holes are minority charge carriers.</li>
+<li>The point at which these two different P and N types come together is called the <b>junction</b>.</li>
+<li>At the junction, negative charged ions accumulate near the junction on the P side, and positive charged ions accumulate near the junction on the N side. Hence a region forms near the junction which is called the <b>depletion region</b>, and the potential associated with it is called the <b>barrier potential</b>.</li>
+<li>The diode has two electrodes, anode and cathode, made from conducting material like aluminium and copper.</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit3/pn-junction-construction.png" style="max-width:780px;" alt="PN Junction Diode Construction: P-type region with holes as majority carriers and electrons as minority carriers, N-type region with electrons as majority carriers and holes as minority carriers, junction in the middle with negative ions on the P side and positive ions on the N side forming the depletion region">
+<p class="fig-caption">Fig 3.2 — Construction of a PN junction diode, showing the P-type and N-type regions, the junction and the depletion region</p>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Good to know:</b> The barrier potential (knee / cut-in voltage) of a PN junction is typically about <b>0.7 V for silicon</b> and about <b>0.3 V for germanium</b> at room temperature — this is why silicon diodes like the 1N4007 are the most commonly used in practice.
+</div>
+
+</section>
+
+<!-- Working -->
+<section class="section" id="pn-diode-working" data-toc-section="1">
+
+<h2>3.3 Working of PN Junction Diode</h2>
+
+<h3>(1) Forward Biasing</h3>
+<p>
+If the P region/anode is connected to the positive terminal of the battery and the N side, i.e. the cathode of the diode, is connected to the negative terminal of the external DC source, then this biasing is said to be <b>forward biasing</b>.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>Due to the positive terminal of the external source connected to the P region, electrons from the N side are pushed towards the P side. Similarly, the positive end of the supply pushes holes from the P side toward the N side.</li>
+<li>With an increase in the external supply voltage, more and more holes and electrons start travelling towards the junction. The holes start converting the negative ions into neutral atoms, and the electrons convert the positive ions into neutral atoms. As a result, the width of the depletion region is reduced.</li>
+<li>Due to the reduction in depletion region width, the barrier potential also reduces. Eventually, at a particular value, this depletion region collapses, and hence a large number of electron and hole majority carriers cross the junction and a continuous current flows through it. This is known as the <b>forward current</b>.</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit3/forward-bias-working.png" style="max-width:780px;" alt="Forward Bias PN Junction Diode Working: holes from the P-type move toward the junction and electrons from the N-type move toward the junction, narrowing the depletion region and allowing current to flow, with the DC supply positive terminal connected to the anode and negative terminal connected to the cathode">
+<p class="fig-caption">Fig 3.3 — Working of a PN junction diode under forward bias: the depletion region narrows and current flows</p>
+
+<h3>(2) Reverse Biasing</h3>
+<p>
+If the P region of a diode is connected to the negative terminal of the external DC source and the N region is connected to the positive terminal of the supply, then the diode is said to be <b>reverse biased</b>.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>The reverse current flows exactly in the opposite direction to that of the forward current. When a diode is reverse biased, majority carriers in the P region are attracted towards the negative terminal of the supply and majority carriers on the N side are attracted towards the positive terminal of the supply.</li>
+<li>Due to the movement of electrons and holes away from the junction, the width of the depletion region increases.</li>
+<li>Due to that, the barrier potential also increases. Because of that, no forward current flows through the diode, but because of thermally generated minority charge carriers, a very small current flows through the diode — this current is known as the <b>reverse current or reverse saturation current</b>.</li>
+<li>With a further increase in the applied reverse voltage, because of the avalanche effect, breakdown occurs — this is known as <b>avalanche breakdown</b>.</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit3/reverse-bias-working.png" style="max-width:780px;" alt="Reverse Bias PN Junction Diode Working: holes in the P-type and electrons in the N-type move away from the junction, widening the depletion region, with the reverse bias supply negative terminal connected to the anode and positive terminal connected to the cathode">
+<p class="fig-caption">Fig 3.4 — Working of a PN junction diode under reverse bias: the depletion region widens and only a small reverse saturation current flows</p>
+
+</section>
+
+<!-- Applications -->
+<section class="section" id="pn-diode-applications" data-toc-section="1">
+
+<h2>3.4 Applications of PN Junction Diode</h2>
+
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>In rectifier circuits.</li>
+<li>In voltage multipliers.</li>
+<li>As a feedback diode.</li>
+<li>As a freewheeling diode.</li>
+<li>In AM detection.</li>
+</ol>
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Coming up next in Unit 3:</b> LED, Zener Diode, and the Half Wave, Full Wave and Bridge Rectifiers — which put the first application above (rectifier circuits) into practice.
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (teacherMode) return;
+
+  const lockedGroups = new Set();
+
+  document.querySelectorAll(".section[data-section]").forEach((section) => {
+    if (Number(section.dataset.section) > unlockedSection) {
+      section.classList.add("locked-section");
+      section.setAttribute("aria-hidden", "true");
+
+      const groupNum = section.dataset.tocSection;
+      if (groupNum && !lockedGroups.has(groupNum)) {
+        lockedGroups.add(groupNum);
+
+        const message = document.createElement("div");
+        message.className = "section locked-message";
+        message.dataset.tocSection = groupNum;
+        message.innerHTML =
+          "<h2>🔒 Section " + groupNum + " is Locked</h2>" +
+          "<p>This section will be unlocked here once it has been delivered in class.</p>";
+        section.after(message);
+
+        const groupBtn = document.querySelector('.toc-group-btn[data-section-jump="' + groupNum + '"]');
+        if (groupBtn) {
+          groupBtn.classList.add("locked");
+          groupBtn.textContent += " 🔒";
+        }
+      }
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const groups = document.querySelectorAll(".section[data-toc-section]");
+  const groupButtons = document.querySelectorAll(".toc-group-btn");
+
+  function showTocSection(num) {
+    groups.forEach((section) => {
+      section.classList.toggle("toc-hidden", section.dataset.tocSection !== String(num));
+    });
+    groupButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.sectionJump === String(num));
+    });
+  }
+
+  groupButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const num = btn.dataset.sectionJump;
+      showTocSection(num);
+      const target =
+        document.querySelector('.locked-message[data-toc-section="' + num + '"]') ||
+        document.querySelector('.section[data-toc-section="' + num + '"]:not(.locked-section)');
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  document.querySelectorAll(".toc a[href^='#']").forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.getAttribute("href").slice(1));
+      const group = target ? target.closest("[data-toc-section]") : null;
+      if (group) showTocSection(group.dataset.tocSection);
+    });
+  });
+
+  showTocSection("1");
+});
+</script>
+
+</body>
+</html>
