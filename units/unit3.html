@@ -311,8 +311,16 @@ const unlockedSection = 2;
 <a href="#pn-diode-working" style="padding-left:22px;">3.2.2 Working of PN Junction Diode</a>
 <a href="#pn-diode-vi" style="padding-left:22px;">3.2.3 V-I Characteristics</a>
 <a href="#pn-diode-applications" style="padding-left:22px;">3.2.4 Applications</a>
-<a href="#led">3.3 Light Emitting Diode (LED)</a>
-<a href="#zener-diode">3.4 Zener Diode</a>
+<p style="font-size:12px;font-weight:bold;color:#0B4AA2;padding:8px 12px 2px;">3.3 Light Emitting Diode (LED)</p>
+<a href="#led-intro" style="padding-left:22px;">3.3.1 Introduction to LED</a>
+<a href="#led-construction" style="padding-left:22px;">3.3.2 Construction of LED</a>
+<a href="#led-working" style="padding-left:22px;">3.3.3 Working Principle of LED</a>
+<a href="#led-applications" style="padding-left:22px;">3.3.4 Applications of LED</a>
+<p style="font-size:12px;font-weight:bold;color:#0B4AA2;padding:8px 12px 2px;">3.4 Zener Diode</p>
+<a href="#zener-intro" style="padding-left:22px;">3.4.1 Introduction to Zener Diode</a>
+<a href="#zener-operating" style="padding-left:22px;">3.4.2 Operating Principle</a>
+<a href="#zener-vi" style="padding-left:22px;">3.4.3 V-I Characteristics</a>
+<a href="#zener-regulator" style="padding-left:22px;">3.4.4 Application as Voltage Regulator</a>
 
 <hr style="margin:14px 0;">
 
@@ -538,7 +546,7 @@ When the P-type semiconductor (anode) is connected to the negative terminal and 
 
 <h2>3.3 Light Emitting Diode (LED)</h2>
 
-<h3>3.3.1 Introduction to LED</h3>
+<h3 id="led-intro">3.3.1 Introduction to LED</h3>
 <p>
 A <b>Light Emitting Diode (LED)</b> is a special type of PN junction diode that emits light when electrical energy is applied to it. An LED has two terminals called the <b>Anode (A)</b> and <b>Cathode (K)</b>. The anode is connected to the P-type semiconductor, whereas the cathode is connected to the N-type semiconductor.
 </p>
@@ -546,7 +554,7 @@ A <b>Light Emitting Diode (LED)</b> is a special type of PN junction diode that 
 An LED works on the principle of <b>electroluminescence</b>, in which electrical energy is converted into light energy. For proper operation, the LED is connected in <b>forward bias</b>, i.e. the anode is connected to the positive terminal and the cathode is connected to the negative terminal of a DC supply. When the LED is forward biased, current flows through the junction and light is emitted.
 </div>
 
-<h3>3.3.2 Construction of LED</h3>
+<h3 id="led-construction">3.3.2 Construction of LED</h3>
 <ul style="margin:10px 0 0 22px;">
 <li>An LED is constructed using a PN junction made from special semiconductor materials that can emit light.</li>
 <li>One commonly used method of LED construction is to deposit three semiconductor layers on a suitable substrate. These layers consist of the <b>P-type region, active region and N-type region</b>.</li>
@@ -573,7 +581,7 @@ An LED works on the principle of <b>electroluminescence</b>, in which electrical
 Silicon and Germanium are generally <b>not used</b> for manufacturing light-emitting diodes because they are inefficient at producing visible light.
 </div>
 
-<h3>3.3.3 Working Principle of LED</h3>
+<h3 id="led-working">3.3.3 Working Principle of LED</h3>
 <p>
 The LED works on the principle of <b>electroluminescence</b>, which means the emission of light due to electrical energy.
 </p>
@@ -592,7 +600,7 @@ The LED works on the principle of <b>electroluminescence</b>, which means the em
 <b>Good to know:</b> Unlike an ordinary silicon rectifier diode (cut-in ≈ 0.7 V), an LED's forward voltage drop is much higher — typically about 1.8 V to 3.3 V depending on its colour/material — because the forbidden energy gap (and hence the photon energy, and so the colour of light) is different for each semiconductor material used.
 </div>
 
-<h3>3.3.4 Applications of LED</h3>
+<h3 id="led-applications">3.3.4 Applications of LED</h3>
 <div class="definition">
 <p>The common applications of LEDs are:</p>
 <ul style="margin:10px 0 0 22px;">
@@ -611,7 +619,7 @@ The LED works on the principle of <b>electroluminescence</b>, which means the em
 
 <h2>3.4 Zener Diode</h2>
 
-<h3>3.4.1 Introduction to Zener Diode</h3>
+<h3 id="zener-intro">3.4.1 Introduction to Zener Diode</h3>
 <p>
 A <b>Zener diode</b> is a special type of PN junction semiconductor diode designed to operate safely in the <b>reverse breakdown region</b>. The construction of a Zener diode is similar to that of an ordinary PN junction diode; however, the doping concentration of impurities is controlled to obtain the required reverse breakdown voltage.
 </p>
@@ -622,7 +630,7 @@ The reverse breakdown voltage of a Zener diode can be selected during manufactur
 <img class="diagram-img" src="../assets/images/unit3/zener-diode-symbol.png" style="max-width:420px;" alt="Symbol of Zener diode showing anode and cathode, with the cathode bar bent at both ends like a Z">
 <p class="fig-caption">Fig 3.9 — Circuit symbol of a Zener diode</p>
 
-<h3>3.4.2 Operating Principle of Zener Diode</h3>
+<h3 id="zener-operating">3.4.2 Operating Principle of Zener Diode</h3>
 <p>A Zener diode can operate in both forward-bias and reverse-bias conditions.</p>
 
 <h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(A) Forward-Bias Operation of Zener Diode</h4>
@@ -644,7 +652,7 @@ When the cathode of a Zener diode is connected to the positive terminal and the 
 </ul>
 <p>This property of maintaining an almost constant voltage makes the Zener diode useful for voltage regulation. A <b>current-limiting resistor</b> is connected in series with the Zener diode to protect it from excessive current during breakdown.</p>
 
-<h3>3.4.3 V-I Characteristics of Zener Diode</h3>
+<h3 id="zener-vi">3.4.3 V-I Characteristics of Zener Diode</h3>
 <p>The V-I characteristics of a Zener diode represent the relationship between the voltage applied across the diode and the current flowing through it, divided into forward-bias and reverse-bias characteristics.</p>
 
 <h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(A) Forward-Bias Characteristics</h4>
@@ -665,7 +673,7 @@ When a Zener diode is connected in reverse bias, initially a very small current 
 <p style="margin-top:10px;">The reverse voltage at which a Zener diode starts conducting a large reverse current and maintains an almost constant voltage across its terminals is called the <b>Zener breakdown voltage (or Zener voltage, V<sub>Z</sub>)</b>. The Zener voltage can be controlled during manufacturing by changing the doping concentration of the semiconductor material.</p>
 </div>
 
-<h3>3.4.4 Application of Zener Diode as a Voltage Regulator</h3>
+<h3 id="zener-regulator">3.4.4 Application of Zener Diode as a Voltage Regulator</h3>
 <p>
 A Zener diode is commonly used as a <b>voltage regulator</b> to maintain an almost constant output voltage. For voltage regulation, the Zener diode is connected in <b>reverse bias across the load</b>, and a <b>current-limiting resistor</b> is connected in series with the DC supply.
 </p>
