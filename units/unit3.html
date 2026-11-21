@@ -307,11 +307,14 @@ const unlockedSection = 1;
 <a href="#semiconductor-basics">3.1 Semiconductor Basics</a>
 <a href="#pn-diode-intro">3.2 PN Junction Diode — Introduction &amp; Construction</a>
 <a href="#pn-diode-working">3.3 Working of PN Junction Diode</a>
-<a href="#pn-diode-applications">3.4 Applications of PN Junction Diode</a>
+<a href="#pn-diode-vi">3.4 V-I Characteristics of PN Junction Diode</a>
+<a href="#pn-diode-applications">3.5 Applications of PN Junction Diode</a>
+<a href="#led">3.6 Light Emitting Diode (LED)</a>
+<a href="#zener-diode">3.7 Zener Diode</a>
 
 <hr style="margin:14px 0;">
 
-<p style="font-size:12px;color:#94A3B8;padding:0 12px;">LED, Zener Diode, Rectifiers &amp; Comparison — coming soon</p>
+<p style="font-size:12px;color:#94A3B8;padding:0 12px;">Rectifiers, Half Wave, Full Wave, Bridge Rectifier &amp; Comparison — coming soon</p>
 
 <hr style="margin:14px 0;">
 
@@ -454,10 +457,59 @@ If the P region of a diode is connected to the negative terminal of the external
 
 </section>
 
+<!-- V-I Characteristics -->
+<section class="section" id="pn-diode-vi" data-toc-section="1">
+
+<h2>3.4 V-I Characteristics of PN Junction Diode</h2>
+
+<p>
+The V-I (Voltage-Current) characteristics of a PN junction diode represent the relationship between the voltage applied across the diode and the current flowing through it. The V-I characteristics are obtained by plotting a graph of applied voltage (V) on the X-axis and current (I) on the Y-axis. The V-I characteristics of a PN junction diode are divided into two parts: <b>forward-bias characteristics</b> and <b>reverse-bias characteristics</b>.
+</p>
+
+<h3>1. Forward-Bias Characteristics</h3>
+<p>
+When the P-type semiconductor (anode) is connected to the positive terminal and the N-type semiconductor (cathode) is connected to the negative terminal of a DC supply, the diode is said to be forward biased.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>In forward bias, the depletion region becomes narrower, allowing the majority charge carriers to move towards the junction.</li>
+<li>Initially, when a small forward voltage is applied, a very small current flows through the diode because the applied voltage is insufficient to overcome the barrier potential of the junction.</li>
+<li>As the forward voltage increases, the depletion region becomes narrower and the forward current increases slowly.</li>
+<li>When the applied forward voltage reaches a certain value called the <b>cut-in voltage or knee voltage</b>, the diode starts conducting a significant amount of current.</li>
+<li>After reaching the cut-in voltage, even a small increase in forward voltage causes a rapid increase in forward current. The current increases exponentially with the applied forward voltage.</li>
+</ul>
+<p>The forward-bias characteristics are represented in the <b>first quadrant</b> of the V-I characteristics graph.</p>
+
+<div class="definition">
+<b>Cut-in Voltage or Knee Voltage</b>
+<p style="margin-top:10px;">The forward voltage at which the diode starts conducting significant current is called the cut-in voltage or knee voltage. The approximate cut-in voltage is:</p>
+<ul style="margin:10px 0 0 22px;">
+<li><b>Germanium (Ge) diode:</b> ≈ 0.3 V</li>
+<li><b>Silicon (Si) diode:</b> ≈ 0.7 V</li>
+</ul>
+</div>
+
+<h3>2. Reverse-Bias Characteristics</h3>
+<p>
+When the P-type semiconductor (anode) is connected to the negative terminal and the N-type semiconductor (cathode) is connected to the positive terminal of a DC supply, the diode is said to be reverse biased.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>In reverse bias, the majority charge carriers — i.e. holes in the P-type region and electrons in the N-type region — move away from the junction towards their respective terminals.</li>
+<li>Due to this movement, the depletion region becomes wider, which opposes the flow of majority charge carriers through the diode.</li>
+<li>Initially, when a small reverse voltage is applied, a very small current flows through the diode due to minority charge carriers. This current is called the <b>reverse saturation current (I<sub>S</sub>)</b>.</li>
+<li>As the reverse voltage increases, the reverse saturation current remains almost constant, provided the temperature remains constant.</li>
+<li>When the reverse voltage reaches a certain value called the <b>reverse breakdown voltage (V<sub>BR</sub>)</b>, the reverse current increases suddenly and rapidly. This condition is known as <b>reverse breakdown</b>. In an ordinary PN junction diode, excessive reverse current during breakdown may damage the diode due to overheating.</li>
+</ul>
+<p>The reverse-bias characteristics are represented in the <b>third quadrant</b> of the V-I characteristics graph.</p>
+
+<img class="diagram-img" src="../assets/images/unit3/diode-vi-characteristics.png" style="max-width:780px;" alt="V-I Characteristics of PN Junction Diode: forward bias curve for Ge diode with cut-in voltage approximately 0.3 V and Si diode with cut-in voltage approximately 0.7 V, reverse bias curve showing reverse saturation current Is staying almost constant until the breakdown voltage VBR where current increases sharply">
+<p class="fig-caption">Fig 3.5 — V-I characteristics of a PN junction diode: forward bias (Ge ≈ 0.3 V, Si ≈ 0.7 V) and reverse bias (I<sub>S</sub>, V<sub>BR</sub>) shown together</p>
+
+</section>
+
 <!-- Applications -->
 <section class="section" id="pn-diode-applications" data-toc-section="1">
 
-<h2>3.4 Applications of PN Junction Diode</h2>
+<h2>3.5 Applications of PN Junction Diode</h2>
 
 <div class="definition">
 <ol style="margin-left:18px;">
@@ -469,8 +521,156 @@ If the P region of a diode is connected to the negative terminal of the external
 </ol>
 </div>
 
+</section>
+
+<!-- LED -->
+<section class="section" id="led" data-toc-section="1">
+
+<h2>3.6 Light Emitting Diode (LED)</h2>
+
+<h3>3.6.1 Introduction to LED</h3>
+<p>
+A <b>Light Emitting Diode (LED)</b> is a special type of PN junction diode that emits light when electrical energy is applied to it. An LED has two terminals called the <b>Anode (A)</b> and <b>Cathode (K)</b>. The anode is connected to the P-type semiconductor, whereas the cathode is connected to the N-type semiconductor.
+</p>
+<div class="definition">
+An LED works on the principle of <b>electroluminescence</b>, in which electrical energy is converted into light energy. For proper operation, the LED is connected in <b>forward bias</b>, i.e. the anode is connected to the positive terminal and the cathode is connected to the negative terminal of a DC supply. When the LED is forward biased, current flows through the junction and light is emitted.
+</div>
+
+<h3>3.6.2 Construction of LED</h3>
+<ul style="margin:10px 0 0 22px;">
+<li>An LED is constructed using a PN junction made from special semiconductor materials that can emit light.</li>
+<li>One commonly used method of LED construction is to deposit three semiconductor layers on a suitable substrate. These layers consist of the <b>P-type region, active region and N-type region</b>.</li>
+<li>The <b>active region</b> is located between the P-type and N-type semiconductor layers. This is the region where electrons and holes recombine to produce light.</li>
+<li>The semiconductor chip is placed inside a small <b>reflective cup</b>, which helps to direct the emitted light in the required direction.</li>
+<li>The entire arrangement is enclosed in a <b>transparent epoxy resin case</b>, which protects the semiconductor chip and acts as a lens to focus the emitted light.</li>
+<li>The LED has two external terminals: Anode (A) and Cathode (K).</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit3/led-construction-layers.png" style="max-width:480px;" alt="Construction of LED showing layered structure: p-region, active region, n-region and substrate, with anode connected to the top positive terminal and cathode to the bottom negative terminal">
+<p class="fig-caption">Fig 3.6 — Layered construction of an LED: P-region, active region, N-region and substrate</p>
+
+<img class="diagram-img" src="../assets/images/unit3/led-physical-structure.png" style="max-width:480px;" alt="Physical structure of an LED showing the small reflective cup, basic layered structure, transparent epoxy dome, and anode and cathode leads, with light rays emerging from the top">
+<p class="fig-caption">Fig 3.7 — Physical structure of an LED, showing the reflective cup and epoxy lens</p>
+
+<h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">Semiconductor Materials Used in LEDs</h4>
+<p>LEDs are manufactured using semiconductor materials such as:</p>
+<ul style="margin:10px 0 0 22px;">
+<li>Gallium Arsenide (GaAs)</li>
+<li>Gallium Arsenide Phosphide (GaAsP)</li>
+<li>Gallium Phosphide (GaP)</li>
+</ul>
+<div class="note">
+Silicon and Germanium are generally <b>not used</b> for manufacturing light-emitting diodes because they are inefficient at producing visible light.
+</div>
+
+<h3>3.6.3 Working Principle of LED</h3>
+<p>
+The LED works on the principle of <b>electroluminescence</b>, which means the emission of light due to electrical energy.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>When an LED is connected in forward bias, the electrons present in the N-type semiconductor move towards the P-type region, while holes move towards the N-type region.</li>
+<li>The electrons present in the conduction band have higher energy than the holes in the valence band.</li>
+<li>When electrons combine with holes in the active region, the electrons move from a higher energy level (conduction band) to a lower energy level (valence band).</li>
+<li>During this recombination process, the electrons release their excess energy in the form of light. This process is called <b>electroluminescence</b>.</li>
+</ul>
+<p>Thus, an LED converts electrical energy into light energy when it is operated under forward-bias conditions. The <b>colour of the emitted light</b> depends on the semiconductor material used in the construction of the LED.</p>
+
+<img class="diagram-img" src="../assets/images/unit3/led-working-principle.png" style="max-width:620px;" alt="Principle of operation of LED: an electron falls from the conduction band across the forbidden energy gap and recombines with a hole in the valence band, releasing the energy as light output">
+<p class="fig-caption">Fig 3.8 — Principle of operation of an LED: recombination of an electron and hole across the forbidden energy gap releases light</p>
+
 <div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
-<b>Coming up next in Unit 3:</b> LED, Zener Diode, and the Half Wave, Full Wave and Bridge Rectifiers — which put the first application above (rectifier circuits) into practice.
+<b>Good to know:</b> Unlike an ordinary silicon rectifier diode (cut-in ≈ 0.7 V), an LED's forward voltage drop is much higher — typically about 1.8 V to 3.3 V depending on its colour/material — because the forbidden energy gap (and hence the photon energy, and so the colour of light) is different for each semiconductor material used.
+</div>
+
+<h3>3.6.4 Applications of LED</h3>
+<div class="definition">
+<p>The common applications of LEDs are:</p>
+<ul style="margin:10px 0 0 22px;">
+<li>LEDs are used in optocouplers for transferring signals between electrically isolated circuits.</li>
+<li>LEDs are used in infrared remote controls.</li>
+<li>LEDs are used as indicators in electronic circuits.</li>
+<li>LEDs are used in seven-segment displays.</li>
+<li>LEDs are used in alphanumeric displays.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- Zener Diode -->
+<section class="section" id="zener-diode" data-toc-section="1">
+
+<h2>3.7 Zener Diode</h2>
+
+<h3>3.7.1 Introduction to Zener Diode</h3>
+<p>
+A <b>Zener diode</b> is a special type of PN junction semiconductor diode designed to operate safely in the <b>reverse breakdown region</b>. The construction of a Zener diode is similar to that of an ordinary PN junction diode; however, the doping concentration of impurities is controlled to obtain the required reverse breakdown voltage.
+</p>
+<div class="definition">
+The reverse breakdown voltage of a Zener diode can be selected during manufacturing — typically ranging from about <b>3 V to 200 V</b>. Unlike an ordinary PN junction diode, a Zener diode is specially designed to operate in the reverse breakdown region <b>without damage</b>, provided its current and power limits are maintained. A Zener diode is commonly used as a <b>voltage regulator</b> because it can maintain an almost constant voltage across its terminals in the breakdown region.
+</div>
+
+<img class="diagram-img" src="../assets/images/unit3/zener-diode-symbol.png" style="max-width:420px;" alt="Symbol of Zener diode showing anode and cathode, with the cathode bar bent at both ends like a Z">
+<p class="fig-caption">Fig 3.9 — Circuit symbol of a Zener diode</p>
+
+<h3>3.7.2 Operating Principle of Zener Diode</h3>
+<p>A Zener diode can operate in both forward-bias and reverse-bias conditions.</p>
+
+<h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(A) Forward-Bias Operation of Zener Diode</h4>
+<p>
+When the anode of a Zener diode is connected to the positive terminal and the cathode is connected to the negative terminal of a DC supply, the Zener diode is said to be forward biased. In this condition, the Zener diode behaves like an ordinary PN junction diode: initially a very small current flows, and as the applied forward voltage increases and reaches the cut-in voltage, the current starts increasing rapidly.
+</p>
+<div class="note">
+The forward-bias characteristics of a Zener diode are almost identical to those of an ordinary PN junction diode. Generally, Zener diodes are <b>not used in forward-bias conditions</b> for voltage regulation.
+</div>
+
+<h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(B) Reverse-Bias Operation of Zener Diode</h4>
+<p>
+When the cathode of a Zener diode is connected to the positive terminal and the anode is connected to the negative terminal of a DC supply, the Zener diode is said to be reverse biased.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>Initially, when a small reverse voltage is applied, a very small reverse saturation current flows through the diode due to minority charge carriers.</li>
+<li>As the reverse voltage increases, the reverse current remains almost constant until the applied voltage reaches the <b>Zener breakdown voltage</b>.</li>
+<li>When the reverse voltage reaches this value, the diode enters the breakdown region, and the reverse current increases suddenly. After breakdown, the <b>voltage across the Zener diode remains almost constant at the Zener voltage</b>, even if the reverse current increases.</li>
+</ul>
+<p>This property of maintaining an almost constant voltage makes the Zener diode useful for voltage regulation. A <b>current-limiting resistor</b> is connected in series with the Zener diode to protect it from excessive current during breakdown.</p>
+
+<h3>3.7.3 V-I Characteristics of Zener Diode</h3>
+<p>The V-I characteristics of a Zener diode represent the relationship between the voltage applied across the diode and the current flowing through it, divided into forward-bias and reverse-bias characteristics.</p>
+
+<h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(A) Forward-Bias Characteristics</h4>
+<p>
+When a Zener diode is connected in forward bias, its V-I characteristics are almost identical to those of an ordinary PN junction diode: initially very little current flows, and as the applied forward voltage increases and reaches the cut-in voltage, the forward current starts increasing rapidly. The forward characteristics are represented in the <b>first quadrant</b> of the V-I characteristics graph.
+</p>
+
+<h4 style="color:#0B4AA2;margin-top:18px;margin-bottom:8px;font-size:16px;">(B) Reverse-Bias Characteristics</h4>
+<p>
+When a Zener diode is connected in reverse bias, initially a very small current called the <b>reverse saturation current (I<sub>S</sub>)</b> flows through the diode due to minority charge carriers. As the reverse voltage increases, the reverse current remains almost constant until the breakdown voltage is reached. When the reverse voltage reaches the <b>Zener breakdown voltage</b>, the reverse current increases suddenly and rapidly. After breakdown, the voltage across the Zener diode remains almost constant, even when the reverse current changes — so the Zener diode maintains a nearly constant voltage across its terminals in the breakdown region. The reverse characteristics are represented in the <b>third quadrant</b> of the V-I characteristics graph.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit3/zener-vi-characteristics.png" style="max-width:720px;" alt="V-I characteristics of a Zener diode: forward characteristics in the first quadrant similar to an ordinary diode with a cut-in voltage, and reverse characteristics showing the knee point, the Zener region between Iz min and Iz max, and the breakdown voltage Vz">
+<p class="fig-caption">Fig 3.10 — V-I characteristics of a Zener diode, showing the knee point and the Zener (breakdown) region between I<sub>Z min</sub> and I<sub>Z max</sub></p>
+
+<div class="definition">
+<b>Zener Breakdown Voltage</b>
+<p style="margin-top:10px;">The reverse voltage at which a Zener diode starts conducting a large reverse current and maintains an almost constant voltage across its terminals is called the <b>Zener breakdown voltage (or Zener voltage, V<sub>Z</sub>)</b>. The Zener voltage can be controlled during manufacturing by changing the doping concentration of the semiconductor material.</p>
+</div>
+
+<h3>3.7.4 Application of Zener Diode as a Voltage Regulator</h3>
+<p>
+A Zener diode is commonly used as a <b>voltage regulator</b> to maintain an almost constant output voltage. For voltage regulation, the Zener diode is connected in <b>reverse bias across the load</b>, and a <b>current-limiting resistor</b> is connected in series with the DC supply.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>When the input voltage increases, the current flowing through the Zener diode increases, but the voltage across the diode remains almost constant at the Zener voltage.</li>
+<li>Similarly, when the input voltage decreases, the Zener current decreases, while the voltage across the load remains nearly constant, provided the diode continues to operate within its regulation range.</li>
+</ul>
+<p>Thus, a Zener diode is used to maintain a nearly constant DC voltage in electronic circuits.</p>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Good to know:</b> Low-voltage Zener diodes (below about 5 V) actually break down by the <b>Zener effect</b> (a very strong electric field pulling electrons directly out of covalent bonds), while higher-voltage ones (above about 5–6 V) break down by the <b>avalanche effect</b> (carriers gaining enough energy to knock loose more carriers in a chain reaction) — both are commercially called "Zener diodes" regardless of which effect actually dominates.
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Coming up next in Unit 3:</b> Rectifiers — Half Wave, Full Wave and Bridge Rectifier, and their comparison — which put the first PN junction diode application (rectifier circuits) into practice.
 </div>
 
 </section>
