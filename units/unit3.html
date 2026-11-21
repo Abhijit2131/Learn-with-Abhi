@@ -284,8 +284,9 @@ top:0;
 const teacherMode = false;
 
 // Unlock complete sections
-// 1 = Semiconductor Basics & PN Junction Diode
-const unlockedSection = 1;
+// 1 = Semiconductor Basics, PN Junction Diode, LED & Zener Diode
+// 2 = Rectifiers
+const unlockedSection = 2;
 
 </script>
 
@@ -315,7 +316,13 @@ const unlockedSection = 1;
 
 <hr style="margin:14px 0;">
 
-<p style="font-size:12px;color:#94A3B8;padding:0 12px;">Rectifiers, Half Wave, Full Wave, Bridge Rectifier &amp; Comparison — coming soon</p>
+<button type="button" class="toc-group-btn" data-section-jump="2">Section 2</button>
+
+<a href="#rectifier-intro">3.5 Rectifier — Introduction &amp; Classification</a>
+<a href="#hwr">3.6 Half Wave Rectifier</a>
+<a href="#ct-fwr">3.7 Centre-Tap Full Wave Rectifier</a>
+<a href="#bridge-rectifier">3.8 Bridge-Type Full Wave Rectifier</a>
+<a href="#rectifier-comparison">3.9 Comparison of Rectifiers</a>
 
 <hr style="margin:14px 0;">
 
@@ -672,8 +679,278 @@ A Zener diode is commonly used as a <b>voltage regulator</b> to maintain an almo
 <b>Good to know:</b> Low-voltage Zener diodes (below about 5 V) actually break down by the <b>Zener effect</b> (a very strong electric field pulling electrons directly out of covalent bonds), while higher-voltage ones (above about 5–6 V) break down by the <b>avalanche effect</b> (carriers gaining enough energy to knock loose more carriers in a chain reaction) — both are commercially called "Zener diodes" regardless of which effect actually dominates.
 </div>
 
+</section>
+
+<div class="part-banner">Section 2 — Rectifiers</div>
+
+<!-- Rectifier Introduction & Classification -->
+<section class="section" id="rectifier-intro" data-section="2" data-toc-section="2">
+
+<h2>3.5 Rectifier — Introduction &amp; Classification</h2>
+
+<div class="definition">
+<b>Definition</b>
+<p style="margin-top:10px;">
+<b>Rectification</b> is the process of converting the alternating voltage or current into the corresponding direct (DC) quantity (direct voltage or current). The input to a rectifier is an alternating (AC) voltage, whereas its output is unidirectional or DC voltage. The electronic circuit which carries out rectification is called an <b>AC rectifier</b>.
+</p>
+</div>
+
+<h3>Polarities of Transformer Voltages</h3>
+<p>
+To understand the operation of a rectifier circuit, we must know the polarities of voltages associated with the transformer.
+</p>
+<p>
+<b>Single phase AC supply voltage:</b> The primary of a transformer is connected to the single-phase AC supply available from the mains (MSEB). This supply voltage has two terminals, namely <b>Live (L)</b> and <b>Neutral (N)</b>. The voltage at the live terminal with respect to neutral is sinusoidal.
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>The <b>positive half cycle</b> extends from ωt = 0 to π radians. In this half cycle, Live (L) is positive with respect to Neutral (N), and the secondary voltage V<sub>AB</sub> is positive.</li>
+<li>The <b>negative half cycle</b> extends from ωt = π to 2π radians. L is negative with respect to N, and the secondary voltage V<sub>AB</sub> is negative.</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit3/polarities.png" style="max-width:720px;" alt="Polarities of primary and secondary voltages in the positive half cycle and the negative half cycle of the AC supply voltage">
+<p class="fig-caption">Fig 3.11 — Polarities of primary and secondary transformer voltages in the positive and negative half cycles</p>
+
+<h3>Types of Rectifiers</h3>
+<p>Rectifiers are classified as follows:</p>
+
+<div style="max-width:720px;margin:25px auto;">
+<div style="background:#17345E;color:white;text-align:center;padding:12px 18px;border-radius:10px;font-weight:bold;font-size:15px;">Rectifier</div>
+<div style="display:flex;gap:18px;margin-top:18px;align-items:flex-start;">
+<div style="flex:1;background:#EAF4FF;border:2px solid #0B4AA2;border-radius:10px;padding:16px 10px;text-align:center;font-weight:bold;color:#0B4AA2;font-size:14px;">Half Wave Rectifier</div>
+<div style="flex:1;">
+<div style="background:#EAF4FF;border:2px solid #0B4AA2;border-radius:10px;padding:16px 10px;text-align:center;font-weight:bold;color:#0B4AA2;font-size:14px;margin-bottom:12px;">Full Wave Rectifier</div>
+<div style="display:flex;gap:10px;">
+<div style="flex:1;background:#FFF8E6;border:2px solid orange;border-radius:8px;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:bold;color:#92610B;">Centre Tapped Full Wave Rectifier</div>
+<div style="flex:1;background:#FFF8E6;border:2px solid orange;border-radius:8px;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:bold;color:#92610B;">Bridge Rectifier</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- Half Wave Rectifier -->
+<section class="section" id="hwr" data-section="2" data-toc-section="2">
+
+<h2>3.6 Half Wave Rectifier</h2>
+
+<div class="definition">
+In a half wave rectifier, the rectifier is <b>ON only during one half cycle</b> of the AC supply, so output is produced only in that half cycle. The output is suppressed (zero) in the other half cycle. The conduction takes place only in one half cycle of the supply; hence the name of this circuit is the <b>half wave rectifier (HWR)</b>.
+</div>
+
+<img class="diagram-img" src="../assets/images/unit3/hwr-circuit-and-equivalent.png" style="max-width:520px;" alt="Half wave rectifier circuit with a single-phase 230V AC supply, input transformer T1, diode and load resistor RL giving the load voltage; and the equivalent circuits for the positive half cycle (diode ON) and negative half cycle (diode OFF)">
+<p class="fig-caption">Fig 3.12 — Fig. 3.3.1: Half wave rectifier circuit, with equivalent circuits for (a) the positive half cycle and (b) the negative half cycle</p>
+
+<h3>Waveform</h3>
+<img class="diagram-img" src="../assets/images/unit3/hwr-waveforms.png" style="max-width:560px;" alt="Half wave rectifier waveforms: secondary voltage VAB, load current, load voltage and voltage across the diode, showing Diode ON during the positive half cycle and Diode OFF during the negative half cycle, with 0.7 V forward drop and PIV = -Vm">
+<p class="fig-caption">Fig 3.13 — Voltage and current waveforms of a half wave rectifier</p>
+
+<h3>Operation</h3>
+
+<div class="note">
+<b>Operation in the positive half cycle of AC supply (0 – π):</b><br><br>
+In the positive half cycle (0 – π) of the AC supply, the secondary voltage V<sub>AB</sub> is positive, i.e. A is positive with respect to B. Hence the diode is forward biased and starts conducting. As the diode starts conducting, the secondary voltage V<sub>AB</sub> appears almost as it is across the load resistance (as the voltage drop across a conducting diode is very small). The load voltage is thus positive and almost equal to the instantaneous secondary voltage V. The load current has the same shape as the voltage, since the load is purely resistive.
+</div>
+
+<div class="note">
+<b>Operation in the negative half cycle of AC supply (π to 2π):</b><br><br>
+In the negative half cycle of the AC supply (π to 2π), the secondary voltage V<sub>AB</sub> is negative, i.e. A is negative with respect to B. Hence the diode is reverse biased and offers a very high resistance, so we can replace it with an open-circuit switch. The load is disconnected from the secondary; hence the load voltage and load current are both zero, and the voltage across the diode equals the instantaneous secondary voltage V<sub>AB</sub>.
+</div>
+
+<h3>Advantages of HWR</h3>
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>Simple construction.</li>
+<li>Less number of components are required to be used.</li>
+<li>Small size.</li>
+</ol>
+</div>
+
+<h3>Disadvantages of HWR</h3>
+<div class="note">
+<ol style="margin-left:18px;">
+<li>Ripple factor is high (1.21).</li>
+<li>Low rectification efficiency (40%).</li>
+<li>Low TUF (only 28%), which indicates that the transformer is not being used effectively.</li>
+<li>Low DC output voltage and current.</li>
+<li>Larger filter components are required.</li>
+</ol>
+<p style="margin-top:10px;">Because of these disadvantages, the half wave rectifier is very rarely used in practice.</p>
+</div>
+
+<h3>Applications of HWR</h3>
+<p>A HWR is used in the eliminators for pocket radios or eliminators for Walkman, or in low-cost power supplies.</p>
+
+</section>
+
+<!-- Centre-Tap Full Wave Rectifier -->
+<section class="section" id="ct-fwr" data-section="2" data-toc-section="2">
+
+<h2>3.7 Centre-Tap Full Wave Rectifier</h2>
+
+<p>
+The centre tapped full wave rectifier configuration consists of a step-down centre tapped transformer T<sub>1</sub>, two diodes, and a purely resistive load R<sub>L</sub>. In the HWR, the load current flows in only one half cycle of the supply, but in the full wave rectifier, it flows in <b>both</b> the half cycles of the AC supply.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit3/ct-fwr-circuit.png" style="max-width:480px;" alt="Centre tap full wave rectifier circuit: single-phase 230V AC supply, centre tap transformer T1 with terminals A, O (centre tap) and B, diode D1 from A and diode D2 from B joined to feed the load resistor RL giving load voltage VL">
+<p class="fig-caption">Fig 3.14 — Centre tap full wave rectifier circuit</p>
+
+<div class="definition">
+<b>Centre Tapped Transformer</b>
+<p style="margin-top:10px;">Before analysing the full wave rectifier, we need the concept of the voltages induced on the secondary side of a centre tapped transformer: the induced voltages in the two halves of the secondary winding are always <b>180° out of phase</b> with respect to each other.</p>
+</div>
+
+<h3>Operation</h3>
+
+<div class="note">
+<b>Operation in the positive half cycle of AC supply:</b><br><br>
+The polarities of the secondary induced voltages are such that V<sub>AO</sub> is positive and V<sub>BO</sub> is negative. Due to the centre tapped secondary, V<sub>AO</sub> and V<sub>BO</sub> are always equal and opposite to each other. Hence diode D<sub>1</sub> is forward biased and D<sub>2</sub> is reverse biased. The load current starts flowing from A, through D<sub>1</sub>, load resistance R<sub>L</sub>, back to point O. The instantaneous load voltage is positive and approximately equal to V<sub>AO</sub>. As the load is purely resistive, the load current has the same shape as the load voltage.
+</div>
+
+<div class="note">
+<b>Operation in the negative half cycle:</b><br><br>
+In the negative half cycle of the AC supply, the polarities of the secondary induced voltages are such that V<sub>AO</sub> is negative and V<sub>BO</sub> is positive. Hence D<sub>1</sub> is reverse biased and D<sub>2</sub> is forward biased. So D<sub>1</sub> acts as an open-circuited switch and D<sub>2</sub> carries the entire load current. Note that the direction of load current I<sub>L</sub> is the same as in the positive half cycle — that means even in the negative half cycle, the load current continues to be positive. The instantaneous load voltage V<sub>L</sub> is positive and almost equal to V.
+</div>
+
+<img class="diagram-img" src="../assets/images/unit3/ct-polarities.png" style="max-width:720px;" alt="Secondary voltage polarities of a centre-tapped transformer: in the positive half cycle VAO is positive and VBO is negative; in the negative half cycle VAO is negative and VBO is positive">
+<p class="fig-caption">Fig 3.15 — Secondary voltage polarities of a centre tapped transformer in the positive and negative half cycles</p>
+
+<div class="definition">
+<b>Important points about the full wave rectifier</b>
+<ol style="margin:10px 0 0 18px;">
+<li>Load voltage and load current are both positive in both the half cycles of the AC supply.</li>
+<li>Output voltage is available in both the half cycles of the AC supply.</li>
+<li>The full wave rectifier circuit consists of two half wave rectifiers, which work independently and feed the common load.</li>
+</ol>
+</div>
+
+<h3>Waveform</h3>
+<img class="diagram-img" src="../assets/images/unit3/ct-fwr-waveforms.png" style="max-width:480px;" alt="Centre tap full wave rectifier waveforms: secondary voltages VAO and VBO, conducting diodes D1 and D2 alternating, diode currents, load current, load voltage, and voltage across D1 with 0.7 V forward drop and PIV = -2Vm">
+<p class="fig-caption">Fig 3.16 — Fig. 3.5.4: Voltage and current waveforms for a centre tap full wave rectifier</p>
+
+<h3>Advantages</h3>
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>Low ripple factor as compared to HWR.</li>
+<li>Better rectification efficiency.</li>
+<li>Better TUF.</li>
+<li>Higher values of average load voltage and average load current.</li>
+<li>No possibility of transformer core saturation, because transformer current flows equally in both the half cycles.</li>
+</ol>
+</div>
+
+<h3>Disadvantages</h3>
+<div class="note">
+<ol style="margin-left:18px;">
+<li>Since the PIV of the diode is 2V<sub>m</sub>, the size of the diodes is larger and they are more costly.</li>
+<li>Cost of the centre tapped transformer is high.</li>
+</ol>
+</div>
+
+<h3>Applications</h3>
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>Laboratory power supply.</li>
+<li>Battery chargers.</li>
+<li>High current power supplies.</li>
+</ol>
+</div>
+
+</section>
+
+<!-- Bridge Rectifier -->
+<section class="section" id="bridge-rectifier" data-section="2" data-toc-section="2">
+
+<h2>3.8 Bridge-Type Full Wave Rectifier</h2>
+
+<p>
+The disadvantages of the centre-tap full wave rectifier — such as the high cost and compulsory use of a centre tapped transformer — are overcome in the <b>bridge rectifier</b>. It consists of <b>four diodes</b> connected to form a bridge. The centre tapped input transformer is not required; the input transformer T<sub>1</sub> is just a step-down transformer.
+</p>
+<div class="definition">
+The bridge rectifier offers full wave rectification. The diodes conduct in pairs, i.e. at any given instant of time, one pair of diodes — either D<sub>1</sub>D<sub>2</sub> or D<sub>3</sub>D<sub>4</sub> — will be conducting.
+</div>
+
+<img class="diagram-img" src="../assets/images/unit3/bridge-circuit.png" style="max-width:520px;" alt="Full wave bridge rectifier circuit: single-phase 230V AC supply, step-down transformer T1 feeding a bridge of four diodes D1, D2, D3, D4, with the load resistor RL across the bridge output giving load voltage VL">
+<p class="fig-caption">Fig 3.17 — Full wave bridge rectifier circuit</p>
+
+<h3>Operation</h3>
+
+<div class="note">
+<b>Operation in the positive half cycle:</b><br><br>
+In the positive half cycle of the AC supply, the secondary voltage V<sub>AB</sub> is positive. Therefore, diodes D<sub>1</sub> and D<sub>2</sub> are forward biased, whereas D<sub>3</sub> and D<sub>4</sub> are reverse biased — note that the reverse biased diodes D<sub>3</sub> and D<sub>4</sub> act as open switches. The load current and load voltage are both positive.
+</div>
+
+<div class="note">
+<b>Operation in the negative half cycle:</b><br><br>
+In the negative half cycle of the AC supply, the secondary voltage V<sub>AB</sub> becomes negative. Diodes D<sub>3</sub> and D<sub>4</sub> are forward biased and start conducting. D<sub>1</sub> and D<sub>2</sub> are reverse biased, hence do not conduct.
+</div>
+
+<img class="diagram-img" src="../assets/images/unit3/bridge-equivalent-circuits.png" style="max-width:420px;" alt="Equivalent circuits of the bridge rectifier: (a) current flow during the positive half cycle through D1 and D2, (b) current flow during the negative half cycle through D3 and D4" >
+<p class="fig-caption">Fig 3.18 — Equivalent circuits of the bridge rectifier showing current flow during (a) the positive half cycle and (b) the negative half cycle</p>
+
+<h3>Waveforms</h3>
+<img class="diagram-img" src="../assets/images/unit3/bridge-waveforms.png" style="max-width:480px;" alt="Bridge rectifier waveforms: secondary voltage VAB, load voltage, load current, current through D1D2, current through D3D4, and voltage across D1 with 0.7 V forward drop and PIV = -Vm">
+<p class="fig-caption">Fig 3.19 — Voltage and current waveforms for a full wave bridge rectifier</p>
+
+<h3>Advantages</h3>
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>The input transformer is not a must — it is possible to operate the bridge rectifier directly on the 230 V AC supply.</li>
+<li>Core saturation does not take place, because equal and opposite currents flow through the transformer in each cycle — therefore transformer losses are reduced.</li>
+<li>The PIV is only V<sub>m</sub> volts, which is half the PIV of the full wave rectifier with centre tap.</li>
+<li>High average output voltage.</li>
+<li>Rectifier efficiency (η) is high.</li>
+<li>Transformer utilisation factor (TUF) is high.</li>
+</ol>
+</div>
+
+<h3>Disadvantages of Bridge Rectifier</h3>
+<div class="note">
+<ol style="margin-left:18px;">
+<li>The number of diodes used is four, instead of two for FWR.</li>
+<li>As two diodes conduct simultaneously, the voltage drop across them increases and the output voltage reduces.</li>
+</ol>
+</div>
+
+<h3>Applications of Bridge Rectifier</h3>
+<div class="definition">
+<ol style="margin-left:18px;">
+<li>Laboratory DC power supplies.</li>
+<li>Battery charger.</li>
+<li>High current power supplies.</li>
+<li>DC power supplies for various electronic circuits.</li>
+</ol>
+</div>
+
+</section>
+
+<!-- Comparison -->
+<section class="section" id="rectifier-comparison" data-section="2" data-toc-section="2">
+
+<h2>3.9 Comparison of Rectifiers</h2>
+
+<p>Table 3.6.1 — Comparison of the rectifier circuits:</p>
+
+<table class="comparison">
+<tr><th>Parameter</th><th>HWR</th><th>FWR (Centre Tap)</th><th>Bridge Rectifier</th></tr>
+<tr><td>DC or average load current (I<sub>L dc</sub>)</td><td>I<sub>m</sub>/π</td><td>2I<sub>m</sub>/π</td><td>2I<sub>m</sub>/π</td></tr>
+<tr><td>Maximum average load voltage V<sub>L dc</sub></td><td>V<sub>m</sub>/π</td><td>2V<sub>m</sub>/π</td><td>2V<sub>m</sub>/π</td></tr>
+<tr><td>RMS load current I<sub>L rms</sub></td><td>I<sub>m</sub>/2</td><td>I<sub>m</sub>/√2</td><td>I<sub>m</sub>/√2</td></tr>
+<tr><td>RMS load voltage V<sub>L rms</sub></td><td>V<sub>m</sub>/2</td><td>V<sub>m</sub>/√2</td><td>V<sub>m</sub>/√2</td></tr>
+<tr><td>DC load power P<sub>dc</sub></td><td>(I<sub>m</sub>²/π²) R<sub>L</sub></td><td>4I<sub>m</sub>²R<sub>L</sub>/π²</td><td>4I<sub>m</sub>²R<sub>L</sub>/π²</td></tr>
+<tr><td>Maximum rectification efficiency (η)</td><td>40%</td><td>81.2%</td><td>81.2%</td></tr>
+<tr><td>TUF</td><td>28.7%</td><td>69.3%</td><td>81.2%</td></tr>
+<tr><td>Ripple factor</td><td>121%</td><td>48%</td><td>48%</td></tr>
+<tr><td>Ripple frequency</td><td>50 Hz</td><td>100 Hz</td><td>100 Hz</td></tr>
+<tr><td>Number of diodes used</td><td>One</td><td>Two</td><td>Four</td></tr>
+<tr><td>Centre tap transformer</td><td>Not required</td><td>Very much required</td><td>Not required</td></tr>
+<tr><td>Transformer core saturation</td><td>Possible</td><td>Not possible</td><td>Not possible</td></tr>
+<tr><td>PIV</td><td>V<sub>m</sub></td><td>2V<sub>m</sub></td><td>V<sub>m</sub></td></tr>
+<tr><td>Expression for the peak load current</td><td>I<sub>m</sub> = V<sub>m</sub>/(R<sub>S</sub>+R<sub>F</sub>+R<sub>L</sub>)</td><td>I<sub>m</sub> = V<sub>m</sub>/(R<sub>S</sub>+R<sub>F</sub>+R<sub>L</sub>)</td><td>I<sub>m</sub> = V<sub>m</sub>/(R<sub>S</sub>+2R<sub>F</sub>+R<sub>L</sub>)</td></tr>
+</table>
+
 <div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
-<b>Coming up next in Unit 3:</b> Rectifiers — Half Wave, Full Wave and Bridge Rectifier, and their comparison — which put the first PN junction diode application (rectifier circuits) into practice.
+<b>Good to know:</b> Despite needing four diodes instead of two, the <b>bridge rectifier</b> is the one most widely used in practice today — it gives the same efficiency, ripple factor and TUF as the centre-tap FWR, but with a smaller PIV rating per diode, no bulky/costly centre-tapped transformer, and it can even work directly off the AC mains without a transformer at all.
 </div>
 
 </section>
