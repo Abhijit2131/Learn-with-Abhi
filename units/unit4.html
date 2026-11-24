@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 | Transistors</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#F4F8FC;
+color:#17345E;
+line-height:1.7;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#0B4AA2,#2196F3);
+color:white;
+padding:22px 8%;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:5px;
+}
+
+header p{
+opacity:.95;
+}
+
+/* Layout */
+
+.container{
+width:92%;
+margin:30px auto;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:25px;
+align-items:start;
+}
+
+/* Left Navigation */
+
+.toc{
+position:sticky;
+top:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.toc h3{
+color:#0B4AA2;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.toc a{
+display:block;
+padding:10px 12px;
+text-decoration:none;
+color:#17345E;
+border-radius:8px;
+font-size:14px;
+margin-bottom:6px;
+transition:.3s;
+}
+
+.toc a:hover{
+background:#EAF4FF;
+color:#0B4AA2;
+padding-left:18px;
+font-weight:bold;
+}
+
+.toc-group-btn{
+display:block;
+width:100%;
+text-align:left;
+background:none;
+border:none;
+font-family:inherit;
+font-size:14px;
+font-weight:bold;
+color:#0B4AA2;
+padding:9px 12px;
+margin-bottom:6px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.toc-group-btn:hover{
+background:#EAF4FF;
+}
+
+.toc-group-btn.active{
+background:#0B4AA2;
+color:#fff;
+}
+
+.toc-group-btn.locked{
+color:#94A3B8;
+}
+
+.toc-group-btn.locked.active{
+background:#94A3B8;
+color:#fff;
+}
+
+/* Content */
+
+.content{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.section{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.section.locked-section{
+display:none;
+}
+
+.section.toc-hidden{
+display:none;
+}
+
+.locked-message{
+background:#F8FAFC;
+border:2px dashed #CBD5E1;
+text-align:center;
+padding:50px 25px;
+}
+
+.locked-message h2{
+border:none;
+padding:0;
+margin-bottom:12px;
+color:#64748B;
+}
+
+.locked-message p{
+color:#64748B;
+font-size:15px;
+line-height:1.6;
+}
+
+.section h2{
+color:#0B4AA2;
+border-left:5px solid #2196F3;
+padding-left:12px;
+margin-bottom:15px;
+}
+
+.section h3{
+color:#0B4AA2;
+margin-top:22px;
+margin-bottom:10px;
+font-size:18px;
+}
+
+.definition{
+background:#EAF4FF;
+padding:18px;
+border-left:6px solid #0B4AA2;
+border-radius:10px;
+margin:18px 0;
+}
+
+.note{
+background:#FFF8E6;
+padding:15px;
+border-left:5px solid orange;
+border-radius:8px;
+margin-top:15px;
+}
+
+.diagram-img{
+max-width:100%;
+height:auto;
+object-fit:contain;
+display:block;
+margin:20px auto;
+border:1px solid #E3EAF4;
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+.fig-caption{
+text-align:center;
+font-size:13px;
+color:#64748B;
+margin-top:-6px;
+margin-bottom:10px;
+}
+
+.comparison{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+font-size:15px;
+}
+
+.comparison th{
+background:#0B4AA2;
+color:white;
+padding:14px;
+}
+
+.comparison td{
+border:1px solid #DCE5F0;
+padding:14px;
+vertical-align:top;
+}
+
+.comparison tr:nth-child(even){
+background:#F8FBFF;
+}
+
+.part-banner{
+background:#17345E;
+color:white;
+font-size:15px;
+font-weight:bold;
+letter-spacing:.4px;
+padding:12px 22px;
+border-radius:12px;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:30px;
+color:#64748B;
+font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.toc{
+position:relative;
+top:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+// ===============================
+// TEACHER / STUDENT MODE
+// ===============================
+
+// true  = Teacher (all sections visible)
+// false = Student (GitHub Live)
+const teacherMode = false;
+
+// Unlock complete sections
+// 1 = Transistors (BJT)
+const unlockedSection = 1;
+
+</script>
+
+<header>
+<h1>UNIT 4 : Transistors</h1>
+<p>Fundamentals of Electrical & Electronics Engineering</p>
+</header>
+
+<div class="container">
+
+<!-- LEFT PALETTE -->
+
+<aside class="toc">
+
+<h3>📘 Unit 4 Contents</h3>
+
+<button type="button" class="toc-group-btn" data-section-jump="1">Section 1</button>
+
+<a href="#transistor-intro">4.1 Transistor — Introduction &amp; Classification</a>
+<a href="#bjt-construction">4.2 Construction of BJT</a>
+<a href="#bjt-working">4.3 Working Principle of BJT</a>
+<a href="#bjt-regions">4.4 Operating Regions of BJT</a>
+<p style="font-size:12px;font-weight:bold;color:#0B4AA2;padding:8px 12px 2px;">4.5 Transistor Configurations</p>
+<a href="#cb-config" style="padding-left:22px;">4.5.1 Common Base (CB)</a>
+<a href="#ce-config" style="padding-left:22px;">4.5.2 Common Emitter (CE)</a>
+<a href="#cc-config" style="padding-left:22px;">4.5.3 Common Collector (CC)</a>
+<a href="#config-comparison" style="padding-left:22px;">4.5.4 Comparison</a>
+<a href="#transistor-applications">4.6 Applications of Transistor</a>
+
+<hr style="margin:14px 0;">
+
+<a href="unit3.html">⬅ Unit 3 – Semiconductor Basics &amp; PN Junction Diode</a>
+<a href="../index.html">🏠 Back to Home</a>
+
+</aside>
+
+<!-- RIGHT CONTENT -->
+
+<div class="content">
+
+<!-- Introduction & Classification -->
+<div class="section" id="transistor-intro" data-section="1" data-toc-section="1">
+
+<h2>4.1 Transistor — Introduction &amp; Classification</h2>
+
+<div class="definition">
+<b>Transistor</b>
+<p style="margin-top:10px;">
+The transistor is the main building block element of electronics. It is a semiconductor device, and it comes in three general types: the <b>Bipolar Junction Transistor (BJT)</b>, <b>Field Effect Transistor (FET)</b> and <b>Metal Oxide Semiconductor Field Effect Transistor (MOSFET)</b>.
+</p>
+</div>
+
+<div style="max-width:560px;margin:25px auto;">
+<div style="background:#17345E;color:white;text-align:center;padding:12px 18px;border-radius:10px;font-weight:bold;font-size:15px;">Transistors</div>
+<div style="display:flex;gap:14px;margin-top:18px;">
+<div style="flex:1;background:#EAF4FF;border:2px solid #0B4AA2;border-radius:10px;padding:14px 8px;text-align:center;font-weight:bold;color:#0B4AA2;font-size:14px;">BJT</div>
+<div style="flex:1;background:#EAF4FF;border:2px solid #0B4AA2;border-radius:10px;padding:14px 8px;text-align:center;font-weight:bold;color:#0B4AA2;font-size:14px;">FET</div>
+<div style="flex:1;background:#EAF4FF;border:2px solid #0B4AA2;border-radius:10px;padding:14px 8px;text-align:center;font-weight:bold;color:#0B4AA2;font-size:14px;">MOSFET</div>
+</div>
+</div>
+
+<table class="comparison">
+<tr><th>Term</th><th>Stands for</th></tr>
+<tr><td>BJT</td><td>Bipolar Junction Transistor</td></tr>
+<tr><td>FET</td><td>Field Effect Transistor</td></tr>
+<tr><td>MOSFET</td><td>Metal Oxide Semiconductor Field Effect Transistor</td></tr>
+</table>
+
+<div class="note">
+<b>Note:</b> FET and MOSFET are <b>unipolar</b> devices built on a different operating principle; they are studied in detail in a later unit. This unit, as per the syllabus, focuses entirely on the <b>Bipolar Junction Transistor (BJT)</b>.
+</div>
+
+<h3>BJT (Bipolar Junction Transistor)</h3>
+
+<p>
+The word "transistor" is an acronym of two terms: <b>"transfer" + "resistor"</b>. It means that the internal resistance of the transistor transfers from one value to another, depending on the biasing voltage applied to it. Thus, it is called a <b>transfer resistor</b>, i.e. <b>TRANSISTOR</b>.
+</p>
+
+<ul style="margin:10px 0 0 22px;">
+<li>A bipolar transistor (BJT) is a <b>three terminal semiconductor device</b> in which the operation depends on the interaction of both majority and minority carriers, i.e. both electrons and holes — hence the name <b>bipolar</b>.</li>
+<li>If a transistor's operation depends only on majority carriers — i.e. either electrons or holes, not both — it is called <b>unipolar</b>, e.g. the FET (Field Effect Transistor).</li>
+<li>A BJT is a <b>current-controlled device</b>: the output current (flowing between two terminals) is controlled by the input current flowing through the third terminal. A FET, by contrast, is a <b>voltage-controlled device</b>: its output current is controlled by an input voltage rather than an input current.</li>
+<li>This is the basic principle of the BJT — it can be used as an <b>amplifier</b> and as a <b>logic switch</b>.</li>
+<li>A BJT consists of three terminals: <b>Collector (C)</b>, <b>Base (B)</b>, <b>Emitter (E)</b>.</li>
+</ul>
+
+<div class="definition">
+<b>Types:</b> There are two types of bipolar transistors — the <b>NPN transistor</b> and the <b>PNP transistor</b>.
+</div>
+
+</div>
+
+<!-- Construction -->
+<section class="section" id="bjt-construction" data-toc-section="1">
+
+<h2>4.2 Construction of BJT</h2>
+
+<p>
+A P-N junction is represented by a diode; therefore, the P-N-P and N-P-N transistors are equivalent to <b>two diodes connected back-to-back</b>.
+</p>
+
+<ul style="margin:10px 0 0 22px;">
+<li><b>PNP Transistor:</b> a thin layer of N-type silicon is sandwiched between two layers of P-type silicon.</li>
+<li><b>NPN Transistor:</b> a thin layer of P-type silicon is sandwiched between two layers of N-type silicon.</li>
+</ul>
+
+<img class="diagram-img" src="../assets/images/unit4/bjt-construction-symbol.png" style="max-width:780px;" alt="Construction, two-diode analogy and circuit symbols of PNP and NPN bipolar junction transistors, showing emitter, base and collector terminals">
+<p class="fig-caption">Fig 4.1 — Construction, two-diode analogy and circuit symbols of PNP and NPN transistors</p>
+
+<h3>Area of the Three Regions — C &gt; E &gt; B</h3>
+<div class="note">
+The area of the <b>collector</b> layer is the <b>largest</b>, so it can dissipate heat quickly. The area of the <b>base</b> layer is the <b>smallest</b>, and it is a very thin layer. The area of the <b>emitter</b> layer is medium.
+</div>
+
+<h3>Doping Level — E &gt; C &gt; B</h3>
+<div class="note">
+The <b>collector</b> layer is moderately doped, so it has a medium number of charge carriers. The <b>base</b> layer is lightly doped, so it has very few charge carriers. The <b>emitter</b> layer is heavily doped, so it has the largest number of charge carriers.
+</div>
+
+<h3>Junctions</h3>
+<p>
+There are two junctions in a transistor:
+</p>
+<ul style="margin:10px 0 0 22px;">
+<li>The junction between the base layer and the emitter layer is called the <b>base-emitter junction</b>, or <b>B-E junction</b>.</li>
+<li>The junction between the collector layer and the base layer is called the <b>collector-base junction</b>, or <b>C-B junction</b>.</li>
+</ul>
+<div class="definition">
+The two junctions have almost the same potential barrier voltage of <b>0.6 V to 0.7 V</b>, just like in a diode. A transistor can thus be thought of as having two P-N junctions: the <b>BE (Base-Emitter) junction</b> and the <b>CB (Collector-Base) junction</b>.
+</div>
+
+<h3>Symbol</h3>
+<p>
+The arrow in the circuit symbol always shows the direction of <b>conventional current flow</b> between the base terminal and the emitter terminal. The direction of the arrow always points from the positive P-type region to the negative N-type region for both transistor types — exactly the same convention as for the standard diode symbol.
+</p>
+
+</section>
+
+<!-- Working -->
+<section class="section" id="bjt-working" data-toc-section="1">
+
+<h2>4.3 Working Principle of BJT</h2>
+
+<p>The working of a BJT is explained below for an <b>N-P-N transistor</b>; a <b>P-N-P transistor</b> works in exactly the mirror-image way, with holes as the majority carriers instead of electrons, and all supply polarities reversed.</p>
+
+<img class="diagram-img" src="../assets/images/unit4/npn-operation.png" style="max-width:720px;" alt="Operation of an NPN transistor: electrons emitted from the emitter cross the thin base region, with a small recombination current IB flowing out of the base and the remaining electrons collected as collector current IC, with IE = IC + IB">
+<p class="fig-caption">Fig 4.2 — Fig. 3.4.1: Operation of an N-P-N transistor</p>
+
+<div class="note">
+<ul style="margin:0 0 0 20px;">
+<li>The forward bias at the B-E junction reduces the barrier potential and causes electrons to flow from the n-type emitter to the p-type base.</li>
+<li>Holes also flow from the p-type base to the n-type emitter, but as the base is more lightly doped than the emitter, almost all the current flowing across the B-E junction consists of electrons entering the base from the emitter. Hence, <b>electrons are the majority carriers</b> in an n-p-n transistor.</li>
+<li>Some of the electrons entering the base region do not reach the collector region. Instead, they flow out of the base terminal via the base connection, due to recombination. As the base region is very thin and lightly doped, there are very few holes available for recombination — hence <b>about 2% of the electrons</b> flow out of the base.</li>
+<li>The remaining <b>98% of the electrons</b> cross the reverse-biased collector junction to constitute the collector current. They cross the collector region and are collected by the supply V<sub>CC</sub>.</li>
+</ul>
+</div>
+
+<div class="definition" style="text-align:center;">I<sub>E</sub> = I<sub>C</sub> + I<sub>B</sub></div>
+<p>
+This means the emitter current is always equal to the sum of the collector current and the base current. As I<sub>B</sub> is very small compared with I<sub>E</sub>, we could say that I<sub>E</sub> ≈ I<sub>C</sub>.
+</p>
+
+<h3>Current Amplification Factors</h3>
+<p>
+Since a transistor's output current is controlled by its input current, two ratios are used to describe how effectively it does this:
+</p>
+<div class="definition">
+<ul style="margin:10px 0 0 22px;">
+<li><b>DC current gain α (alpha)</b>, used in the common base configuration: α = I<sub>C</sub> / I<sub>E</sub>. Since I<sub>C</sub> is always slightly less than I<sub>E</sub>, α is always <b>less than 1</b> (typically 0.95 to 0.99).</li>
+<li><b>DC current gain β (beta)</b>, used in the common emitter configuration: β = I<sub>C</sub> / I<sub>B</sub>. Since I<sub>B</sub> is very small, β is <b>large</b> (typically 20 to 500) — this is why the common emitter configuration gives high current gain.</li>
+</ul>
+<p style="margin-top:10px;">The two are related by: β = α / (1 − α), and α = β / (1 + β).</p>
+</div>
+
+</section>
+
+<!-- Operating Regions -->
+<section class="section" id="bjt-regions" data-toc-section="1">
+
+<h2>4.4 Operating Regions of BJT</h2>
+
+<div class="definition">
+<b>Biasing</b> is the process of applying external voltages to the transistor. A transistor cannot work unless external DC power supplies are connected to it.
+</div>
+
+<p>
+A BJT is capable of operating in <b>four different regions</b>, depending on the way in which it is biased:
+</p>
+<ol style="margin:10px 0 0 22px;">
+<li>Cut off region (transistor is OFF)</li>
+<li>Saturation region (transistor is fully ON)</li>
+<li>Forward active region (transistor works as an amplifier)</li>
+<li>Reverse (inverse) active region</li>
+</ol>
+
+<table class="comparison">
+<tr><th>Region of Operation</th><th>Base-Emitter Junction</th><th>Collector-Base Junction</th><th>Application</th></tr>
+<tr><td><b>Cut off region</b></td><td>Reverse bias</td><td>Reverse bias</td><td>Open switch</td></tr>
+<tr><td><b>Forward active region</b></td><td>Forward bias</td><td>Reverse bias</td><td>Amplifier</td></tr>
+<tr><td><b>Saturation region</b></td><td>Forward bias</td><td>Forward bias</td><td>Closed switch</td></tr>
+<tr><td><b>Reverse active region</b></td><td>Reverse bias</td><td>Forward bias</td><td>Attenuator</td></tr>
+</table>
+
+<div class="note">
+<ul style="margin:0 0 0 20px;">
+<li><b>Cut off:</b> both junctions are reverse biased, so (ideally) no current flows at all — the transistor behaves like an <b>open switch</b> between collector and emitter.</li>
+<li><b>Saturation:</b> both junctions are forward biased, so maximum current flows and the voltage across the transistor (V<sub>CE</sub>) becomes very small — the transistor behaves like a <b>closed switch</b>.</li>
+<li><b>Forward active:</b> the BE junction is forward biased and the CB junction is reverse biased — this is the normal condition used for <b>amplification</b>, where I<sub>C</sub> = β × I<sub>B</sub>.</li>
+<li><b>Reverse active:</b> the roles of emitter and collector are effectively interchanged (BE reverse biased, CB forward biased). The transistor still conducts, but far less efficiently than in forward active mode, so this region is rarely used deliberately in practice.</li>
+</ul>
+</div>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Good to know:</b> Switching circuits deliberately drive the transistor between <b>cut off</b> and <b>saturation</b> only (skipping the active region as quickly as possible), whereas amplifier circuits are biased to stay in the <b>forward active region</b> at all times.
+</div>
+
+</section>
+
+<!-- Configurations -->
+<div class="part-banner">4.5 Transistor Configurations</div>
+
+<div class="section" id="cb-config" data-section="1" data-toc-section="1">
+
+<p>
+The common terminal between the input and output ports can be the base, emitter or collector. Depending on which terminal is made common, there are three possible configurations of the transistor:
+</p>
+<ol style="margin:10px 0 0 22px;">
+<li>Common Base (CB) configuration</li>
+<li>Common Emitter (CE) configuration</li>
+<li>Common Collector (CC) configuration</li>
+</ol>
+
+<h2>4.5.1 Common Base (CB) Configuration</h2>
+
+<p>
+The input is applied between the emitter and the base. The base acts as the common terminal between the input and output ports. The input voltage is therefore V<sub>EB</sub> and the input current is I<sub>E</sub>. The output is taken between the collector and the base; therefore the output voltage is V<sub>CB</sub> and the output current is I<sub>C</sub>.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit4/cb-configuration.png" style="max-width:780px;" alt="Common base configuration circuits for n-p-n and p-n-p transistors, with base as the common terminal between input (VEE, IE) and output (VCC, IC)">
+<p class="fig-caption">Fig 4.3 — Common base configuration for (a) n-p-n and (b) p-n-p transistors</p>
+
+<div class="definition">
+<b>Key Point — Common Base</b>
+<ul style="margin:10px 0 0 22px;">
+<li>Common terminal: Base</li>
+<li>Input current: I<sub>E</sub> &nbsp;|&nbsp; Output current: I<sub>C</sub></li>
+<li>Input voltage: V<sub>EB</sub> &nbsp;|&nbsp; Output voltage: V<sub>CB</sub></li>
+<li>Current gain: α<sub>dc</sub> (less than one)</li>
+<li>Voltage gain: medium</li>
+<li>Input resistance: very low</li>
+<li>Output resistance: very high</li>
+</ul>
+</div>
+
+</div>
+
+<div class="section" id="ce-config" data-toc-section="1">
+
+<h2>4.5.2 Common Emitter (CE) Configuration</h2>
+
+<p>
+The input is applied between the base and the emitter. The emitter acts as the common terminal between the input and output ports. The input voltage is therefore V<sub>BE</sub> and the input current is I<sub>B</sub>. The output is taken between the collector and the emitter; therefore the output voltage is V<sub>CE</sub> and the output current is I<sub>C</sub>. To operate the transistor in the active region, the base-emitter junction is forward biased and the collector-base junction is reverse biased.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit4/ce-configuration.png" style="max-width:780px;" alt="Common emitter configuration circuits for n-p-n and p-n-p transistors, with emitter as the common terminal between input (VBB, IB) and output (VCC, IC)">
+<p class="fig-caption">Fig 4.4 — Common emitter configuration for (a) n-p-n and (b) p-n-p transistors</p>
+
+<div class="definition">
+<b>Key Point — Common Emitter</b>
+<ul style="margin:10px 0 0 22px;">
+<li>Common terminal: Emitter</li>
+<li>Input current: I<sub>B</sub> &nbsp;|&nbsp; Output current: I<sub>C</sub></li>
+<li>Input voltage: V<sub>BE</sub> &nbsp;|&nbsp; Output voltage: V<sub>CE</sub></li>
+<li>Current gain: β<sub>dc</sub> (high)</li>
+<li>Voltage gain: medium</li>
+<li>Input resistance: moderate (≈ 1.1 kΩ)</li>
+<li>Output resistance: high (≈ 40 kΩ)</li>
+<li>Applications: amplifier</li>
+</ul>
+</div>
+
+</div>
+
+<div class="section" id="cc-config" data-toc-section="1">
+
+<h2>4.5.3 Common Collector (CC) Configuration</h2>
+
+<p>
+The input is applied between the base and the collector. The collector acts as the common terminal between the input and output ports. The input voltage is therefore V<sub>BC</sub> and the input current is I<sub>B</sub>. The output is taken between the collector and the emitter; therefore the output voltage is V<sub>CE</sub> and the output current is I<sub>E</sub>. To operate the transistor in the active region, the base-emitter junction is forward biased and the collector-base junction is reverse biased.
+</p>
+
+<img class="diagram-img" src="../assets/images/unit4/cc-configuration.png" style="max-width:780px;" alt="Common collector configuration circuits for n-p-n and p-n-p transistors, with collector as the common terminal between input (VBB, IB) and output (VCC, IE)">
+<p class="fig-caption">Fig 4.5 — Common collector configuration for (a) n-p-n and (b) p-n-p transistors</p>
+
+<div class="definition">
+<b>Key Point — Common Collector</b>
+<ul style="margin:10px 0 0 22px;">
+<li>Common terminal: Collector</li>
+<li>Input current: I<sub>B</sub> &nbsp;|&nbsp; Output current: I<sub>E</sub></li>
+<li>Input voltage: V<sub>BC</sub> &nbsp;|&nbsp; Output voltage: V<sub>CE</sub></li>
+<li>Current gain: unity</li>
+<li>Voltage gain: medium</li>
+<li>Input resistance: high</li>
+<li>Output resistance: low</li>
+</ul>
+</div>
+
+</div>
+
+<div class="section" id="config-comparison" data-toc-section="1">
+
+<h2>4.5.4 Comparison of Configurations</h2>
+
+<table class="comparison">
+<tr><th>Parameter</th><th>Common Base (CB)</th><th>Common Emitter (CE)</th><th>Common Collector (CC)</th></tr>
+<tr><td>Common terminal</td><td>Base</td><td>Emitter</td><td>Collector</td></tr>
+<tr><td>Input current</td><td>I<sub>E</sub></td><td>I<sub>B</sub></td><td>I<sub>B</sub></td></tr>
+<tr><td>Output current</td><td>I<sub>C</sub></td><td>I<sub>C</sub></td><td>I<sub>E</sub></td></tr>
+<tr><td>Input voltage</td><td>V<sub>EB</sub></td><td>V<sub>BE</sub></td><td>V<sub>BC</sub></td></tr>
+<tr><td>Output voltage</td><td>V<sub>CB</sub></td><td>V<sub>CE</sub></td><td>V<sub>CE</sub></td></tr>
+<tr><td>Current gain</td><td>α<sub>dc</sub> (&lt; 1)</td><td>β<sub>dc</sub> (high)</td><td>Unity</td></tr>
+<tr><td>Voltage gain</td><td>Medium</td><td>Medium</td><td>Medium</td></tr>
+<tr><td>Input resistance</td><td>Very low</td><td>Moderate (≈1.1 kΩ)</td><td>High</td></tr>
+<tr><td>Output resistance</td><td>Very high</td><td>High (≈40 kΩ)</td><td>Low</td></tr>
+<tr><td>Typical application</td><td>High-frequency circuits</td><td>Amplifier</td><td>Buffer / impedance matching</td></tr>
+</table>
+
+<div class="note" style="background:#EAF4FF;border-left-color:#0B4AA2;">
+<b>Good to know:</b> The <b>Common Emitter</b> configuration is by far the most widely used of the three in amplifier circuits, because it offers high current gain, decent voltage gain, and a reasonable balance of input/output resistance — unlike CB (very low input resistance, used mainly in high-frequency applications) and CC (unity current gain, used mainly as a buffer stage because its high input resistance and low output resistance make it good for impedance matching).
+</div>
+
+</div>
+
+<!-- Applications -->
+<section class="section" id="transistor-applications" data-toc-section="1">
+
+<h2>4.6 Applications of Transistor</h2>
+
+<p>
+Building on the operating regions and configurations studied above, a BJT is used in three broad ways:
+</p>
+
+<h3>1. As an Amplifier</h3>
+<div class="definition">
+When biased in the <b>forward active region</b> (most commonly in the Common Emitter configuration), a small change in the base current I<sub>B</sub> produces a much larger change in the collector current I<sub>C</sub> (I<sub>C</sub> = β × I<sub>B</sub>). A small AC input signal applied at the base therefore appears as a much larger version of itself at the collector — this is <b>amplification</b>. This is the working principle behind audio amplifiers, microphone pre-amplifiers and signal-boosting stages in electronic circuits.
+</div>
+
+<h3>2. As a Switch</h3>
+<div class="definition">
+When driven only between the <b>cut off region</b> (fully OFF, acting as an open switch) and the <b>saturation region</b> (fully ON, acting as a closed switch), a transistor behaves as an electronic switch with no moving parts. This is the basis of digital logic gates, relay-driver circuits, and LED/motor driver stages — where the transistor is switched ON and OFF by a control signal at its base.
+</div>
+
+<h3>3. As an Oscillator</h3>
+<div class="definition">
+When a transistor amplifier's output is fed back to its input in the correct phase (positive feedback) through a suitable RC or LC feedback network, the circuit sustains its own oscillation and generates a continuous AC waveform without any external AC input. This is used to generate clock signals, radio-frequency carrier signals, and audio tones.
+</div>
+
+<div class="note">
+<b>Everyday example:</b> The volume control circuit in a simple transistor radio uses a BJT as an <b>amplifier</b> to boost the weak signal picked up by the antenna, while the ON/OFF power switch inside many digital devices is often implemented using a BJT working purely as a <b>switch</b> between cut off and saturation.
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+Prepared &amp; Developed by <b>Mr. Abhijit S. Shinde</b><br>
+Learn with Abhi © 2026
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (teacherMode) return;
+
+  const lockedGroups = new Set();
+
+  document.querySelectorAll(".section[data-section]").forEach((section) => {
+    if (Number(section.dataset.section) > unlockedSection) {
+      section.classList.add("locked-section");
+      section.setAttribute("aria-hidden", "true");
+
+      const groupNum = section.dataset.tocSection;
+      if (groupNum && !lockedGroups.has(groupNum)) {
+        lockedGroups.add(groupNum);
+
+        const message = document.createElement("div");
+        message.className = "section locked-message";
+        message.dataset.tocSection = groupNum;
+        message.innerHTML =
+          "<h2>🔒 Section " + groupNum + " is Locked</h2>" +
+          "<p>This section will be unlocked here once it has been delivered in class.</p>";
+        section.after(message);
+
+        const groupBtn = document.querySelector('.toc-group-btn[data-section-jump="' + groupNum + '"]');
+        if (groupBtn) {
+          groupBtn.classList.add("locked");
+          groupBtn.textContent += " 🔒";
+        }
+      }
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const groups = document.querySelectorAll(".section[data-toc-section]");
+  const groupButtons = document.querySelectorAll(".toc-group-btn");
+
+  function showTocSection(num) {
+    groups.forEach((section) => {
+      section.classList.toggle("toc-hidden", section.dataset.tocSection !== String(num));
+    });
+    groupButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.sectionJump === String(num));
+    });
+  }
+
+  groupButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const num = btn.dataset.sectionJump;
+      showTocSection(num);
+      const target =
+        document.querySelector('.locked-message[data-toc-section="' + num + '"]') ||
+        document.querySelector('.section[data-toc-section="' + num + '"]:not(.locked-section)');
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  document.querySelectorAll(".toc a[href^='#']").forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.getAttribute("href").slice(1));
+      const group = target ? target.closest("[data-toc-section]") : null;
+      if (group) showTocSection(group.dataset.tocSection);
+    });
+  });
+
+  showTocSection("1");
+});
+</script>
+
+</body>
+</html>
