@@ -285,7 +285,7 @@ const teacherMode = false;
 
 // Unlock complete sections
 // 1 = Transistors (BJT)
-const unlockedSection = 1;
+const unlockedSection = 0;
 
 </script>
 
@@ -379,7 +379,7 @@ The word "transistor" is an acronym of two terms: <b>"transfer" + "resistor"</b>
 </div>
 
 <!-- Construction -->
-<section class="section" id="bjt-construction" data-toc-section="1">
+<section class="section" id="bjt-construction" data-section="1" data-toc-section="1">
 
 <h2>4.2 Construction of BJT</h2>
 
@@ -425,7 +425,7 @@ The arrow in the circuit symbol always shows the direction of <b>conventional cu
 </section>
 
 <!-- Working -->
-<section class="section" id="bjt-working" data-toc-section="1">
+<section class="section" id="bjt-working" data-section="1" data-toc-section="1">
 
 <h2>4.3 Working Principle of BJT</h2>
 
@@ -463,7 +463,7 @@ Since a transistor's output current is controlled by its input current, two rati
 </section>
 
 <!-- Operating Regions -->
-<section class="section" id="bjt-regions" data-toc-section="1">
+<section class="section" id="bjt-regions" data-section="1" data-toc-section="1">
 
 <h2>4.4 Operating Regions of BJT</h2>
 
@@ -542,7 +542,7 @@ The input is applied between the emitter and the base. The base acts as the comm
 
 </div>
 
-<div class="section" id="ce-config" data-toc-section="1">
+<div class="section" id="ce-config" data-section="1" data-toc-section="1">
 
 <h2>4.5.2 Common Emitter (CE) Configuration</h2>
 
@@ -569,7 +569,7 @@ The input is applied between the base and the emitter. The emitter acts as the c
 
 </div>
 
-<div class="section" id="cc-config" data-toc-section="1">
+<div class="section" id="cc-config" data-section="1" data-toc-section="1">
 
 <h2>4.5.3 Common Collector (CC) Configuration</h2>
 
@@ -595,7 +595,7 @@ The input is applied between the base and the collector. The collector acts as t
 
 </div>
 
-<div class="section" id="config-comparison" data-toc-section="1">
+<div class="section" id="config-comparison" data-section="1" data-toc-section="1">
 
 <h2>4.5.4 Comparison of Configurations</h2>
 
@@ -620,7 +620,7 @@ The input is applied between the base and the collector. The collector acts as t
 </div>
 
 <!-- Applications -->
-<section class="section" id="transistor-applications" data-toc-section="1">
+<section class="section" id="transistor-applications" data-section="1" data-toc-section="1">
 
 <h2>4.6 Applications of Transistor</h2>
 
@@ -687,6 +687,15 @@ document.addEventListener("DOMContentLoaded", () => {
           groupBtn.textContent += " 🔒";
         }
       }
+    }
+  });
+
+  // Hide any "Part"/"Section" banner divider that sits directly above a
+  // section which just got locked, so a locked page doesn't show a lone
+  // banner heading with no visible content underneath it.
+  document.querySelectorAll(".part-banner").forEach((banner) => {
+    if (banner.nextElementSibling && banner.nextElementSibling.classList.contains("locked-section")) {
+      banner.style.display = "none";
     }
   });
 });
